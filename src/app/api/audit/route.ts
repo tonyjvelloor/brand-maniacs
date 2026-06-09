@@ -1,6 +1,5 @@
 import { NextResponse } from 'next/server';
-import { promises as fs } from 'fs';
-import path from 'path';
+import { readSubmissions, writeSubmissions } from '@/lib/storage';
 
 export const maxDuration = 30;
 
@@ -33,22 +32,6 @@ export interface AuditSubmission {
     report?: string;
 }
 
-const DB_PATH = path.join(process.cwd(), 'data', 'audit-submissions.json');
-
-async function readSubmissions(): Promise<AuditSubmission[]> {
-    try {
-        const raw = await fs.readFile(DB_PATH, 'utf-8');
-        return JSON.parse(raw);
-    } catch {
-        return [];
-    }
-}
-
-async function writeSubmissions(data: AuditSubmission[]): Promise<void> {
-    await fs.mkdir(path.dirname(DB_PATH), { recursive: true });
-    await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
-}
-
 // POST — submit a new audit application
 export async function POST(req: Request) {
     try {
@@ -69,10 +52,12 @@ export async function POST(req: Request) {
             id: `audit_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
             submittedAt: new Date().toISOString(),
             status: 'pending',
-            contactName, email, phone, companyName, role,
-            website, industry, monthlyRevenue, teamSize, businessAge,
-            monthlyAdSpend, currentChannels, cac, currentAgency,
-            primaryChallenge, goals, timeline,
+            contactName, email, phone, companyName, role: role || '',
+            website, industry: industry || '', monthlyRevenue: monthlyRevenue || '',
+            teamSize: teamSize || '', businessAge: businessAge || '',
+            monthlyAdSpend: monthlyAdSpend || '', currentChannels: currentChannels || [],
+            cac: cac || '', currentAgency: currentAgency || '',
+            primaryChallenge, goals: goals || '', timeline: timeline || '',
         };
 
         const existing = await readSubmissions();
