@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, Users, Settings } from "lucide-react";
+import { Activity, Users, Settings, FileText } from "lucide-react";
 
 export default function AdminLayout({
     children,
@@ -18,6 +18,14 @@ export default function AdminLayout({
 
                 <nav className="flex-1 p-4 flex flex-col gap-2">
                     <Link
+                        href="/admin/audits"
+                        className="flex items-center gap-3 p-3 font-bold uppercase transition-none hover:bg-accent-yellow hover:text-black border-2 border-transparent hover:border-accent-yellow"
+                    >
+                        <FileText className="w-5 h-5" />
+                        Audit Applications
+                    </Link>
+
+                    <Link
                         href="/admin/creator-intelligence"
                         className="flex items-center gap-3 p-3 font-bold uppercase transition-none hover:bg-black hover:text-accent-yellow border-2 border-transparent hover:border-black"
                     >
@@ -30,7 +38,7 @@ export default function AdminLayout({
                         className="flex items-center gap-3 p-3 font-bold uppercase transition-none text-gray-500 cursor-not-allowed border-2 border-transparent"
                     >
                         <Activity className="w-5 h-5" />
-                        Audit Logs (Soon)
+                        Analytics (Soon)
                     </Link>
 
                     <Link

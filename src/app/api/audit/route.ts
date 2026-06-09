@@ -1,62 +1,94 @@
-import { generateText } from 'ai';
-import { anthropic } from '@ai-sdk/anthropic';
 import { NextResponse } from 'next/server';
+import { promises as fs } from 'fs';
+import path from 'path';
 
-// Allow responses up to 60 seconds
-export const maxDuration = 60;
+export const maxDuration = 30;
 
+export interface AuditSubmission {
+    id: string;
+    submittedAt: string;
+    status: 'pending' | 'qualified' | 'rejected' | 'report_sent';
+    // Step 1 — Contact Info
+    contactName: string;
+    email: string;
+    phone: string;
+    companyName: string;
+    role: string;
+    // Step 2 — Business Details
+    website: string;
+    industry: string;
+    monthlyRevenue: string;
+    teamSize: string;
+    businessAge: string;
+    // Step 3 — Marketing Details
+    monthlyAdSpend: string;
+    currentChannels: string[];
+    cac: string;
+    currentAgency: string;
+    // Step 4 — Goals
+    primaryChallenge: string;
+    goals: string;
+    timeline: string;
+    // Generated report (filled after qualification)
+    report?: string;
+}
+
+const DB_PATH = path.join(process.cwd(), 'data', 'audit-submissions.json');
+
+async function readSubmissions(): Promise<AuditSubmission[]> {
+    try {
+        const raw = await fs.readFile(DB_PATH, 'utf-8');
+        return JSON.parse(raw);
+    } catch {
+        return [];
+    }
+}
+
+async function writeSubmissions(data: AuditSubmission[]): Promise<void> {
+    await fs.mkdir(path.dirname(DB_PATH), { recursive: true });
+    await fs.writeFile(DB_PATH, JSON.stringify(data, null, 2));
+}
+
+// POST — submit a new audit application
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { url, revenue, spend, cac, bottleneck } = body;
 
-        // Basic validation
-        if (!url || !revenue || !spend || !cac || !bottleneck) {
-            return NextResponse.json(
-                { error: 'Missing required fields' },
-                { status: 400 }
-            );
+        const {
+            contactName, email, phone, companyName, role,
+            website, industry, monthlyRevenue, teamSize, businessAge,
+            monthlyAdSpend, currentChannels, cac, currentAgency,
+            primaryChallenge, goals, timeline
+        } = body;
+
+        if (!contactName || !email || !phone || !companyName || !website || !primaryChallenge) {
+            return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
-        const systemPrompt = `You are a world-class Fractional Chief Growth Officer for Indian mid-market digital/D2C brands. Your style is direct, punchy, performance-driven, and slightly "brutalist"—focusing on hard ROI, revenue attribution, and systemic scale. You do not use fluff or jargon.
+        const submission: AuditSubmission = {
+            id: `audit_${Date.now()}_${Math.random().toString(36).slice(2, 7)}`,
+            submittedAt: new Date().toISOString(),
+            status: 'pending',
+            contactName, email, phone, companyName, role,
+            website, industry, monthlyRevenue, teamSize, businessAge,
+            monthlyAdSpend, currentChannels, cac, currentAgency,
+            primaryChallenge, goals, timeline,
+        };
 
-The user has submitted the following data for an AI Growth Audit:
-- Website URL: ${url}
-- Monthly Revenue Range: ${revenue}
-- Monthly Ad Spend: ${spend}
-- Current CAC: ${cac}
-- Self-Identified Primary Bottleneck: ${bottleneck}
+        const existing = await readSubmissions();
+        existing.push(submission);
+        await writeSubmissions(existing);
 
-Generate a concise, 3-part "Growth Infrastructure Blueprint" for this brand. 
+        return NextResponse.json({ success: true, id: submission.id });
 
-STRUCTURE YOUR RESPONSE LIKE THIS:
-
-# 1. THE BRUTAL TRUTH (Diagnosis)
-[Provide a blunt, insightful 2-3 sentence analysis of their current situation, connecting their spend, CAC, and bottleneck. Call out the flaw in their current scaling motion.]
-
-# 2. THE REVENUE LEAK (Immediate Fix)
-[Identify one specific, tactical thing they must fix immediately based on their inputs. Focus on performance marketing, tracking, or creator ROI.]
-
-# 3. THE INFRASTRUCTURE BLUEPRINT (Next 90 Days)
-[Provide 3 bullet points of high-level strategic changes they need to implement to scale sustainably.]
-
-FORMATTING RULES:
-- Keep it under 250 words total.
-- Use Markdown formatting for headings and lists.
-- Be authoritative and confident.
-- Do not add standard AI conversational openings/closings like "Here is your plan" or "Good luck!". Just start with the headers.`;
-
-        const { text } = await generateText({
-            model: anthropic('claude-3-5-sonnet-20241022'), // Or latest model
-            prompt: systemPrompt,
-        });
-
-        return NextResponse.json({ report: text });
     } catch (error) {
-        console.error('Audit Generation Error:', error);
-        return NextResponse.json(
-            { error: 'Failed to generate audit. Please try again later.' },
-            { status: 500 }
-        );
+        console.error('Audit submission error:', error);
+        return NextResponse.json({ error: 'Submission failed. Please try again.' }, { status: 500 });
     }
+}
+
+// GET — return all submissions (admin use)
+export async function GET() {
+    const submissions = await readSubmissions();
+    return NextResponse.json(submissions);
 }
