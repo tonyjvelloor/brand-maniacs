@@ -2,7 +2,7 @@
 // Central config — update these once, works everywhere
 // ─────────────────────────────────────────────
 
-export const WHATSAPP_NUMBER = "919895000000"; // Replace with real number: country code + number
+export const WHATSAPP_NUMBER = "917507623241"; // India +91
 export const WHATSAPP_MESSAGE = encodeURIComponent(
     "Hi, I want to book a Growth Strategy Call for my brand."
 );
