@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/config";
 
 const stats = [
     { value: "₹50 Cr+", label: "Revenue Generated" },
@@ -64,11 +65,11 @@ export function Hero() {
                         transition={{ duration: 0.1, delay: 0.15 }}
                         className="flex flex-col sm:flex-row items-start gap-4 mb-20"
                     >
-                        <Button size="lg" className="w-full sm:w-auto min-w-[260px]">
+                        <Button size="lg" className="w-full sm:w-auto min-w-[260px]" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                             Book a Strategy Call
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
-                        <Button variant="secondary" size="lg" className="w-full sm:w-auto min-w-[260px]">
+                        <Button variant="secondary" size="lg" className="w-full sm:w-auto min-w-[260px]" scrollTo="case-studies">
                             See Transformations
                         </Button>
                     </motion.div>

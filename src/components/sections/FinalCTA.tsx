@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/config";
 
 export function FinalCTA() {
     return (
@@ -39,11 +40,11 @@ export function FinalCTA() {
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start mb-20">
-                            <Button size="lg" className="min-w-[300px]">
+                            <Button size="lg" className="min-w-[300px]" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                                 Book Strategy Call — Free
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Button>
-                            <Button variant="secondary" size="lg" className="min-w-[260px]">
+                            <Button variant="secondary" size="lg" className="min-w-[260px]" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                                 WhatsApp Us First
                             </Button>
                         </div>

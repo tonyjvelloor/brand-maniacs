@@ -136,7 +136,7 @@ export function CaseStudies() {
                         transition={{ duration: 0.1 }}
                         className="mt-12 text-center"
                     >
-                        <Button size="lg">
+                        <Button size="lg" href="/case-studies">
                             See All Case Studies
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>

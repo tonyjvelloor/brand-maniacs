@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
+import { CALENDLY_URL } from "@/lib/config";
 
 const engines = [
     {
@@ -132,15 +133,15 @@ export function GrowthEngines() {
                         transition={{ duration: 0.1 }}
                         className="mt-12 flex flex-col sm:flex-row gap-4 items-start"
                     >
-                        <Button size="lg">
+                        <Button size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                             Get Your Custom Engine Plan
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
-                        <div className="border-2 border-foreground px-6 py-4 bg-background">
-                            <p className="font-black text-sm text-foreground uppercase tracking-widest">
+                        <a href="/ai-growth-audit" className="border-2 border-foreground px-6 py-4 bg-background hover:bg-foreground hover:text-background transition-none group flex items-center">
+                            <p className="font-black text-sm text-foreground uppercase tracking-widest group-hover:text-background transition-none">
                                 Not sure which engine? Book a free audit ↗
                             </p>
-                        </div>
+                        </a>
                     </motion.div>
                 </div>
             </div>

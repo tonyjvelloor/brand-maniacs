@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CheckCircle2, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import ReactMarkdown from "react-markdown";
+import { CALENDLY_URL } from "@/lib/config";
 
 export default function AIGrowthAuditPage() {
     const [step, setStep] = useState(1);
@@ -193,7 +194,7 @@ export default function AIGrowthAuditPage() {
                                         <Button variant="outline" className="w-full border-background text-background hover:bg-background hover:text-foreground" onClick={handlePrev}>Back</Button>
                                         <Button
                                             className="w-full bg-accent-red text-white border-black hover:bg-black hover:text-accent-yellow brutalist-shadow transition-none disabled:opacity-50 disabled:hover:bg-accent-red disabled:hover:text-white"
-                                            onClick={handleSubmit}
+                                            onClick={() => handleSubmit({ preventDefault: () => {} } as React.FormEvent)}
                                             disabled={!formData.bottleneck}
                                         >
                                             Generate AI Blueprint
@@ -255,7 +256,7 @@ export default function AIGrowthAuditPage() {
                                                     <Button className="w-full md:w-auto border-2 border-background bg-transparent text-background hover:bg-background hover:text-foreground brutalist-hover-invert transition-none" onClick={() => window.location.href = "/"}>
                                                         Back to Home
                                                     </Button>
-                                                    <Button className="w-full md:w-auto bg-accent-blue text-white hover:bg-black hover:text-accent-yellow border-black brutalist-shadow transition-none">
+                                                    <Button className="w-full md:w-auto bg-accent-blue text-white hover:bg-black hover:text-accent-yellow border-black brutalist-shadow transition-none" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                                                         Book Strategy Call
                                                     </Button>
                                                 </div>
