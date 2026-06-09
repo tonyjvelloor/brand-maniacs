@@ -53,7 +53,7 @@ export function Navbar() {
                 {/* Logo */}
                 <Link href="/" className="flex items-center gap-2 group hover:opacity-80 transition-opacity">
                     <Image 
-                        src="/images/logos/logo-outline.png" 
+                        src="/images/logos/logo-menu.png" 
                         alt="The Brand Maniacs" 
                         width={180} 
                         height={45} 
