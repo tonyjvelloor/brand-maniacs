@@ -1,30 +1,30 @@
 import { Hero } from "@/components/sections/Hero";
-import { TheEnemy } from "@/components/sections/TheEnemy";
-import { OperatingSystem } from "@/components/sections/OperatingSystem";
-import { CaseStudies } from "@/components/sections/CaseStudies";
-import { GrowthEngines } from "@/components/sections/GrowthEngines";
+import { FounderSection } from "@/components/sections/FounderSection";
+import { WorkShowcase } from "@/components/sections/WorkShowcase";
+import { GrowthSystems } from "@/components/sections/GrowthSystems";
+import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 export default function Home() {
   return (
     <>
-      {/* 1. Hero: "Build Brands People Can't Ignore" */}
+      {/* 1. Hero — "The internet doesn't need more content" */}
       <Hero />
 
-      {/* 2. The Enemy: "Marketing Has Become Noise" */}
-      <TheEnemy />
+      {/* 2. Founder — Tony Joseph + operating beliefs */}
+      <FounderSection />
 
-      {/* 3. The Maniac Method™ — Our Operating System */}
-      <OperatingSystem />
+      {/* 3. Work — Challenge → Thinking → Execution → Learning */}
+      <WorkShowcase />
 
-      {/* 4. Case Studies — Transformations, Not Campaigns */}
-      <CaseStudies />
+      {/* 4. Systems — Brand Foundation, Attention, Conversion, Growth Experiments */}
+      <GrowthSystems />
 
-      {/* 5. Growth Engines — Packaged Services */}
-      <GrowthEngines />
+      {/* 5. Intentionally Small — Proof + positioning */}
+      <IntentionallySmall />
 
-      {/* 6. Process — How We Work */}
+      {/* 6. Process — How we work */}
       <Process />
 
       {/* 7. Final CTA */}
