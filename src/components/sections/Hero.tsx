@@ -41,8 +41,8 @@ export function Hero() {
                         transition={{ duration: 0.15, delay: 0.05 }}
                         className="mb-10"
                     >
-                        <h1 className="font-heading font-black uppercase tracking-tighter text-foreground leading-[0.9] text-[10vw] md:text-[6.5vw] lg:text-[6vw]">
-                            Brands don't<br />
+                        <h1 className="font-heading font-black uppercase tracking-tighter text-foreground leading-[0.9] text-5xl md:text-[6.5vw] lg:text-[6vw]">
+                            Brands don&apos;t<br />
                             grow by creating<br />
                             more.<br />
                             <span className="text-foreground opacity-30">They grow by</span><br />

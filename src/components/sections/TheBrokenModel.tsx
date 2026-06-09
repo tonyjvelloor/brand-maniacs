@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowDown } from "lucide-react";
+import { ArrowDown } from "lucide-react";
 
 export function TheBrokenModel() {
     return (
@@ -24,7 +24,7 @@ export function TheBrokenModel() {
                             Model Is <span className="bg-accent-red text-white px-2">Broken.</span>
                         </h2>
                         <p className="text-lg md:text-xl font-bold text-background opacity-80 leading-snug max-w-2xl mx-auto">
-                            Culture moves in hours. Traditional agencies move in weeks. If you're relying on the old playbook, you're already behind.
+                            Culture moves in hours. Traditional agencies move in weeks. If you&apos;re relying on the old playbook, you&apos;re already behind.
                         </p>
                     </motion.div>
                 </div>

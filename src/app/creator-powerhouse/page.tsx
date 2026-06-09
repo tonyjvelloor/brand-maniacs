@@ -8,7 +8,7 @@ const features = [
     {
         icon: Database,
         title: "Creator Scoring System",
-        desc: "We don't pick influencers based on followers. We analyze their audience overlap, past conversion rates, and engagement authenticity before spending a single rupee."
+        desc: "We don&apos;t pick influencers based on followers. We analyze their audience overlap, past conversion rates, and engagement authenticity before spending a single rupee."
     },
     {
         icon: CheckCircle2,
@@ -86,7 +86,7 @@ export default function CreatorPowerhousePage() {
                 >
                     <h2 className="font-heading text-4xl md:text-6xl font-black uppercase text-white mb-6">Stop Pushing "Brand Awareness"</h2>
                     <p className="text-white md:text-xl mb-10 max-w-2xl mx-auto font-bold leading-relaxed border-2 border-white p-4">
-                        If you can't track the ROI of your influencer campaigns, you have a leak in your growth engine. Let's install the revenue attribution you need.
+                        If you can&apos;t track the ROI of your influencer campaigns, you have a leak in your growth engine. Let's install the revenue attribution you need.
                     </p>
                     <Button size="lg" className="w-full sm:w-auto bg-accent-yellow text-black hover:bg-black hover:text-accent-yellow border-black brutalist-shadow">Request a Creator Scale Sprint</Button>
                 </motion.div>

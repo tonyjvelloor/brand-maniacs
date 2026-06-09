@@ -21,7 +21,7 @@ const caseStudies = [
             "Ran targeted campaigns to high-intent wellness audiences",
             "Developed video content that showed treatment outcomes, not just testimonials",
         ],
-        outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don't.",
+        outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don&apos;t.",
     },
     {
         client: "AIProdGen Experiment",
@@ -43,7 +43,7 @@ const caseStudies = [
         category: "Fashion · E-Commerce",
         accentColor: "bg-accent-red",
         accentText: "text-white",
-        problem: "High traffic, terrible conversions. ₹8L/month in ad spend producing a 0.8% conversion rate. Every month felt like gambling with the founders' money.",
+        problem: "High traffic, terrible conversions. ₹8L/month in ad spend producing a 0.8% conversion rate. Every month felt like gambling with the founders&apos; money.",
         systemBuilt: [
             "Repositioned as 'slow fashion for people who own their style'",
             "Rebuilt landing pages around brand story, not just product features",
@@ -190,7 +190,7 @@ export default function WorkPage() {
                             Ready to be our next case study?
                         </h3>
                         <p className="font-bold text-foreground opacity-70 text-base max-w-lg">
-                            If you're tired of running the same playbook as everyone else and getting mediocre results, we should talk.
+                            If you&apos;re tired of running the same playbook as everyone else and getting mediocre results, we should talk.
                         </p>
                     </div>
                     <div className="flex flex-col sm:flex-row gap-4 shrink-0 relative z-10 w-full md:w-auto">

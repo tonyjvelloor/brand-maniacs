@@ -10,7 +10,7 @@ const systems = [
         num: "01",
         name: "Brand Foundation\nSystem",
         tagline: "Before anyone remembers you, they need to understand you.",
-        description: "We define what you stand for, who you're for, why they should choose you — and build the visual and verbal identity that makes it impossible to forget.",
+        description: "We define what you stand for, who you&apos;re for, why they should choose you — and build the visual and verbal identity that makes it impossible to forget.",
         includes: ["Brand Positioning", "Identity & Visual Language", "Messaging Architecture", "Competitive Differentiation"],
         accent: "bg-accent-yellow",
         textAccent: "text-black",
@@ -29,7 +29,7 @@ const systems = [
     {
         num: "03",
         name: "Conversion\nEngine",
-        tagline: "Attention means nothing if it doesn't convert.",
+        tagline: "Attention means nothing if it doesn&apos;t convert.",
         description: "We engineer the digital infrastructure that turns interest into action — websites, landing pages, funnels, and performance marketing built on testing, not guessing.",
         includes: ["Websites & Landing Pages", "Funnel Engineering", "Performance Marketing", "A/B & Creative Testing"],
         accent: "bg-foreground",
@@ -40,7 +40,7 @@ const systems = [
     {
         num: "04",
         name: "Growth\nExperiments",
-        tagline: "Your competitors are running the same playbook. We don't.",
+        tagline: "Your competitors are running the same playbook. We don&apos;t.",
         description: "We design and run creative experiments — trend hacking, viral mechanics, campaign innovations — that find the 1 idea that changes your trajectory.",
         includes: ["Trend Hacking", "Creative Testing Sprints", "Campaign Innovation", "Viral Mechanics Design"],
         accent: "bg-accent-blue",
@@ -74,7 +74,7 @@ export function GrowthSystems() {
                             </h2>
                             <div>
                                 <p className="text-lg font-bold text-foreground leading-snug mb-4 opacity-80">
-                                    We don't sell individual services. We deploy interconnected systems — each one engineered to win a different battle in your brand's growth.
+                                    We don&apos;t sell individual services. We deploy interconnected systems — each one engineered to win a different battle in your brand&apos;s growth.
                                 </p>
                                 <p className="text-sm font-black text-foreground opacity-40 uppercase tracking-widest border-l-4 border-accent-yellow pl-4">
                                     We stay intentionally small — working closely with selected brands where creative speed and strategic depth both matter.

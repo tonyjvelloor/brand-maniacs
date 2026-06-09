@@ -39,7 +39,7 @@ export function Infrastructure() {
                         The Brand Maniacs<br />Growth Infrastructure
                     </h2>
                     <p className="text-xl text-foreground font-bold border-2 border-foreground p-4 bg-accent-blue inline-block">
-                        We don't run isolated campaigns. We build interconnected systems engineered for predictable, profitable scale.
+                        We don&apos;t run isolated campaigns. We build interconnected systems engineered for predictable, profitable scale.
                     </p>
                 </div>
 

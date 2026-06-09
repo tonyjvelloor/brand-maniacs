@@ -23,7 +23,7 @@ export function IntentionallySmall() {
                             Our Position
                         </span>
                         <h2 className="font-heading text-4xl md:text-5xl font-black uppercase text-background leading-[0.95] tracking-tighter mb-8">
-                            We Don't Want<br />
+                            We Don&apos;t Want<br />
                             To Be The<br />
                             <span className="bg-accent-yellow text-black px-2">Biggest Agency.</span>
                         </h2>

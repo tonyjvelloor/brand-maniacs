@@ -61,7 +61,7 @@ export function EngagementModels() {
                         Engagement Models
                     </h2>
                     <p className="text-xl text-foreground font-bold border-2 border-foreground p-4 bg-background inline-block">
-                        We don't do cookie-cutter retainers. Choose the model that fits your current growth bottleneck.
+                        We don&apos;t do cookie-cutter retainers. Choose the model that fits your current growth bottleneck.
                     </p>
                 </div>
 

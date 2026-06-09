@@ -35,7 +35,15 @@ export default function AuditAdminPage() {
         setLoading(false);
     };
 
-    useEffect(() => { fetchSubmissions(); }, []);
+    useEffect(() => {
+        const load = async () => {
+            const res = await fetch("/api/audit");
+            const data = await res.json();
+            setSubmissions(data.reverse());
+            setLoading(false);
+        };
+        load();
+    }, []);
 
     const updateStatus = async (id: string, status: string) => {
         await fetch("/api/audit-admin", {

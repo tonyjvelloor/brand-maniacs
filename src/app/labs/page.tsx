@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { CALENDLY_URL } from "@/lib/config";
-import Link from "next/link";
 import { ArrowRight, Sparkles, Image as ImageIcon, Zap, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -23,7 +22,7 @@ export default function LabsPage() {
                         <span className="text-accent-yellow">Labs.</span>
                     </h1>
                     <p className="text-lg md:text-xl font-bold text-background opacity-80 leading-snug border-l-4 border-accent-yellow pl-5 max-w-2xl mx-auto text-left">
-                        Where we build technology that solves problems we discover while growing brands. We don't just use tools. We build them.
+                        Where we build technology that solves problems we discover while growing brands. We don&apos;t just use tools. We build them.
                     </p>
                 </div>
 

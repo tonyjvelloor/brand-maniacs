@@ -12,7 +12,7 @@ const problems = [
     {
         icon: UserMinus,
         title: "Creator campaigns without measurable ROI?",
-        description: "You're paying for 'brand awareness' because agencies can't tie creator content to actual revenue.",
+        description: "You&apos;re paying for 'brand awareness' because agencies can&apos;t tie creator content to actual revenue.",
     },
     {
         icon: MousePointerClick,

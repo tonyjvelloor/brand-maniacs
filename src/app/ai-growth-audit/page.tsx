@@ -197,7 +197,7 @@ export default function AIGrowthAuditPage() {
                                     Application Received
                                 </span>
                                 <h1 className="font-heading text-3xl md:text-4xl font-black uppercase text-background leading-tight">
-                                    We've Got {form.companyName}.<br />
+                                    We&apos;ve Got {form.companyName}.<br />
                                     We'll Be In Touch.
                                 </h1>
                             </div>
@@ -267,7 +267,7 @@ export default function AIGrowthAuditPage() {
                                 rel="noopener noreferrer"
                                 className="bg-accent-yellow text-black border-black"
                             >
-                                Can't wait? Book directly →
+                                Can&apos;t wait? Book directly →
                             </Button>
                         </div>
                     </motion.div>
@@ -361,7 +361,7 @@ export default function AIGrowthAuditPage() {
                                 <motion.div key="s3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.1 }} className="space-y-6">
                                     <div className="mb-6">
                                         <span className="font-heading font-black uppercase text-background text-xl">How are you marketing right now?</span>
-                                        <p className="text-sm font-bold text-background opacity-60 mt-1">Be honest. We've seen everything — nothing surprises us.</p>
+                                        <p className="text-sm font-bold text-background opacity-60 mt-1">Be honest. We&apos;ve seen everything — nothing surprises us.</p>
                                     </div>
                                     <SelectField label="Monthly Ad Spend" value={form.monthlyAdSpend} onChange={(v) => set("monthlyAdSpend", v)} options={AD_SPEND_RANGES} />
                                     <CheckboxGroup
@@ -382,7 +382,7 @@ export default function AIGrowthAuditPage() {
                                 <motion.div key="s4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.1 }} className="space-y-5">
                                     <div className="mb-6">
                                         <span className="font-heading font-black uppercase text-background text-xl">What do you actually want?</span>
-                                        <p className="text-sm font-bold text-background opacity-60 mt-1">The more specific, the sharper the audit. Don't be polite.</p>
+                                        <p className="text-sm font-bold text-background opacity-60 mt-1">The more specific, the sharper the audit. Don&apos;t be polite.</p>
                                     </div>
                                     <div>
                                         <label className="block text-xs font-black uppercase tracking-widest text-background mb-2">

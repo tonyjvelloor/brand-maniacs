@@ -38,7 +38,7 @@ export function FounderSection() {
                                 Founded by <span className="text-accent-yellow">Tony Joseph</span>, The Brand Maniacs was created with one belief:
                             </p>
                             <blockquote className="border-l-4 border-accent-yellow pl-5 text-xl font-black uppercase leading-tight text-background">
-                                "Great marketing is not about posting more. It's about understanding why people stop, trust, remember, and buy."
+                                &quot;Great marketing is not about posting more. It&apos;s about understanding why people stop, trust, remember, and buy.&quot;
                             </blockquote>
                             <p className="opacity-70">
                                 After years studying what makes brands command attention — not just likes — we built a studio that starts with psychology and ends with measurable outcomes.
@@ -70,7 +70,7 @@ export function FounderSection() {
                             {
                                 num: "01",
                                 title: "Attention Comes Before Sales",
-                                body: "You can't convert a customer you haven't stopped. Every strategy starts with earning the scroll-stop.",
+                                body: "You can&apos;t convert a customer you haven't stopped. Every strategy starts with earning the scroll-stop.",
                                 accent: "bg-accent-red text-white",
                             },
                             {

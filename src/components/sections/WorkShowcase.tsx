@@ -17,7 +17,7 @@ const caseStudies = [
             "Ran targeted campaigns to high-intent wellness audiences",
             "Developed video content that showed treatment outcomes, not just testimonials",
         ],
-        outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don't.",
+        outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don&apos;t.",
     },
     {
         client: "AIProdGen Experiment",

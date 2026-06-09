@@ -5,32 +5,32 @@ import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Our Approach — The Brand Maniacs",
-    description: "We don't just execute. We think. Discover our operating principles for building brands that win attention and trust.",
+    description: "We don&apos;t just execute. We think. Discover our operating principles for building brands that win attention and trust.",
 };
 
 const principles = [
     {
         num: "01",
         title: "Attention Comes Before Sales",
-        body: "You can't convert a customer you haven't stopped. In a world of infinite scrolling, the first battle is simply getting noticed. Every strategy we build starts with earning the scroll-stop through psychological hooks, striking visuals, and contrarian thinking.",
+        body: "You can&apos;t convert a customer you haven't stopped. In a world of infinite scrolling, the first battle is simply getting noticed. Every strategy we build starts with earning the scroll-stop through psychological hooks, striking visuals, and contrarian thinking.",
         icon: "👁️"
     },
     {
         num: "02",
         title: "Strategy Before Aesthetic",
-        body: "Beautiful work that says nothing is expensive noise. We don't design to make things look 'pretty'. We design to communicate a specific feeling, overcome a specific objection, and drive a specific action. We think before we design.",
+        body: "Beautiful work that says nothing is expensive noise. We don&apos;t design to make things look 'pretty'. We design to communicate a specific feeling, overcome a specific objection, and drive a specific action. We think before we design.",
         icon: "🧠"
     },
     {
         num: "03",
         title: "Test Before Assuming",
-        body: "Best practices are averages. Averages don't win. We run creative experiments, A/B tests, and rapid prototyping sprints. We kill bad ideas cheap and early. We scale what the data proves actually works.",
+        body: "Best practices are averages. Averages don&apos;t win. We run creative experiments, A/B tests, and rapid prototyping sprints. We kill bad ideas cheap and early. We scale what the data proves actually works.",
         icon: "🧪"
     },
     {
         num: "04",
         title: "Build Systems, Not Random Posts",
-        body: "A viral post fades in 48 hours. A content system compounds for years. We don't do random acts of marketing. We engineer interconnected systems—brand foundations, attention engines, and conversion flows—that work together.",
+        body: "A viral post fades in 48 hours. A content system compounds for years. We don&apos;t do random acts of marketing. We engineer interconnected systems—brand foundations, attention engines, and conversion flows—that work together.",
         icon: "⚙️"
     },
     {
@@ -42,7 +42,7 @@ const principles = [
     {
         num: "06",
         title: "We Stay Intentionally Small",
-        body: "We are not a volume agency. We don't take on 50 clients and hand the work to juniors. We work with a maximum of 3 ambitious brands at any given time, ensuring every project gets senior strategic oversight and obsessive execution.",
+        body: "We are not a volume agency. We don&apos;t take on 50 clients and hand the work to juniors. We work with a maximum of 3 ambitious brands at any given time, ensuring every project gets senior strategic oversight and obsessive execution.",
         icon: "🎯"
     }
 ];
@@ -63,7 +63,7 @@ export default function ApproachPage() {
                         <span className="bg-foreground text-background px-2">Works.</span>
                     </h1>
                     <p className="text-lg md:text-xl font-bold text-foreground opacity-80 leading-snug border-l-4 border-accent-blue pl-5 max-w-2xl">
-                        The difference between premium agencies and commodity vendors isn't the tools they use. It's how they think. These are the uncompromising principles that govern every piece of work we touch.
+                        The difference between premium agencies and commodity vendors isn't the tools they use. It&apos;s how they think. These are the uncompromising principles that govern every piece of work we touch.
                     </p>
                 </div>
 
