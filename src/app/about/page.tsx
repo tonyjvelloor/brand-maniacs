@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "About Tony Joseph — The Brand Maniacs",
-    description: "The Brand Maniacs was founded by Tony Joseph with one belief: great marketing starts with understanding why people stop, trust, remember, and buy.",
+    description: "After years creating campaigns, I realized the future belongs to teams who can combine creativity with technology.",
 };
 
 const beliefs = [
@@ -15,8 +15,8 @@ const beliefs = [
     },
     {
         num: "02",
-        title: "Distribution Beats Creation",
-        body: "Most brands obsess over content quality when they should be obsessing over distribution strategy. The best content in the world fails without the right system to get it seen.",
+        title: "Technology is Leverage, Not a Strategy",
+        body: "AI doesn't make bad ideas good. It makes good ideas scale infinitely. We use technology to execute brilliant, human-led strategies at speeds traditional agencies can't match.",
     },
     {
         num: "03",
@@ -25,8 +25,8 @@ const beliefs = [
     },
     {
         num: "04",
-        title: "Premium is a Position, Not a Price",
-        body: "Any brand can become premium without raising prices — by communicating clearly, positioning sharply, and showing up consistently in a way that makes price feel secondary.",
+        title: "Build Systems, Not Just Campaigns",
+        body: "A viral post fades in 48 hours. A system compounds for years. My mission is building technology and creative systems that help brands move at the speed of culture.",
     },
 ];
 
@@ -34,8 +34,8 @@ const timeline = [
     { year: "2018", event: "Started studying consumer psychology and digital marketing. First brand experiments with zero budget." },
     { year: "2020", event: "Built and tested content systems for early-stage D2C brands. Found what actually works vs. what looks like it works." },
     { year: "2022", event: "The Brand Maniacs formally founded. Mission: apply psychological thinking to brand building for ambitious Indian brands." },
-    { year: "2024", event: "Expanded internationally. Working with brands across wellness, fashion, SaaS, and B2B verticals." },
-    { year: "Now", event: "Selectively working with 3 brands at a time. Building systems that compound. Obsessing over outcomes." },
+    { year: "2024", event: "The Shift. Transitioned from pure marketer to builder. Began integrating AI-powered production systems to bypass slow traditional agency workflows." },
+    { year: "Now", event: "Operating as a Creative Technology Studio. Building proprietary tech like AIProdGen. Selectively working with 3 brands at a time." },
 ];
 
 export default function AboutPage() {
@@ -46,7 +46,7 @@ export default function AboutPage() {
                 {/* Hero */}
                 <div className="mb-20">
                     <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-8 bg-foreground text-background">
-                        About The Studio
+                        About The Founder
                     </span>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                         <div>
@@ -54,14 +54,18 @@ export default function AboutPage() {
                                 Tony<br />
                                 <span className="bg-accent-yellow text-black px-2">Joseph.</span>
                             </h1>
-                            <p className="text-sm font-black uppercase tracking-widest text-foreground opacity-50 mb-6">
-                                Founder · The Brand Maniacs
+                            <p className="text-sm font-black uppercase tracking-widest text-foreground opacity-50 mb-6 flex items-center gap-2">
+                                <span className="w-2 h-2 bg-accent-red rounded-full animate-pulse"></span>
+                                Marketer → Builder
                             </p>
-                            <p className="text-lg font-bold text-foreground leading-snug mb-6">
-                                The Brand Maniacs was created with one belief: great marketing is not about posting more. It's about understanding why people stop, trust, remember, and buy.
+                            <p className="text-lg font-bold text-foreground leading-snug mb-6 border-l-4 border-accent-yellow pl-4">
+                                "After years creating campaigns, I realized the future belongs to teams who can combine creativity with technology."
                             </p>
                             <p className="text-base font-bold text-foreground opacity-70 leading-snug mb-8">
-                                After years studying the gap between brands that command attention and brands that beg for it — I built a studio that starts with psychology, moves to strategy, and only then touches creative execution.
+                                For years, I built brands the traditional way. It was slow. It was expensive. And it relied entirely on human hours. When AI and advanced tooling emerged, I realized the entire agency model was about to become obsolete.
+                            </p>
+                            <p className="text-base font-bold text-foreground opacity-70 leading-snug mb-8">
+                                I stopped just marketing and started building. Today, my mission is building systems that help brands move at the speed of culture—combining the depth of human psychology with the infinite scale of technology.
                             </p>
                             <a
                                 href={CALENDLY_URL}
@@ -76,10 +80,10 @@ export default function AboutPage() {
                         {/* Quote card */}
                         <div className="bg-foreground p-10 border-2 border-foreground">
                             <blockquote className="font-heading text-2xl md:text-3xl font-black uppercase text-background leading-tight mb-8">
-                                "The brands that win don't just look better. They think differently — and make sure everyone knows it."
+                                "The brands that win don't just look better. They have better systems. And they move faster than anyone else."
                             </blockquote>
                             <div className="flex items-center gap-4 pt-6 border-t-2 border-background">
-                                <div className="w-12 h-12 bg-accent-yellow flex items-center justify-center border-2 border-background font-heading font-black text-black text-xl">
+                                <div className="w-12 h-12 bg-accent-yellow flex items-center justify-center border-2 border-background font-heading font-black text-black text-xl shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
                                     T
                                 </div>
                                 <div>
@@ -133,7 +137,7 @@ export default function AboutPage() {
                 <div className="bg-foreground border-2 border-foreground p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                     <div>
                         <h3 className="font-heading text-3xl font-black uppercase text-background leading-tight mb-3">
-                            Want to Work Together?
+                            Want to Build Your System?
                         </h3>
                         <p className="font-bold text-background opacity-60 text-base">
                             We only take 3 brands at a time. If you're ready to build a brand that can't be ignored, let's talk.
@@ -146,7 +150,7 @@ export default function AboutPage() {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-accent-yellow text-black border-2 border-black font-black text-sm uppercase tracking-widest px-8 py-4 hover:bg-accent-red hover:text-white hover:border-accent-red transition-none whitespace-nowrap"
                         >
-                            Book a Strategy Call →
+                            Build My Growth System →
                         </a>
                         <Link href="/ai-growth-audit" className="inline-flex items-center gap-2 border-2 border-background text-background font-black text-xs uppercase tracking-widest px-8 py-3 hover:bg-background hover:text-foreground transition-none">
                             Apply for Free Audit

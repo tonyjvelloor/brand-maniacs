@@ -16,7 +16,7 @@ export function Footer() {
                             <span className="text-xl">The Brand Maniacs</span>
                         </Link>
                         <p className="text-foreground max-w-sm text-sm font-bold leading-relaxed opacity-80">
-                            An international creative growth partner helping ambitious brands win attention, trust, and revenue through psychology-driven systems.
+                            A Creative Technology Studio combining human strategy, AI-powered creative systems, and performance experiments to build brands faster.
                         </p>
                         
                         {/* Social Links */}
@@ -48,13 +48,14 @@ export function Footer() {
                     <div className="md:col-span-4 space-y-5">
                         <h4 className="font-heading font-black uppercase text-accent-yellow underline decoration-2 underline-offset-4 mb-2">Studio</h4>
                         <ul className="space-y-3 text-sm font-bold uppercase tracking-wide text-foreground">
+                            <li><Link href="/labs" className="text-accent-blue hover:bg-accent-blue hover:text-white p-1 -ml-1 transition-none">Maniac Labs</Link></li>
                             <li><Link href="/work" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Our Work & Proof</Link></li>
                             <li><Link href="/approach" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Operating Principles</Link></li>
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">About The Founder</Link></li>
-                            <li><Link href="/ai-growth-audit" className="text-accent-red hover:bg-accent-red hover:text-white p-1 -ml-1 transition-none border-2 border-transparent hover:border-accent-red inline-block">Apply for Free Audit</Link></li>
+                            <li><Link href="/ai-growth-audit" className="text-accent-red hover:bg-accent-red hover:text-white p-1 -ml-1 transition-none border-2 border-transparent hover:border-accent-red inline-block mt-2">Apply for Free Audit</Link></li>
                             <li className="pt-2">
                                 <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-foreground text-background px-4 py-2 inline-block hover:bg-accent-yellow hover:text-black transition-none">
-                                    Book Strategy Call →
+                                    Build My Growth System →
                                 </a>
                             </li>
                         </ul>

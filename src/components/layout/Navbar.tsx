@@ -10,6 +10,7 @@ import { CALENDLY_URL } from "@/lib/config";
 const navLinks = [
     { label: "Work", href: "/work" },
     { label: "Systems", href: "/#services" },
+    { label: "Maniac Labs", href: "/labs" },
     { label: "Approach", href: "/approach" },
     { label: "About", href: "/about" },
     { label: "Free Audit", href: "/ai-growth-audit" },
@@ -52,7 +53,7 @@ export function Navbar() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`text-xs font-black uppercase tracking-widest px-3 py-2 border-2 border-transparent hover:border-foreground hover:bg-foreground hover:text-background transition-none ${link.label === "Free Audit" ? "text-accent-red" : "text-foreground"}`}
+                            className={`text-xs font-black uppercase tracking-widest px-3 py-2 border-2 border-transparent hover:border-foreground hover:bg-foreground hover:text-background transition-none ${link.label === "Free Audit" ? "text-accent-red" : link.label === "Maniac Labs" ? "text-accent-blue" : "text-foreground"}`}
                         >
                             {link.label}
                         </Link>
@@ -65,7 +66,7 @@ export function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Apply to Work With Us
+                            Build My Growth System
                         </Button>
                     </div>
                 </nav>
@@ -95,7 +96,7 @@ export function Navbar() {
                                 <Link
                                     key={link.href}
                                     href={link.href}
-                                    className={`text-sm font-black uppercase tracking-widest border-2 border-transparent hover:border-foreground hover:bg-foreground hover:text-background px-4 py-3 transition-none ${link.label === "Free Audit" ? "text-accent-red" : "text-foreground"}`}
+                                    className={`text-sm font-black uppercase tracking-widest border-2 border-transparent hover:border-foreground hover:bg-foreground hover:text-background px-4 py-3 transition-none ${link.label === "Free Audit" ? "text-accent-red" : link.label === "Maniac Labs" ? "text-accent-blue" : "text-foreground"}`}
                                     onClick={() => setMobileOpen(false)}
                                 >
                                     {link.label}
@@ -109,7 +110,7 @@ export function Navbar() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    Apply to Work With Us
+                                    Build My Growth System
                                 </Button>
                             </div>
                         </div>
