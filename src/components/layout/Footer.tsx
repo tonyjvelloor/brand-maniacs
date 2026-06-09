@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { CALENDLY_URL, WHATSAPP_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/config";
 
 export function Footer() {
@@ -9,11 +10,14 @@ export function Footer() {
 
                     {/* Brand & Mission */}
                     <div className="md:col-span-5 space-y-6">
-                        <Link href="/" className="font-heading font-black uppercase tracking-tighter text-foreground flex items-center gap-2 group hover:opacity-80 transition-none w-fit">
-                            <div className="w-10 h-10 border-2 border-foreground flex items-center justify-center text-foreground font-black text-lg group-hover:bg-accent-yellow group-hover:text-black group-hover:border-black transition-none">
-                                B
-                            </div>
-                            <span className="text-xl">The Brand Maniacs</span>
+                        <Link href="/" className="flex items-center gap-2 group hover:opacity-80 transition-opacity w-fit">
+                            <Image 
+                                src="/images/logos/logo-outline.png" 
+                                alt="The Brand Maniacs" 
+                                width={200} 
+                                height={50} 
+                                className="object-contain" 
+                            />
                         </Link>
                         <p className="text-foreground max-w-sm text-sm font-bold leading-relaxed opacity-80">
                             A Creative Technology Studio combining human strategy, AI-powered creative systems, and performance experiments to build brands faster.

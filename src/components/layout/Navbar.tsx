@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
@@ -50,12 +51,23 @@ export function Navbar() {
             <div className="container mx-auto px-4 md:px-6 flex items-center justify-between py-4">
 
                 {/* Logo */}
-                <Link href="/" className="font-heading font-black uppercase tracking-tighter text-foreground flex items-center gap-2 group hover:opacity-80 transition-none">
-                    <div className="w-9 h-9 border-2 border-foreground flex items-center justify-center text-foreground font-black text-lg group-hover:bg-accent-yellow group-hover:text-black group-hover:border-black transition-none">
-                        B
-                    </div>
-                    <span className="hidden sm:inline text-lg">The Brand Maniacs</span>
-                    <span className="sm:hidden text-lg">TBM</span>
+                <Link href="/" className="flex items-center gap-2 group hover:opacity-80 transition-opacity">
+                    <Image 
+                        src="/images/logos/logo-outline.png" 
+                        alt="The Brand Maniacs" 
+                        width={180} 
+                        height={45} 
+                        className="object-contain hidden md:block" 
+                        priority
+                    />
+                    <Image 
+                        src="/icon.png" 
+                        alt="The Brand Maniacs Icon" 
+                        width={40} 
+                        height={40} 
+                        className="object-contain md:hidden" 
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Nav */}
