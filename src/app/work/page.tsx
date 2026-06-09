@@ -103,7 +103,7 @@ export default function WorkPage() {
                             className="bg-background border-b-2 border-foreground last:border-b-0 grid grid-cols-1 lg:grid-cols-12"
                         >
                             {/* Left accent */}
-                            <div className={`lg:col-span-3 ${cs.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
+                            <div className={`lg:col-span-3 ${cs.accentColor} p-6 sm:p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
                                 {cs.isTech && (
                                     <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                                         Technology Lab
@@ -125,7 +125,7 @@ export default function WorkPage() {
                             </div>
 
                             {/* Content */}
-                            <div className="lg:col-span-9 p-8 md:p-12">
+                            <div className="lg:col-span-9 p-6 sm:p-8 md:p-12">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
 
                                     {/* Problem */}
@@ -182,7 +182,7 @@ export default function WorkPage() {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-background border-2 border-foreground p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-center md:text-left relative overflow-hidden">
+                <div className="bg-background border-2 border-foreground p-8 sm:p-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8 text-center md:text-left relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-64 h-64 bg-accent-red rounded-full blur-[100px] opacity-20 pointer-events-none"></div>
                     
                     <div className="relative z-10">

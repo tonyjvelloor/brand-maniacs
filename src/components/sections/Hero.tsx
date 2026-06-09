@@ -41,7 +41,7 @@ export function Hero() {
                         transition={{ duration: 0.15, delay: 0.05 }}
                         className="mb-10"
                     >
-                        <h1 className="font-heading font-black uppercase tracking-tighter text-foreground leading-[0.9] text-5xl md:text-[6.5vw] lg:text-[6vw]">
+                        <h1 className="font-heading font-black uppercase tracking-tighter text-foreground leading-[0.9] text-4xl sm:text-5xl md:text-[6.5vw] lg:text-[6vw]">
                             Brands don&apos;t<br />
                             grow by creating<br />
                             more.<br />
@@ -94,7 +94,7 @@ export function Hero() {
                             { v: "Testing", s: "Before Assuming" },
                             { v: "Systems", s: "Not Random Posts" },
                         ].map((item, i) => (
-                            <div key={i} className="bg-background p-5 border-r-2 border-b-2 md:border-b-0 border-foreground last:border-r-0 group hover:bg-accent-yellow transition-none">
+                            <div key={i} className="bg-background p-3 sm:p-5 border-r-2 border-b-2 md:border-b-0 border-foreground last:border-r-0 group hover:bg-accent-yellow transition-none">
                                 <div className="font-heading text-base font-black uppercase text-foreground group-hover:text-black transition-none">{item.v}</div>
                                 <div className="text-xs font-bold text-foreground opacity-50 group-hover:text-black group-hover:opacity-70 transition-none uppercase tracking-widest">{item.s}</div>
                             </div>

@@ -28,7 +28,7 @@ export function TheManiacMethod() {
                             <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black">
                                 Our Intellectual Property
                             </span>
-                            <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground leading-[0.95] mb-6">
+                            <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter text-foreground leading-[0.95] mb-6">
                                 The <span className="bg-foreground text-background px-2">Maniac</span> Method™
                             </h2>
                             <p className="text-lg font-bold text-foreground opacity-80 leading-snug max-w-2xl mx-auto">
@@ -46,7 +46,7 @@ export function TheManiacMethod() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.15, delay: i * 0.05 }}
-                                className="bg-background p-10 border-r-2 border-b-2 lg:border-b-0 border-foreground group hover:bg-foreground hover:text-background transition-none relative overflow-hidden"
+                                className="bg-background p-6 sm:p-10 border-r-2 border-b-2 lg:border-b-0 border-foreground group hover:bg-foreground hover:text-background transition-none relative overflow-hidden"
                             >
                                 <div className="absolute -right-4 -top-8 font-heading text-[120px] font-black leading-none opacity-5 group-hover:opacity-10 group-hover:text-accent-yellow transition-none pointer-events-none select-none">
                                     {item.letter}

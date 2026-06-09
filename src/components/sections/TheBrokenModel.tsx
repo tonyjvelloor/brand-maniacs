@@ -19,7 +19,7 @@ export function TheBrokenModel() {
                         <span className="inline-block border-2 border-background font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 text-background">
                             The Paradigm Shift
                         </span>
-                        <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter text-background leading-[0.95] mb-6">
+                        <h2 className="font-heading text-3xl sm:text-4xl md:text-6xl font-black uppercase tracking-tighter text-background leading-[0.95] mb-6">
                             The Old Agency<br />
                             Model Is <span className="bg-accent-red text-white px-2">Broken.</span>
                         </h2>
@@ -37,7 +37,7 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Left: Traditional Marketing */}
-                    <div className="bg-background text-foreground p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background opacity-90 relative grayscale">
+                    <div className="bg-background text-foreground p-6 sm:p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background opacity-90 relative grayscale">
                         <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                         <h3 className="font-heading text-2xl font-black uppercase mb-8 opacity-50 flex items-center gap-3">
                             <span className="w-3 h-3 bg-foreground rounded-full"></span>
@@ -66,7 +66,7 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Right: The Maniac Method */}
-                    <div className="bg-foreground text-background p-8 md:p-12">
+                    <div className="bg-foreground text-background p-6 sm:p-8 md:p-12">
                         <h3 className="font-heading text-2xl font-black uppercase mb-8 text-accent-yellow flex items-center gap-3">
                             <span className="w-3 h-3 bg-accent-yellow animate-pulse rounded-full"></span>
                             The Maniac Method
