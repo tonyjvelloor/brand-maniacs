@@ -8,6 +8,13 @@ import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
+  description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore. Studio for ambitious D2C, SaaS & ecom brands.",
+};
+
 export default function Home() {
   return (
     <>

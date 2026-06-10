@@ -54,8 +54,8 @@ export function IntentionallySmall() {
                         className="grid grid-cols-2 divide-x-2 divide-y-2 divide-background"
                     >
                         {[
-                            { val: "40+", label: "Brands Worked With", sub: "Across India & globally" },
-                            { val: "₹50Cr+", label: "Revenue Influenced", sub: "Across all client brands" },
+                            { val: "40+", label: "Brands", sub: "8 Industries. 3 Countries." },
+                            { val: "₹3.2Cr+", label: "Ad Spend Managed", sub: "Across client accounts" },
                             { val: "3", label: "Max Active Clients", sub: "At any given time" },
                             { val: "100%", label: "Senior-Led Work", sub: "No juniors running strategy" },
                         ].map((item, i) => (

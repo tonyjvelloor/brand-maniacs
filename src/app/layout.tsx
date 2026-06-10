@@ -17,8 +17,24 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 
 export const metadata: Metadata = {
-  title: "The Brand Maniacs | AI-Powered Revenue Systems",
-  description: "We build predictable growth engines using AI, performance marketing, and creator amplification.",
+  metadataBase: new URL('https://www.thebrandmaniacs.online'),
+  title: {
+    template: "%s",
+    default: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
+  },
+  description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore.",
+  openGraph: {
+    type: "website",
+    url: "https://www.thebrandmaniacs.online",
+    title: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
+    description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore.",
+    siteName: "The Brand Maniacs",
+    images: [{
+      url: "https://www.thebrandmaniacs.online/images/og-image.jpg",
+      width: 1200,
+      height: 630,
+    }]
+  }
 };
 
 export default function RootLayout({

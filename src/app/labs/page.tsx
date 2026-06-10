@@ -3,8 +3,8 @@ import { CALENDLY_URL } from "@/lib/config";
 import { ArrowRight, Sparkles, Image as ImageIcon, Zap, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Maniac Labs: Our Technology — The Brand Maniacs",
-    description: "Where we build technology that solves problems we discover while growing brands.",
+    title: "Maniac Labs & AIProdGen — AI Product Photography Tool | The Brand Maniacs",
+    description: "AIProdGen generates ecommerce product visuals without expensive photo shoots. One image in. 50 ad-ready variants out. Built by The Brand Maniacs.",
 };
 
 export default function LabsPage() {
@@ -65,8 +65,11 @@ export default function LabsPage() {
                             </div>
 
                             <div className="pt-8 border-t-2 border-background/20">
-                                <p className="text-xs font-black uppercase tracking-widest opacity-50 mb-3">Available For</p>
-                                <p className="font-bold text-sm">Used exclusively internally for our studio clients to accelerate their growth experiments.</p>
+                                <p className="text-xs font-black uppercase tracking-widest opacity-50 mb-3">Early Access</p>
+                                <p className="font-bold text-sm mb-4">Join the AIProdGen Early Access List → Get first access when we open to the public.</p>
+                                <a href="mailto:tony@thebrandmaniacs.online?subject=AIProdGen%20Waitlist" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-accent-yellow hover:text-white transition-colors">
+                                    Join Waitlist <ArrowRight className="w-3 h-3" />
+                                </a>
                             </div>
                         </div>
 
@@ -119,9 +122,12 @@ export default function LabsPage() {
                     </div>
                     <div className="relative z-10">
                         <h2 className="font-heading text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4">
-                            More experiments coming<br />from Maniac Labs.
+                            Next: AI AdCopy<br />Engine
                         </h2>
-                        <p className="font-bold opacity-60">We are currently building in stealth.</p>
+                        <p className="font-bold opacity-60 mb-6">Brief your product, get 50 ad copy variants in 3 minutes. Coming Q3 2026.</p>
+                        <a href="mailto:tony@thebrandmaniacs.online?subject=AI%20AdCopy%20Waitlist" className="inline-flex justify-center items-center gap-2 border-2 border-background text-background font-black text-xs uppercase tracking-widest px-6 py-3 hover:bg-background hover:text-foreground transition-none">
+                            Join Waitlist
+                        </a>
                     </div>
                 </div>
 

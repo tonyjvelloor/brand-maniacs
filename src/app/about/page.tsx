@@ -3,8 +3,8 @@ import { CALENDLY_URL } from "@/lib/config";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "About Tony Joseph — The Brand Maniacs",
-    description: "After years creating campaigns, I realized the future belongs to teams who can combine creativity with technology.",
+    title: "Tony Joseph — Founder, The Brand Maniacs | AI Marketing Studio, Pune",
+    description: "Tony Joseph is a marketer-turned-builder obsessed with brand psychology and AI-powered growth systems. Founder of The Brand Maniacs and creator of AIProdGen.",
 };
 
 const beliefs = [
@@ -56,7 +56,7 @@ export default function AboutPage() {
                             </h1>
                             <p className="text-sm font-black uppercase tracking-widest text-foreground opacity-50 mb-6 flex items-center gap-2">
                                 <span className="w-2 h-2 bg-accent-red rounded-full animate-pulse"></span>
-                                Marketer → Builder
+                                Founder. Marketer. Builder of AI Systems.
                             </p>
                             <p className="text-lg font-bold text-foreground leading-snug mb-6 border-l-4 border-accent-yellow pl-4">
                                 "After years creating campaigns, I realized the future belongs to teams who can combine creativity with technology."

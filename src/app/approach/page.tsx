@@ -4,8 +4,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Our Approach — The Brand Maniacs",
-    description: "We don&apos;t just execute. We think. Discover our operating principles for building brands that win attention and trust.",
+    title: "Our Approach — The Maniac Method™ | The Brand Maniacs",
+    description: "The Maniac Method is our 6-step framework: Market Intelligence → Attention Architecture → Narrative → Intelligent Production → Amplification → Experiments.",
 };
 
 const principles = [
