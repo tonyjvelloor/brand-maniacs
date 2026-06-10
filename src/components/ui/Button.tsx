@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 export interface ButtonProps {
-    variant?: "primary" | "secondary" | "outline" | "ghost";
+    variant?: "primary" | "secondary" | "outline" | "ghost" | "inverted" | "outlineWhite";
     size?: "sm" | "md" | "lg";
     children: ReactNode;
     className?: string;
@@ -26,6 +26,8 @@ const variants = {
     secondary: "bg-accent-yellow text-background border-background brutalist-shadow-red hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0_0_#FF2A00] active:translate-y-0 active:translate-x-0 active:shadow-none",
     outline: "bg-background text-foreground border-foreground hover:bg-foreground hover:text-background",
     ghost: "bg-transparent text-foreground hover:bg-accent-blue hover:text-foreground border-transparent hover:border-foreground brutalist-hover",
+    inverted: "bg-foreground text-background border-2 border-foreground hover:bg-transparent hover:text-foreground transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)]",
+    outlineWhite: "bg-transparent text-foreground border-2 border-foreground hover:bg-foreground hover:text-background transition-colors",
 };
 
 const sizes = {

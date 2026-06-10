@@ -73,9 +73,9 @@ export function EngagementModels() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.1, delay: i * 0.1 }}
-                            className={`relative p-8 h-full flex flex-col transition-none border-b-2 md:border-b-0 border-r-2 border-foreground last:border-r-0 group ${model.highlight
+                            className={`relative p-8 h-full flex flex-col border-b-2 md:border-b-0 border-r-2 last:border-r-0 group transition-all duration-200 ${model.highlight
                                 ? "bg-accent-yellow border-foreground text-black md:-translate-y-4 brutalist-shadow"
-                                : "bg-background text-foreground hover:bg-foreground hover:text-background"
+                                : "bg-background text-foreground border-foreground/30 hover:border-foreground hover:-translate-y-[3px]"
                                 }`}
                         >
                             {model.highlight && (
@@ -85,11 +85,11 @@ export function EngagementModels() {
                             )}
 
                             <div className="mb-8 mt-4">
-                                <h3 className={`font-heading text-3xl font-black uppercase mb-4 ${model.highlight ? 'text-black' : 'text-foreground group-hover:text-background transition-none'}`}>{model.name}</h3>
-                                <p className={`text-sm md:text-base font-bold leading-tight h-16 ${model.highlight ? 'text-black' : 'text-foreground group-hover:text-background transition-none'}`}>{model.description}</p>
+                                <h3 className={`font-heading text-3xl font-black uppercase mb-4 text-foreground`}>{model.name}</h3>
+                                <p className={`text-sm md:text-base font-bold leading-tight h-16 ${model.highlight ? 'text-black' : 'text-foreground'}`}>{model.description}</p>
                             </div>
 
-                            <div className={`mb-8 pb-8 border-b-2 ${model.highlight ? 'border-black' : 'border-foreground group-hover:border-background transition-none'}`}>
+                            <div className={`mb-8 pb-8 border-b-2 ${model.highlight ? 'border-black' : 'border-foreground/30 group-hover:border-foreground transition-colors'}`}>
                                 <div className="flex items-baseline gap-2">
                                     <span className="font-heading text-5xl font-black">{model.price}</span>
                                 </div>
@@ -99,8 +99,8 @@ export function EngagementModels() {
                             <ul className="space-y-4 mb-10 flex-1">
                                 {model.features.map((feature, j) => (
                                     <li key={j} className="flex items-start">
-                                        <Check className={`w-6 h-6 mr-3 border-2 p-0.5 shrink-0 ${model.highlight ? 'border-black text-black' : 'border-foreground text-foreground group-hover:border-background group-hover:text-background transition-none'}`} />
-                                        <span className={`text-sm md:text-base font-bold ${model.highlight ? 'text-black' : 'text-foreground group-hover:text-background transition-none'}`}>{feature}</span>
+                                        <Check className={`w-6 h-6 mr-3 border-2 p-0.5 shrink-0 ${model.highlight ? 'border-black text-black' : 'border-foreground text-foreground'}`} />
+                                        <span className={`text-sm md:text-base font-bold ${model.highlight ? 'text-black' : 'text-foreground'}`}>{feature}</span>
                                     </li>
                                 ))}
                             </ul>

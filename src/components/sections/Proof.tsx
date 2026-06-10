@@ -30,7 +30,7 @@ export function Proof() {
                                 <ArrowUpRight className="w-6 h-6 border-2 border-current p-0.5" />
                                 <span className="font-bold text-sm tracking-widest uppercase">ROAS</span>
                             </div>
-                            <div className="font-heading text-5xl font-black text-foreground group-hover:text-black mb-2">+140%</div>
+                            <div className="font-heading text-6xl md:text-7xl font-black text-foreground group-hover:text-black mb-2 tracking-tighter">+140%</div>
                             <div className="text-sm text-foreground group-hover:text-black font-bold uppercase">Average Improvement</div>
                         </motion.div>
 
@@ -45,7 +45,7 @@ export function Proof() {
                                 <ArrowDownRight className="w-6 h-6 border-2 border-current p-0.5" />
                                 <span className="font-bold text-sm tracking-widest uppercase">CAC</span>
                             </div>
-                            <div className="font-heading text-5xl font-black text-foreground group-hover:text-white mb-2">-45%</div>
+                            <div className="font-heading text-6xl md:text-7xl font-black text-foreground group-hover:text-white mb-2 tracking-tighter">-45%</div>
                             <div className="text-sm text-foreground group-hover:text-white font-bold uppercase">Average Reduction</div>
                         </motion.div>
 
@@ -60,7 +60,7 @@ export function Proof() {
                                 <TrendingUp className="w-6 h-6 border-2 border-current p-0.5" />
                                 <span className="font-bold text-sm tracking-widest uppercase">Revenue Jump</span>
                             </div>
-                            <div className="font-heading text-5xl md:text-7xl font-black text-white group-hover:text-background mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] group-hover:drop-shadow-none">₹12 Cr <span className="text-accent-yellow mx-2">→</span> ₹34 Cr</div>
+                            <div className="font-heading text-6xl md:text-8xl font-black text-white group-hover:text-background mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] group-hover:drop-shadow-none tracking-tighter">₹12 Cr <span className="text-accent-yellow mx-2">→</span> ₹34 Cr</div>
                             <div className="text-sm font-bold uppercase bg-background text-foreground inline-block px-2 border-2 border-transparent group-hover:border-background">D2C Fashion Brand (8 Months)</div>
                         </motion.div>
                     </div>

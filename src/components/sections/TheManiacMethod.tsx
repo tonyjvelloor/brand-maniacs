@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { FadeUp } from "@/components/ui/FadeUp";
 
 const acronym = [
     { letter: "M", title: "Market Intelligence", desc: "Study customers, competitors, culture. We don't guess what your audience wants. We find out." },
@@ -12,6 +13,7 @@ const acronym = [
 ];
 
 export function TheManiacMethod() {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     return (
         <section className="py-24 bg-background text-foreground border-b-2 border-foreground" id="maniac-method">
             <div className="container mx-auto px-4 md:px-6">
@@ -19,12 +21,7 @@ export function TheManiacMethod() {
                     
                     {/* Header */}
                     <div className="mb-20 text-center">
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.15 }}
-                        >
+                        <FadeUp>
                             <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black">
                                 Our Intellectual Property
                             </span>
@@ -34,36 +31,36 @@ export function TheManiacMethod() {
                             <p className="text-lg font-bold text-foreground opacity-80 leading-snug max-w-2xl mx-auto">
                                 The exact six-step framework we use to engineer brands that grow at the speed of culture. This is what separates us from commodity agencies.
                             </p>
-                        </motion.div>
+                        </FadeUp>
                     </div>
 
                     {/* Acronym Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground">
                         {acronym.map((item, i) => (
-                            <motion.div
+                        {acronym.map((item, i) => (
+                            <FadeUp
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.15, delay: i * 0.05 }}
-                                className="bg-background p-6 sm:p-10 border-r-2 border-b-2 lg:border-b-0 border-foreground group hover:bg-foreground hover:text-background transition-none relative overflow-hidden"
+                                delay={i * 0.05}
+                                className={`p-6 sm:p-10 border-r-2 border-b-2 border-foreground transition-all duration-300 relative overflow-hidden cursor-pointer ${hoveredIndex === i ? 'bg-foreground text-background scale-[1.02] shadow-2xl z-10' : 'bg-background text-foreground'}`}
+                                onMouseEnter={() => setHoveredIndex(i)}
+                                onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                <div className="absolute -right-4 -top-8 font-heading text-[120px] font-black leading-none opacity-5 group-hover:opacity-10 group-hover:text-accent-yellow transition-none pointer-events-none select-none">
+                                <div className={`absolute -right-4 -top-8 font-heading text-[120px] font-black leading-none pointer-events-none select-none transition-all duration-500 ${hoveredIndex === i ? 'opacity-20 text-accent-yellow scale-110 translate-y-4 -translate-x-4' : 'opacity-5'}`}>
                                     {item.letter}
                                 </div>
                                 
                                 <div className="relative z-10">
-                                    <div className="w-12 h-12 bg-accent-yellow text-black border-2 border-black font-heading font-black text-2xl flex items-center justify-center mb-6 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                                    <div className={`w-12 h-12 font-heading font-black text-2xl flex items-center justify-center mb-6 transition-colors duration-300 ${hoveredIndex === i ? 'bg-accent-yellow text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]' : 'bg-background text-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'}`}>
                                         {item.letter}
                                     </div>
                                     <h3 className="font-heading text-2xl font-black uppercase mb-4 leading-tight pr-4">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm font-bold opacity-80 leading-relaxed">
+                                    <p className={`text-sm font-bold leading-relaxed transition-opacity duration-300 ${hoveredIndex === i ? 'opacity-100' : 'opacity-80'}`}>
                                         {item.desc}
                                     </p>
                                 </div>
-                            </motion.div>
+                            </FadeUp>
                         ))}
                     </div>
 

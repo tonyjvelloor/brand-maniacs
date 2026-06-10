@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Image as ImageIcon } from "lucide-react";
 
 export function FounderSection() {
     return (
@@ -32,6 +33,15 @@ export function FounderSection() {
                             <span className="bg-accent-yellow text-black px-2">Obsessed With</span><br />
                             Human Behaviour.
                         </h2>
+
+                        {/* Founder Photo Placeholder */}
+                        <div className="w-full h-48 sm:h-64 bg-background/10 border-2 border-dashed border-background/30 flex items-center justify-center relative overflow-hidden group mb-8">
+                            <div className="absolute inset-0 bg-accent-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div className="text-center relative z-10">
+                                <ImageIcon className="w-6 h-6 text-background/30 mx-auto mb-2" />
+                                <span className="text-[10px] font-black uppercase tracking-widest text-background/50">Founder Portrait/Landscape</span>
+                            </div>
+                        </div>
 
                         <div className="space-y-5 text-background text-base font-bold leading-snug opacity-90">
                             <p>

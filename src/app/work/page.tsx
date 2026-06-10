@@ -21,6 +21,10 @@ const caseStudies = [
             "Ran targeted campaigns to high-intent wellness audiences",
             "Developed video content that showed treatment outcomes, not just testimonials",
         ],
+        metrics: [
+            { label: "Patient Volume", value: "+120%", improvement: true, width: "100%" },
+            { label: "Cost Per Consultation", value: "-40%", improvement: true, width: "60%" }
+        ],
         outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don&apos;t.",
     },
     {
@@ -34,6 +38,10 @@ const caseStudies = [
             "Engineered prompts to place the product in 20 radically different environments (ice blocks, neon streets, floating in water)",
             "Generated high-fidelity, ad-ready assets maintaining exact brand lighting",
             "Built a workflow that completed the entire process in under 45 minutes",
+        ],
+        metrics: [
+            { label: "Production Cost", value: "-95%", improvement: true, width: "95%" },
+            { label: "Creative Output", value: "20x", improvement: true, width: "100%" }
         ],
         outcome: "Replaced a ₹50,000 physical shoot with infinite creative variations. Allowed the brand to run a 20-variant creative testing sprint at a fraction of the cost, finding winning angles that would have never been tested physically.",
         isTech: true
@@ -50,6 +58,10 @@ const caseStudies = [
             "Ran 40+ creative variants over 30 days to find what actually stopped the scroll",
             "Cut underperforming ad spend, doubled down on 3 winning creative concepts",
         ],
+        metrics: [
+            { label: "ROAS", value: "1.4x → 4.8x", improvement: true, width: "80%" },
+            { label: "CAC", value: "-45%", improvement: true, width: "45%" }
+        ],
         outcome: "ROAS moved from 1.4x to 4.8x over 8 months. Revenue scaled significantly. CAC dropped by 45%. Differentiation is always a conversion problem in disguise.",
     },
     {
@@ -63,6 +75,10 @@ const caseStudies = [
             "Identified 3 trends in their niche and created content that shaped the conversation",
             "Built a weekly publishing system that ran with minimal founder time",
             "Created a content-to-demo pipeline that nurtured cold audiences to warm leads",
+        ],
+        metrics: [
+            { label: "LinkedIn Following", value: "12K → 61K", improvement: true, width: "100%" },
+            { label: "Inbound Demos", value: "3x", improvement: true, width: "75%" }
         ],
         outcome: "LinkedIn following grew from 12,000 to 61,000. Inbound demo requests tripled. Sales cycle compressed to 6 weeks. Authority compounds.",
     },
@@ -156,6 +172,24 @@ export default function WorkPage() {
                                             </div>
                                         </div>
                                     )}
+
+                                    {/* Visual KPI Progress Bars */}
+                                    <div className="md:col-span-2 mt-4 mb-4">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            {cs.metrics?.map((metric, k) => (
+                                                <div key={k} className="border-2 border-foreground p-4 bg-background relative overflow-hidden">
+                                                    <div className="flex justify-between items-end mb-2 relative z-10">
+                                                        <span className="text-xs font-black uppercase tracking-widest text-foreground/50">{metric.label}</span>
+                                                        <span className="font-heading text-2xl font-black">{metric.value}</span>
+                                                    </div>
+                                                    <div className="h-1.5 w-full bg-foreground/10">
+                                                        <div className={`h-full ${cs.accentColor}`} style={{ width: metric.width }}></div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 {/* System Built */}

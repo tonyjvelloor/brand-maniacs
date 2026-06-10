@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Image as ImageIcon, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { FadeUp } from "@/components/ui/FadeUp";
 
 const caseStudies = [
     {
@@ -17,6 +18,10 @@ const caseStudies = [
             "Ran targeted campaigns to high-intent wellness audiences",
             "Developed video content that showed treatment outcomes, not just testimonials",
         ],
+        metrics: [
+            { label: "Patient Volume", value: "+120%", width: "100%" },
+            { label: "Cost Per Consultation", value: "-40%", width: "60%" }
+        ],
         outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don&apos;t.",
     },
     {
@@ -30,6 +35,10 @@ const caseStudies = [
             "Engineered prompts to place the product in 20 radically different environments (ice blocks, neon streets, floating in water)",
             "Generated high-fidelity, ad-ready assets maintaining exact brand lighting",
             "Built a workflow that completed the entire process in under 45 minutes",
+        ],
+        metrics: [
+            { label: "Production Cost", value: "-95%", width: "95%" },
+            { label: "Creative Output", value: "20x", width: "100%" }
         ],
         outcome: "Replaced a ₹50,000 physical shoot with infinite creative variations. Allowed the brand to run a 20-variant creative testing sprint at a fraction of the cost, finding winning angles that would have never been tested physically.",
         isTech: true
@@ -46,6 +55,10 @@ const caseStudies = [
             "Built a weekly publishing system that ran with minimal founder time",
             "Created a content-to-demo pipeline that nurtured cold audiences to warm leads",
         ],
+        metrics: [
+            { label: "LinkedIn Following", value: "12K → 61K", width: "100%" },
+            { label: "Inbound Demos", value: "3x", width: "75%" }
+        ],
         outcome: "LinkedIn following grew from 12,000 to 61,000. Inbound demo requests tripled. Sales cycle compressed to 6 weeks. Authority compounds.",
     },
 ];
@@ -57,13 +70,7 @@ export function WorkShowcase() {
                 <div className="max-w-6xl mx-auto">
 
                     {/* Header */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.15 }}
-                        className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end"
-                    >
+                    <FadeUp className="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
                         <div>
                             <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black">
                                 Experiments & Proof
@@ -82,17 +89,14 @@ export function WorkShowcase() {
                                 Problem → System Built → Outcome/Learning
                             </p>
                         </div>
-                    </motion.div>
+                    </FadeUp>
 
                     {/* Case Study Cards */}
                     <div className="space-y-0 border-2 border-foreground bg-foreground">
                         {caseStudies.map((cs, i) => (
-                            <motion.div
+                            <FadeUp
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.15, delay: i * 0.05 }}
+                                delay={i * 0.05}
                                 className="bg-background border-b-2 border-foreground last:border-b-0 grid grid-cols-1 lg:grid-cols-12"
                             >
                                 {/* Left accent */}
@@ -151,6 +155,23 @@ export function WorkShowcase() {
                                         )}
                                     </div>
 
+                                    {/* Visual KPI Progress Bars */}
+                                    <div className="mt-4 mb-8">
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                            {cs.metrics?.map((metric, k) => (
+                                                <div key={k} className="border-2 border-foreground p-4 bg-background relative overflow-hidden">
+                                                    <div className="flex justify-between items-end mb-2 relative z-10">
+                                                        <span className="text-xs font-black uppercase tracking-widest text-foreground/50">{metric.label}</span>
+                                                        <span className="font-heading text-2xl font-black">{metric.value}</span>
+                                                    </div>
+                                                    <div className="h-1.5 w-full bg-foreground/10">
+                                                        <div className={`h-full ${cs.accentColor}`} style={{ width: metric.width }}></div>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
                                     {/* System Built */}
                                     <div className="mb-6 pb-6 border-b-2 border-foreground">
                                         <span className="text-xs font-black uppercase tracking-widest text-accent-blue block mb-4 border-l-2 border-accent-blue pl-3">The System Built</span>
@@ -170,22 +191,16 @@ export function WorkShowcase() {
                                         <p className="font-bold text-sm leading-snug">{cs.outcome}</p>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </FadeUp>
                         ))}
                     </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.15 }}
-                        className="mt-10"
-                    >
+                    <FadeUp className="mt-10">
                         <Link href="/work" className="inline-flex items-center gap-3 border-2 border-foreground px-8 py-4 font-black text-sm uppercase tracking-widest text-foreground hover:bg-foreground hover:text-background transition-none">
                             See All Experiments & Proof
                             <ArrowRight className="w-4 h-4" />
                         </Link>
-                    </motion.div>
+                    </FadeUp>
                 </div>
             </div>
         </section>

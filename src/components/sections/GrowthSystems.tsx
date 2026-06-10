@@ -1,9 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { FadeUp } from "@/components/ui/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/config";
+import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+
+const chartData = [
+  { month: "M1", single: 10, system: 12 },
+  { month: "M2", single: 15, system: 22 },
+  { month: "M3", single: 20, system: 40 },
+  { month: "M4", single: 25, system: 65 },
+  { month: "M5", single: 30, system: 105 },
+  { month: "M6", single: 35, system: 160 },
+];
 
 const systems = [
     {
@@ -56,13 +66,7 @@ export function GrowthSystems() {
                 <div className="max-w-6xl mx-auto">
 
                     {/* Header */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.15 }}
-                        className="mb-20"
-                    >
+                    <FadeUp className="mb-8">
                         <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-foreground text-background">
                             How We Work
                         </span>
@@ -81,18 +85,49 @@ export function GrowthSystems() {
                                 </p>
                             </div>
                         </div>
-                    </motion.div>
+                    </FadeUp>
+
+                    {/* Chart Visualization */}
+                    <FadeUp delay={0.1} className="mb-20">
+                        <div className="p-6 md:p-10 border-2 border-foreground bg-foreground/5 relative overflow-hidden group">
+                            <div className="absolute top-4 left-4 md:top-6 md:left-10 z-10">
+                                <h3 className="font-heading font-black text-xl uppercase tracking-tighter">Compounding Systems vs Single Service</h3>
+                            </div>
+                            <div className="absolute top-4 right-4 md:top-6 md:right-10 bg-background border-2 border-foreground px-3 py-1 text-[10px] font-black uppercase tracking-widest z-10 flex flex-col sm:flex-row gap-2 sm:gap-4">
+                                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-foreground/30"></div> Single Service</span>
+                                <span className="flex items-center gap-2"><div className="w-2 h-2 bg-accent-yellow"></div> Maniac System</span>
+                            </div>
+                            <div className="h-[200px] sm:h-[300px] w-full mt-16 sm:mt-12">
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <AreaChart data={chartData} margin={{ top: 10, right: 0, left: -20, bottom: 0 }}>
+                                        <defs>
+                                            <linearGradient id="colorSystem" x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="5%" stopColor="#D97706" stopOpacity={0.3}/>
+                                                <stop offset="95%" stopColor="#D97706" stopOpacity={0}/>
+                                            </linearGradient>
+                                        </defs>
+                                        <XAxis dataKey="month" stroke="#777777" tick={{fill: '#777777', fontSize: 12, fontWeight: 900}} tickLine={false} axisLine={false} />
+                                        <YAxis stroke="#777777" tick={{fill: '#777777', fontSize: 12, fontWeight: 900}} tickLine={false} axisLine={false} />
+                                        <Tooltip 
+                                            contentStyle={{ backgroundColor: '#0D0D0D', borderColor: '#FFFFFF', color: '#FFFFFF', fontWeight: 'bold' }}
+                                            itemStyle={{ fontWeight: 'black' }}
+                                            cursor={{ stroke: '#FFFFFF', strokeWidth: 1, strokeDasharray: '4 4' }}
+                                        />
+                                        <Area type="monotone" dataKey="single" name="Single Service" stroke="#777777" strokeWidth={3} fill="transparent" />
+                                        <Area type="monotone" dataKey="system" name="Maniac System" stroke="#D97706" strokeWidth={4} fillOpacity={1} fill="url(#colorSystem)" />
+                                    </AreaChart>
+                                </ResponsiveContainer>
+                            </div>
+                        </div>
+                    </FadeUp>
 
                     {/* Systems grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-foreground bg-foreground">
                         {systems.map((s, i) => (
-                            <motion.div
+                            <FadeUp
                                 key={i}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.15, delay: i * 0.05 }}
-                                className="bg-background p-10 border-r-2 border-b-2 border-foreground group hover:bg-foreground transition-none relative"
+                                delay={i * 0.05}
+                                className="bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative"
                             >
                                 {s.featured && (
                                     <div className="absolute -top-4 left-10 bg-accent-yellow text-black font-black text-xs px-4 py-1.5 border-2 border-foreground uppercase tracking-widest">
@@ -101,7 +136,7 @@ export function GrowthSystems() {
                                 )}
 
                                 <div className="flex items-start justify-between mb-6">
-                                    <span className="font-heading text-7xl font-black leading-none text-foreground opacity-10 group-hover:opacity-5 transition-none">
+                                    <span className="font-heading text-7xl font-black leading-none text-foreground opacity-10 group-hover:opacity-20 transition-opacity">
                                         {s.num}
                                     </span>
                                     <span className={`${s.accent} ${s.textAccent} border-2 ${s.borderAccent} font-black text-xs uppercase tracking-widest px-3 py-1`}>
@@ -109,34 +144,28 @@ export function GrowthSystems() {
                                     </span>
                                 </div>
 
-                                <h3 className="font-heading text-3xl md:text-4xl font-black uppercase text-foreground leading-tight mb-3 whitespace-pre-line group-hover:text-background transition-none">
+                                <h3 className="font-heading text-3xl md:text-4xl font-black uppercase text-foreground leading-tight mb-3 whitespace-pre-line">
                                     {s.name}
                                 </h3>
-                                <p className={`font-black text-xs uppercase tracking-widest mb-5 group-hover:text-accent-yellow transition-none ${s.accent === 'bg-accent-yellow' ? 'text-accent-red' : s.accent === 'bg-foreground' ? 'text-accent-yellow' : 'text-accent-yellow'}`}>
+                                <p className={`font-black text-xs uppercase tracking-widest mb-5 ${s.accent === 'bg-accent-yellow' ? 'text-accent-red' : s.accent === 'bg-foreground' ? 'text-accent-yellow' : 'text-accent-yellow'}`}>
                                     {s.tagline}
                                 </p>
-                                <p className="font-bold text-sm text-foreground opacity-70 mb-6 leading-snug group-hover:text-background group-hover:opacity-80 transition-none">
+                                <p className="font-bold text-sm text-foreground opacity-70 mb-6 leading-snug group-hover:opacity-100 transition-opacity">
                                     {s.description}
                                 </p>
                                 <ul className="space-y-2">
                                     {s.includes.map((item, j) => (
-                                        <li key={j} className="flex items-center gap-3 text-sm font-bold text-foreground group-hover:text-background transition-none">
-                                            <span className={`w-5 h-5 shrink-0 border-2 border-foreground ${s.accent} ${s.textAccent} flex items-center justify-center text-xs font-black group-hover:border-background transition-none`}>+</span>
+                                        <li key={j} className="flex items-center gap-3 text-sm font-bold text-foreground">
+                                            <span className={`w-5 h-5 shrink-0 border-2 border-foreground/50 ${s.accent} ${s.textAccent} flex items-center justify-center text-xs font-black group-hover:border-foreground transition-colors`}>+</span>
                                             {item}
                                         </li>
                                     ))}
                                 </ul>
-                            </motion.div>
+                            </FadeUp>
                         ))}
                     </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.15 }}
-                        className="mt-12 flex flex-col sm:flex-row gap-4 items-start"
-                    >
+                    <FadeUp className="mt-12 flex flex-col sm:flex-row gap-4 items-start">
                         <Button size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                             Apply to Work With Us
                             <ArrowRight className="w-5 h-5 ml-2" />
@@ -146,7 +175,7 @@ export function GrowthSystems() {
                                 Not sure where to start? Free Brand Audit →
                             </p>
                         </a>
-                    </motion.div>
+                    </FadeUp>
                 </div>
             </div>
         </section>

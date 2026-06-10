@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CALENDLY_URL } from "@/lib/config";
 import Link from "next/link";
+import { Image as ImageIcon } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Tony Joseph — Founder, The Brand Maniacs | AI Marketing Studio, Pune",
@@ -77,18 +78,30 @@ export default function AboutPage() {
                             </a>
                         </div>
 
-                        {/* Quote card */}
-                        <div className="bg-foreground p-10 border-2 border-foreground">
-                            <blockquote className="font-heading text-2xl md:text-3xl font-black uppercase text-background leading-tight mb-8">
-                                "The brands that win don't just look better. They have better systems. And they move faster than anyone else."
-                            </blockquote>
-                            <div className="flex items-center gap-4 pt-6 border-t-2 border-background">
-                                <div className="w-12 h-12 bg-accent-yellow flex items-center justify-center border-2 border-background font-heading font-black text-black text-xl shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
-                                    T
+                        {/* Photo & Quote card */}
+                        <div className="flex flex-col gap-6 relative">
+                            {/* Photo Placeholder */}
+                            <div className="w-full aspect-[4/5] bg-foreground/5 border-2 border-dashed border-foreground/30 flex items-center justify-center relative overflow-hidden group">
+                                <div className="absolute inset-0 bg-accent-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="text-center relative z-10">
+                                    <ImageIcon className="w-8 h-8 text-foreground/30 mx-auto mb-2" />
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground/50">Founder Portrait (4:5)</span>
                                 </div>
-                                <div>
-                                    <p className="font-black uppercase text-background text-sm">Tony Joseph</p>
-                                    <p className="text-background opacity-50 text-xs font-bold uppercase tracking-widest">Founder, The Brand Maniacs</p>
+                            </div>
+                            
+                            {/* Quote Card (overlapping) */}
+                            <div className="bg-foreground p-8 md:p-10 border-2 border-foreground md:-mt-32 md:-ml-12 relative z-10 shadow-2xl">
+                                <blockquote className="font-heading text-2xl md:text-3xl font-black uppercase text-background leading-tight mb-8">
+                                    "The brands that win don't just look better. They have better systems. And they move faster than anyone else."
+                                </blockquote>
+                                <div className="flex items-center gap-4 pt-6 border-t-2 border-background/20">
+                                    <div className="w-12 h-12 bg-accent-yellow flex items-center justify-center border-2 border-background font-heading font-black text-black text-xl shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]">
+                                        T
+                                    </div>
+                                    <div>
+                                        <p className="font-black uppercase text-background text-sm">Tony Joseph</p>
+                                        <p className="text-background opacity-50 text-[10px] font-bold uppercase tracking-widest">Founder, The Brand Maniacs</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

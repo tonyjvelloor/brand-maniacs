@@ -66,51 +66,111 @@ export default function LabsPage() {
 
                             <div className="pt-8 border-t-2 border-background/20">
                                 <p className="text-xs font-black uppercase tracking-widest opacity-50 mb-3">Early Access</p>
-                                <p className="font-bold text-sm mb-4">Join the AIProdGen Early Access List → Get first access when we open to the public.</p>
-                                <a href="mailto:tony@thebrandmaniacs.online?subject=AIProdGen%20Waitlist" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-accent-yellow hover:text-white transition-colors">
-                                    Join Waitlist <ArrowRight className="w-3 h-3" />
-                                </a>
+                                <p className="font-bold text-sm mb-4">Join the AIProdGen Early Access List.</p>
+                                
+                                <form className="mt-4 flex flex-col gap-3 max-w-sm">
+                                    <input type="text" placeholder="Name" className="bg-transparent border-2 border-background/30 p-3 font-bold text-sm outline-none focus:border-accent-yellow placeholder:text-background/50 text-background" />
+                                    <input type="email" placeholder="Email" className="bg-transparent border-2 border-background/30 p-3 font-bold text-sm outline-none focus:border-accent-yellow placeholder:text-background/50 text-background" />
+                                    <input type="text" placeholder="What product do you sell?" className="bg-transparent border-2 border-background/30 p-3 font-bold text-sm outline-none focus:border-accent-yellow placeholder:text-background/50 text-background" />
+                                    <button type="submit" className="bg-accent-yellow text-black font-black text-sm uppercase tracking-widest p-4 border-2 border-transparent hover:border-black transition-colors mt-2">
+                                        Join Waitlist
+                                    </button>
+                                </form>
+
+                                <div className="mt-6">
+                                    <span className="inline-flex items-center gap-2 bg-background/10 text-background text-[10px] font-black uppercase tracking-widest px-3 py-1.5 border border-background/20">
+                                        <div className="flex -space-x-2 mr-1">
+                                            <div className="w-5 h-5 rounded-full bg-accent-blue border border-background"></div>
+                                            <div className="w-5 h-5 rounded-full bg-accent-red border border-background"></div>
+                                            <div className="w-5 h-5 rounded-full bg-accent-yellow border border-background"></div>
+                                        </div>
+                                        Join 142 brands on early access
+                                    </span>
+                                </div>
                             </div>
                         </div>
 
-                        {/* Right Visualizer */}
-                        <div className="p-10 md:p-16 flex flex-col items-center justify-center bg-black/20 relative z-10">
-                            
-                            <div className="w-full max-w-sm">
-                                {/* Simulated App UI */}
-                                <div className="border-2 border-background bg-foreground rounded-lg overflow-hidden shadow-2xl">
-                                    <div className="bg-background/10 px-4 py-2 flex items-center gap-2 border-b-2 border-background">
-                                        <div className="w-2 h-2 rounded-full bg-accent-red"></div>
-                                        <div className="w-2 h-2 rounded-full bg-accent-yellow"></div>
-                                        <div className="w-2 h-2 rounded-full bg-accent-blue"></div>
-                                        <span className="ml-2 text-[10px] font-black uppercase tracking-widest text-background opacity-50">aiprodgen.brandmaniacs.com</span>
-                                    </div>
-                                    <div className="p-6">
-                                        <div className="flex justify-between items-end mb-4">
-                                            <div className="w-24 h-24 border-2 border-dashed border-background/50 flex flex-col items-center justify-center opacity-50">
-                                                <ImageIcon className="w-6 h-6 mb-1" />
-                                                <span className="text-[10px] uppercase font-bold text-center px-2">Input Image</span>
-                                            </div>
-                                            <div className="flex flex-col items-center justify-center px-4">
-                                                <Sparkles className="w-5 h-5 text-accent-yellow mb-1" />
-                                                <div className="h-0.5 w-12 bg-accent-yellow"></div>
-                                            </div>
-                                            <div className="w-32 h-32 border-2 border-accent-yellow bg-accent-yellow/10 flex items-center justify-center relative overflow-hidden group-hover:bg-accent-yellow/20 transition-colors duration-500">
-                                                <div className="text-[10px] font-black uppercase text-accent-yellow absolute top-2 left-2">Output</div>
-                                                <div className="w-20 h-20 bg-background/20 flex items-center justify-center animate-pulse">
-                                                    <span className="text-xs font-bold text-background opacity-50 text-center">Studio<br/>Quality</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <div className="h-2 w-full bg-background/20 rounded-full overflow-hidden mt-6">
-                                            <div className="h-full bg-accent-yellow w-3/4 animate-[pulse_2s_ease-in-out_infinite]"></div>
-                                        </div>
-                                        <p className="text-[10px] font-bold text-center mt-2 opacity-50 uppercase tracking-widest">Generating 50 environments...</p>
-                                    </div>
+                        {/* Right Visualizer: Horizontal Gallery */}
+                        <div className="p-10 md:p-16 flex flex-col justify-center bg-black/20 relative z-10 w-full overflow-hidden">
+                            <div className="flex items-center justify-between mb-6">
+                                <span className="text-xs font-black uppercase tracking-widest text-background opacity-50">1 Raw Photo → 5 AI Variants</span>
+                                <div className="flex gap-2">
+                                    <div className="w-2 h-2 rounded-full bg-accent-red animate-pulse"></div>
+                                    <div className="w-2 h-2 rounded-full bg-accent-yellow animate-pulse delay-75"></div>
+                                    <div className="w-2 h-2 rounded-full bg-accent-blue animate-pulse delay-150"></div>
                                 </div>
                             </div>
+                            
+                            {/* Horizontal scroll container */}
+                            <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory hide-scrollbar">
+                                {/* Raw Input */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-dashed border-background/40 flex flex-col items-center justify-center snap-start relative group">
+                                    <div className="absolute top-2 left-2 bg-background/20 backdrop-blur-sm px-2 py-1 text-[10px] font-black uppercase tracking-widest text-background">Input</div>
+                                    <ImageIcon className="w-10 h-10 mb-3 opacity-40 text-background" />
+                                    <span className="text-xs font-bold text-background opacity-60">Raw Product Photo</span>
+                                </div>
+                                
+                                {/* Separator */}
+                                <div className="shrink-0 flex items-center justify-center w-12">
+                                    <ArrowRight className="w-6 h-6 text-accent-yellow" />
+                                </div>
 
+                                {/* Output 1 */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-background bg-gradient-to-br from-blue-900 to-black flex flex-col items-center justify-center snap-start relative">
+                                    <div className="absolute top-2 left-2 bg-accent-yellow px-2 py-1 text-[10px] font-black uppercase tracking-widest text-black">Variant 01</div>
+                                    <Sparkles className="w-8 h-8 text-white opacity-80 mb-2" />
+                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Ice Block Studio</span>
+                                </div>
+
+                                {/* Output 2 */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-background bg-gradient-to-br from-pink-900 to-purple-900 flex flex-col items-center justify-center snap-start relative">
+                                    <div className="absolute top-2 left-2 bg-accent-yellow px-2 py-1 text-[10px] font-black uppercase tracking-widest text-black">Variant 02</div>
+                                    <Sparkles className="w-8 h-8 text-white opacity-80 mb-2" />
+                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Neon Streets</span>
+                                </div>
+
+                                {/* Output 3 */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-background bg-gradient-to-br from-cyan-900 to-blue-800 flex flex-col items-center justify-center snap-start relative">
+                                    <div className="absolute top-2 left-2 bg-accent-yellow px-2 py-1 text-[10px] font-black uppercase tracking-widest text-black">Variant 03</div>
+                                    <Sparkles className="w-8 h-8 text-white opacity-80 mb-2" />
+                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Floating Water</span>
+                                </div>
+
+                                {/* Output 4 */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-background bg-gradient-to-br from-orange-900 to-red-900 flex flex-col items-center justify-center snap-start relative">
+                                    <div className="absolute top-2 left-2 bg-accent-yellow px-2 py-1 text-[10px] font-black uppercase tracking-widest text-black">Variant 04</div>
+                                    <Sparkles className="w-8 h-8 text-white opacity-80 mb-2" />
+                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Desert Sand</span>
+                                </div>
+
+                                {/* Output 5 */}
+                                <div className="shrink-0 w-64 h-80 border-2 border-background bg-gradient-to-br from-gray-800 to-black flex flex-col items-center justify-center snap-start relative">
+                                    <div className="absolute top-2 left-2 bg-accent-yellow px-2 py-1 text-[10px] font-black uppercase tracking-widest text-black">Variant 05</div>
+                                    <Sparkles className="w-8 h-8 text-white opacity-80 mb-2" />
+                                    <span className="text-xs font-bold text-white uppercase tracking-widest">Minimalist Dark</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {/* Demo Video Placeholder */}
+                    <div className="border-t-2 border-background bg-black/60 aspect-video md:aspect-[21/9] relative group cursor-pointer overflow-hidden flex items-center justify-center">
+                        <div className="absolute inset-0 bg-accent-yellow/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                        
+                        {/* Play Button */}
+                        <div className="w-24 h-24 bg-accent-yellow rounded-full flex items-center justify-center pl-2 shadow-[0_0_60px_rgba(217,119,6,0.2)] group-hover:scale-110 transition-transform duration-300 relative z-10">
+                            <div className="w-0 h-0 border-t-[12px] border-b-[12px] border-l-[20px] border-t-transparent border-b-transparent border-l-black"></div>
+                        </div>
+
+                        {/* Video Meta */}
+                        <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 flex items-center gap-4 z-10">
+                            <span className="bg-background text-foreground text-[10px] font-black uppercase tracking-widest px-3 py-1 border border-background">Product Demo</span>
+                            <span className="text-sm font-bold text-background opacity-80">Watch AIProdGen Workflow (02:45)</span>
+                        </div>
+
+                        {/* Faux progress bar */}
+                        <div className="absolute bottom-0 left-0 right-0 h-1 bg-background/20">
+                            <div className="h-full w-1/3 bg-accent-yellow"></div>
                         </div>
                     </div>
                 </div>
