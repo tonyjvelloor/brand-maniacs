@@ -8,30 +8,43 @@ import { CALENDLY_URL } from "@/lib/config";
 export function Hero() {
     return (
         <section className="relative min-h-[100vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-black">
-            {/* Cinematic Background Video */}
-            <div className="absolute inset-0 z-0">
-                <video 
-                    autoPlay 
-                    loop 
-                    muted 
-                    playsInline 
-                    className="w-full h-full object-cover opacity-60 mix-blend-screen scale-105"
-                >
-                    <source src="https://cdn.pixabay.com/video/2023/10/22/186115-877134375_large.mp4" type="video/mp4" />
-                </video>
+            {/* Animated Fluid Gradient Background */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-black pointer-events-none">
+                <motion.div 
+                    animate={{ 
+                        scale: [1, 1.2, 1],
+                        x: ['-10%', '10%', '-10%'],
+                        y: ['-10%', '10%', '-10%'],
+                    }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] bg-accent-yellow/20 rounded-full mix-blend-screen blur-[120px]"
+                />
+                <motion.div 
+                    animate={{ 
+                        scale: [1, 1.3, 1],
+                        x: ['10%', '-10%', '10%'],
+                        y: ['10%', '-10%', '10%'],
+                    }}
+                    transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+                    className="absolute top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-accent-red/20 rounded-full mix-blend-screen blur-[120px]"
+                />
+                <motion.div 
+                    animate={{ 
+                        scale: [1, 1.4, 1],
+                        x: ['0%', '20%', '0%'],
+                        y: ['20%', '0%', '20%'],
+                    }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 5 }}
+                    className="absolute -bottom-[20%] left-[20%] w-[80vw] h-[80vw] bg-foreground/50 rounded-full mix-blend-screen blur-[150px]"
+                />
             </div>
 
             {/* Gradients & Vignette for Text Contrast */}
-            <div className="absolute inset-0 z-0 bg-gradient-to-t from-foreground via-foreground/60 to-transparent pointer-events-none"></div>
-            <div className="absolute inset-0 z-0 bg-gradient-to-b from-foreground via-transparent to-transparent pointer-events-none h-48"></div>
-            <div className="absolute inset-0 z-0 bg-gradient-to-r from-foreground via-transparent to-transparent pointer-events-none"></div>
-            <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(13,13,13,0.8)_100%)] pointer-events-none"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 z-0 bg-gradient-to-b from-black via-transparent to-transparent pointer-events-none h-48"></div>
 
             {/* Film Grain / Noise Overlay */}
-            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}></div>
-
-            {/* Glowing Accent Core */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent-yellow opacity-10 rounded-full blur-[100px] pointer-events-none z-0"></div>
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.06] mix-blend-overlay" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E')" }}></div>
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="max-w-6xl mx-auto">
