@@ -37,7 +37,6 @@ export function TheManiacMethod() {
                     {/* Acronym Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground">
                         {acronym.map((item, i) => (
-                        {acronym.map((item, i) => (
                             <FadeUp
                                 key={i}
                                 delay={i * 0.05}
