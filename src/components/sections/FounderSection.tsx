@@ -34,26 +34,32 @@ export function FounderSection() {
                             Human Behaviour.
                         </h2>
 
-                        {/* Founder Photo Placeholder */}
-                        <div className="w-full h-48 sm:h-64 bg-background/10 border-2 border-dashed border-background/30 flex items-center justify-center relative overflow-hidden group mb-8">
-                            <div className="absolute inset-0 bg-accent-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div className="text-center relative z-10">
-                                <ImageIcon className="w-6 h-6 text-background/30 mx-auto mb-2" />
-                                <span className="text-[10px] font-black uppercase tracking-widest text-background/50">Founder Portrait/Landscape</span>
+                        <div className="flex items-start gap-6 mb-8 mt-4">
+                            {/* Small Circular Headshot Placeholder */}
+                            <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-accent-yellow overflow-hidden shrink-0 relative group brutalist-shadow-sm">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img 
+                                    src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&q=80" 
+                                    alt="Tony Joseph" 
+                                    className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-300"
+                                />
+                            </div>
+
+                            <div className="space-y-4 text-background text-base font-bold leading-snug opacity-90">
+                                <p>
+                                    Founded by <span className="text-accent-yellow">Tony Joseph</span>, The Brand Maniacs was created with one belief:
+                                </p>
+                                <blockquote className="border-l-4 border-accent-yellow pl-4 text-lg sm:text-xl font-black uppercase leading-tight text-background">
+                                    &quot;Great marketing is not about posting more. It&apos;s about understanding why people stop, trust, remember, and buy.&quot;
+                                </blockquote>
                             </div>
                         </div>
 
-                        <div className="space-y-5 text-background text-base font-bold leading-snug opacity-90">
+                        <div className="space-y-4 text-background text-sm sm:text-base font-bold leading-snug opacity-80">
                             <p>
-                                Founded by <span className="text-accent-yellow">Tony Joseph</span>, The Brand Maniacs was created with one belief:
-                            </p>
-                            <blockquote className="border-l-4 border-accent-yellow pl-5 text-xl font-black uppercase leading-tight text-background">
-                                &quot;Great marketing is not about posting more. It&apos;s about understanding why people stop, trust, remember, and buy.&quot;
-                            </blockquote>
-                            <p className="opacity-70">
                                 After years studying what makes brands command attention — not just likes — we built a studio that starts with psychology and ends with measurable outcomes.
                             </p>
-                            <p className="opacity-70">
+                            <p>
                                 We stay intentionally small. Every brand we work with gets real strategic thinking, not templated campaigns handed to a junior team.
                             </p>
                         </div>

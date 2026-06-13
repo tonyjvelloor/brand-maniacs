@@ -100,7 +100,7 @@ export function Hero() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.15, delay: 0.15 }}
-                        className="flex flex-col sm:flex-row items-start gap-4 mb-20"
+                        className="flex flex-col sm:flex-row items-start gap-4 mb-12"
                     >
                         <Button variant="inverted" size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
                             Build My Growth System
@@ -109,6 +109,24 @@ export function Hero() {
                         <Button variant="outlineWhite" size="lg" href="/labs">
                             Explore Technology ↗
                         </Button>
+                    </motion.div>
+
+                    {/* Social Proof Above the Fold */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.3, delay: 0.3 }}
+                        className="mb-20"
+                    >
+                        <p className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Trusted by 40+ brands generating ₹3.2Cr+ ad spend</p>
+                        <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-60 mix-blend-screen">
+                            {['Animoca', 'Sandbox', 'Monad', 'Blur', 'Immutable'].map((brand, i) => (
+                                <div key={i} className="font-heading text-xl md:text-2xl font-black uppercase text-white tracking-tighter flex items-center gap-2">
+                                    <div className="w-4 h-4 bg-white rounded-full"></div>
+                                    {brand}
+                                </div>
+                            ))}
+                        </div>
                     </motion.div>
 
                     {/* Bottom bar */}

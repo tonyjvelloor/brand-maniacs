@@ -37,10 +37,9 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Left: Traditional Marketing */}
-                    <div className="bg-background text-foreground p-6 sm:p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background opacity-90 relative grayscale">
-                        <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
-                        <h3 className="font-heading text-2xl font-black uppercase mb-8 opacity-50 flex items-center gap-3">
-                            <span className="w-3 h-3 bg-foreground rounded-full"></span>
+                    <div className="bg-foreground text-background p-6 sm:p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background relative grayscale opacity-40">
+                        <h3 className="font-heading text-2xl font-black uppercase mb-8 opacity-60 flex items-center gap-3">
+                            <span className="w-3 h-3 bg-background rounded-full"></span>
                             Traditional Marketing
                         </h3>
                         
@@ -54,7 +53,7 @@ export function TheBrokenModel() {
                                 "Launch after weeks"
                             ].map((step, i, arr) => (
                                 <div key={i} className="flex flex-col items-center w-full">
-                                    <div className="w-full max-w-xs border-2 border-foreground p-4 text-center font-bold text-sm uppercase tracking-wide opacity-70">
+                                    <div className="w-full max-w-xs border border-background p-4 text-center font-bold text-sm uppercase tracking-wide line-through decoration-background/50">
                                         {step}
                                     </div>
                                     {i < arr.length - 1 && (
@@ -66,9 +65,9 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Right: The Maniac Method */}
-                    <div className="bg-foreground text-background p-6 sm:p-8 md:p-12">
-                        <h3 className="font-heading text-2xl font-black uppercase mb-8 text-accent-yellow flex items-center gap-3">
-                            <span className="w-3 h-3 bg-accent-yellow animate-pulse rounded-full"></span>
+                    <div className="bg-background text-foreground p-6 sm:p-8 md:p-12 border-2 border-accent-yellow brutalist-shadow z-10 relative">
+                        <h3 className="font-heading text-2xl md:text-3xl font-black uppercase mb-8 text-accent-red flex items-center gap-3">
+                            <span className="w-4 h-4 bg-accent-red animate-pulse rounded-full shadow-[0_0_10px_rgba(255,0,0,0.8)]"></span>
                             The Maniac Method
                         </h3>
                         
@@ -80,23 +79,23 @@ export function TheBrokenModel() {
                                 { text: "Scale Winners", desc: "Infinite ROI" }
                             ].map((step, i, arr) => (
                                 <div key={i} className="flex flex-col items-center w-full">
-                                    <div className="w-full max-w-xs border-2 border-accent-yellow p-4 text-center bg-black/20">
-                                        <div className="font-black text-sm md:text-base uppercase tracking-wide text-background">
+                                    <div className="w-full max-w-xs border-2 border-foreground p-4 text-center bg-accent-yellow brutalist-shadow-sm hover:scale-105 transition-transform cursor-default">
+                                        <div className="font-black text-sm md:text-base uppercase tracking-wide text-black">
                                             {step.text}
                                         </div>
-                                        <div className="text-xs font-bold text-accent-yellow mt-1 opacity-80">
+                                        <div className="text-xs font-bold text-black/80 mt-1 uppercase">
                                             {step.desc}
                                         </div>
                                     </div>
                                     {i < arr.length - 1 && (
-                                        <ArrowDown className="w-5 h-5 my-2 text-accent-yellow opacity-80" />
+                                        <ArrowDown className="w-6 h-6 my-3 text-foreground font-black" />
                                     )}
                                 </div>
                             ))}
                         </div>
 
-                        <div className="mt-12 text-center p-6 border-2 border-background/20 bg-background/5">
-                            <p className="font-heading font-black text-xl uppercase tracking-wide text-background">
+                        <div className="mt-12 text-center p-6 border-4 border-foreground bg-foreground">
+                            <p className="font-heading font-black text-xl md:text-2xl uppercase tracking-wide text-background">
                                 Powered by <span className="text-accent-yellow">AIProdGen</span> + Human Strategy.
                             </p>
                         </div>

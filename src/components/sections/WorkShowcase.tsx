@@ -131,24 +131,39 @@ export function WorkShowcase() {
                                             <p className="font-bold text-sm text-foreground leading-snug">{cs.problem}</p>
                                         </div>
 
-                                        {/* Tech visualizer for AIProdGen case study */}
+                                        {/* Real Before/After visual for AIProdGen case study */}
                                         {cs.isTech && (
                                             <div className="border-2 border-foreground bg-foreground text-background p-4 flex flex-col justify-center">
-                                                <div className="flex items-center justify-between text-xs font-black uppercase tracking-widest mb-4">
-                                                    <span className="opacity-50">Input Image</span>
+                                                <div className="flex items-center justify-between text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4">
+                                                    <span className="opacity-50">Raw iPhone Shot</span>
                                                     <ArrowRight className="w-4 h-4 text-accent-yellow" />
-                                                    <span className="text-accent-yellow">AI Variations</span>
+                                                    <span className="text-accent-yellow">AI Studio Output</span>
                                                 </div>
-                                                <div className="flex justify-between items-end gap-2">
-                                                    <div className="w-16 h-16 border-2 border-dashed border-background/30 flex items-center justify-center opacity-50">
-                                                        <ImageIcon className="w-5 h-5" />
+                                                <div className="flex justify-between items-stretch gap-2 h-32 sm:h-40">
+                                                    {/* Before Image */}
+                                                    <div className="w-1/2 relative border-2 border-dashed border-background/30 overflow-hidden opacity-80 group">
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                        <img 
+                                                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" 
+                                                            alt="Raw product" 
+                                                            className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                                                        />
                                                     </div>
-                                                    <div className="flex-1 h-1 bg-background/20 relative">
-                                                        <div className="absolute top-0 left-0 h-full w-full bg-accent-yellow animate-pulse"></div>
+                                                    {/* Divider */}
+                                                    <div className="w-1 bg-accent-yellow/50 relative flex items-center justify-center">
+                                                        <div className="w-4 h-4 bg-accent-yellow rounded-full absolute" />
                                                     </div>
-                                                    <div className="w-20 h-20 bg-accent-yellow border-2 border-black flex items-center justify-center relative overflow-hidden group">
-                                                        <Sparkles className="w-6 h-6 text-black relative z-10" />
-                                                        <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                                    {/* After Image */}
+                                                    <div className="w-1/2 relative border-2 border-accent-yellow overflow-hidden group">
+                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                                                        <img 
+                                                            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80" 
+                                                            alt="AI Studio Output" 
+                                                            className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-500"
+                                                        />
+                                                        <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 text-[8px] font-black uppercase text-accent-yellow border border-accent-yellow backdrop-blur-sm">
+                                                            Generated
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

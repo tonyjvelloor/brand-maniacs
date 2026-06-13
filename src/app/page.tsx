@@ -6,6 +6,7 @@ import { WorkShowcase } from "@/components/sections/WorkShowcase";
 import { GrowthSystems } from "@/components/sections/GrowthSystems";
 import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
+import { EngagementModels } from "@/components/sections/EngagementModels";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { Metadata } from "next";
@@ -41,6 +42,9 @@ export default function Home() {
 
       {/* 8. Process — How we work */}
       <Process />
+
+      {/* 9. Engagement Models / Pricing */}
+      <EngagementModels />
 
       {/* 9. Final CTA */}
       <FinalCTA />

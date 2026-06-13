@@ -101,7 +101,7 @@ export function Navbar() {
                             target="_blank"
                             rel="noopener noreferrer"
                         >
-                            Apply →
+                            Free Audit
                         </Button>
                     </div>
                 </nav>
@@ -177,7 +177,7 @@ export function Navbar() {
                                     rel="noopener noreferrer"
                                     className="w-full"
                                 >
-                                    Apply →
+                                    Free Audit
                                 </Button>
                             </motion.div>
                         </div>

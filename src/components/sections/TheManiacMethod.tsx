@@ -36,31 +36,39 @@ export function TheManiacMethod() {
 
                     {/* Acronym Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground">
-                        {acronym.map((item, i) => (
+                        {acronym.map((item, i) => {
+                            const isHovered = hoveredIndex === i;
+                            const isAnotherHovered = hoveredIndex !== null && hoveredIndex !== i;
+                            return (
                             <FadeUp
                                 key={i}
                                 delay={i * 0.05}
-                                className={`p-6 sm:p-10 border-r-2 border-b-2 border-foreground transition-all duration-300 relative overflow-hidden cursor-pointer ${hoveredIndex === i ? 'bg-foreground text-background scale-[1.02] shadow-2xl z-10' : 'bg-background text-foreground'}`}
+                                className={`p-6 sm:p-10 border-r-2 border-b-2 border-foreground transition-all duration-300 relative overflow-hidden cursor-pointer ${
+                                    isHovered 
+                                        ? 'bg-foreground text-background scale-[1.02] shadow-2xl z-10 border-l-[12px] border-l-accent-red' 
+                                        : 'bg-background text-foreground border-l-2 border-l-foreground'
+                                } ${isAnotherHovered ? 'opacity-40 grayscale' : 'opacity-100'}`}
                                 onMouseEnter={() => setHoveredIndex(i)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                <div className={`absolute -right-4 -top-8 font-heading text-[120px] font-black leading-none pointer-events-none select-none transition-all duration-500 ${hoveredIndex === i ? 'opacity-20 text-accent-yellow scale-110 translate-y-4 -translate-x-4' : 'opacity-5'}`}>
+                                <div className={`absolute -right-4 -top-8 font-heading text-[120px] font-black leading-none pointer-events-none select-none transition-all duration-500 ${isHovered ? 'opacity-20 text-accent-yellow scale-110 translate-y-4 -translate-x-4' : 'opacity-5'}`}>
                                     {item.letter}
                                 </div>
                                 
                                 <div className="relative z-10">
-                                    <div className={`w-12 h-12 font-heading font-black text-2xl flex items-center justify-center mb-6 transition-colors duration-300 ${hoveredIndex === i ? 'bg-accent-yellow text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]' : 'bg-background text-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'}`}>
+                                    <div className={`w-12 h-12 font-heading font-black text-2xl flex items-center justify-center mb-6 transition-colors duration-300 ${isHovered ? 'bg-accent-yellow text-black border-2 border-black shadow-[2px_2px_0px_0px_rgba(255,255,255,1)]' : 'bg-background text-foreground border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]'}`}>
                                         {item.letter}
                                     </div>
                                     <h3 className="font-heading text-2xl font-black uppercase mb-4 leading-tight pr-4">
                                         {item.title}
                                     </h3>
-                                    <p className={`text-sm font-bold leading-relaxed transition-opacity duration-300 ${hoveredIndex === i ? 'opacity-100' : 'opacity-80'}`}>
+                                    <p className={`text-sm font-bold leading-relaxed transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-80'}`}>
                                         {item.desc}
                                     </p>
                                 </div>
                             </FadeUp>
-                        ))}
+                            );
+                        })}
                     </div>
 
                 </div>

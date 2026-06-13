@@ -4,7 +4,7 @@ import { CALENDLY_URL, WHATSAPP_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/c
 
 export function Footer() {
     return (
-        <footer className="bg-background border-t-2 border-foreground py-16 relative overflow-hidden">
+        <footer className="bg-background border-t-2 border-foreground pt-16 pb-28 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-10 mb-16">
 
@@ -66,11 +66,14 @@ export function Footer() {
                     </div>
                 </div>
 
-                <div className="pt-8 border-t-2 border-foreground flex flex-col md:flex-row items-center justify-between text-xs font-black uppercase tracking-widest text-foreground gap-4">
-                    <p className="opacity-60">© {new Date().getFullYear()} The Brand Maniacs. All rights reserved.</p>
-                    <div className="flex gap-6">
-                        <span className="opacity-40 cursor-default hover:opacity-100 transition-opacity">Privacy Policy</span>
-                        <span className="opacity-40 cursor-default hover:opacity-100 transition-opacity">Terms of Service</span>
+                <div className="pt-8 border-t-2 border-foreground flex flex-col items-center justify-center text-xs font-black uppercase tracking-widest text-foreground gap-4 text-center">
+                    <p className="text-sm md:text-base mb-2">Built to make brands impossible to ignore.</p>
+                    <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
+                        <p className="opacity-60">© {new Date().getFullYear()} The Brand Maniacs. All rights reserved.</p>
+                        <div className="flex gap-6">
+                            <span className="opacity-40 cursor-default hover:opacity-100 transition-opacity">Privacy Policy</span>
+                            <span className="opacity-40 cursor-default hover:opacity-100 transition-opacity">Terms of Service</span>
+                        </div>
                     </div>
                 </div>
             </div>
