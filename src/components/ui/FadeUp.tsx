@@ -8,9 +8,11 @@ interface FadeUpProps {
     delay?: number;
     className?: string;
     yOffset?: number;
+    onMouseEnter?: () => void;
+    onMouseLeave?: () => void;
 }
 
-export function FadeUp({ children, delay = 0, className = "", yOffset = 30 }: FadeUpProps) {
+export function FadeUp({ children, delay = 0, className = "", yOffset = 30, onMouseEnter, onMouseLeave }: FadeUpProps) {
     return (
         <motion.div
             initial={{ opacity: 0, y: yOffset }}
@@ -18,6 +20,8 @@ export function FadeUp({ children, delay = 0, className = "", yOffset = 30 }: Fa
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.4, delay, ease: "easeOut" }}
             className={className}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
         >
             {children}
         </motion.div>
