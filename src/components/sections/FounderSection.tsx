@@ -116,7 +116,7 @@ export function FounderSection() {
                                     <h3 className="font-heading font-black uppercase text-background text-base mb-2 group-hover:text-accent-yellow transition-none">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm font-bold text-background opacity-60 leading-snug group-hover:opacity-80 transition-none">
+                                    <p className="text-sm font-bold text-background opacity-60 leading-snug group-hover:text-foreground group-hover:opacity-80 transition-none">
                                         {item.body}
                                     </p>
                                 </div>
