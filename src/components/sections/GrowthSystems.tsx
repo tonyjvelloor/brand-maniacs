@@ -59,6 +59,58 @@ const systems = [
     },
 ];
 
+interface SystemCardProps {
+    s: typeof systems[0];
+    index: number;
+}
+
+function SystemCard({ s, index }: SystemCardProps) {
+    return (
+        <FadeUp
+            delay={index * 0.05}
+            className={`bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative ${
+                s.featured ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1"
+            }`}
+        >
+            {s.featured && (
+                <div className="absolute -top-4 left-10 bg-accent-yellow text-black font-black text-xs px-4 py-1.5 border-2 border-foreground uppercase tracking-widest z-10">
+                    Most Popular
+                </div>
+            )}
+
+            <div className="flex items-start justify-between mb-6">
+                <span className="font-heading text-7xl font-black leading-none text-foreground opacity-10 group-hover:opacity-20 transition-opacity">
+                    {s.num}
+                </span>
+                <span className={`${s.accent} ${s.textAccent} border-2 ${s.borderAccent} font-black text-xs uppercase tracking-widest px-3 py-1`}>
+                    System
+                </span>
+            </div>
+
+            <h3 className="font-heading text-3xl md:text-4xl font-black uppercase text-foreground leading-tight mb-3 whitespace-pre-line">
+                {s.name}
+            </h3>
+            <p className={`font-black text-xs uppercase tracking-widest mb-5 ${s.accent === 'bg-accent-yellow' ? 'text-accent-red' : s.accent === 'bg-foreground' ? 'text-accent-yellow' : 'text-accent-yellow'}`}>
+                {s.tagline}
+            </p>
+            <p className="font-bold text-sm text-foreground opacity-70 mb-6 leading-snug group-hover:opacity-100 transition-opacity max-w-xl">
+                {s.description}
+            </p>
+            
+            <div className="mt-auto">
+                <ul className={s.featured ? "grid grid-cols-1 sm:grid-cols-2 gap-2" : "space-y-2"}>
+                    {s.includes.map((item, j) => (
+                        <li key={j} className="flex items-center gap-3 text-sm font-bold text-foreground">
+                            <span className={`w-5 h-5 shrink-0 border-2 border-foreground/50 ${s.accent} ${s.textAccent} flex items-center justify-center text-xs font-black group-hover:border-foreground transition-colors`}>+</span>
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </FadeUp>
+    );
+}
+
 export function GrowthSystems() {
     return (
         <section className="py-24 bg-background border-b-2 border-foreground" id="services">
@@ -121,47 +173,10 @@ export function GrowthSystems() {
                         </div>
                     </FadeUp>
 
-                    {/* Systems grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-2 border-foreground bg-foreground">
+                    {/* Systems Bento Grid */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground grid-flow-row-dense">
                         {systems.map((s, i) => (
-                            <FadeUp
-                                key={i}
-                                delay={i * 0.05}
-                                className="bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative"
-                            >
-                                {s.featured && (
-                                    <div className="absolute -top-4 left-10 bg-accent-yellow text-black font-black text-xs px-4 py-1.5 border-2 border-foreground uppercase tracking-widest">
-                                        Most Popular
-                                    </div>
-                                )}
-
-                                <div className="flex items-start justify-between mb-6">
-                                    <span className="font-heading text-7xl font-black leading-none text-foreground opacity-10 group-hover:opacity-20 transition-opacity">
-                                        {s.num}
-                                    </span>
-                                    <span className={`${s.accent} ${s.textAccent} border-2 ${s.borderAccent} font-black text-xs uppercase tracking-widest px-3 py-1`}>
-                                        System
-                                    </span>
-                                </div>
-
-                                <h3 className="font-heading text-3xl md:text-4xl font-black uppercase text-foreground leading-tight mb-3 whitespace-pre-line">
-                                    {s.name}
-                                </h3>
-                                <p className={`font-black text-xs uppercase tracking-widest mb-5 ${s.accent === 'bg-accent-yellow' ? 'text-accent-red' : s.accent === 'bg-foreground' ? 'text-accent-yellow' : 'text-accent-yellow'}`}>
-                                    {s.tagline}
-                                </p>
-                                <p className="font-bold text-sm text-foreground opacity-70 mb-6 leading-snug group-hover:opacity-100 transition-opacity">
-                                    {s.description}
-                                </p>
-                                <ul className="space-y-2">
-                                    {s.includes.map((item, j) => (
-                                        <li key={j} className="flex items-center gap-3 text-sm font-bold text-foreground">
-                                            <span className={`w-5 h-5 shrink-0 border-2 border-foreground/50 ${s.accent} ${s.textAccent} flex items-center justify-center text-xs font-black group-hover:border-foreground transition-colors`}>+</span>
-                                            {item}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </FadeUp>
+                            <SystemCard key={i} s={s} index={i} />
                         ))}
                     </div>
 

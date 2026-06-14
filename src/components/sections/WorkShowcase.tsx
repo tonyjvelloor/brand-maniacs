@@ -63,6 +63,133 @@ const caseStudies = [
     },
 ];
 
+function BeforeAfterSlider() {
+    return (
+        <div className="border-2 border-foreground bg-foreground text-background p-4 flex flex-col justify-center h-full">
+            <div className="flex items-center justify-between text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4">
+                <span className="opacity-50">Raw iPhone Shot</span>
+                <ArrowRight className="w-4 h-4 text-accent-yellow" />
+                <span className="text-accent-yellow">AI Studio Output</span>
+            </div>
+            <div className="flex justify-between items-stretch gap-2 h-32 sm:h-40">
+                {/* Before Image */}
+                <div className="w-1/2 relative border-2 border-dashed border-background/30 overflow-hidden opacity-80 group">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" 
+                        alt="Raw product" 
+                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                </div>
+                {/* Divider */}
+                <div className="w-1 bg-accent-yellow/50 relative flex items-center justify-center">
+                    <div className="w-4 h-4 bg-accent-yellow rounded-full absolute" />
+                </div>
+                {/* After Image */}
+                <div className="w-1/2 relative border-2 border-accent-yellow overflow-hidden group">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img 
+                        src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80" 
+                        alt="AI Studio Output" 
+                        className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-500"
+                    />
+                    <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 text-[8px] font-black uppercase text-accent-yellow border border-accent-yellow backdrop-blur-sm">
+                        Generated
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+function CaseStudyCard({ cs, index }: { cs: typeof caseStudies[0], index: number }) {
+    return (
+        <FadeUp
+            delay={index * 0.05}
+            className="bg-background border-b-2 border-foreground last:border-b-0 grid grid-cols-1 lg:grid-cols-12"
+        >
+            {/* Left accent */}
+            <div className={`lg:col-span-3 ${cs.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
+                {cs.isTech && (
+                    <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                        Technology Lab
+                    </div>
+                )}
+                <div>
+                    <span className={`font-heading text-6xl font-black leading-none ${cs.accentText} opacity-30`}>
+                        {String(index + 1).padStart(2, "0")}
+                    </span>
+                </div>
+                <div className="mt-8 lg:mt-0">
+                    <div className={`font-heading font-black uppercase text-xl md:text-2xl leading-tight ${cs.accentText}`}>
+                        {cs.client}
+                    </div>
+                    <div className={`text-xs font-black uppercase tracking-widest ${cs.accentText} opacity-60 mt-2`}>
+                        {cs.category}
+                    </div>
+                </div>
+            </div>
+
+            {/* Content (Bento Grid Internal) */}
+            <div className="lg:col-span-9 p-8 md:p-10">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    
+                    {/* Problem Box */}
+                    <div className={`border-2 border-foreground p-6 bg-background ${cs.isTech ? 'md:col-span-6 lg:col-span-7' : 'md:col-span-12'}`}>
+                        <span className="text-xs font-black uppercase tracking-widest text-accent-red block mb-3 border-l-2 border-accent-red pl-3">The Problem</span>
+                        <p className="font-bold text-sm text-foreground leading-snug">{cs.problem}</p>
+                    </div>
+
+                    {/* Tech Showcase Box */}
+                    {cs.isTech && (
+                        <div className="md:col-span-6 lg:col-span-5 border-2 border-foreground bg-foreground">
+                            <BeforeAfterSlider />
+                        </div>
+                    )}
+
+                    {/* System Built Box */}
+                    <div className="border-2 border-foreground p-6 bg-background md:col-span-12 lg:col-span-7">
+                        <span className="text-xs font-black uppercase tracking-widest text-accent-blue block mb-4 border-l-2 border-accent-blue pl-3">The System Built</span>
+                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {cs.systemBuilt.map((item, j) => (
+                                <li key={j} className="flex items-start gap-3 text-sm font-bold text-foreground">
+                                    <span className="text-accent-yellow font-black shrink-0 mt-0.5 border-2 border-foreground w-4 h-4 flex items-center justify-center text-[10px] shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] bg-background">✓</span>
+                                    {item}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Metrics Box */}
+                    <div className="border-2 border-foreground p-6 bg-background md:col-span-12 lg:col-span-5 flex flex-col justify-center">
+                        <span className="text-xs font-black uppercase tracking-widest text-foreground block mb-4 border-l-2 border-foreground pl-3">The Results</span>
+                        <div className="grid grid-cols-1 gap-6">
+                            {cs.metrics?.map((metric, k) => (
+                                <div key={k} className="relative overflow-hidden">
+                                    <div className="flex justify-between items-end mb-2 relative z-10">
+                                        <span className="text-xs font-black uppercase tracking-widest text-foreground/50">{metric.label}</span>
+                                        <span className="font-heading text-xl font-black">{metric.value}</span>
+                                    </div>
+                                    <div className="h-1.5 w-full bg-foreground/10">
+                                        <div className={`h-full ${cs.accentColor}`} style={{ width: metric.width }}></div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Outcome Box */}
+                    <div className="md:col-span-12 bg-accent-yellow text-black p-6 border-2 border-black">
+                        <span className="text-xs font-black uppercase tracking-widest opacity-60 block mb-2 border-l-2 border-black pl-3">Outcome & Learning</span>
+                        <p className="font-bold text-sm md:text-base leading-snug">{cs.outcome}</p>
+                    </div>
+
+                </div>
+            </div>
+        </FadeUp>
+    );
+}
+
 export function WorkShowcase() {
     return (
         <section className="py-24 bg-background border-b-2 border-foreground" id="work">
@@ -94,119 +221,7 @@ export function WorkShowcase() {
                     {/* Case Study Cards */}
                     <div className="space-y-0 border-2 border-foreground bg-foreground">
                         {caseStudies.map((cs, i) => (
-                            <FadeUp
-                                key={i}
-                                delay={i * 0.05}
-                                className="bg-background border-b-2 border-foreground last:border-b-0 grid grid-cols-1 lg:grid-cols-12"
-                            >
-                                {/* Left accent */}
-                                <div className={`lg:col-span-3 ${cs.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
-                                    {cs.isTech && (
-                                        <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                                            Technology Lab
-                                        </div>
-                                    )}
-                                    <div>
-                                        <span className={`font-heading text-6xl font-black leading-none ${cs.accentText} opacity-30`}>
-                                            {String(i + 1).padStart(2, "0")}
-                                        </span>
-                                    </div>
-                                    <div className="mt-8 lg:mt-0">
-                                        <div className={`font-heading font-black uppercase text-xl md:text-2xl leading-tight ${cs.accentText}`}>
-                                            {cs.client}
-                                        </div>
-                                        <div className={`text-xs font-black uppercase tracking-widest ${cs.accentText} opacity-60 mt-2`}>
-                                            {cs.category}
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="lg:col-span-9 p-8 md:p-10">
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-
-                                        {/* Problem */}
-                                        <div className="md:col-span-2 lg:col-span-1">
-                                            <span className="text-xs font-black uppercase tracking-widest text-accent-red block mb-3 border-l-2 border-accent-red pl-3">The Problem</span>
-                                            <p className="font-bold text-sm text-foreground leading-snug">{cs.problem}</p>
-                                        </div>
-
-                                        {/* Real Before/After visual for AIProdGen case study */}
-                                        {cs.isTech && (
-                                            <div className="border-2 border-foreground bg-foreground text-background p-4 flex flex-col justify-center">
-                                                <div className="flex items-center justify-between text-[10px] sm:text-xs font-black uppercase tracking-widest mb-4">
-                                                    <span className="opacity-50">Raw iPhone Shot</span>
-                                                    <ArrowRight className="w-4 h-4 text-accent-yellow" />
-                                                    <span className="text-accent-yellow">AI Studio Output</span>
-                                                </div>
-                                                <div className="flex justify-between items-stretch gap-2 h-32 sm:h-40">
-                                                    {/* Before Image */}
-                                                    <div className="w-1/2 relative border-2 border-dashed border-background/30 overflow-hidden opacity-80 group">
-                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img 
-                                                            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80" 
-                                                            alt="Raw product" 
-                                                            className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
-                                                        />
-                                                    </div>
-                                                    {/* Divider */}
-                                                    <div className="w-1 bg-accent-yellow/50 relative flex items-center justify-center">
-                                                        <div className="w-4 h-4 bg-accent-yellow rounded-full absolute" />
-                                                    </div>
-                                                    {/* After Image */}
-                                                    <div className="w-1/2 relative border-2 border-accent-yellow overflow-hidden group">
-                                                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                                                        <img 
-                                                            src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=400&q=80" 
-                                                            alt="AI Studio Output" 
-                                                            className="object-cover w-full h-full scale-100 group-hover:scale-110 transition-all duration-500"
-                                                        />
-                                                        <div className="absolute bottom-2 right-2 bg-black/80 px-2 py-1 text-[8px] font-black uppercase text-accent-yellow border border-accent-yellow backdrop-blur-sm">
-                                                            Generated
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-
-                                    {/* Visual KPI Progress Bars */}
-                                    <div className="mt-4 mb-8">
-                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                            {cs.metrics?.map((metric, k) => (
-                                                <div key={k} className="border-2 border-foreground p-4 bg-background relative overflow-hidden">
-                                                    <div className="flex justify-between items-end mb-2 relative z-10">
-                                                        <span className="text-xs font-black uppercase tracking-widest text-foreground/50">{metric.label}</span>
-                                                        <span className="font-heading text-2xl font-black">{metric.value}</span>
-                                                    </div>
-                                                    <div className="h-1.5 w-full bg-foreground/10">
-                                                        <div className={`h-full ${cs.accentColor}`} style={{ width: metric.width }}></div>
-                                                    </div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-
-                                    {/* System Built */}
-                                    <div className="mb-6 pb-6 border-b-2 border-foreground">
-                                        <span className="text-xs font-black uppercase tracking-widest text-accent-blue block mb-4 border-l-2 border-accent-blue pl-3">The System Built</span>
-                                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                                            {cs.systemBuilt.map((item, j) => (
-                                                <li key={j} className="flex items-start gap-3 text-sm font-bold text-foreground">
-                                                    <span className="text-accent-yellow font-black shrink-0 mt-0.5 border-2 border-foreground w-4 h-4 flex items-center justify-center text-[10px] shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] bg-background">✓</span>
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    </div>
-
-                                    {/* Outcome */}
-                                    <div className="bg-accent-yellow text-black p-6 border-2 border-black">
-                                        <span className="text-xs font-black uppercase tracking-widest opacity-60 block mb-2 border-l-2 border-black pl-3">Outcome & Learning</span>
-                                        <p className="font-bold text-sm leading-snug">{cs.outcome}</p>
-                                    </div>
-                                </div>
-                            </FadeUp>
+                            <CaseStudyCard key={i} cs={cs} index={i} />
                         ))}
                     </div>
 
