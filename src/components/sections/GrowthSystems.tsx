@@ -1,10 +1,18 @@
 "use client";
 
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/config";
 import { AreaChart, Area, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+
+if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger, useGSAP);
+}
 
 const chartData = [
   { month: "M1", single: 10, system: 12 },
@@ -66,9 +74,8 @@ interface SystemCardProps {
 
 function SystemCard({ s, index }: SystemCardProps) {
     return (
-        <FadeUp
-            delay={index * 0.05}
-            className={`bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative ${
+        <div
+            className={`bento-card opacity-0 bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative ${
                 s.featured ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1"
             }`}
         >
@@ -107,13 +114,33 @@ function SystemCard({ s, index }: SystemCardProps) {
                     ))}
                 </ul>
             </div>
-        </FadeUp>
+        </div>
     );
 }
 
 export function GrowthSystems() {
+    const container = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        gsap.fromTo(".bento-card", 
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.6,
+                stagger: 0.1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: ".bento-grid",
+                    start: "top bottom-=100",
+                    once: true
+                }
+            }
+        );
+    }, { scope: container });
+
     return (
-        <section className="py-24 bg-background border-b-2 border-foreground" id="services">
+        <section ref={container} className="py-24 bg-background border-b-2 border-foreground" id="services">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-6xl mx-auto">
 
@@ -174,7 +201,7 @@ export function GrowthSystems() {
                     </FadeUp>
 
                     {/* Systems Bento Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground grid-flow-row-dense">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground grid-flow-row-dense bento-grid">
                         {systems.map((s, i) => (
                             <SystemCard key={i} s={s} index={i} />
                         ))}

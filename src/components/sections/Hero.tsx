@@ -4,10 +4,51 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/config";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export function Hero() {
+    const container = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        const tl = gsap.timeline({ delay: 0.2 });
+
+        // Reveal the "Studio Label"
+        tl.from(".hero-label", { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" });
+
+        // Stagger the split words in the headline
+        tl.to(".word-reveal", {
+            y: 0,
+            rotationZ: 0,
+            opacity: 1,
+            stagger: 0.05,
+            duration: 0.8,
+            ease: "power4.out"
+        }, "-=0.3");
+
+        // Reveal the subheadline
+        tl.from(".hero-sub", { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" }, "-=0.4");
+
+        // Reveal CTAs
+        tl.from(".hero-cta", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.4");
+
+        // Reveal Social Proof and Bottom Bar
+        tl.from(".hero-bottom", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.4");
+
+    }, { scope: container });
+
+    // Helper to wrap words for GSAP masking
+    const wrapWords = (text: string, customClass = "") => {
+        return text.split(' ').map((word, i) => (
+            <span key={i} className="inline-block overflow-hidden mr-[0.25em] align-bottom pb-2">
+                <span className={`inline-block translate-y-[120%] rotate-2 opacity-0 word-reveal will-change-transform ${customClass}`}>{word}</span>
+            </span>
+        ));
+    };
+
     return (
-        <section className="relative min-h-[100vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-black">
+        <section ref={container} className="relative min-h-[100vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-black">
             {/* Animated Fluid Gradient Background */}
             <div className="absolute inset-0 z-0 overflow-hidden bg-black pointer-events-none">
                 <motion.div 
@@ -50,74 +91,59 @@ export function Hero() {
                 <div className="max-w-6xl mx-auto">
 
                     {/* Studio label */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.15 }}
-                        className="mb-10"
-                    >
+                    <div className="mb-10 hero-label opacity-100">
                         <span className="inline-flex items-center gap-3 border-2 border-white/20 bg-white/5 px-4 py-2 backdrop-blur-sm relative z-10">
                             <span className="w-2 h-2 bg-accent-yellow rounded-full animate-pulse shadow-[0_0_10px_rgba(255,230,0,0.8)]" />
                             <span className="font-black text-[11px] uppercase tracking-widest text-white/80">
                                 Creative Technology Studio · Est. India
                             </span>
                         </span>
-                    </motion.div>
+                    </div>
 
                     {/* Main headline */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.15, delay: 0.05 }}
-                        className="mb-10"
-                    >
+                    <div className="mb-10">
                         <h1 className="font-heading font-black uppercase tracking-tighter text-white leading-[0.9] text-5xl sm:text-6xl md:text-[72px] lg:text-[96px]">
-                            Brands don&apos;t<br />
-                            grow by creating<br />
-                            more.<br />
-                            <span className="text-white/50">They grow by</span><br />
-                            <span className="bg-accent-yellow text-black px-4 inline-block mt-1">becoming</span><br />
-                            <span className="relative inline-block mt-1">
-                                <span className="relative z-10 bg-accent-red text-white px-4 py-1">impossible to ignore.</span>
-                            </span>
+                            <div className="flex flex-wrap">{wrapWords("Brands don't")}</div>
+                            <div className="flex flex-wrap">{wrapWords("grow by creating")}</div>
+                            <div className="flex flex-wrap">{wrapWords("more.")}</div>
+                            <div className="flex flex-wrap items-center mt-2">
+                                {wrapWords("They grow by", "text-white/50")}
+                                <span className="inline-block overflow-hidden ml-4">
+                                    <span className="inline-block translate-y-[120%] word-reveal bg-accent-yellow text-black px-4 pb-2 pt-1">becoming</span>
+                                </span>
+                            </div>
+                            <div className="flex flex-wrap mt-2">
+                                <span className="inline-block overflow-hidden relative">
+                                    <span className="inline-block translate-y-[120%] word-reveal relative z-10 bg-accent-red text-white px-4 pb-2 pt-1">impossible to ignore.</span>
+                                </span>
+                            </div>
                         </h1>
-                    </motion.div>
+                    </div>
 
                     {/* Sub */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.15, delay: 0.1 }}
-                        className="max-w-2xl mb-12"
-                    >
+                    <div className="max-w-2xl mb-12 hero-sub opacity-100">
                         <p className="text-lg md:text-xl font-bold text-white/90 leading-snug border-l-4 border-accent-yellow pl-5">
                             The Brand Maniacs is an AI-powered growth studio building brands through strategy, storytelling, AI-powered production, and growth experiments.
                         </p>
-                    </motion.div>
+                    </div>
 
                     {/* CTAs */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.15, delay: 0.15 }}
-                        className="flex flex-col sm:flex-row items-start gap-4 mb-12"
-                    >
-                        <Button variant="inverted" size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                            Build My Growth System
-                            <ArrowRight className="w-5 h-5 ml-2" />
-                        </Button>
-                        <Button variant="outlineWhite" size="lg" href="/labs">
-                            Explore Technology ↗
-                        </Button>
-                    </motion.div>
+                    <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
+                        <div className="hero-cta opacity-100">
+                            <Button variant="inverted" size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                                Build My Growth System
+                                <ArrowRight className="w-5 h-5 ml-2" />
+                            </Button>
+                        </div>
+                        <div className="hero-cta opacity-100">
+                            <Button variant="outlineWhite" size="lg" href="/labs">
+                                Explore Technology ↗
+                            </Button>
+                        </div>
+                    </div>
 
                     {/* Social Proof Above the Fold */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.3, delay: 0.3 }}
-                        className="mb-20"
-                    >
+                    <div className="mb-20 hero-bottom opacity-100">
                         <p className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Trusted by 40+ brands generating ₹3.2Cr+ ad spend</p>
                         <div className="flex flex-wrap items-center gap-6 md:gap-10 opacity-60 mix-blend-screen">
                             {['Animoca', 'Sandbox', 'Monad', 'Blur', 'Immutable'].map((brand, i) => (
@@ -127,15 +153,10 @@ export function Hero() {
                                 </div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     {/* Bottom bar */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.15, delay: 0.2 }}
-                        className="grid grid-cols-2 md:grid-cols-4 gap-0 border-2 border-white/20 bg-white/10 max-w-3xl backdrop-blur-md"
-                    >
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-0 border-2 border-white/20 bg-white/10 max-w-3xl backdrop-blur-md hero-bottom opacity-100">
                         {[
                             { v: "Human", s: "Strategy First" },
                             { v: "AI", s: "Production Scale" },
@@ -147,7 +168,7 @@ export function Hero() {
                                 <div className="text-xs font-bold text-white/50 group-hover:text-black/70 uppercase tracking-widest">{item.s}</div>
                             </div>
                         ))}
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
