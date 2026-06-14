@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { ArrowRight, Image as ImageIcon, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { FadeUp } from "@/components/ui/FadeUp";
+import { useRef } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const caseStudies = [
     {
@@ -103,13 +106,53 @@ function BeforeAfterSlider() {
 }
 
 function CaseStudyCard({ cs, index }: { cs: typeof caseStudies[0], index: number }) {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const contentRef = useRef<HTMLDivElement>(null);
+
+    useGSAP(() => {
+        if (!cardRef.current || !contentRef.current) return;
+        
+        const xTo = gsap.quickTo(contentRef.current, "rotationY", { duration: 0.8, ease: "power3.out" });
+        const yTo = gsap.quickTo(contentRef.current, "rotationX", { duration: 0.8, ease: "power3.out" });
+
+        const handleMouseMove = (e: MouseEvent) => {
+            const rect = cardRef.current!.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width * 2 - 1;
+            const y = (e.clientY - rect.top) / rect.height * 2 - 1;
+
+            // Tilt limit: 3 degrees
+            xTo(x * 3);
+            yTo(-y * 3); 
+        };
+
+        const handleMouseLeave = () => {
+            xTo(0);
+            yTo(0);
+        };
+
+        const el = cardRef.current;
+        el.addEventListener("mousemove", handleMouseMove);
+        el.addEventListener("mouseleave", handleMouseLeave);
+
+        return () => {
+            el.removeEventListener("mousemove", handleMouseMove);
+            el.removeEventListener("mouseleave", handleMouseLeave);
+        };
+    }, []);
+
     return (
         <FadeUp
             delay={index * 0.05}
-            className="bg-background border-b-2 border-foreground last:border-b-0 grid grid-cols-1 lg:grid-cols-12"
+            className="border-b-2 border-foreground last:border-b-0"
         >
-            {/* Left accent */}
-            <div className={`lg:col-span-3 ${cs.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
+            <div ref={cardRef} style={{ perspective: "1500px" }}>
+                <div 
+                    ref={contentRef} 
+                    className="bg-background grid grid-cols-1 lg:grid-cols-12 will-change-transform"
+                    style={{ transformStyle: "preserve-3d" }}
+                >
+                    {/* Left accent */}
+                    <div className={`lg:col-span-3 ${cs.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
                 {cs.isTech && (
                     <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
                         Technology Lab
@@ -185,6 +228,8 @@ function CaseStudyCard({ cs, index }: { cs: typeof caseStudies[0], index: number
                     </div>
 
                 </div>
+            </div>
+            </div>
             </div>
         </FadeUp>
     );

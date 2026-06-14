@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { MagneticWrapper } from "@/components/animations/MagneticWrapper";
 
 export interface ButtonProps {
     variant?: "primary" | "secondary" | "outline" | "ghost" | "inverted" | "outlineWhite";
@@ -16,6 +17,7 @@ export interface ButtonProps {
     rel?: string;
     type?: "button" | "submit" | "reset";
     scrollTo?: string; // smooth-scroll to section id
+    isMagnetic?: boolean; // wraps button in MagneticWrapper
 }
 
 const baseStyles =
@@ -48,6 +50,7 @@ export function Button({
     rel,
     type = "button",
     scrollTo,
+    isMagnetic = false,
 }: ButtonProps) {
     const classes = cn(baseStyles, variants[variant], sizes[size], className);
 
@@ -60,26 +63,40 @@ export function Button({
         if (onClick) onClick();
     };
 
-    // External or internal link
-    if (href) {
-        return (
-            <motion.a
-                href={href}
-                target={target}
-                rel={rel}
-                className={classes}
-                whileTap={{ scale: 0.98 }}
-            >
-                {children}
-            </motion.a>
-        );
-    }
+    const renderButton = () => {
+        // External or internal link
+        if (href) {
+            return (
+                <motion.a
+                    href={href}
+                    target={target}
+                    rel={rel}
+                    className={classes}
+                    whileTap={{ scale: 0.98 }}
+                >
+                    {children}
+                </motion.a>
+            );
+        }
 
-    if (scrollTo) {
+        if (scrollTo) {
+            return (
+                <motion.button
+                    type="button"
+                    onClick={handleScrollTo}
+                    disabled={disabled}
+                    className={classes}
+                    whileTap={{ scale: 0.98 }}
+                >
+                    {children}
+                </motion.button>
+            );
+        }
+
         return (
             <motion.button
-                type="button"
-                onClick={handleScrollTo}
+                type={type}
+                onClick={onClick}
                 disabled={disabled}
                 className={classes}
                 whileTap={{ scale: 0.98 }}
@@ -87,17 +104,11 @@ export function Button({
                 {children}
             </motion.button>
         );
+    };
+
+    if (isMagnetic) {
+        return <MagneticWrapper intensity={0.2}>{renderButton()}</MagneticWrapper>;
     }
 
-    return (
-        <motion.button
-            type={type}
-            onClick={onClick}
-            disabled={disabled}
-            className={classes}
-            whileTap={{ scale: 0.98 }}
-        >
-            {children}
-        </motion.button>
-    );
+    return renderButton();
 }

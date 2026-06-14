@@ -7,6 +7,7 @@ import { CALENDLY_URL } from "@/lib/config";
 import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { LiquidBackground } from "@/components/animations/LiquidBackground";
 
 export function Hero() {
     const container = useRef<HTMLDivElement>(null);
@@ -49,36 +50,8 @@ export function Hero() {
 
     return (
         <section ref={container} className="relative min-h-[100vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-black">
-            {/* Animated Fluid Gradient Background */}
-            <div className="absolute inset-0 z-0 overflow-hidden bg-black pointer-events-none">
-                <motion.div 
-                    animate={{ 
-                        scale: [1, 1.2, 1],
-                        x: ['-10%', '10%', '-10%'],
-                        y: ['-10%', '10%', '-10%'],
-                    }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -top-[20%] -left-[10%] w-[70vw] h-[70vw] bg-accent-yellow/20 rounded-full mix-blend-screen blur-[120px]"
-                />
-                <motion.div 
-                    animate={{ 
-                        scale: [1, 1.3, 1],
-                        x: ['10%', '-10%', '10%'],
-                        y: ['10%', '-10%', '10%'],
-                    }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-                    className="absolute top-[20%] -right-[10%] w-[60vw] h-[60vw] bg-accent-red/20 rounded-full mix-blend-screen blur-[120px]"
-                />
-                <motion.div 
-                    animate={{ 
-                        scale: [1, 1.4, 1],
-                        x: ['0%', '20%', '0%'],
-                        y: ['20%', '0%', '20%'],
-                    }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "easeInOut", delay: 5 }}
-                    className="absolute -bottom-[20%] left-[20%] w-[80vw] h-[80vw] bg-foreground/50 rounded-full mix-blend-screen blur-[150px]"
-                />
-            </div>
+            {/* Interactive WebGL Liquid Background */}
+            <LiquidBackground />
 
             {/* Gradients & Vignette for Text Contrast */}
             <div className="absolute inset-0 z-0 bg-gradient-to-t from-black via-black/40 to-transparent pointer-events-none"></div>
@@ -130,13 +103,13 @@ export function Hero() {
                     {/* CTAs */}
                     <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
                         <div className="hero-cta opacity-100">
-                            <Button variant="inverted" size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
+                            <Button variant="inverted" size="lg" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" isMagnetic={true}>
                                 Build My Growth System
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Button>
                         </div>
                         <div className="hero-cta opacity-100">
-                            <Button variant="outlineWhite" size="lg" href="/labs">
+                            <Button variant="outlineWhite" size="lg" href="/labs" isMagnetic={true}>
                                 Explore Technology ↗
                             </Button>
                         </div>
