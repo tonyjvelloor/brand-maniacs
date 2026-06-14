@@ -65,3 +65,10 @@ body {
   background-color: var(--accent-yellow);
   color: #000000;
 }
+
+/* Hide default cursor on devices with mouse/trackpad */
+@media (pointer: fine) {
+  body, a, button, input, textarea, select {
+    cursor: none !important;
+  }
+}

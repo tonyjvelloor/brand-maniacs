@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
 import { Menu, X } from "lucide-react";
 import { CALENDLY_URL } from "@/lib/config";
+import { useRef } from "react";
 
 import { usePathname } from "next/navigation";
 
@@ -20,11 +21,28 @@ const navLinks = [
 export function Navbar() {
     const pathname = usePathname();
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
+    const lastScrollY = useRef(0);
 
     useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 50);
-        window.addEventListener("scroll", handleScroll);
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            // Apply background blur when scrolled past 50px
+            setIsScrolled(currentScrollY > 50);
+
+            // Hide navbar when scrolling down past 200px, reveal when scrolling up
+            if (currentScrollY > 200 && currentScrollY > lastScrollY.current) {
+                setIsHidden(true);
+            } else {
+                setIsHidden(false);
+            }
+
+            lastScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener("scroll", handleScroll, { passive: true });
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
@@ -42,9 +60,9 @@ export function Navbar() {
     return (
         <motion.header
             initial={{ y: -100 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.15 }}
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+            animate={{ y: isHidden ? -100 : 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`fixed top-0 left-0 right-0 z-[80] transition-colors duration-300 ${isScrolled
                 ? "bg-background/80 backdrop-blur-md border-b-2 border-foreground/10"
                 : "bg-transparent border-b-2 border-transparent"
                 }`}
@@ -100,6 +118,7 @@ export function Navbar() {
                             href={CALENDLY_URL}
                             target="_blank"
                             rel="noopener noreferrer"
+                            isMagnetic={true}
                         >
                             Free Audit
                         </Button>
