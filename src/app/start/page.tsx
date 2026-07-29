@@ -187,7 +187,7 @@ export default function StartProjectPage() {
                     {/* Question Area */}
                     <div className="flex-grow flex flex-col justify-center">
                         <AnimatePresence mode="wait">
-                            {!isComplete ? (
+                            {!isComplete && !showLeadCapture ? (
                                 <motion.div
                                     key={currentStep}
                                     initial={{ opacity: 0, x: 20 }}
