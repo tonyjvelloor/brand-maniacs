@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import posthog from 'posthog-js';
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const steps = [
