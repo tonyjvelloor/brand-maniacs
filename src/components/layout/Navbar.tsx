@@ -11,11 +11,11 @@ import { useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-    { label: "Work", href: "/work" },
-    { label: "Solutions", href: "/solutions" },
-    { label: "Process", href: "/process" },
-    { label: "Insights", href: "/insights" },
-    { label: "About", href: "/about" },
+    { label: "Work", href: "/#work" },
+    { label: "Solutions", href: "/#solutions" },
+    { label: "Process", href: "/#process" },
+    { label: "Insights", href: "/#insights" },
+    { label: "About", href: "/#meet-the-maniacs" },
 ];
 
 export function Navbar() {
