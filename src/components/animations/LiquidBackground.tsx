@@ -17,7 +17,7 @@ function AnimatedBlob({ color, position, scale, speed, distort }: any) {
     });
 
     return (
-        <Sphere ref={mesh} position={position} scale={scale} args={[1, 64, 64]}>
+        <Sphere ref={mesh} position={position} scale={scale} args={[1, 32, 32]}>
             <MeshDistortMaterial
                 color={color}
                 envMapIntensity={1}
@@ -35,7 +35,7 @@ function AnimatedBlob({ color, position, scale, speed, distort }: any) {
 export function LiquidBackground() {
     return (
         <div className="absolute inset-0 z-0 pointer-events-none opacity-40 mix-blend-screen blur-[40px]">
-            <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
+            <Canvas camera={{ position: [0, 0, 10], fov: 45 }} dpr={[1, 1.5]}>
                 <ambientLight intensity={2} />
                 <directionalLight position={[10, 10, 5]} intensity={2} />
                 <directionalLight position={[-10, -10, -5]} intensity={1} />

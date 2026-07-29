@@ -1,0 +1,43 @@
+"use client";
+
+import posthog from 'posthog-js';
+import { PostHogProvider as PHProvider } from 'posthog-js/react';
+import { useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+
+if (
+  typeof window !== 'undefined' && 
+  process.env.NEXT_PUBLIC_POSTHOG_KEY && 
+  process.env.NEXT_PUBLIC_POSTHOG_HOST
+) {
+  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+    person_profiles: 'identified_only',
+    capture_pageview: false, // Disable automatic pageview capture, as we capture manually
+    capture_pageleave: true,
+  });
+}
+
+export function PostHogProvider({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (pathname && posthog.__loaded) {
+      let url = window.origin + pathname;
+      if (searchParams?.toString()) {
+        url = url + `?${searchParams.toString()}`;
+      }
+
+      // Track Acquisition Events
+      const referrer = document.referrer;
+      posthog.capture('landing_page_viewed', {
+        $current_url: url,
+        referrer: referrer,
+        landing_page: pathname
+      });
+    }
+  }, [pathname, searchParams]);
+
+  return <PHProvider client={posthog}>{children}</PHProvider>;
+}

@@ -42,12 +42,12 @@ export function FinalCTA() {
                         </h2>
 
                         <p className="text-xl md:text-2xl font-bold text-white/80 mb-14 max-w-2xl leading-tight border-l-4 border-accent-yellow pl-5">
-                            Book a free 45-minute strategy call. We'll show you exactly what's holding your brand back — and what the first 30 days look like if we work together.
+                            In a 30-minute strategy session we'll identify your biggest growth bottleneck and outline practical next steps.
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 items-start mb-16">
-                            <Button variant="inverted" size="lg" className="min-w-[300px]" href={CALENDLY_URL} target="_blank" rel="noopener noreferrer">
-                                Book Strategy Call — Free
+                            <Button size="lg" href="/book" className="bg-accent-yellow text-black border-background hover:bg-background hover:text-foreground">
+                                Book Strategy Session
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Button>
                             <Button variant="outlineWhite" size="lg" className="min-w-[260px]" href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">

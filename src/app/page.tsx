@@ -1,12 +1,14 @@
 import { Hero } from "@/components/sections/Hero";
 import { TheBrokenModel } from "@/components/sections/TheBrokenModel";
-import { FounderSection } from "@/components/sections/FounderSection";
-import { TheManiacMethod } from "@/components/sections/TheManiacMethod";
-import { WorkShowcase } from "@/components/sections/WorkShowcase";
-import { GrowthSystems } from "@/components/sections/GrowthSystems";
+import { MeetTheManiacs } from "@/components/sections/MeetTheManiacs";
+import { OurSystem } from "@/components/sections/OurSystem";
+import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
+import { Solutions } from "@/components/sections/Solutions";
+import { Insights } from "@/components/sections/Insights";
+import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
-import { EngagementModels } from "@/components/sections/EngagementModels";
+import { ProjectEstimatorTeaser } from "@/components/sections/ProjectEstimatorTeaser";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { Metadata } from "next";
@@ -25,26 +27,32 @@ export default function Home() {
       {/* 2. The Broken Model — Traditional vs Maniac Method */}
       <TheBrokenModel />
 
-      {/* 3. The Maniac Method — IP Breakdown */}
-      <TheManiacMethod />
+      {/* 3. Methodology — Discover, Design, Build, Grow */}
+      <OurSystem />
 
-      {/* 4. Founder — Tony Joseph + operating beliefs */}
-      <FounderSection />
+      {/* 4. Meet The Maniacs (Founder/Team) */}
+      <MeetTheManiacs />
 
-      {/* 5. Work — Problem → System Built → Outcome/Learning */}
-      <WorkShowcase />
+      {/* 5. Results (Case Studies) — Headline Metric → Before → Process → After */}
+      <ResultsShowcase />
 
-      {/* 6. Systems — Brand Foundation, Attention, Conversion, Growth Experiments */}
-      <GrowthSystems />
+      {/* 6. Capabilities / Solutions */}
+      <Solutions />
 
-      {/* 7. Intentionally Small — Proof + positioning */}
+      {/* 7. Why Choose Us */}
+      <WhyChooseUs />
+
+      {/* 8. Intentionally Small — Proof + positioning */}
       <IntentionallySmall />
+
+      {/* 9. Insights */}
+      <Insights />
 
       {/* 8. Process — How we work */}
       <Process />
 
-      {/* 9. Engagement Models / Pricing */}
-      <EngagementModels />
+      {/* 10. Start Your Project Teaser */}
+      <ProjectEstimatorTeaser />
 
       {/* 9. Final CTA */}
       <FinalCTA />

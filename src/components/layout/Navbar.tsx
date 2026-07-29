@@ -5,17 +5,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { Menu, X } from "lucide-react";
-import { CALENDLY_URL } from "@/lib/config";
+import { Menu, X, ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
 import { usePathname } from "next/navigation";
 
 const navLinks = [
     { label: "Work", href: "/work" },
-    { label: "Labs", href: "/labs" },
+    { label: "Solutions", href: "/solutions" },
+    { label: "Process", href: "/process" },
+    { label: "Insights", href: "/insights" },
     { label: "About", href: "/about" },
-    { label: "Approach", href: "/approach" },
 ];
 
 export function Navbar() {
@@ -115,12 +115,10 @@ export function Navbar() {
                         <Button
                             variant="primary"
                             size="sm"
-                            href={CALENDLY_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/book"
                             isMagnetic={true}
                         >
-                            Free Audit
+                            Book Strategy Session
                         </Button>
                     </div>
                 </nav>
@@ -191,12 +189,10 @@ export function Navbar() {
                                 <Button
                                     variant="primary"
                                     size="lg"
-                                    href={CALENDLY_URL}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                    href="/book"
                                     className="w-full"
                                 >
-                                    Free Audit
+                                    Book Strategy Session
                                 </Button>
                             </motion.div>
                         </div>

@@ -34,9 +34,7 @@ export function IntentionallySmall() {
                             Every brand we take on gets real thinking from senior people, not templated campaigns handed to a junior executive who joined last month.
                         </p>
                         <Button
-                            href={CALENDLY_URL}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href="/book"
                             className="bg-accent-yellow text-black border-black"
                             size="lg"
                         >

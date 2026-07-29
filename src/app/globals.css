@@ -72,3 +72,25 @@ body {
     cursor: none !important;
   }
 }
+
+@media print {
+  /* Reset background and colors for printing */
+  body {
+    background-color: white !important;
+    color: black !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide navigation, footers, custom cursor and interactive elements */
+  nav, footer, .custom-cursor, .whatsapp-cta {
+    display: none !important;
+  }
+
+  /* When printing, hide all main layout children unless they are the specific print container */
+  main > div:not(.print\:block) {
+    display: none !important;
+  }
+}

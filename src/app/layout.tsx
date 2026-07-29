@@ -18,6 +18,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppCTA } from "@/components/ui/WhatsAppCTA";
 import { CustomCursor } from "@/components/ui/CustomCursor";
+import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebrandmaniacs.online'),
@@ -48,15 +49,18 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
+        suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased selection:bg-accent-yellow selection:text-black min-h-screen flex flex-col font-mono text-foreground bg-background`}
       >
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-1 flex flex-col">
-          {children}
-        </main>
-        <Footer />
-        <WhatsAppCTA />
+        <PostHogProvider>
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-1 flex flex-col">
+            {children}
+          </main>
+          <Footer />
+          <WhatsAppCTA />
+        </PostHogProvider>
       </body>
     </html>
   );

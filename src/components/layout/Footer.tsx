@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CALENDLY_URL, WHATSAPP_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/config";
+import { WHATSAPP_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/config";
 
 export function Footer() {
     return (
@@ -58,9 +58,9 @@ export function Footer() {
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">About The Founder</Link></li>
                             <li><Link href="/ai-growth-audit" className="text-accent-red hover:bg-accent-red hover:text-white p-1 -ml-1 transition-none border-2 border-transparent hover:border-accent-red inline-block mt-2">Apply for Free Audit</Link></li>
                             <li className="pt-2">
-                                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="bg-foreground text-background px-4 py-2 inline-block hover:bg-accent-yellow hover:text-black transition-none">
+                                <Link href="/book" className="bg-foreground text-background px-4 py-2 inline-block hover:bg-accent-yellow hover:text-black transition-none">
                                     Build My Growth System →
-                                </a>
+                                </Link>
                             </li>
                         </ul>
                     </div>

@@ -32,7 +32,7 @@ export function TheBrokenModel() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 border-2 border-background relative">
                     
                     {/* Desktop VS badge */}
-                    <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-accent-yellow border-2 border-black items-center justify-center font-heading font-black text-black z-10 uppercase text-xl">
+                    <div className="hidden md:flex absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-accent-yellow border-2 border-black items-center justify-center font-heading font-black text-black z-20 uppercase text-xl">
                         VS
                     </div>
 
