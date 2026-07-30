@@ -37,7 +37,7 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Left: Traditional Marketing */}
-                    <div className="bg-foreground text-background p-6 sm:p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background relative grayscale opacity-40">
+                    <div className="bg-foreground text-background p-6 sm:p-8 md:p-12 border-b-2 md:border-b-0 md:border-r-2 border-background relative grayscale opacity-40 scroll-fade">
                         <h3 className="font-heading text-2xl font-black uppercase mb-8 opacity-60 flex items-center gap-3">
                             <span className="w-3 h-3 bg-background rounded-full"></span>
                             Traditional Marketing
@@ -65,7 +65,7 @@ export function TheBrokenModel() {
                     </div>
 
                     {/* Right: The Maniac Method */}
-                    <div className="bg-background text-foreground p-6 sm:p-8 md:p-12 border-2 border-accent-yellow brutalist-shadow z-10 relative">
+                    <div className="bg-background text-foreground p-6 sm:p-8 md:p-12 border-2 border-accent-yellow brutalist-shadow z-10 relative scroll-reveal">
                         <h3 className="font-heading text-2xl md:text-3xl font-black uppercase mb-8 text-accent-red flex items-center gap-3">
                             <span className="w-4 h-4 bg-accent-red animate-pulse rounded-full shadow-[0_0_10px_rgba(255,0,0,0.8)]"></span>
                             The Maniac Method

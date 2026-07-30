@@ -1,16 +1,8 @@
 "use client";
 
-import { useRef } from "react";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { FadeUp } from "@/components/ui/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
-
-if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger, useGSAP);
-}
 
 const solutions = [
     {
@@ -64,9 +56,10 @@ interface SolutionCardProps {
 function SolutionCard({ s, index }: SolutionCardProps) {
     return (
         <div
-            className={`bento-card opacity-0 bg-background p-10 border-r-2 border-b-2 border-foreground/30 group hover:border-foreground hover:-translate-y-[3px] transition-all duration-200 relative ${
+            className={`bento-card squircle scroll-reveal bg-background p-10 border-r-2 border-b-2 border-foreground/30 hover:border-foreground hover:-translate-y-[3px] transition-all duration-300 relative group ${
                 s.featured ? "md:col-span-2 lg:col-span-2" : "md:col-span-1 lg:col-span-1"
             }`}
+            style={{ animationDelay: `${index * 0.1}s` }}
         >
             {s.featured && (
                 <div className="absolute -top-4 left-10 bg-accent-yellow text-black font-black text-xs px-4 py-1.5 border-2 border-foreground uppercase tracking-widest z-10">
@@ -108,28 +101,8 @@ function SolutionCard({ s, index }: SolutionCardProps) {
 }
 
 export function Solutions() {
-    const container = useRef<HTMLDivElement>(null);
-
-    useGSAP(() => {
-        gsap.fromTo(".bento-card", 
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.6,
-                stagger: 0.1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".bento-grid",
-                    start: "top bottom-=100",
-                    once: true
-                }
-            }
-        );
-    }, { scope: container });
-
     return (
-        <section ref={container} className="py-24 bg-background border-b-2 border-foreground" id="solutions">
+        <section className="py-24 bg-background border-b-2 border-foreground" id="solutions">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="max-w-6xl mx-auto">
 
@@ -152,7 +125,7 @@ export function Solutions() {
                     </FadeUp>
 
                     {/* Systems Bento Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground grid-flow-row-dense bento-grid">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-2 border-foreground bg-foreground grid-flow-row-dense bento-grid has-[.bento-card:hover]:[.bento-card:not(:hover)]:opacity-50 has-[.bento-card:hover]:[.bento-card:not(:hover)]:blur-sm transition-all duration-300">
                         {solutions.map((s, i) => (
                             <SolutionCard key={i} s={s} index={i} />
                         ))}

@@ -129,7 +129,7 @@ function ResultCard({ data, index }: { data: typeof resultsData[0], index: numbe
     return (
         <FadeUp
             delay={index * 0.05}
-            className="border-b-2 border-foreground last:border-b-0"
+            className="border-b-2 border-foreground last:border-b-0 result-card transition-all duration-300"
         >
             <div ref={cardRef} style={{ perspective: "1500px" }}>
                 <div 
@@ -247,7 +247,7 @@ export function ResultsShowcase() {
                     </FadeUp>
 
                     {/* Case Study Cards */}
-                    <div className="space-y-0 border-2 border-foreground bg-foreground">
+                    <div className="space-y-0 border-2 border-foreground bg-foreground result-card-container has-[.result-card:hover]:[.result-card:not(:hover)]:opacity-50 has-[.result-card:hover]:[.result-card:not(:hover)]:blur-sm transition-all duration-300">
                         {resultsData.map((data, i) => (
                             <ResultCard key={i} data={data} index={i} />
                         ))}
