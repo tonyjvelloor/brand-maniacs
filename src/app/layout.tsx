@@ -52,6 +52,42 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased selection:bg-accent-yellow selection:text-black min-h-screen flex flex-col font-mono text-foreground bg-background`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.thebrandmaniacs.online/#organization",
+                  "name": "The Brand Maniacs",
+                  "url": "https://www.thebrandmaniacs.online",
+                  "logo": "https://www.thebrandmaniacs.online/icon.png",
+                  "sameAs": [
+                    "https://www.linkedin.com/company/thebrandmaniacs",
+                    "https://www.instagram.com/thebrandmaniacs"
+                  ],
+                  "description": "An AI-powered Creative Technology Studio engineering growth for ambitious D2C, SaaS, and E-commerce brands."
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": "https://www.thebrandmaniacs.online/#professionalservice",
+                  "name": "The Brand Maniacs",
+                  "url": "https://www.thebrandmaniacs.online",
+                  "description": "We combine human strategy, AI-powered production, and growth experiments to build brands people can't ignore.",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "addressCountry": "IN"
+                  },
+                  "priceRange": "$$$"
+                }
+              ]
+            })
+          }}
+        />
         <PostHogProvider>
           <CustomCursor />
           <Navbar />

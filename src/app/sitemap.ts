@@ -9,28 +9,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: 'https://www.thebrandmaniacs.online/work',
+      url: 'https://www.thebrandmaniacs.online/book',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: 'https://www.thebrandmaniacs.online/labs',
+      url: 'https://www.thebrandmaniacs.online/start',
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.thebrandmaniacs.online/about',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://www.thebrandmaniacs.online/approach',
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.9,
     },
   ];
 }
