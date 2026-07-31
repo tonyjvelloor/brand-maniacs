@@ -29,7 +29,30 @@ const resultsData = [
             { label: "Capability", value: "Revenue OS", width: "100%" }
         ],
         outcome: "Built the Revenue Operating System for flexible workspaces. Proof that we don't just design websites—we build and scale real products.",
-        isTech: true
+        badgeText: "Flagship Product"
+    },
+    {
+        headlineMetric: "Live",
+        headlineLabel: "Product",
+        client: "CouponHub.store",
+        category: "Consumer Marketplace · Savings Platform",
+        accentColor: "bg-accent-blue",
+        accentText: "text-white",
+        problem: "Consumers were frustrated by outdated coupons, intrusive advertising, and unreliable savings platforms. The objective was to build a premium destination where shoppers could quickly discover verified deals from leading brands.",
+        systemBuilt: [
+            "Designed and developed a high-performance platform using Next.js",
+            "Built an SEO-first architecture for long-term organic growth",
+            "Created a premium dark-mode shopping experience",
+            "Developed intelligent merchant categorisation and coupon discovery",
+            "Engineered a scalable foundation for affiliate commerce"
+        ],
+        metrics: [
+            { label: "Capabilities", value: "Aggregator Engine", width: "100%" },
+            { label: "SEO", value: "Programmatic", width: "85%" }
+        ],
+        outcome: "CouponHub demonstrates our ability to take a product from concept to launch by combining product strategy, branding, UX, engineering, SEO, and growth infrastructure into a single platform.",
+        badgeText: "Built & Operated by The Brand Maniacs",
+        link: "https://www.couponhub.store/"
     },
     {
         headlineMetric: "+120%",
@@ -87,7 +110,7 @@ const resultsData = [
             { label: "Testing Speed", value: "Days → Hours", width: "90%" }
         ],
         outcome: "Replaced a ₹50,000 physical shoot with infinite creative variations. Allowed the brand to run a 20-variant creative testing sprint at a fraction of the cost.",
-        isTech: true
+        badgeText: "Technology Lab"
     },
 ];
 
@@ -140,9 +163,9 @@ function ResultCard({ data, index }: { data: typeof resultsData[0], index: numbe
                 >
                     {/* Left Accent - Massive Number Focus */}
                     <div className={`lg:col-span-4 ${data.accentColor} p-8 flex flex-col justify-between border-r-2 lg:border-b-0 border-b-2 border-foreground relative`}>
-                        {data.isTech && (
-                            <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-                                Technology Lab
+                        {(data as any).badgeText && (
+                            <div className="absolute top-4 right-4 bg-accent-yellow text-black px-2 py-1 text-[10px] font-black uppercase tracking-widest border-2 border-foreground shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] text-right max-w-[200px]">
+                                {(data as any).badgeText}
                             </div>
                         )}
                         <div>
@@ -205,9 +228,17 @@ function ResultCard({ data, index }: { data: typeof resultsData[0], index: numbe
                             </div>
 
                             {/* Outcome Box */}
-                            <div className="md:col-span-2 bg-accent-yellow text-black p-6 border-2 border-black">
-                                <span className="text-xs font-black uppercase tracking-widest opacity-60 block mb-2 border-l-2 border-black pl-3">After</span>
-                                <p className="font-bold text-sm md:text-base leading-snug">{data.outcome}</p>
+                            <div className="md:col-span-2 bg-accent-yellow text-black p-6 border-2 border-black flex flex-col justify-between items-start gap-6">
+                                <div>
+                                    <span className="text-xs font-black uppercase tracking-widest opacity-60 block mb-2 border-l-2 border-black pl-3">After</span>
+                                    <p className="font-bold text-sm md:text-base leading-snug">{data.outcome}</p>
+                                </div>
+                                {(data as any).link && (
+                                    <a onClick={(e) => e.stopPropagation()} href={(data as any).link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border-2 border-black px-6 py-3 font-black text-sm uppercase tracking-widest hover:bg-black hover:text-accent-yellow transition-none group/btn">
+                                        Explore {data.client.split('.')[0]}
+                                        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                                    </a>
+                                )}
                             </div>
 
                         </div>
