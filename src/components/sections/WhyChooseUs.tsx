@@ -44,7 +44,7 @@ export function WhyChooseUs() {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                                 <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter text-background leading-[0.95]">
                                     Why Companies<br />
-                                    <span className="text-accent-yellow">Choose Us.</span>
+                                    <span className="text-accent-blue">Choose Us.</span>
                                 </h2>
                                 <div>
                                     <p className="text-lg font-bold text-background opacity-80 leading-snug mb-4">

@@ -20,7 +20,7 @@ export function ProjectEstimatorTeaser() {
                         
                         <h2 className="font-heading text-4xl md:text-6xl font-black uppercase tracking-tighter leading-[0.95] mb-6">
                             What would your <br />
-                            <span className="text-accent-yellow">growth project</span> look like?
+                            <span className="text-accent-red">growth project</span> look like?
                         </h2>
                         
                         <p className="text-lg font-bold opacity-80 leading-snug mb-10 max-w-2xl mx-auto">
