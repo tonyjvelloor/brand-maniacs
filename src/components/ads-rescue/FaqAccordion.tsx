@@ -22,7 +22,7 @@ const FAQS: FAQItem[] = [
   },
   {
     question: "Do I need to give full access to my ad account?",
-    answer: "No. We request only read-only / viewer level access, or you can simply screen-share and walk through the numbers with us during the live session. We never ask for admin credentials or billing control."
+    answer: "No. We request only read-only / viewer level access so that our team can check all of the details. We never ask for admin credentials or billing control."
   },
   {
     question: "Will you manage my ads after the session?",
