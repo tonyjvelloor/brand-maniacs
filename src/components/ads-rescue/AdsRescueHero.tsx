@@ -104,7 +104,7 @@ export function AdsRescueHero({ onOpenCheckout }: AdsRescueHeroProps) {
               </span>
               <span>·</span>
               <span>
-                Regular Value: <del className="text-foreground/40">₹7,500</del>
+                Standard Price: <del className="text-foreground/40">₹7,500</del>
               </span>
             </div>
 

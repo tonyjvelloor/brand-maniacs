@@ -50,7 +50,7 @@ export function FaqAccordion({ onOpenCheckout }: FaqAccordionProps) {
   };
 
   const handleCTAClick = () => {
-    trackCTAClick("faq_cta", "Book My Ads Rescue — ₹1,499");
+    trackCTAClick("faq_cta", "Book My Ads Rescue — ₹2,499");
     if (onOpenCheckout) {
       onOpenCheckout();
     } else {
@@ -128,7 +128,7 @@ export function FaqAccordion({ onOpenCheckout }: FaqAccordionProps) {
               Ready to stop leaking ad budget?
             </h4>
             <p className="font-sans text-xs sm:text-sm text-[#111111]/70">
-              Get your 60-minute diagnostic session booked today for just ₹2,499 (Normally ₹7,500).
+              Get your 60-minute diagnostic session booked today for just ₹2,499 (Standard Price: ₹7,500).
             </p>
           </div>
 

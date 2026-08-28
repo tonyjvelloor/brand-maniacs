@@ -4,9 +4,8 @@ import { useState, useEffect } from "react";
 import { AdsRescueHeader } from "@/components/ads-rescue/AdsRescueHeader";
 import { AdsRescueHero } from "@/components/ads-rescue/AdsRescueHero";
 import { ProblemRecognition } from "@/components/ads-rescue/ProblemRecognition";
-import { ScorecardFramework } from "@/components/ads-rescue/ScorecardFramework";
-import { InteractiveScorecardCalculator } from "@/components/ads-rescue/InteractiveScorecardCalculator";
 import { DiagnosticGrid } from "@/components/ads-rescue/DiagnosticGrid";
+import { ExampleHealthScore } from "@/components/ads-rescue/ExampleHealthScore";
 import { HowItWorks } from "@/components/ads-rescue/HowItWorks";
 import { AntiAgency } from "@/components/ads-rescue/AntiAgency";
 import { QualificationSplit } from "@/components/ads-rescue/QualificationSplit";
@@ -33,43 +32,40 @@ export function AdsRescueLandingClient() {
 
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-foreground flex flex-col font-mono selection:bg-accent-yellow selection:text-black">
-      {/* 1. Distraction-Free Header with Sticky CTA */}
+      {/* Distraction-Free Header with Sticky CTA */}
       <AdsRescueHeader onOpenCheckout={openCheckout} />
 
-      {/* 2. Section 1 — Hero with Leaking Budget Visual & Strict Qualification */}
+      {/* 1. HERO — Before you spend another ₹10,000 on ads + Leaking budget simulation */}
       <AdsRescueHero onOpenCheckout={openCheckout} />
 
-      {/* 3. Section 2 — Problem Recognition (4 Patterns of Failure) */}
+      {/* 2. PROBLEM RECOGNITION — 4 Patterns of Failure */}
       <ProblemRecognition />
 
-      {/* 4. Section 3 — The 25-Point Scorecard Methodology & STOP/FIX/TEST/SCALE Matrix */}
-      <ScorecardFramework />
-
-      {/* 5. Section 4 — Interactive Health Score Simulator */}
-      <InteractiveScorecardCalculator onOpenCheckout={openCheckout} />
-
-      {/* 6. Section 5 — The 6 Forensic Investigation Areas */}
+      {/* 3. THE 5-POINT AD SPEND HEALTH CHECK — Attract, Convince, Convert, Track, Scale */}
       <DiagnosticGrid />
 
-      {/* 7. Section 6 — How It Works (The 4-Step Protocol) */}
+      {/* 4. EXAMPLE AD SPEND HEALTH SCORE — Signature Visual Proof Output */}
+      <ExampleHealthScore onOpenCheckout={openCheckout} />
+
+      {/* 5. HOW THE DIAGNOSIS WORKS — The 4-Step Protocol */}
       <HowItWorks />
 
-      {/* 8. Section 7 — The Anti-Agency Section (Radical Transparency & Fit) */}
+      {/* 6. WHY THIS IS NOT A SALES PITCH — Anti-Agency Radical Transparency */}
       <AntiAgency />
 
-      {/* 9. Section 8 — Who It's For vs NOT For (Split Screen) */}
+      {/* 7. WHO THIS IS FOR vs NOT FOR — Split Screen Qualification Filter */}
       <QualificationSplit onOpenCheckout={openCheckout} />
 
-      {/* 10. Section 9 — The Offer Card (7 Deliverables + ₹9,000 Tangible Value Stack) */}
+      {/* 8. WHAT YOU ACTUALLY WALK AWAY WITH & ₹2,499 LAUNCH OFFER */}
       <OfferCard onOpenCheckout={openCheckout} />
 
-      {/* 11. Section 10 — FAQ (6 Objections Crusher) */}
+      {/* 9. FAQ — 6 Objections Crusher + WhatsApp Desk */}
       <FaqAccordion onOpenCheckout={openCheckout} />
 
-      {/* 12. Distraction-Free Brand Maniacs Footer */}
+      {/* 10. Minimalist Brand Maniacs Footer */}
       <AdsRescueFooter />
 
-      {/* 13. Seamless Razorpay / Sandbox Checkout Modal */}
+      {/* 11. Razorpay / Sandbox Checkout Modal */}
       <RazorpayCheckoutModal
         isOpen={isCheckoutOpen}
         onClose={closeCheckout}

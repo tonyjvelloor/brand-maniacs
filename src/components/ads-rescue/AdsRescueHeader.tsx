@@ -28,7 +28,7 @@ export function AdsRescueHeader({ onOpenCheckout }: AdsRescueHeaderProps) {
         <span>For businesses spending ₹25,000+/mo on Google or Meta Ads</span>
         <span className="hidden md:inline text-black/60">·</span>
         <span className="hidden md:inline">
-          Normally <del className="text-black/60">₹7,500</del> · Launch Offer: <strong className="bg-black text-accent-yellow px-1.5 py-0.5">₹2,499</strong>
+          Standard Price: <del className="text-black/60">₹7,500</del> · Launch Offer: <strong className="bg-black text-accent-yellow px-1.5 py-0.5">₹2,499</strong>
         </span>
       </div>
 
