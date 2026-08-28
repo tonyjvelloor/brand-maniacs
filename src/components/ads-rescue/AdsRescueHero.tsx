@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, AlertOctagon } from "lucide-react";
+import { ArrowRight, CheckCircle2, Calendar, XCircle, ShieldCheck, AlertOctagon } from "lucide-react";
 import { trackCTAClick } from "@/lib/tracking";
-import { LeakingBudgetVisual } from "./LeakingBudgetVisual";
+import { HeroVisualInteractive } from "./HeroVisualInteractive";
 
 interface AdsRescueHeroProps {
   onOpenCheckout: () => void;
@@ -16,146 +16,106 @@ export function AdsRescueHero({ onOpenCheckout }: AdsRescueHeroProps) {
   };
 
   return (
-    <section className="relative pt-8 pb-16 md:pt-14 md:pb-24 bg-[#0A0A0A] text-foreground border-b-2 border-foreground/15 overflow-hidden">
+    <section className="relative pt-6 pb-14 md:pt-12 md:pb-20 bg-[#0A0A0A] text-foreground border-b-2 border-foreground/15 overflow-hidden">
       {/* Background Ambience Glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-accent-yellow/5 blur-[120px] pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
-        {/* Core Headline & Narrative Box */}
-        <div className="max-w-5xl mx-auto text-center space-y-6 md:space-y-8">
+        {/* 2-Column Desktop Grid Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center max-w-7xl mx-auto">
           
-          {/* Overline Tag */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4 }}
-            className="inline-flex items-center gap-2 bg-[#1A1A1A] border-2 border-foreground/20 px-3.5 py-1.5 text-xs font-mono font-bold uppercase tracking-wider text-accent-yellow"
-          >
-            <span className="w-2 h-2 rounded-full bg-accent-red animate-ping" />
-            <span>FOR BUSINESSES SPENDING ₹25,000+/MONTH ON ADS</span>
-          </motion.div>
-
-          {/* Main Headline — Simple, instant business clarity */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="font-heading font-black text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tighter uppercase leading-[1.05] text-foreground"
-          >
-            Spending money on ads <br className="hidden sm:block" />
-            but not getting the <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">results you expected?</span>
-          </motion.h1>
-
-          {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-sans text-lg sm:text-2xl md:text-3xl font-bold tracking-tight text-foreground/90 max-w-3xl mx-auto leading-tight"
-          >
-            Find out what went wrong with the money you've already spent.
-          </motion.p>
-
-          {/* Supporting Clarifier */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.25 }}
-            className="font-sans text-sm sm:text-base text-foreground/75 max-w-2xl mx-auto leading-relaxed font-medium"
-          >
-            We'll look at your Google or Meta Ads, find the biggest problems, and show you what to fix first.
-          </motion.p>
-
-          {/* Primary CTA & Microcopy */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="pt-2 flex flex-col items-center justify-center gap-3"
-          >
-            <button
-              type="button"
-              onClick={handleCTAClick}
-              className="w-full sm:w-auto min-w-[320px] sm:min-w-[420px] bg-accent-yellow text-black hover:bg-white border-2 border-black font-heading font-black uppercase text-base sm:text-xl py-4 sm:py-5 px-8 tracking-wider brutalist-shadow transition-all hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0_0_#F0F0F0] active:translate-x-0 active:translate-y-0 active:shadow-none flex items-center justify-center gap-3 cursor-pointer group"
+          {/* Left Column: Core Narrative & Conversion Triggers */}
+          <div className="lg:col-span-7 space-y-5 sm:space-y-6 text-left">
+            
+            {/* Overline Qualification Pill */}
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 bg-accent-yellow text-black border-2 border-black px-3.5 py-1 text-xs font-mono font-black uppercase tracking-wider shadow-[3px_3px_0_0_#FFE600]"
             >
-              <span>GET YOUR ADS CHECKED — ₹2,499</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
-            </button>
+              <span className="w-2 h-2 rounded-full bg-accent-red animate-ping" />
+              <span>FOR BUSINESSES SPENDING ₹25,000+/MONTH ON ADS</span>
+            </motion.div>
 
-            {/* Direct Qualification Subtext Under CTA */}
-            <p className="font-mono text-xs sm:text-sm font-bold text-accent-yellow">
-              For businesses already spending ₹25,000+/month on Google or Meta Ads.
-            </p>
+            {/* Main Headline — High Emotional Impact */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl tracking-tighter uppercase leading-[1.05] text-foreground"
+            >
+              SPENDING MONEY ON ADS <br />
+              BUT NOT GETTING THE <br />
+              <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">
+                RESULTS YOU EXPECTED?
+              </span>
+            </motion.h1>
 
-            {/* Microcopy & Price Anchor */}
-            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-mono font-bold text-foreground/60 pt-1">
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                One-time payment
-              </span>
+            {/* Subtitle & Value Proposition */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-sans text-sm sm:text-base md:text-lg text-foreground/85 font-medium leading-relaxed max-w-xl"
+            >
+              We'll analyse your Google or Meta Ads, find the biggest problems, and show you exactly what to fix first.
+            </motion.p>
+
+            {/* Primary Action Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="space-y-3 pt-1"
+            >
+              <button
+                type="button"
+                onClick={handleCTAClick}
+                className="w-full sm:w-auto bg-accent-yellow text-black hover:bg-white border-2 border-black font-heading font-black uppercase text-base sm:text-xl py-4 sm:py-4.5 px-8 tracking-wider brutalist-shadow transition-all hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0_0_#F0F0F0] active:translate-x-0 active:translate-y-0 flex items-center justify-center gap-3 cursor-pointer group"
+              >
+                <span>GET YOUR ADS CHECKED — ₹2,499</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" />
+              </button>
+
+              {/* 3 Trust Badges (From Mockup) */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] font-mono text-foreground/80 pt-1">
+                <div className="flex items-center gap-1.5 bg-[#141414] border border-foreground/15 px-2.5 py-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-accent-yellow shrink-0" />
+                  <span>One-time payment</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-[#141414] border border-foreground/15 px-2.5 py-1.5">
+                  <XCircle className="w-3.5 h-3.5 text-accent-red shrink-0" />
+                  <span>No monthly commitment</span>
+                </div>
+                <div className="flex items-center gap-1.5 bg-[#141414] border border-foreground/15 px-2.5 py-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-green-400 shrink-0" />
+                  <span>60-Min Strategy Session</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Standard Price Anchor Note */}
+            <div className="text-xs font-mono text-foreground/60 pt-1 flex items-center gap-2">
+              <span>Standard Price: <del className="text-foreground/40">₹7,500</del></span>
               <span>·</span>
-              <span className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                No monthly commitment
-              </span>
-              <span>·</span>
-              <span>
-                Standard Price: <del className="text-foreground/40">₹7,500</del>
-              </span>
+              <span className="text-accent-yellow font-bold">Save ₹5,000 during Launch</span>
             </div>
 
-            {/* The Buyer Psychology Callout */}
-            <div className="bg-[#141414] border border-foreground/15 px-4 py-2 mt-1 text-[11px] font-mono text-foreground/75 max-w-lg mx-auto">
-              💡 <span className="text-foreground font-bold">The ROI Reality:</span> If ₹2,499 helps you plug even one recurring leak in your monthly ad budget, this diagnostic pays for itself on day one.
-            </div>
-          </motion.div>
+          </div>
 
-          {/* Qualification Callout Banner */}
+          {/* Right Column: High-Impact Visual Overlay */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.35 }}
-            className="bg-[#141414] border-2 border-foreground/20 p-4 sm:p-5 max-w-3xl mx-auto text-left"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-5"
           >
-            <div className="flex items-center gap-2 mb-3 text-accent-yellow font-mono text-xs font-black uppercase tracking-widest">
-              <AlertOctagon className="w-4 h-4 text-accent-red" />
-              <span>Strict Qualification Notice</span>
-            </div>
-            <p className="text-xs sm:text-sm font-sans font-bold text-foreground/90 mb-2">
-              This diagnostic session is exclusively for businesses that are:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-mono text-foreground/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-accent-yellow shrink-0" />
-                <span>Spending ₹25,000+/month on ads</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-accent-yellow shrink-0" />
-                <span>Running Google Ads, Meta Ads, or both</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-accent-yellow shrink-0" />
-                <span>Already experiencing poor or stagnant results</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-accent-yellow shrink-0" />
-                <span>Wanting to understand what is actually wrong</span>
-              </div>
-            </div>
+            <HeroVisualInteractive />
           </motion.div>
 
         </div>
-
-        {/* Leaking Budget Simulation Graphic */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-12 md:mt-16 max-w-5xl mx-auto"
-        >
-          <LeakingBudgetVisual />
-        </motion.div>
 
       </div>
     </section>
