@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { AdsRescueHeader } from "@/components/ads-rescue/AdsRescueHeader";
 import { AdsRescueHero } from "@/components/ads-rescue/AdsRescueHero";
 import { ProblemRecognition } from "@/components/ads-rescue/ProblemRecognition";
+import { ScorecardFramework } from "@/components/ads-rescue/ScorecardFramework";
+import { InteractiveScorecardCalculator } from "@/components/ads-rescue/InteractiveScorecardCalculator";
 import { DiagnosticGrid } from "@/components/ads-rescue/DiagnosticGrid";
 import { HowItWorks } from "@/components/ads-rescue/HowItWorks";
 import { AntiAgency } from "@/components/ads-rescue/AntiAgency";
@@ -34,34 +36,40 @@ export function AdsRescueLandingClient() {
       {/* 1. Distraction-Free Header with Sticky CTA */}
       <AdsRescueHeader onOpenCheckout={openCheckout} />
 
-      {/* 2. Section 1 — Hero with Leaking Budget Visual & Qualification */}
+      {/* 2. Section 1 — Hero with Leaking Budget Visual & Strict Qualification */}
       <AdsRescueHero onOpenCheckout={openCheckout} />
 
-      {/* 3. Section 2 — Problem Recognition (4 Statements) */}
+      {/* 3. Section 2 — Problem Recognition (4 Patterns of Failure) */}
       <ProblemRecognition />
 
-      {/* 4. Section 3 — The Mechanism: The Ads Rescue Method (2x3 Grid) */}
+      {/* 4. Section 3 — The 25-Point Scorecard Methodology & STOP/FIX/TEST/SCALE Matrix */}
+      <ScorecardFramework />
+
+      {/* 5. Section 4 — Interactive Health Score Simulator */}
+      <InteractiveScorecardCalculator onOpenCheckout={openCheckout} />
+
+      {/* 6. Section 5 — The 6 Forensic Investigation Areas */}
       <DiagnosticGrid />
 
-      {/* 5. Section 4 — How It Works (4 Steps) */}
+      {/* 7. Section 6 — How It Works (The 4-Step Protocol) */}
       <HowItWorks />
 
-      {/* 6. Section 5 — The Anti-Agency Section (Radical Transparency & Fit) */}
+      {/* 8. Section 7 — The Anti-Agency Section (Radical Transparency & Fit) */}
       <AntiAgency />
 
-      {/* 7. Section 6 — Who It's For vs NOT For (Split Screen) */}
+      {/* 9. Section 8 — Who It's For vs NOT For (Split Screen) */}
       <QualificationSplit onOpenCheckout={openCheckout} />
 
-      {/* 8. Section 7 — The Offer Card (Conversion Engine) */}
+      {/* 10. Section 9 — The Offer Card (7 Deliverables + ₹9,000 Tangible Value Stack) */}
       <OfferCard onOpenCheckout={openCheckout} />
 
-      {/* 9. Section 8 — FAQ (6 Objections Crusher) */}
+      {/* 11. Section 10 — FAQ (6 Objections Crusher) */}
       <FaqAccordion onOpenCheckout={openCheckout} />
 
-      {/* 10. Distraction-Free Brand Maniacs Footer */}
+      {/* 12. Distraction-Free Brand Maniacs Footer */}
       <AdsRescueFooter />
 
-      {/* 11. Seamless Razorpay / Sandbox Checkout Modal */}
+      {/* 13. Seamless Razorpay / Sandbox Checkout Modal */}
       <RazorpayCheckoutModal
         isOpen={isCheckoutOpen}
         onClose={closeCheckout}
