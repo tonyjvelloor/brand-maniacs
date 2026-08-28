@@ -68,9 +68,9 @@ export function ExampleHealthScore({ onOpenCheckout }: ExampleHealthScoreProps) 
             {EXAMPLE_PILLARS.map((pillar) => (
               <div
                 key={pillar.name}
-                className="bg-[#1A1A1A] border border-foreground/10 p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2"
+                className="bg-[#1A1A1A] border border-foreground/10 p-3.5 sm:p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5"
               >
-                <div className="space-y-0.5 min-w-[200px]">
+                <div className="space-y-0.5 w-full sm:w-auto sm:min-w-[180px]">
                   <div className="flex items-center gap-2">
                     <strong className="font-heading font-black text-sm uppercase text-foreground">
                       {pillar.name}
@@ -84,32 +84,34 @@ export function ExampleHealthScore({ onOpenCheckout }: ExampleHealthScoreProps) 
                   </p>
                 </div>
 
-                {/* Visual Dot Meter */}
-                <div className="flex items-center gap-1.5 font-mono text-sm sm:text-base">
-                  {Array.from({ length: 10 }).map((_, idx) => (
-                    <span
-                      key={idx}
-                      className={
-                        idx < pillar.dots
-                          ? "text-accent-yellow font-black"
-                          : "text-foreground/20 font-normal"
-                      }
-                    >
-                      {idx < pillar.dots ? "●" : "○"}
-                    </span>
-                  ))}
-                </div>
+                <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto pt-1 sm:pt-0 border-t sm:border-t-0 border-foreground/10">
+                  {/* Visual Dot Meter */}
+                  <div className="flex items-center gap-1 sm:gap-1.5 font-mono text-xs sm:text-base">
+                    {Array.from({ length: 10 }).map((_, idx) => (
+                      <span
+                        key={idx}
+                        className={
+                          idx < pillar.dots
+                            ? "text-accent-yellow font-black"
+                            : "text-foreground/20 font-normal"
+                        }
+                      >
+                        {idx < pillar.dots ? "●" : "○"}
+                      </span>
+                    ))}
+                  </div>
 
-                {/* Score */}
-                <div className="text-right font-mono font-black text-sm text-foreground">
-                  {pillar.score.toFixed(1)} <span className="text-foreground/40 text-xs">/ 10</span>
+                  {/* Score */}
+                  <div className="text-right font-mono font-black text-xs sm:text-sm text-foreground">
+                    {pillar.score.toFixed(1)} <span className="text-foreground/40 text-[10px] sm:text-xs">/ 10</span>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Overall Health Score Banner */}
-          <div className="bg-[#1C1C1C] border-2 border-accent-yellow p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[6px_6px_0_0_#FFE600]">
+          <div className="bg-[#1C1C1C] border-2 border-accent-yellow p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-6 shadow-[6px_6px_0_0_#FFE600]">
             <div className="space-y-1 text-center md:text-left">
               <span className="text-[11px] font-mono font-bold uppercase text-foreground/60 block">
                 Overall Health Score
@@ -137,7 +139,7 @@ export function ExampleHealthScore({ onOpenCheckout }: ExampleHealthScoreProps) 
             <button
               type="button"
               onClick={handleCTAClick}
-              className="w-full sm:w-auto min-w-[320px] bg-accent-yellow text-black hover:bg-white font-heading font-black uppercase text-sm sm:text-base py-4 px-8 border-2 border-black shadow-[4px_4px_0_0_#F0F0F0] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 mx-auto cursor-pointer"
+              className="w-full sm:w-auto max-w-full sm:min-w-[340px] bg-accent-yellow text-black hover:bg-white font-heading font-black uppercase text-sm sm:text-base py-4 px-6 sm:px-8 border-2 border-black shadow-[4px_4px_0_0_#F0F0F0] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 mx-auto cursor-pointer"
             >
               <span>Get Your Ad Health Score — ₹2,499 →</span>
             </button>

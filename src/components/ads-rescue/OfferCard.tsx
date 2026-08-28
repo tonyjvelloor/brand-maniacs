@@ -55,10 +55,10 @@ export function OfferCard({ onOpenCheckout }: OfferCardProps) {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="max-w-5xl mx-auto bg-[#141414] border-4 border-accent-yellow p-6 sm:p-10 md:p-12 shadow-[12px_12px_0_0_#FFE600] relative"
+          className="max-w-5xl mx-auto bg-[#141414] border-2 sm:border-4 border-accent-yellow p-4 sm:p-10 md:p-12 shadow-[6px_6px_0_0_#FFE600] sm:shadow-[12px_12px_0_0_#FFE600] relative"
         >
           {/* Top Pill / Badge */}
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b-2 border-foreground/15 pb-6 mb-8">
+          <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4 border-b-2 border-foreground/15 pb-4 sm:pb-6 mb-6 sm:mb-8">
             <div className="space-y-1">
               <span className="font-mono text-xs sm:text-sm font-black uppercase tracking-widest text-accent-yellow block">
                 THE BRAND MANIACS PRESENTS

@@ -20,7 +20,7 @@ export function CalendlyEmbed({ url }: CalendlyEmbedProps) {
 
     return (
         <div
-            className="calendly-inline-widget min-w-[320px] h-[700px] w-full bg-slate-900 rounded-xl overflow-hidden border border-slate-800 shadow-2xl"
+            className="calendly-inline-widget w-full max-w-full min-w-0 h-[650px] sm:h-[700px] bg-slate-900 rounded-none sm:rounded-xl overflow-hidden border border-slate-800 shadow-2xl"
             data-url={url}
         ></div>
     );

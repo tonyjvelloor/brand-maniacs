@@ -104,7 +104,7 @@ function SuccessContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="bg-[#141414] border-4 border-accent-yellow p-6 sm:p-10 mb-10 shadow-[10px_10px_0_0_#FFE600] space-y-4 text-center sm:text-left"
+          className="bg-[#141414] border-2 sm:border-4 border-accent-yellow p-4 sm:p-10 mb-8 sm:mb-10 shadow-[6px_6px_0_0_#FFE600] sm:shadow-[10px_10px_0_0_#FFE600] space-y-4 text-center sm:text-left"
         >
           <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 border-b border-foreground/15 pb-6">
             <div className="space-y-2">

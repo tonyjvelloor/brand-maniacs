@@ -245,25 +245,25 @@ export function LeakingBudgetVisual() {
             </svg>
 
             {/* Overlaid Pill Badges for Quick Selection on Mobile/Tablet */}
-            <div className="absolute top-[20%] -left-2 sm:-left-6">
+            <div className="absolute top-[18%] left-0 sm:-left-3">
               <button
                 type="button"
                 onClick={() => setActiveLeak("targeting")}
-                className={`text-[10px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-1 border transition-all ${
+                className={`text-[9px] sm:text-xs font-mono font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 border transition-all cursor-pointer ${
                   activeLeak === "targeting"
                     ? "bg-accent-red text-white border-accent-red shadow-lg scale-105"
                     : "bg-[#1A1A1A] text-foreground/80 border-foreground/20 hover:border-accent-yellow"
                 }`}
               >
-                01 Targeting ⚡
+                01 Audience ⚡
               </button>
             </div>
 
-            <div className="absolute top-[28%] -right-2 sm:-right-6">
+            <div className="absolute top-[26%] right-0 sm:-right-3">
               <button
                 type="button"
                 onClick={() => setActiveLeak("tracking")}
-                className={`text-[10px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-1 border transition-all ${
+                className={`text-[9px] sm:text-xs font-mono font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 border transition-all cursor-pointer ${
                   activeLeak === "tracking"
                     ? "bg-accent-red text-white border-accent-red shadow-lg scale-105"
                     : "bg-[#1A1A1A] text-foreground/80 border-foreground/20 hover:border-accent-yellow"
@@ -273,38 +273,38 @@ export function LeakingBudgetVisual() {
               </button>
             </div>
 
-            <div className="absolute top-[52%] -left-2 sm:-left-6">
+            <div className="absolute top-[50%] left-0 sm:-left-3">
               <button
                 type="button"
                 onClick={() => setActiveLeak("creative")}
-                className={`text-[10px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-1 border transition-all ${
+                className={`text-[9px] sm:text-xs font-mono font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 border transition-all cursor-pointer ${
                   activeLeak === "creative"
                     ? "bg-accent-red text-white border-accent-red shadow-lg scale-105"
                     : "bg-[#1A1A1A] text-foreground/80 border-foreground/20 hover:border-accent-yellow"
                 }`}
               >
-                03 Creative ⚡
+                03 Messaging ⚡
               </button>
             </div>
 
-            <div className="absolute top-[62%] -right-2 sm:-right-6">
+            <div className="absolute top-[60%] right-0 sm:-right-3">
               <button
                 type="button"
                 onClick={() => setActiveLeak("funnel")}
-                className={`text-[10px] sm:text-xs font-mono font-bold px-2 sm:px-2.5 py-1 border transition-all ${
+                className={`text-[9px] sm:text-xs font-mono font-bold px-1.5 sm:px-2.5 py-0.5 sm:py-1 border transition-all cursor-pointer ${
                   activeLeak === "funnel"
                     ? "bg-accent-red text-white border-accent-red shadow-lg scale-105"
                     : "bg-[#1A1A1A] text-foreground/80 border-foreground/20 hover:border-accent-yellow"
                 }`}
               >
-                04 Funnel ⚡
+                04 Conversion ⚡
               </button>
             </div>
           </div>
 
           {/* Bottom Output Drain Label */}
-          <div className="text-center mt-2">
-            <div className="inline-flex items-center gap-2 bg-[#222] border border-foreground/30 text-foreground/80 px-3 py-1 text-xs font-mono font-bold tracking-wider">
+          <div className="text-center mt-2 max-w-full">
+            <div className="inline-flex flex-wrap items-center justify-center gap-1.5 bg-[#222] border border-foreground/30 text-foreground/80 px-2.5 py-1 text-[11px] sm:text-xs font-mono font-bold tracking-wider">
               <span>Actual Customers Reached</span>
               <span className="text-red-400 font-black">(-40% to -65% Drain)</span>
             </div>
@@ -313,8 +313,8 @@ export function LeakingBudgetVisual() {
 
         {/* Diagnostic Inspector Card Column */}
         <div className="lg:col-span-6 flex flex-col justify-center">
-          {/* Quick leak selector tab bar */}
-          <div className="grid grid-cols-4 gap-1.5 mb-4">
+          {/* Quick leak selector tab bar — 2x2 on mobile, 4 across on desktop */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
             {LEAKS.map((leak) => {
               const isSelected = leak.id === activeLeak;
               return (
@@ -322,14 +322,14 @@ export function LeakingBudgetVisual() {
                   key={leak.id}
                   type="button"
                   onClick={() => setActiveLeak(leak.id)}
-                  className={`py-2 px-1 text-center font-mono text-xs uppercase font-bold border transition-all ${
+                  className={`py-2 px-2 text-center font-mono text-xs uppercase font-bold border transition-all cursor-pointer ${
                     isSelected
                       ? "bg-accent-yellow text-black border-accent-yellow font-black shadow-md"
                       : "bg-[#1A1A1A] text-foreground/70 border-foreground/20 hover:bg-[#252525]"
                   }`}
                 >
                   <span className="block text-[10px] opacity-70">{leak.label}</span>
-                  <span className="truncate block">{leak.name.split(" ")[0]}</span>
+                  <span className="truncate block">{leak.name}</span>
                 </button>
               );
             })}

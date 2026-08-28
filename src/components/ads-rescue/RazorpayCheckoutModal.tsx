@@ -192,30 +192,30 @@ export function RazorpayCheckoutModal({ isOpen, onClose }: RazorpayCheckoutModal
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.2 }}
-            className="relative w-full max-w-xl bg-[#141414] text-foreground border-4 border-accent-yellow p-6 sm:p-8 shadow-[12px_12px_0_0_#FFE600] z-10 my-8"
+            className="relative w-full max-w-xl bg-[#141414] text-foreground border-2 sm:border-4 border-accent-yellow p-4 sm:p-8 shadow-[6px_6px_0_0_#FFE600] sm:shadow-[12px_12px_0_0_#FFE600] z-10 my-auto max-h-[92vh] overflow-y-auto"
           >
             {/* Close Button */}
             <button
               type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 w-8 h-8 bg-[#222] border border-foreground/20 hover:bg-accent-red hover:text-white flex items-center justify-center transition-colors cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 bg-[#222] border border-foreground/20 hover:bg-accent-red hover:text-white flex items-center justify-center transition-colors cursor-pointer"
             >
               <X className="w-4 h-4" />
             </button>
 
             {/* Header */}
-            <div className="space-y-1 border-b border-foreground/15 pb-4 mb-6">
+            <div className="space-y-1 border-b border-foreground/15 pb-4 mb-5 sm:mb-6 pr-8 sm:pr-0">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-accent-yellow animate-ping" />
-                <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow">
+                <span className="font-mono text-[10px] sm:text-xs font-black uppercase tracking-widest text-accent-yellow">
                   Secure Checkout // Ads Rescue Session
                 </span>
               </div>
-              <h3 className="font-heading font-black text-2xl sm:text-3xl uppercase tracking-tight text-white">
-                Diagnose My Ads
+              <h3 className="font-heading font-black text-xl sm:text-3xl uppercase tracking-tight text-white">
+                Get Your Ads Checked
               </h3>
               <p className="font-mono text-xs text-foreground/70">
-                Regular Value: <del className="text-foreground/40 mr-1">₹7,500</del> · Launch Offer: <strong className="text-accent-yellow">₹2,499</strong>
+                Standard Price: <del className="text-foreground/40 mr-1">₹7,500</del> · Launch Offer: <strong className="text-accent-yellow">₹2,499</strong>
               </p>
             </div>
 
