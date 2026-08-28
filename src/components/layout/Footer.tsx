@@ -1,8 +1,17 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { WHATSAPP_URL, INSTAGRAM_URL, LINKEDIN_URL } from "@/lib/config";
 
 export function Footer() {
+    const pathname = usePathname();
+
+    // Hide standard studio footer on standalone funnel routes
+    if (pathname?.startsWith("/ads-rescue")) {
+        return null;
+    }
     return (
         <footer className="bg-background border-t-2 border-foreground pt-16 pb-28 relative overflow-hidden">
             <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -41,6 +50,7 @@ export function Footer() {
                     <div className="md:col-span-3 space-y-5">
                         <h4 className="font-heading font-black uppercase text-accent-red underline decoration-2 underline-offset-4 mb-2">Systems</h4>
                         <ul className="space-y-3 text-sm font-bold uppercase tracking-wide text-foreground">
+                            <li><Link href="/ads-rescue" className="text-accent-yellow hover:bg-accent-yellow hover:text-black p-1 -ml-1 transition-none font-black">Ads Rescue Session (₹2,499) ⚡</Link></li>
                             <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Brand Foundation System</Link></li>
                             <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Attention Engine</Link></li>
                             <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Conversion Engine</Link></li>

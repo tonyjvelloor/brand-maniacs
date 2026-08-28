@@ -25,6 +25,11 @@ export function Navbar() {
     const [mobileOpen, setMobileOpen] = useState(false);
     const lastScrollY = useRef(0);
 
+    // Hide standard navbar on standalone funnel routes
+    if (pathname?.startsWith("/ads-rescue")) {
+        return null;
+    }
+
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;

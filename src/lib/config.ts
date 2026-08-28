@@ -8,7 +8,7 @@ export const WHATSAPP_MESSAGE = encodeURIComponent(
 );
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
 
-export const CALENDLY_URL = "https://calendly.com/brandmaniacs/strategy"; // Replace with real Calendly link
+export const CALENDLY_URL = "https://calendly.com/tonyjvelloor/30min";
 
 export const INSTAGRAM_URL = "https://www.instagram.com/thebrandmaniacs/";
 export const LINKEDIN_URL  = "https://www.linkedin.com/company/thebrandmaniacs/";

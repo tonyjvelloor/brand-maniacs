@@ -1,13 +1,21 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/config";
+import { WHATSAPP_URL, WHATSAPP_NUMBER } from "@/lib/config";
 
 export function WhatsAppCTA() {
+    const pathname = usePathname();
+    const isAdsRescue = pathname?.startsWith("/ads-rescue");
+    
+    const targetUrl = isAdsRescue
+        ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi! I have a question about the Ads Rescue Session.")}`
+        : WHATSAPP_URL;
+
     return (
         <motion.a
-            href={WHATSAPP_URL}
+            href={targetUrl}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat with us on WhatsApp"
