@@ -162,13 +162,13 @@ export function ScorecardFramework() {
               <div className="bg-[#1C1C1C] border-l-4 border-accent-red p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                 <div className="space-y-1">
                   <span className="text-xs font-mono font-black uppercase text-accent-red tracking-wider block">
-                    ⚡ IMPLICATION ENGINE TRIGGER (If Pillar Score &lt; {selectedPillar.implicationThreshold}.0 / 10)
+                    ⚡ What We Investigate (If Score is Weak)
                   </span>
                   <p className="font-sans text-sm font-bold text-foreground/90">
-                    "{selectedPillar.implication.diagnosis}"
+                    "{selectedPillar.implication.simpleSummary}"
                   </p>
                   <p className="font-mono text-xs text-foreground/60">
-                    Prescribed Action: <strong className="text-accent-yellow">{selectedPillar.implication.recommendedSolution}</strong> ({selectedPillar.implication.engagementType})
+                    Suggested Action: <strong className="text-accent-yellow">{selectedPillar.implication.recommendedSolution}</strong>
                   </p>
                 </div>
               </div>

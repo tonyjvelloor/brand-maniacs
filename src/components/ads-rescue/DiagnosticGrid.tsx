@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { 
   Users, 
   Sparkles, 
@@ -8,95 +9,87 @@ import {
   Activity, 
   TrendingUp, 
   ArrowRight,
-  Check
+  ChevronDown,
+  CheckCircle2,
+  AlertTriangle,
+  XCircle
 } from "lucide-react";
+import { SCORECARD_PILLARS } from "@/lib/scorecard";
 
-interface PillarItem {
-  number: string;
-  name: string;
-  question: string;
-  icon: typeof Users;
-  includes: string[];
-  businessQuestion: string;
-}
-
-const HEALTH_CHECK_PILLARS: PillarItem[] = [
+const PILLARS_DISPLAY = [
   {
     number: "01",
     name: "ATTRACT",
-    question: "Are the right people finding you?",
-    businessQuestion: "Are you paying for potential buyers, or just curiosity clickers?",
+    headline: "Are you reaching the right people?",
+    description: "We check whether your ads are attracting people who are actually likely to become customers.",
     icon: Users,
-    includes: [
-      "Targeting accuracy",
-      "Audience quality",
-      "Search keywords",
-      "Search intent match",
-      "Traffic relevance"
+    detailPoints: [
+      "Targeting accuracy & audience signals",
+      "Search keyword intent on Google",
+      "Irrelevant curiosity traffic filtering",
+      "Message-to-market pain point match"
     ]
   },
   {
     number: "02",
     name: "CONVINCE",
-    question: "Does your message make the right people act?",
-    businessQuestion: "Does your ad clearly explain why someone should choose you?",
+    headline: "Are your ads giving people a reason to act?",
+    description: "We check your message, offer, and creative to understand whether they are compelling enough to win buyers.",
     icon: Sparkles,
-    includes: [
-      "Ad creative & visuals",
-      "Problem recognition hooks",
-      "Offer clarity",
-      "Differentiation from competitors",
-      "Message-to-market fit"
+    detailPoints: [
+      "Scroll-stopping visual and hook clarity",
+      "Offer positioning & why choose you",
+      "Differentiation from direct competitors",
+      "Clear, frictionless calls-to-action"
     ]
   },
   {
     number: "03",
     name: "CONVERT",
-    question: "Where are potential customers dropping off?",
-    businessQuestion: "What friction is stopping warm visitors from buying or inquiring?",
+    headline: "What happens after someone clicks?",
+    description: "We look for places on your landing page, lead forms, or checkout where potential customers may be losing interest or dropping off.",
     icon: Filter,
-    includes: [
-      "Landing page speed & clarity",
-      "Lead form friction",
-      "WhatsApp & checkout journey",
-      "Mobile conversion experience",
-      "Sales follow-up process"
+    detailPoints: [
+      "Mobile page load speed & responsiveness",
+      "Ad-to-landing-page message continuity",
+      "Form simplicity & checkout friction",
+      "Speed-to-lead and sales follow-up flow"
     ]
   },
   {
     number: "04",
     name: "TRACK",
-    question: "Are you measuring what actually matters?",
-    businessQuestion: "Can you trace your bank account revenue back to specific campaigns?",
+    headline: "Do you know what's actually working?",
+    description: "We check whether you can clearly see where your leads, sales, and bank account revenue are coming from.",
     icon: Activity,
-    includes: [
-      "Meta Pixel & Google tag health",
+    detailPoints: [
+      "Meta Pixel & Google tag firing health",
       "Server-side conversion tracking (CAPI)",
-      "Accurate sales attribution",
-      "Lead quality feedback loops",
-      "Decision-grade reporting"
+      "False/duplicate lead reporting checks",
+      "Algorithm feedback on qualified buyers"
     ]
   },
   {
     number: "05",
     name: "SCALE",
-    question: "Are you ready to invest more?",
-    businessQuestion: "Will increasing ad spend double your revenue or just double your costs?",
+    headline: "Is it safe to spend more money?",
+    description: "We check whether your current advertising is strong enough to scale without driving up costs or wasting more budget.",
     icon: TrendingUp,
-    includes: [
-      "Budget allocation efficiency",
-      "Systematic creative testing",
-      "Winning campaign identification",
-      "Cost per lead / customer economics",
-      "Operational capacity to handle growth"
+    detailPoints: [
+      "Budget concentration on winning campaigns",
+      "Systematic creative testing routines",
+      "Customer acquisition cost (CAC) economics",
+      "Operational capacity to fulfill higher demand"
     ]
   }
 ];
 
 export function DiagnosticGrid() {
+  const [showTechnicalDetails, setShowTechnicalDetails] = useState(false);
+
   return (
     <section className="py-16 md:py-24 bg-[#080808] text-foreground border-b-2 border-foreground/20 relative overflow-hidden">
-      {/* Blueprint Grid Lines */}
+      {/* Blueprint Grid Background */}
       <div 
         className="absolute inset-0 opacity-5 pointer-events-none"
         style={{
@@ -107,23 +100,23 @@ export function DiagnosticGrid() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         
-        {/* Section Header */}
+        {/* Section Header — Level 1 Clarity */}
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-14 md:mb-18">
           <span className="inline-block font-mono text-xs font-black uppercase tracking-widest text-accent-yellow bg-accent-yellow/10 border border-accent-yellow/30 px-3 py-1">
-            THE ADS RESCUE METHOD
+            THE 5-POINT AD HEALTH CHECK
           </span>
           <h2 className="font-heading font-black text-3xl sm:text-5xl md:text-6xl uppercase tracking-tighter text-foreground leading-[1.05]">
             We don't guess. <br className="hidden sm:block" />
             <span className="text-accent-yellow">We diagnose the system.</span>
           </h2>
-          <p className="font-mono text-sm sm:text-base text-foreground/75 max-w-2xl mx-auto leading-relaxed">
-            Your advertising is evaluated across five critical areas to isolate exact leaks and inefficiencies.
+          <p className="font-sans text-base sm:text-lg text-foreground/80 max-w-2xl mx-auto font-medium">
+            Your advertising is evaluated across five critical areas to pinpoint exactly what's working and what's costing you money.
           </p>
         </div>
 
         {/* 5-Pillar Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {HEALTH_CHECK_PILLARS.map((pillar, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          {PILLARS_DISPLAY.map((pillar, index) => (
             <motion.div
               key={pillar.number}
               initial={{ opacity: 0, y: 20 }}
@@ -132,15 +125,15 @@ export function DiagnosticGrid() {
               transition={{ duration: 0.4, delay: index * 0.08 }}
               className="bg-[#121212] border-2 border-foreground/20 p-6 sm:p-7 flex flex-col justify-between hover:border-accent-yellow transition-colors group"
             >
-              <div>
-                {/* Pillar Number & Name */}
-                <div className="flex items-center justify-between border-b border-foreground/10 pb-4 mb-4">
+              <div className="space-y-3">
+                {/* Number & Icon */}
+                <div className="flex items-center justify-between border-b border-foreground/10 pb-3">
                   <div className="flex items-center gap-2">
                     <span className="font-mono font-black text-sm text-accent-yellow">
                       {pillar.number}
                     </span>
                     <span className="font-mono text-foreground/40 text-xs">—</span>
-                    <span className="font-heading font-black text-base tracking-wider uppercase text-foreground">
+                    <span className="font-heading font-black text-sm tracking-wider uppercase text-foreground">
                       {pillar.name}
                     </span>
                   </div>
@@ -148,51 +141,58 @@ export function DiagnosticGrid() {
                 </div>
 
                 {/* Primary Question */}
-                <h3 className="font-heading font-black text-xl sm:text-2xl text-foreground uppercase tracking-tight mb-2 leading-tight group-hover:text-accent-yellow transition-colors">
-                  {pillar.question}
+                <h3 className="font-heading font-black text-xl sm:text-2xl text-foreground uppercase tracking-tight leading-snug group-hover:text-accent-yellow transition-colors">
+                  {pillar.headline}
                 </h3>
 
-                {/* Plain-English Business Meaning */}
-                <p className="font-sans text-xs sm:text-sm text-foreground/70 mb-5 font-medium leading-snug">
-                  {pillar.businessQuestion}
+                {/* Plain-English Meaning */}
+                <p className="font-sans text-xs sm:text-sm text-foreground/75 font-medium leading-relaxed">
+                  {pillar.description}
                 </p>
-
-                {/* Evaluated Checkpoints */}
-                <div className="space-y-1.5 pt-3 border-t border-foreground/10">
-                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-foreground/50 block mb-2">
-                    What We Investigate:
-                  </span>
-                  <ul className="space-y-1.5 text-xs font-mono text-foreground/80">
-                    {pillar.includes.map((item, i) => (
-                      <li key={i} className="flex items-center gap-2">
-                        <Check className="w-3.5 h-3.5 text-accent-yellow shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
 
-              {/* Footer Evidence Promise */}
-              <div className="mt-6 pt-3 border-t border-foreground/10 flex items-center justify-between text-[11px] font-mono text-foreground/40 uppercase">
-                <span>Pillar {pillar.number}/05</span>
-                <span className="text-accent-yellow font-bold">Evidence Backed</span>
+              {/* Evaluated Checkpoints */}
+              <div className="mt-5 pt-3 border-t border-foreground/10 space-y-1.5 text-xs font-mono text-foreground/70">
+                <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-foreground/40 block mb-1">
+                  What we look at:
+                </span>
+                {pillar.detailPoints.map((pt, i) => (
+                  <div key={i} className="flex items-center gap-2 text-foreground/80">
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-yellow shrink-0" />
+                    <span>{pt}</span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           ))}
 
-          {/* 6th Card: The Evidence Commitment */}
+          {/* 6th Card: Simple Scoring Explanation */}
           <div className="bg-[#181818] border-2 border-accent-yellow/40 p-6 sm:p-7 flex flex-col justify-between shadow-lg">
             <div className="space-y-3">
               <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow block">
-                METHODOLOGY STANDARD
+                HOW YOUR AUDIT WORKS
               </span>
               <h3 className="font-heading font-black text-xl sm:text-2xl uppercase tracking-tight text-white leading-snug">
-                Every score is backed by actual account evidence.
+                25 diagnostic checks. <br />Zero vague opinions.
               </h3>
-              <p className="font-sans text-xs sm:text-sm text-foreground/75 leading-relaxed">
-                We don't say “your tracking looks weak.” We show you the exact broken triggers, search term spillovers, and landing page bottlenecks draining your capital.
+              <p className="font-sans text-xs sm:text-sm text-foreground/80 leading-relaxed font-medium">
+                We look at 25 important parts of your advertising. Each area is checked and scored based on what we find, so you see:
               </p>
+
+              <div className="space-y-1.5 text-xs font-mono pt-1">
+                <div className="flex items-center gap-2 text-green-400 font-bold">
+                  <span>🟢</span>
+                  <span>What's working well</span>
+                </div>
+                <div className="flex items-center gap-2 text-yellow-400 font-bold">
+                  <span>🟡</span>
+                  <span>What needs improvement</span>
+                </div>
+                <div className="flex items-center gap-2 text-red-400 font-bold">
+                  <span>🔴</span>
+                  <span>What's costing you money</span>
+                </div>
+              </div>
             </div>
 
             <div className="pt-4 border-t border-foreground/15">
@@ -200,11 +200,62 @@ export function DiagnosticGrid() {
                 href="#offer"
                 className="w-full inline-flex items-center justify-between bg-accent-yellow text-black font-heading font-black uppercase text-xs sm:text-sm py-3 px-4 hover:bg-white transition-colors"
               >
-                <span>Diagnose My Ads — ₹2,499</span>
+                <span>Get Your Ads Checked — ₹2,499</span>
                 <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Expandable Technical Depth Accordion for analytical visitors */}
+        <div className="max-w-4xl mx-auto text-center">
+          <button
+            type="button"
+            onClick={() => setShowTechnicalDetails(!showTechnicalDetails)}
+            className="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-accent-yellow hover:text-white transition-colors cursor-pointer py-2 px-4 border border-foreground/20 bg-[#121212]"
+          >
+            <span>{showTechnicalDetails ? "Hide technical methodology" : "How is your score calculated? See all 25 checkpoints"}</span>
+            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${showTechnicalDetails ? "rotate-180" : ""}`} />
+          </button>
+
+          <AnimatePresence>
+            {showTechnicalDetails && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: "auto" }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.3 }}
+                className="mt-6 bg-[#141414] border-2 border-foreground/20 p-6 text-left space-y-6 overflow-hidden"
+              >
+                <div className="border-b border-foreground/15 pb-3">
+                  <h4 className="font-heading font-black text-lg uppercase text-white">
+                    The 25-Point Diagnostic Methodology
+                  </h4>
+                  <p className="text-xs font-mono text-foreground/60">
+                    Each checkpoint receives an evidence-backed score (0 = Critical Issue, 1 = Weak, 2 = Functional, 3 = Strong) to calculate your weighted Ad Health Score.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-mono">
+                  {SCORECARD_PILLARS.map((pillar) => (
+                    <div key={pillar.id} className="bg-[#1A1A1A] p-4 border border-foreground/10 space-y-2">
+                      <div className="flex items-center justify-between font-bold text-accent-yellow border-b border-foreground/10 pb-1">
+                        <span>{pillar.number}. {pillar.name} ({pillar.weightPercent}% Weight)</span>
+                      </div>
+                      <ul className="space-y-1.5 text-foreground/80">
+                        {pillar.checkpoints.map((cp) => (
+                          <li key={cp.id} className="flex items-start gap-1.5">
+                            <span className="text-accent-yellow font-bold">{cp.letter}.</span>
+                            <span><strong>{cp.name}:</strong> {cp.question}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
 
       </div>

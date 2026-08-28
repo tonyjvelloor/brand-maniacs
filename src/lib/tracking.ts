@@ -13,6 +13,7 @@ export type EventLocation =
   | 'mechanism_cta'
   | 'offer_card_cta'
   | 'value_stack_cta'
+  | 'simulator_cta'
   | 'qualification_cta'
   | 'faq_cta'
   | 'exit_intent';

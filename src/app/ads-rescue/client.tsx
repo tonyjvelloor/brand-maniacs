@@ -6,6 +6,7 @@ import { AdsRescueHero } from "@/components/ads-rescue/AdsRescueHero";
 import { ProblemRecognition } from "@/components/ads-rescue/ProblemRecognition";
 import { DiagnosticGrid } from "@/components/ads-rescue/DiagnosticGrid";
 import { ExampleHealthScore } from "@/components/ads-rescue/ExampleHealthScore";
+import { InteractiveScorecardCalculator } from "@/components/ads-rescue/InteractiveScorecardCalculator";
 import { HowItWorks } from "@/components/ads-rescue/HowItWorks";
 import { AntiAgency } from "@/components/ads-rescue/AntiAgency";
 import { QualificationSplit } from "@/components/ads-rescue/QualificationSplit";
@@ -47,7 +48,10 @@ export function AdsRescueLandingClient() {
       {/* 4. EXAMPLE AD SPEND HEALTH SCORE — Signature Visual Proof Output */}
       <ExampleHealthScore onOpenCheckout={openCheckout} />
 
-      {/* 5. HOW THE DIAGNOSIS WORKS — The 4-Step Protocol */}
+      {/* 5. HOW HEALTHY ARE YOUR ADS? — 5-Question Quick Estimator */}
+      <InteractiveScorecardCalculator onOpenCheckout={openCheckout} />
+
+      {/* 6. HOW THE DIAGNOSIS WORKS — The 4-Step Protocol */}
       <HowItWorks />
 
       {/* 6. WHY THIS IS NOT A SALES PITCH — Anti-Agency Radical Transparency */}

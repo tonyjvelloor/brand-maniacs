@@ -53,7 +53,7 @@ export function AdsRescueHeader({ onOpenCheckout }: AdsRescueHeaderProps) {
             onClick={handleCTAClick}
             className="bg-accent-yellow text-black hover:bg-white font-heading font-black uppercase text-xs sm:text-sm px-4 sm:px-6 py-2.5 tracking-wider transition-all hover:shadow-[4px_4px_0_0_#F0F0F0] active:translate-x-0.5 active:translate-y-0.5 flex items-center gap-2 cursor-pointer border-2 border-black"
           >
-            <span>Get Your Ads Diagnosed — ₹2,499</span>
+            <span>Get Your Ads Checked — ₹2,499</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
