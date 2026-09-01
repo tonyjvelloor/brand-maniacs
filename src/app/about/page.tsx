@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CALENDLY_URL } from "@/lib/config";
 import Link from "next/link";
-import { Image as ImageIcon } from "lucide-react";
+
 
 export const metadata: Metadata = {
     title: "Tony Joseph — Founder, The Brand Maniacs | AI Marketing Studio, Pune",
@@ -80,13 +80,14 @@ export default function AboutPage() {
 
                         {/* Photo & Quote card */}
                         <div className="flex flex-col gap-6 relative">
-                            {/* Photo Placeholder */}
-                            <div className="w-full aspect-[4/5] bg-foreground/5 border-2 border-dashed border-foreground/30 flex items-center justify-center relative overflow-hidden group">
-                                <div className="absolute inset-0 bg-accent-yellow/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="text-center relative z-10">
-                                    <ImageIcon className="w-8 h-8 text-foreground/30 mx-auto mb-2" />
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-foreground/50">Founder Portrait (4:5)</span>
-                                </div>
+                            {/* Founder Photo */}
+                            <div className="w-full aspect-[4/5] bg-foreground/5 border-2 border-foreground relative overflow-hidden group">
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img 
+                                    src="/images/tony-joseph.jpg" 
+                                    alt="Tony Joseph, Founder of The Brand Maniacs" 
+                                    className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                                />
                             </div>
                             
                             {/* Quote Card (overlapping) */}

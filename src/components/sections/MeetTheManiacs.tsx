@@ -63,7 +63,7 @@ export function MeetTheManiacs() {
                                     <div className="w-24 h-24 rounded-full border-2 border-foreground overflow-hidden shrink-0 group">
                                         {/* eslint-disable-next-line @next/next/no-img-element */}
                                         <img 
-                                            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=200&q=80" 
+                                            src="/images/tony-joseph.jpg" 
                                             alt="Tony Joseph" 
                                             width={200}
                                             height={200}
