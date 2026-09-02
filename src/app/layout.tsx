@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebrandmaniacs.online'),
   title: {
     template: "%s",
-    default: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
+    default: "The Brand Maniacs | Growth Infrastructure & Creative Technology Studio",
   },
-  description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore.",
+  description: "Built in India, designed for the world. We build growth systems, digital products, and acquisition infrastructure for ambitious brands.",
   openGraph: {
     type: "website",
     url: "https://www.thebrandmaniacs.online",
-    title: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
-    description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore.",
+    title: "The Brand Maniacs | Global Growth Infrastructure Studio",
+    description: "Built in India, designed for the world. We build growth systems, digital products, and acquisition infrastructure for ambitious brands.",
     siteName: "The Brand Maniacs",
     images: [{
       url: "https://www.thebrandmaniacs.online/images/og-image.jpg",

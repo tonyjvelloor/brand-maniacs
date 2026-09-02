@@ -115,14 +115,14 @@ export function Hero() {
                     {/* Main headline */}
                     <div className="mb-10">
                         <h1 className="font-heading font-black uppercase tracking-tighter text-white leading-[0.9] text-5xl sm:text-6xl md:text-[72px] lg:text-[96px]">
-                            <div className="flex flex-wrap">{wrapWords("We Build Brands")}</div>
-                            <div className="flex flex-wrap items-center mt-2">
-                                {wrapWords("and Digital Products", "text-white/50")}
-                            </div>
-                            <div className="flex flex-wrap mt-2 lg:mt-4">
+                            <div className="flex flex-wrap">{wrapWords("We Build")}</div>
+                            <div className="flex flex-wrap mt-1 lg:mt-2">
                                 <span className="inline-block overflow-hidden relative">
-                                    <span className="inline-block translate-y-[120%] word-reveal relative z-10 bg-accent-yellow text-black px-4 pb-2 pt-1 lg:pt-3 lg:pb-4">That Drive Measurable Growth.</span>
+                                    <span className="inline-block translate-y-[120%] word-reveal relative z-10 bg-accent-yellow text-black px-4 pb-2 pt-1 lg:pt-3 lg:pb-4">Growth Systems</span>
                                 </span>
+                            </div>
+                            <div className="flex flex-wrap items-center mt-2 lg:mt-4">
+                                {wrapWords("That Move Businesses Forward.", "text-white/50")}
                             </div>
                         </h1>
                     </div>
@@ -130,7 +130,7 @@ export function Hero() {
                     {/* Sub */}
                     <div className="max-w-2xl mb-12 hero-sub opacity-100">
                         <p className="text-lg md:text-xl font-bold text-white/90 leading-snug border-l-4 border-accent-yellow pl-5">
-                            Strategy, design and technology engineered to increase trust, conversions and long-term business growth.
+                            The Brand Maniacs is a creative technology and growth studio helping ambitious brands build stronger brands, acquire customers and turn attention into revenue.
                         </p>
                     </div>
 
@@ -138,7 +138,7 @@ export function Hero() {
                     <div className="flex flex-col sm:flex-row items-start gap-4 mb-12">
                         <div className="hero-cta opacity-100">
                             <Button variant="inverted" size="lg" href="/start" isMagnetic={true}>
-                                Start Your Growth Project
+                                Build Your Growth System
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Button>
                         </div>
@@ -146,18 +146,24 @@ export function Hero() {
                             <Button 
                                 variant="outlineWhite" 
                                 size="lg" 
-                                href="/book" 
+                                href="#work" 
                                 isMagnetic={true}
-                                onClick={() => posthog.capture('hero_cta_clicked', { source: 'hero_primary' })}
+                                onClick={() => posthog.capture('hero_cta_clicked', { source: 'hero_secondary' })}
                             >
-                                Book Strategy Session ↗
+                                See Our Work
                             </Button>
                         </div>
                     </div>
 
                     {/* Social Proof Above the Fold */}
                     <div className="mb-20 hero-bottom opacity-100">
-                        <p className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Trusted by 40+ brands generating ₹3.2Cr+ ad spend</p>
+                        <p className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Brands. Products. Growth Systems.</p>
+                        <div className="flex flex-wrap gap-4 text-sm font-bold text-white/70 uppercase tracking-wider">
+                            <span className="bg-white/10 px-3 py-1 border border-white/20">FlexPilot</span>
+                            <span className="bg-white/10 px-3 py-1 border border-white/20">CouponHub</span>
+                            <span className="bg-white/10 px-3 py-1 border border-white/20">WeeSpaces</span>
+                            <span className="bg-white/10 px-3 py-1 border border-white/20">Karmanya Ayurveda</span>
+                        </div>
                     </div>
 
                     {/* Bottom bar */}

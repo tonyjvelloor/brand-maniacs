@@ -20,25 +20,25 @@ export function IntentionallySmall() {
                         className="p-10 md:p-14 border-r-2 border-background"
                     >
                         <span className="inline-block border-2 border-background font-black text-xs uppercase tracking-widest px-3 py-1 mb-8 text-background">
-                            Our Position
+                            Global Position
                         </span>
                         <h2 className="font-heading text-4xl md:text-5xl font-black uppercase text-background leading-[0.95] tracking-tighter mb-8">
-                            We Don&apos;t Want<br />
-                            To Be The<br />
-                            <span className="bg-accent-yellow text-black px-2">Biggest Agency.</span>
+                            Built in India.<br />
+                            Designed for the<br />
+                            <span className="bg-accent-yellow text-black px-2">World.</span>
                         </h2>
-                        <p className="text-background text-lg font-bold leading-snug opacity-80 mb-6">
-                            We stay intentionally small — working closely with selected brands where creative speed and strategic depth both matter.
+                        <p className="text-background text-lg font-black uppercase tracking-wide leading-snug text-accent-yellow mb-6">
+                            Global ambition. Indian engineering discipline.
                         </p>
-                        <p className="text-background text-base font-bold leading-snug opacity-60 mb-10">
-                            Every brand we take on gets real thinking from senior people, not templated campaigns handed to a junior executive who joined last month.
+                        <p className="text-background text-base font-bold leading-snug opacity-80 mb-10">
+                            We combine strategy, creative thinking, technology and performance to build growth infrastructure for ambitious businesses that want to move faster.
                         </p>
                         <Button
-                            href="/book"
+                            href="/start"
                             className="bg-accent-yellow text-black border-black"
                             size="lg"
                         >
-                            Apply to Work With Us
+                            Build Your Growth System
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
                     </motion.div>

@@ -14,8 +14,8 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Brand Maniacs | AI-Powered Creative Growth Studio — Pune, India",
-  description: "We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build brands people can't ignore. Studio for ambitious D2C, SaaS & ecom brands.",
+  title: "The Brand Maniacs | Growth Infrastructure Studio",
+  description: "We combine human strategy, AI-powered production, and digital infrastructure to build growth systems for ambitious brands worldwide.",
 };
 
 export default function Home() {
