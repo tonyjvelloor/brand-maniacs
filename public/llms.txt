@@ -1,0 +1,32 @@
+# The Brand Maniacs (TBM)
+
+The Brand Maniacs is a globally positioned creative technology and growth studio, operating from India. We don't just market businesses; we build the infrastructure that helps them grow.
+
+We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build growth systems for ambitious brands, SaaS platforms, and e-commerce companies.
+
+## What We Build
+Instead of isolated services, we build complete **Growth Systems**:
+- **Brand Foundation System**: Positioning → identity → messaging → brand architecture
+- **Attention Engine**: Creative strategy → content → campaigns → creator systems
+- **Conversion Engine**: Websites → landing pages → funnels → CRO
+- **Growth Engine**: Paid acquisition → experimentation → analytics → optimization
+- **AI & Intelligence**: Automation → internal tools → AI workflows → decision systems
+
+## Our Methodology
+We believe that marketing is a behavior science and systems engineering problem. Technology is leverage, not a strategy. We prioritize the speed of experimentation—testing fastest and killing bad ideas earliest wins the market.
+
+## Our Products & Case Studies
+- **CouponHub**: An automated deal intelligence platform and consumer marketplace built on Next.js. Features strict SEO quality gates, programmatic comparison engines, and arbitrage-ready acquisition flows.
+- **FlexPilot**: An AI-powered SaaS product and workspace operating system.
+
+## Engagement Model
+We partner with clients through structured engagements:
+1. **Growth Assessment**: Frictionless initial audit.
+2. **Growth Architecture**: 2-week engagement to audit the business, identify growth constraints, build an opportunity map, and produce a strategic roadmap.
+3. **Growth System Build**: 6–12 week engagement covering strategy, creative, digital, and acquisition infrastructure.
+4. **Growth Partner**: Ongoing experimentation, creative, performance, and optimization.
+
+## Learn More
+- Start your project: https://www.thebrandmaniacs.online/start
+- View our work: https://www.thebrandmaniacs.online/work
+- Meet the team: https://www.thebrandmaniacs.online/#meet-the-maniacs
