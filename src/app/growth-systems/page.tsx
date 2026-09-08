@@ -56,7 +56,7 @@ export default function GrowthSystemsPage() {
                             Most brands don't have a marketing problem. They have a growth-system problem.
                         </p>
                         <p className="text-lg font-bold text-foreground opacity-80 leading-snug mb-8 border-l-4 border-foreground pl-4">
-                            You don't need another generic digital agency selling you SEO, social media, and graphic design in a vacuum. You need interconnected infrastructure that captures attention and turns it into revenue.
+                            What is a Growth System? It is interconnected digital infrastructure that systematically captures attention and turns it into revenue. You don't need another generic digital agency selling you SEO, social media, and graphic design in a vacuum. You need a system.
                         </p>
                     </div>
                     

@@ -63,7 +63,7 @@ export default function AboutPage() {
                                 "After years creating campaigns, I realized the future belongs to teams who can combine creativity with technology."
                             </p>
                             <p className="text-base font-bold text-foreground opacity-70 leading-snug mb-8">
-                                For years, I built brands the traditional way. It was slow. It was expensive. And it relied entirely on human hours. When AI and advanced tooling emerged, I realized the entire agency model was about to become obsolete.
+                                Tony Joseph is the founder of The Brand Maniacs and Chief Architect of its proprietary growth systems. For years, I built brands the traditional way. It was slow. It was expensive. And it relied entirely on human hours. When AI and advanced tooling emerged, I realized the entire agency model was about to become obsolete.
                             </p>
                             <p className="text-base font-bold text-foreground opacity-70 leading-snug mb-8">
                                 I stopped just marketing and started building. Today, my mission is building systems that help brands move at the speed of culture—combining the depth of human psychology with the infinite scale of technology.

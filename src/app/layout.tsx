@@ -68,21 +68,21 @@ export default function RootLayout({
                     "https://www.linkedin.com/company/thebrandmaniacs",
                     "https://www.instagram.com/thebrandmaniacs"
                   ],
-                  "description": "An AI-powered Creative Technology Studio engineering growth for ambitious D2C, SaaS, and E-commerce brands."
-                },
-                {
-                  "@type": "ProfessionalService",
-                  "@id": "https://www.thebrandmaniacs.online/#professionalservice",
-                  "name": "The Brand Maniacs",
-                  "url": "https://www.thebrandmaniacs.online",
-                  "description": "We combine human strategy, AI-powered production, and growth experiments to build brands people can't ignore.",
-                  "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Pune",
-                    "addressRegion": "Maharashtra",
-                    "addressCountry": "IN"
+                  "description": "A Global Growth Infrastructure and Creative Technology Studio. We build growth systems, digital products, and acquisition infrastructure for ambitious brands worldwide.",
+                  "founder": {
+                    "@type": "Person",
+                    "name": "Tony Joseph",
+                    "jobTitle": "Chief Architect",
+                    "sameAs": "https://www.linkedin.com/in/tonyjoseph/"
                   },
-                  "priceRange": "$$$"
+                  "knowsAbout": [
+                    "Growth Systems",
+                    "Brand Foundation",
+                    "Conversion Rate Optimization",
+                    "AI-Powered Creative Production",
+                    "Programmatic SEO",
+                    "Behavioral Science Marketing"
+                  ]
                 }
               ]
             })
