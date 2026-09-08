@@ -10,6 +10,25 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        client: "CouponHub.store",
+        category: "Consumer Marketplace · Savings Platform",
+        accentColor: "bg-foreground",
+        accentText: "text-background",
+        problem: "Consumers were frustrated by outdated coupons, intrusive advertising, and unreliable savings platforms. The objective was to build a premium destination where shoppers could quickly discover verified deals from leading brands.",
+        systemBuilt: [
+            "Designed and developed a high-performance platform using Next.js",
+            "Built a programmatic SEO-first architecture for long-term organic growth",
+            "Created a premium dark-mode shopping experience",
+            "Engineered a scalable foundation for automated affiliate commerce",
+        ],
+        metrics: [
+            { label: "Platform Speed (LCP)", value: "< 1.2s", improvement: true, width: "95%" },
+            { label: "SEO Health Score", value: "100/100", improvement: true, width: "100%" }
+        ],
+        outcome: "CouponHub demonstrates our ability to take a product from concept to launch by combining product strategy, branding, UX, engineering, SEO, and growth infrastructure.",
+        isTech: true
+    },
+    {
         client: "Karmanya Ayurveda",
         category: "Wellness · Ayurveda",
         accentColor: "bg-accent-yellow",
