@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { ArrowRight } from "lucide-react";
 import posthog from 'posthog-js';
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import dynamic from "next/dynamic";
@@ -15,39 +15,10 @@ const LiquidBackground = dynamic(() => import("@/components/animations/LiquidBac
 
 export function Hero() {
     const container = useRef<HTMLDivElement>(null);
-    const [isFirstVisit, setIsFirstVisit] = useState(true);
-
-    useEffect(() => {
-        // Check session storage to see if they've already seen the preloader
-        const hasVisited = sessionStorage.getItem("tbm_visited");
-        if (hasVisited) {
-            setIsFirstVisit(false);
-        } else {
-            sessionStorage.setItem("tbm_visited", "true");
-        }
-    }, []);
 
     useGSAP(() => {
-        const tl = gsap.timeline();
-
-        if (isFirstVisit) {
-            // Tension Preloader Sequence (Max 2 seconds total)
-            tl.to(".preloader-text-1", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" })
-              .to(".preloader-text-1", { opacity: 0, y: -10, duration: 0.3, delay: 0.4, ease: "power2.in" })
-              
-              .to(".preloader-text-2", { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" })
-              .to(".preloader-text-2", { opacity: 0, y: -10, duration: 0.3, delay: 0.5, ease: "power2.in" })
-              
-              .to(".preloader-logo", { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.5)" })
-              .to(".preloader", { yPercent: -100, duration: 0.6, ease: "expo.inOut", delay: 0.3 })
-              .set(".preloader", { display: "none" });
-        } else {
-            // If returning visitor, hide preloader immediately
-            gsap.set(".preloader", { display: "none" });
-        }
-
-        // Hero Reveal Sequence (Starts after preloader finishes, or immediately)
-        const heroTl = gsap.timeline({ delay: isFirstVisit ? 2.5 : 0.2 });
+        // Hero Reveal Sequence (Starts immediately)
+        const heroTl = gsap.timeline({ delay: 0.1 });
 
         heroTl.from(".hero-label", { opacity: 0, y: 20, duration: 0.6, ease: "power3.out" })
               .to(".word-reveal", {
@@ -62,7 +33,7 @@ export function Hero() {
               .from(".hero-cta", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.4")
               .from(".hero-bottom", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1, ease: "power3.out" }, "-=0.4");
 
-    }, { scope: container, dependencies: [isFirstVisit] });
+    }, { scope: container });
 
     // Helper to wrap words for GSAP masking
     const wrapWords = (text: string, customClass = "") => {
@@ -75,19 +46,6 @@ export function Hero() {
 
     return (
         <section ref={container} className="relative min-h-[100vh] flex flex-col justify-center pt-32 pb-20 overflow-hidden bg-black">
-            
-            {/* Tension Preloader */}
-            <div className={`preloader fixed inset-0 z-[100] bg-black flex flex-col items-center justify-center ${!isFirstVisit ? 'hidden' : ''}`}>
-                <div className="preloader-text-1 absolute opacity-0 translate-y-4 font-heading text-2xl md:text-4xl text-white font-black uppercase tracking-widest text-center px-4">
-                    Most agencies make websites.
-                </div>
-                <div className="preloader-text-2 absolute opacity-0 translate-y-4 font-heading text-3xl md:text-5xl text-accent-yellow font-black uppercase tracking-widest text-center px-4">
-                    We engineer growth.
-                </div>
-                <div className="preloader-logo absolute opacity-0 scale-90 font-heading text-5xl text-white font-black tracking-tighter">
-                    TBM™
-                </div>
-            </div>
 
             {/* Interactive WebGL Liquid Background */}
             <LiquidBackground />
