@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
     { label: "Growth Systems", href: "/growth-systems" },
+    { label: "Methodology", href: "/method" },
     { label: "Work", href: "/#work" },
     { label: "Process", href: "/#process" },
     { label: "Insights", href: "/#insights" },

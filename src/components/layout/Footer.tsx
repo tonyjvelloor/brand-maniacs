@@ -64,7 +64,7 @@ export function Footer() {
                         <ul className="space-y-3 text-sm font-bold uppercase tracking-wide text-foreground">
                             <li><Link href="/labs" className="text-accent-blue hover:bg-accent-blue hover:text-white p-1 -ml-1 transition-none">Maniac Labs</Link></li>
                             <li><Link href="/work" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Our Work & Proof</Link></li>
-                            <li><Link href="/approach" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Operating Principles</Link></li>
+                            <li><Link href="/method" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Methodology</Link></li>
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">About The Founder</Link></li>
                             <li><Link href="/ai-growth-audit" className="text-accent-red hover:bg-accent-red hover:text-white p-1 -ml-1 transition-none border-2 border-transparent hover:border-accent-red inline-block mt-2">Apply for Free Audit</Link></li>
                             <li className="pt-2">
