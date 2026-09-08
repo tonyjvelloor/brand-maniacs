@@ -51,10 +51,10 @@ export function Footer() {
                         <h4 className="font-heading font-black uppercase text-accent-red underline decoration-2 underline-offset-4 mb-2">Systems</h4>
                         <ul className="space-y-3 text-sm font-bold uppercase tracking-wide text-foreground">
                             <li><Link href="/ads-rescue" className="text-accent-yellow hover:bg-accent-yellow hover:text-black p-1 -ml-1 transition-none font-black">Ads Rescue Session (₹2,499) ⚡</Link></li>
-                            <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Brand Foundation System</Link></li>
-                            <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Attention Engine</Link></li>
-                            <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Conversion Engine</Link></li>
-                            <li><Link href="/#services" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Growth Experiments</Link></li>
+                            <li><Link href="/growth-systems" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Brand Foundation</Link></li>
+                            <li><Link href="/growth-systems" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Conversion Engine</Link></li>
+                            <li><Link href="/growth-systems" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Growth Engine</Link></li>
+                            <li><Link href="/growth-systems" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">AI & Intelligence</Link></li>
                         </ul>
                     </div>
 

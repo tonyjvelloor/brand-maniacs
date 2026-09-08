@@ -11,8 +11,8 @@ import { useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
+    { label: "Growth Systems", href: "/growth-systems" },
     { label: "Work", href: "/#work" },
-    { label: "Solutions", href: "/#solutions" },
     { label: "Process", href: "/#process" },
     { label: "Insights", href: "/#insights" },
     { label: "About", href: "/#meet-the-maniacs" },
