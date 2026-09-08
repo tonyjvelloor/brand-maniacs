@@ -26,7 +26,7 @@ We are deliberately NOT targeting "worldwide" initially.
 *(Note: USA is Priority #4 for the long-term; Singapore is Priority #5).*
 
 ## 4. Industries to Attack
-- **SaaS & Digital Products:** Showcasing internal builds like FlexPilot and CouponHub.
+- **SaaS & Digital Products:** Showcasing internal builds like FlexPilot, CouponHub, and our Review Management Platform (reviews.thebrandmaniacs.online).
 - **E-Commerce / D2C:** High-growth consumer brands needing full-funnel acquisition systems.
 - **B2B / Tech Infrastructure:** Companies requiring robust positioning, creative, and performance funnels.
 

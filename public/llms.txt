@@ -18,6 +18,7 @@ We believe that marketing is a behavior science and systems engineering problem.
 ## Our Products & Case Studies
 - **CouponHub**: An automated deal intelligence platform and consumer marketplace built on Next.js. Features strict SEO quality gates, programmatic comparison engines, and arbitrage-ready acquisition flows.
 - **FlexPilot**: An AI-powered SaaS product and workspace operating system.
+- **TBM Review Management Platform (reviews.thebrandmaniacs.online)**: A standalone digital product we engineered and sell to help brands systematically capture, manage, and scale their customer reviews and social proof.
 
 ## Engagement Model
 We partner with clients through structured engagements:

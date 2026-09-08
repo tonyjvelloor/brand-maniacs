@@ -159,6 +159,7 @@ export function Hero() {
                     <div className="mb-20 hero-bottom opacity-100">
                         <p className="text-xs font-bold text-white/50 uppercase tracking-widest mb-4">Brands. Products. Growth Systems.</p>
                         <div className="flex flex-wrap gap-4 text-sm font-bold text-white/70 uppercase tracking-wider">
+                            <span className="bg-white/10 px-3 py-1 border border-white/20">TBM Reviews</span>
                             <span className="bg-white/10 px-3 py-1 border border-white/20">FlexPilot</span>
                             <span className="bg-white/10 px-3 py-1 border border-white/20">CouponHub</span>
                             <span className="bg-white/10 px-3 py-1 border border-white/20">WeeSpaces</span>

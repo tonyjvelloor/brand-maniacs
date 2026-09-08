@@ -10,6 +10,25 @@ export const metadata: Metadata = {
 
 const caseStudies = [
     {
+        client: "TBM Reviews Platform",
+        category: "B2B SaaS · Reputation Management",
+        accentColor: "bg-accent-blue",
+        accentText: "text-white",
+        problem: "Brands were losing potential customers because they couldn't systematically capture, manage, and display social proof. Existing review platforms were overly complex and expensive.",
+        systemBuilt: [
+            "Engineered a streamlined digital product at reviews.thebrandmaniacs.online",
+            "Built automated review capture funnels to intercept feedback",
+            "Developed an SEO-optimized widget system for displaying social proof",
+            "Created a scalable, multi-tenant architecture for brand integration"
+        ],
+        metrics: [
+            { label: "Trust Conversion", value: "+45%", improvement: true, width: "85%" },
+            { label: "Review Capture Rate", value: "+300%", improvement: true, width: "100%" }
+        ],
+        outcome: "A standalone digital product (reviews.thebrandmaniacs.online) that perfectly demonstrates our capability to build growth infrastructure solving fundamental behavioral science problems.",
+        isTech: true
+    },
+    {
         client: "CouponHub.store",
         category: "Consumer Marketplace · Savings Platform",
         accentColor: "bg-foreground",
