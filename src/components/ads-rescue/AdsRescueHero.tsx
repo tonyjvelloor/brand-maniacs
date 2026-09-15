@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2, Calendar, XCircle, ShieldCheck, AlertOctagon } from "lucide-react";
 import { trackCTAClick } from "@/lib/tracking";
 import { HeroVisualInteractive } from "./HeroVisualInteractive";
@@ -10,9 +11,55 @@ interface AdsRescueHeroProps {
 }
 
 export function AdsRescueHero({ onOpenCheckout }: AdsRescueHeroProps) {
+  const [headlinePlatform, setHeadlinePlatform] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const platform = params.get("platform")?.toLowerCase();
+      if (platform === "google" || platform === "meta" || platform === "facebook") {
+        setHeadlinePlatform(platform);
+      }
+    }
+  }, []);
+
   const handleCTAClick = () => {
     trackCTAClick("hero_cta", "GET YOUR ADS CHECKED — ₹2,499");
     onOpenCheckout();
+  };
+
+  const renderHeadline = () => {
+    if (headlinePlatform === "google") {
+      return (
+        <>
+          WHY ARE YOUR <span className="text-accent-yellow">GOOGLE ADS</span> <br />
+          NOT GETTING THE <br />
+          <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">
+            RESULTS YOU EXPECTED?
+          </span>
+        </>
+      );
+    }
+    if (headlinePlatform === "meta" || headlinePlatform === "facebook") {
+      return (
+        <>
+          WHY ARE YOUR <span className="text-[#0668E1]">META ADS</span> <br />
+          NOT GETTING THE <br />
+          <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">
+            RESULTS YOU EXPECTED?
+          </span>
+        </>
+      );
+    }
+    return (
+      <>
+        SPENDING MONEY ON ADS <br />
+        BUT NOT GETTING THE <br />
+        <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">
+          RESULTS YOU EXPECTED?
+        </span>
+      </>
+    );
   };
 
   return (
@@ -46,11 +93,7 @@ export function AdsRescueHero({ onOpenCheckout }: AdsRescueHeroProps) {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-heading font-black text-3xl sm:text-5xl lg:text-6xl tracking-tighter uppercase leading-[1.05] text-foreground"
             >
-              SPENDING MONEY ON ADS <br />
-              BUT NOT GETTING THE <br />
-              <span className="text-accent-yellow underline decoration-accent-red decoration-4 md:decoration-6 underline-offset-4">
-                RESULTS YOU EXPECTED?
-              </span>
+              {renderHeadline()}
             </motion.h1>
 
             {/* Subtitle & Value Proposition */}

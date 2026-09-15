@@ -132,4 +132,48 @@ export function trackPurchase(data: {
       order_id: data.orderId,
     });
   }
+
+  // Google Ads / GA4 (Gtag / DataLayer)
+  if (typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL', // User will need to configure this in GTM/Gtag script
+      value: amount,
+      currency: 'INR',
+      transaction_id: data.orderId,
+    });
+    
+    // For Enhanced Conversions
+    if (data.email) {
+      (window as any).gtag('set', 'user_data', {
+        email: data.email,
+        address: {
+          first_name: data.name?.split(' ')[0] || '',
+          last_name: data.name?.split(' ').slice(1).join(' ') || ''
+        }
+      });
+    }
+  } else if (typeof (window as any).dataLayer !== 'undefined') {
+    (window as any).dataLayer.push({
+      event: 'purchase',
+      ecommerce: {
+        transaction_id: data.orderId,
+        value: amount,
+        currency: "INR",
+        items: [{
+          item_id: "ads_rescue_2499",
+          item_name: "Ads Rescue Session",
+          price: amount,
+          quantity: 1
+        }]
+      },
+      // Enhanced Conversions via dataLayer
+      user_data: {
+        email: data.email,
+        address: {
+          first_name: data.name?.split(' ')[0] || '',
+          last_name: data.name?.split(' ').slice(1).join(' ') || ''
+        }
+      }
+    });
+  }
 }
