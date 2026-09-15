@@ -15,7 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/start',
     '/ai-growth-audit',
     '/ads-rescue',
-    '/digital-marketing-agency-pune'
+    '/digital-marketing-agency-pune',
+    '/brand-foundation',
+    '/conversion-engine',
+    '/growth-engine',
+    '/ai-intelligence'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
