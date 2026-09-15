@@ -65,7 +65,7 @@ export function WebsiteDevLandingClient() {
         </section>
 
         {/* 2. QUALIFICATION */}
-        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5]">
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
@@ -77,7 +77,7 @@ export function WebsiteDevLandingClient() {
                 <p className="text-lg font-bold opacity-80 mb-8">
                   Your website might be:
                 </p>
-                <ul className="space-y-4 font-bold text-foreground opacity-90">
+                <ul className="space-y-4 font-bold opacity-90">
                   <li className="flex gap-4 items-start"><X className="w-6 h-6 text-accent-red shrink-0" /> <span>Outdated and hurting your brand credibility</span></li>
                   <li className="flex gap-4 items-start"><X className="w-6 h-6 text-accent-red shrink-0" /> <span>Beautiful but generating no enquiries</span></li>
                   <li className="flex gap-4 items-start"><X className="w-6 h-6 text-accent-red shrink-0" /> <span>Slow and frustrating on mobile</span></li>
@@ -217,7 +217,7 @@ export function WebsiteDevLandingClient() {
         </section>
 
         {/* 6. AGENCY VS FREELANCER */}
-        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5]">
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter mb-4">
               Freelancer. Agency. Or Brand Maniacs?
@@ -303,7 +303,7 @@ export function WebsiteDevLandingClient() {
                 { step: "06", title: "Launch", desc: "Your website goes live on high-performance hosting." },
                 { step: "07", title: "Growth", desc: "Optional SEO, content, CRO and marketing support." },
               ].map((s, i) => (
-                <div key={i} className="flex gap-6 items-start p-6 border-2 border-foreground bg-[#F5F5F5] hover:bg-accent-yellow hover:text-black transition-colors group">
+                <div key={i} className="flex gap-6 items-start p-6 border-2 border-foreground bg-[#F5F5F5] text-black hover:bg-accent-yellow transition-colors group">
                   <span className="font-heading font-black text-3xl opacity-30 group-hover:opacity-100">{s.step}</span>
                   <div>
                     <h4 className="font-heading font-black text-xl uppercase mb-2">{s.title}</h4>
