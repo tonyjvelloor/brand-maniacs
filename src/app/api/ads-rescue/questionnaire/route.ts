@@ -27,6 +27,35 @@ export async function POST(req: Request) {
           record.questionnaireSubmittedAt = new Date().toISOString();
 
           await redis.set(`ads_rescue:${id}`, JSON.stringify(record));
+
+          // Forward to Webhook for Google Sheets / CRM
+          if (process.env.LEAD_WEBHOOK_URL) {
+            try {
+              const webhookPayload = {
+                Source: "Ads Rescue Questionnaire",
+                Timestamp: record.questionnaireSubmittedAt,
+                Lead_ID: id,
+                Order_ID: record.orderId,
+                Name: record.contact?.name || "",
+                Email: record.contact?.email || "",
+                Company: record.contact?.company || "",
+                AOV: questionnaire.aov || "",
+                Target_CPA: questionnaire.targetCpa || "",
+                Current_CPA: questionnaire.currentCpa || "",
+                Best_Creatives: questionnaire.bestCreatives || "",
+                Biggest_Challenge: questionnaire.biggestChallenge || "",
+                Competitors: questionnaire.competitors || "",
+              };
+
+              await fetch(process.env.LEAD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(webhookPayload)
+              });
+            } catch (webhookErr) {
+              console.error("Webhook forwarding failed:", webhookErr);
+            }
+          }
         }
       } catch (redisErr) {
         console.error("Redis questionnaire error:", redisErr);

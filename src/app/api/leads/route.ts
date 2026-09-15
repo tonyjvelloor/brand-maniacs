@@ -175,6 +175,39 @@ export async function POST(req: Request) {
             console.warn("Redis credentials not found. Lead stored only in memory for this session.", leadData);
         }
 
+        // 4. Forward to Google Sheets / Zapier / Make via Webhook
+        if (process.env.LEAD_WEBHOOK_URL) {
+            try {
+                // Flatten data for easy Google Sheets insertion
+                const webhookPayload = {
+                    Timestamp: timestamp,
+                    Name: leadInfo.name || "",
+                    Email: leadInfo.email || "",
+                    Company: leadInfo.company || "",
+                    Website: leadInfo.website || "",
+                    Goal: answers.goal || "",
+                    Stage: answers.stage || "",
+                    Budget: answers.budget || "",
+                    Industry: answers.industry || "",
+                    TeamSize: answers.teamSize || "",
+                    AI_Readiness_Score: aiBrief?.growthReadiness?.totalScore || "",
+                    AI_Summary: aiBrief?.executiveSummary || "",
+                    AI_Growth_Constraints: aiBrief?.growthConstraints?.join(", ") || "",
+                    Lead_ID: leadId
+                };
+
+                await fetch(process.env.LEAD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(webhookPayload)
+                });
+                console.log(`Successfully forwarded lead ${leadId} to webhook.`);
+            } catch (webhookError) {
+                console.error("Failed to forward lead to webhook:", webhookError);
+                // We don't fail the request if webhook fails, as Redis is the primary store
+            }
+        }
+
         return NextResponse.json({ success: true, id: leadId, aiBrief });
     } catch (error) {
         console.error("Lead capture error:", error);

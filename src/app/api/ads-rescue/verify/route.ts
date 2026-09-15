@@ -64,6 +64,35 @@ export async function POST(req: Request) {
       }
     }
 
+    // Forward to Webhook for Google Sheets / CRM
+    if (process.env.LEAD_WEBHOOK_URL) {
+      try {
+        const webhookPayload = {
+          Source: "Ads Rescue Paid",
+          Timestamp: timestamp,
+          Name: leadInfo.name || "",
+          Email: leadInfo.email || "",
+          Company: leadInfo.company || "",
+          Phone: leadInfo.phone || "",
+          Ad_Spend: leadInfo.adSpend || "",
+          Platforms: leadInfo.platforms?.join(", ") || "",
+          Website: leadInfo.website || "",
+          Order_ID: orderId,
+          Payment_ID: paymentId,
+          Amount: 2499,
+          Lead_ID: leadId
+        };
+
+        await fetch(process.env.LEAD_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(webhookPayload)
+        });
+      } catch (webhookErr) {
+        console.error("Webhook forwarding failed:", webhookErr);
+      }
+    }
+
     return NextResponse.json({
       success: true,
       leadId,

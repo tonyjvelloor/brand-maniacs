@@ -64,6 +64,38 @@ export async function POST(req: Request) {
         existing.push(submission);
         await writeSubmissions(existing);
 
+        // Forward to Webhook for Google Sheets / CRM
+        if (process.env.LEAD_WEBHOOK_URL) {
+            try {
+                const webhookPayload = {
+                    Source: "Growth Audit Application",
+                    Timestamp: submission.submittedAt,
+                    Lead_ID: submission.id,
+                    Name: submission.contactName,
+                    Email: submission.email,
+                    Phone: submission.phone,
+                    Company: submission.companyName,
+                    Role: submission.role,
+                    Website: submission.website,
+                    Industry: submission.industry,
+                    Monthly_Revenue: submission.monthlyRevenue,
+                    Monthly_Ad_Spend: submission.monthlyAdSpend,
+                    CAC: submission.cac,
+                    Current_Channels: submission.currentChannels.join(", "),
+                    Primary_Challenge: submission.primaryChallenge,
+                    Goals: submission.goals,
+                };
+
+                await fetch(process.env.LEAD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(webhookPayload)
+                });
+            } catch (webhookErr) {
+                console.error("Webhook forwarding failed:", webhookErr);
+            }
+        }
+
         return NextResponse.json({ success: true, id: submission.id });
 
     } catch (error) {
