@@ -5,6 +5,9 @@ import { ArrowRight, Sparkles, Image as ImageIcon, Zap, Layers } from "lucide-re
 export const metadata: Metadata = {
     title: "Maniac Labs & AIProdGen — AI Product Photography Tool | The Brand Maniacs",
     description: "AIProdGen generates ecommerce product visuals without expensive photo shoots. One image in. 50 ad-ready variants out. Built by The Brand Maniacs.",
+    alternates: {
+        canonical: "/labs",
+    },
 };
 
 export default function LabsPage() {

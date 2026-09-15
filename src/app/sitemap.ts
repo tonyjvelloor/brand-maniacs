@@ -1,24 +1,23 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://www.thebrandmaniacs.online',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://www.thebrandmaniacs.online/book',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://www.thebrandmaniacs.online/start',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
+  const baseUrl = 'https://www.thebrandmaniacs.online';
+  const routes = [
+    '',
+    '/growth-systems',
+    '/method',
+    '/work',
+    '/about',
+    '/labs',
+    '/book',
+    '/start',
+    '/ai-growth-audit'
   ];
+
+  return routes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: route === '' ? 1 : 0.8,
+  }));
 }

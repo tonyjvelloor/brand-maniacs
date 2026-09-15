@@ -6,6 +6,9 @@ import { ArrowRight, Image as ImageIcon, Sparkles } from "lucide-react";
 export const metadata: Metadata = {
     title: "Case Studies & Proof — The Brand Maniacs Creative Growth Studio",
     description: "See how TBM helped brands go from invisible to impossible to ignore — real strategy, AI-powered production, and measurable growth outcomes.",
+    alternates: {
+        canonical: '/work',
+    },
 };
 
 const caseStudies = [

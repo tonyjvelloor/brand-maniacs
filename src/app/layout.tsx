@@ -22,6 +22,9 @@ import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebrandmaniacs.online'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     template: "%s",
     default: "The Brand Maniacs | Growth Infrastructure & Creative Technology Studio",
@@ -83,6 +86,30 @@ export default function RootLayout({
                     "Programmatic SEO",
                     "Behavioral Science Marketing"
                   ]
+                },
+                {
+                  "@type": "ProfessionalService",
+                  "@id": "https://www.thebrandmaniacs.online/#localbusiness",
+                  "name": "The Brand Maniacs",
+                  "url": "https://www.thebrandmaniacs.online",
+                  "logo": "https://www.thebrandmaniacs.online/icon.png",
+                  "image": "https://www.thebrandmaniacs.online/images/og-image.jpg",
+                  "description": "Digital Marketing Agency and Growth Infrastructure Studio in Pune, India.",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Pimpri-Chinchwad",
+                    "addressLocality": "Pune",
+                    "addressRegion": "Maharashtra",
+                    "postalCode": "411033",
+                    "addressCountry": "IN"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 18.6298,
+                    "longitude": 73.7997
+                  },
+                  "areaServed": ["Pune", "Maharashtra", "India", "Global"],
+                  "priceRange": "$$"
                 }
               ]
             })

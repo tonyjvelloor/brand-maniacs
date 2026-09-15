@@ -4,7 +4,6 @@ import { MeetTheManiacs } from "@/components/sections/MeetTheManiacs";
 import { OurSystem } from "@/components/sections/OurSystem";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
 import { Solutions } from "@/components/sections/Solutions";
-import { Insights } from "@/components/sections/Insights";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
@@ -45,8 +44,6 @@ export default function Home() {
       {/* 8. Intentionally Small — Proof + positioning */}
       <IntentionallySmall />
 
-      {/* 9. Insights */}
-      <Insights />
 
       {/* 8. Process — How we work */}
       <Process />

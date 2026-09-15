@@ -6,6 +6,9 @@ import Link from "next/link";
 export const metadata: Metadata = {
     title: "Tony Joseph — Founder, The Brand Maniacs | AI Marketing Studio, Pune",
     description: "Tony Joseph is a marketer-turned-builder obsessed with brand psychology and AI-powered growth systems. Founder of The Brand Maniacs and creator of AIProdGen.",
+    alternates: {
+        canonical: "/about",
+    },
 };
 
 const beliefs = [

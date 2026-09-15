@@ -7,6 +7,9 @@ import { FadeUp } from "@/components/ui/FadeUp";
 export const metadata: Metadata = {
     title: "Our Methodology | The Brand Maniacs",
     description: "Marketing is a behavior science and systems engineering problem. Learn how we engineer growth through psychology, infrastructure, and high-velocity testing.",
+    alternates: {
+        canonical: "/method",
+    },
 };
 
 const principles = [
