@@ -1,7 +1,5 @@
 "use client";
 
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { ArrowRight, Check, X, Search, Smartphone, PenTool, Code, LineChart, Zap } from "lucide-react";
 import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/config";
@@ -16,9 +14,7 @@ export function WebsiteDevLandingClient() {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black font-sans">
-      <Navbar />
-      
-      <main>
+<main>
         {/* 1. HERO - ATTACK THE PROBLEM */}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b-2 border-foreground">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-blue rounded-full blur-[120px] opacity-10 pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
@@ -358,7 +354,6 @@ export function WebsiteDevLandingClient() {
         </section>
 
       </main>
-      <Footer />
-    </div>
+</div>
   );
 }

@@ -1,6 +1,4 @@
 import { Metadata } from "next";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { TheBrokenModel } from "@/components/sections/TheBrokenModel";
 import { Solutions } from "@/components/sections/Solutions";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
@@ -20,9 +18,7 @@ export const metadata: Metadata = {
 export default function AyurvedaIndustryPage() {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">
-            <Navbar />
-            
-            <main>
+<main>
                 {/* Industry Hero Section */}
                 <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b-2 border-foreground">
                     <div className="container mx-auto px-4 relative z-10">
@@ -60,8 +56,6 @@ export default function AyurvedaIndustryPage() {
                 <OurSystem />
                 <FinalCTA />
             </main>
-
-            <Footer />
-        </div>
+</div>
     );
 }
