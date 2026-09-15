@@ -19,7 +19,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/brand-foundation',
     '/conversion-engine',
     '/growth-engine',
-    '/ai-intelligence'
+    '/ai-intelligence',
+    '/industries/d2c-ecommerce',
+    '/industries/ayurveda-wellness'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
