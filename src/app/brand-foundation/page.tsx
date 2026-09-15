@@ -1,9 +1,9 @@
 import { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
+import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { BuildingBlocks } from "@/components/sections/BuildingBlocks";
+import { OurSystem } from "@/components/sections/OurSystem";
 import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export default function BrandFoundationPage() {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">
-            <Header />
+            <Navbar />
             
             <main>
                 {/* Hero Section */}

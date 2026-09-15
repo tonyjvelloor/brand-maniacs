@@ -1,11 +1,11 @@
 import { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
+import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { ProblemAgnostic } from "@/components/sections/ProblemAgnostic";
+import { TheBrokenModel } from "@/components/sections/TheBrokenModel";
 import { Solutions } from "@/components/sections/Solutions";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
 import { FinalCTA } from "@/components/sections/FinalCTA";
-import { BuildingBlocks } from "@/components/sections/BuildingBlocks";
+import { OurSystem } from "@/components/sections/OurSystem";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function AyurvedaIndustryPage() {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">
-            <Header />
+            <Navbar />
             
             <main>
                 {/* Industry Hero Section */}
@@ -54,10 +54,10 @@ export default function AyurvedaIndustryPage() {
                     </div>
                 </section>
 
-                <ProblemAgnostic />
+                <TheBrokenModel />
                 <Solutions />
                 <ResultsShowcase />
-                <BuildingBlocks />
+                <OurSystem />
                 <FinalCTA />
             </main>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { Header } from "@/components/layout/Header";
+import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ArrowRight, Check, X, Search, Smartphone, PenTool, Code, LineChart, Zap } from "lucide-react";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export function WebsiteDevLandingClient() {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black font-sans">
-      <Header />
+      <Navbar />
       
       <main>
         {/* 1. HERO - ATTACK THE PROBLEM */}

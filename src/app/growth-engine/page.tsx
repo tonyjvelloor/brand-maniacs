@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Header } from "@/components/layout/Header";
+import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
 import { FinalCTA } from "@/components/sections/FinalCTA";
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 export default function GrowthEnginePage() {
     return (
         <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">
-            <Header />
+            <Navbar />
             
             <main>
                 {/* Hero Section */}
