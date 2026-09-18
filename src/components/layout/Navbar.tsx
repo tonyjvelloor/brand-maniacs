@@ -16,7 +16,7 @@ const navLinks = [
     { label: "Work", href: "/#work" },
     { label: "Process", href: "/#process" },
     { label: "Insights", href: "/#insights" },
-    { label: "About", href: "/#meet-the-maniacs" },
+    { label: "Products", href: "https://reviews.thebrandmaniacs.online/" },
 ];
 
 export function Navbar() {

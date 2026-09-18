@@ -73,6 +73,11 @@ export function Footer() {
                         <h4 className="font-heading font-black uppercase text-accent-yellow underline decoration-2 underline-offset-4 mb-2">Studio</h4>
                         <ul className="space-y-3 text-xs sm:text-sm font-bold uppercase tracking-wide text-foreground">
                             <li><Link href="/labs" className="text-accent-blue hover:bg-accent-blue hover:text-white p-1 -ml-1 transition-none">Maniac Labs</Link></li>
+                            <li>
+                                <a href="https://reviews.thebrandmaniacs.online/" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:bg-green-400 hover:text-black p-1 -ml-1 transition-none font-black flex items-center gap-1 w-fit">
+                                    TBM Reviews Software <span className="text-[8px] bg-green-400 text-black px-1">NEW</span>
+                                </a>
+                            </li>
                             <li><Link href="/work" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Our Work</Link></li>
                             <li><Link href="/method" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Methodology</Link></li>
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Founder</Link></li>
