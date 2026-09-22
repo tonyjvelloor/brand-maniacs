@@ -8,13 +8,14 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { IntentionallySmall } from "@/components/sections/IntentionallySmall";
 import { Process } from "@/components/sections/Process";
 import { ProjectEstimatorTeaser } from "@/components/sections/ProjectEstimatorTeaser";
+import { ReviewBoostTeaser } from "@/components/sections/ReviewBoostTeaser";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Brand Maniacs | Growth Infrastructure Studio",
-  description: "We combine human strategy, AI-powered production, and digital infrastructure to build growth systems for ambitious brands worldwide.",
+  title: "The Brand Maniacs | Top Growth Marketing Agency & Technology Studio",
+  description: "The premier B2B SaaS and Healthcare Growth Marketing Agency. We combine human strategy, AI-powered production, and digital infrastructure to build scalable growth systems.",
 };
 
 export default function Home() {
@@ -38,20 +39,22 @@ export default function Home() {
       {/* 6. Capabilities / Solutions */}
       <Solutions />
 
-      {/* 7. Why Choose Us */}
+      {/* 7. TBM Reviews Software Teaser */}
+      <ReviewBoostTeaser />
+
+      {/* 8. Why Choose Us */}
       <WhyChooseUs />
 
-      {/* 8. Intentionally Small — Proof + positioning */}
+      {/* 9. Intentionally Small — Proof + positioning */}
       <IntentionallySmall />
 
-
-      {/* 8. Process — How we work */}
+      {/* 10. Process — How we work */}
       <Process />
 
-      {/* 10. Start Your Project Teaser */}
+      {/* 11. Start Your Project Teaser */}
       <ProjectEstimatorTeaser />
 
-      {/* 9. Final CTA */}
+      {/* 12. Final CTA */}
       <FinalCTA />
     </>
   );
