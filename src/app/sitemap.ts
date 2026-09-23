@@ -21,8 +21,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/growth-engine',
     '/ai-intelligence',
     '/industries/d2c-ecommerce',
-    '/industries/ayurveda-wellness',
-    '/website-development'
+    '/website-development',
+    '/ayurveda-marketing-agency',
+    '/restaurant-marketing-agency',
+    '/ayurveda-patient-acquisition-audit',
+    '/restaurant-visibility-audit'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
@@ -51,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const industryEntries: MetadataRoute.Sitemap = [
-    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech", "ayurveda-clinics-and-hospitals", "restaurants"
+    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech"
   ].map((industry) => ({
     url: `${baseUrl}/marketing-agency-for-${industry}`,
     lastModified: new Date(),

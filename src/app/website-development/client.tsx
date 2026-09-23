@@ -26,7 +26,7 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
               </span>
               
               <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.9] text-foreground mb-8">
-                Your website should do <span className="text-accent-red underline decoration-8 underline-offset-8">more</span> than just look good.
+                Conversion-Ready Websites Built for <span className="text-accent-red underline decoration-8 underline-offset-8">SEO, AEO & Paid Growth.</span>
               </h1>
               
               <p className="text-lg md:text-xl font-bold text-foreground opacity-80 leading-relaxed mb-10 max-w-2xl mx-auto">
@@ -212,53 +212,145 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
           </div>
         </section>
 
-        {/* 5. MARKETING TECH STACK (AEO/SEO/ANALYTICS) */}
+        {/* 5. DAY 1 INFRASTRUCTURE */}
         <section className="py-24 border-b-2 border-foreground bg-black text-white">
-          <div className="container mx-auto px-4 max-w-5xl">
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <span className="inline-block border-2 border-accent-yellow font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 text-accent-yellow">
-                  DAY 1 INFRASTRUCTURE
-                </span>
-                <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter mb-8 leading-tight">
-                  Ad-Ready & <br/>
-                  <span className="text-accent-red">AEO/SEO</span> Optimized.
-                </h2>
-                <p className="text-lg font-bold opacity-80 mb-8">
-                  We don't hand you a blank website and expect you to figure out tracking. Every site we build is wired for performance marketing from launch.
-                </p>
-                <ul className="space-y-4 font-bold opacity-90">
-                  <li className="flex gap-4 items-start">
-                    <Check className="w-6 h-6 text-accent-yellow shrink-0" /> 
-                    <div>
-                      <span className="block text-accent-yellow uppercase tracking-widest text-xs font-black mb-1">AEO & SEO Friendly</span>
-                      <span>Structured for Google Search and AI-Generative Overviews. Clean code, fast load times, and perfect schema markup.</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-4 items-start">
-                    <Check className="w-6 h-6 text-accent-blue shrink-0" /> 
-                    <div>
-                      <span className="block text-accent-blue uppercase tracking-widest text-xs font-black mb-1">Analytics Pre-Installed</span>
-                      <span>Google Tag Manager, GA4, and Google Search Console set up and verified before you even hit publish.</span>
-                    </div>
-                  </li>
-                  <li className="flex gap-4 items-start">
-                    <Check className="w-6 h-6 text-accent-red shrink-0" /> 
-                    <div>
-                      <span className="block text-accent-red uppercase tracking-widest text-xs font-black mb-1">Ad-Ready Tracking</span>
-                      <span>Conversion events mapped. Ready to plug into Google Ads and Meta Ads without pixel errors.</span>
-                    </div>
-                  </li>
-                </ul>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-16">
+              <span className="inline-block border-2 border-accent-yellow font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 text-accent-yellow">
+                DAY 1 INFRASTRUCTURE
+              </span>
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter leading-tight">
+                Every Website Launches With <br className="hidden md:block"/>
+                Our <span className="text-accent-red">Growth Stack</span> Installed.
+              </h2>
+            </div>
+
+            <div className="bg-[#111] border-4 border-foreground shadow-[8px_8px_0_0_#FFE600] p-8 md:p-12">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12 mb-12">
+                <div>
+                  <h3 className="font-heading font-black text-xl uppercase tracking-wider mb-4 border-b-2 border-white/20 pb-2">SEO</h3>
+                  <ul className="space-y-3 font-mono text-sm">
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-yellow" /> Schema Markup</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-yellow" /> Metadata</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-yellow" /> Clean URLs</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-heading font-black text-xl uppercase tracking-wider mb-4 border-b-2 border-white/20 pb-2">AEO</h3>
+                  <ul className="space-y-3 font-mono text-sm">
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-blue" /> Structure</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-blue" /> Entities</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-blue" /> AI-ready Content</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-heading font-black text-xl uppercase tracking-wider mb-4 border-b-2 border-white/20 pb-2">ANALYTICS</h3>
+                  <ul className="space-y-3 font-mono text-sm">
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-400" /> GA4</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-400" /> GTM</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-green-400" /> Search Console</li>
+                  </ul>
+                </div>
               </div>
-              <div className="bg-[#111] p-10 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600] transform md:-rotate-2">
-                <div className="font-mono text-sm opacity-70 mb-4">// tracking_layer.ts</div>
-                <div className="space-y-3 font-mono text-xs sm:text-sm">
-                  <div className="text-green-400">✓ window.dataLayer initialized</div>
-                  <div className="text-green-400">✓ GTM-XXXXXXX connected</div>
-                  <div className="text-green-400">✓ GA4 page_view firing</div>
-                  <div className="text-accent-yellow">✓ search_console verification passed</div>
-                  <div className="text-accent-red animate-pulse">● Waiting for first lead_submit event...</div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 pt-8 border-t-2 border-white/10">
+                <div>
+                  <h3 className="font-heading font-black text-xl uppercase tracking-wider mb-4 border-b-2 border-white/20 pb-2">PERFORMANCE</h3>
+                  <ul className="space-y-3 font-mono text-sm">
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-white" /> Core Web Vitals</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-white" /> Fast Loading</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-white" /> Mobile-first Architecture</li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="font-heading font-black text-xl uppercase tracking-wider mb-4 border-b-2 border-white/20 pb-2">ADS</h3>
+                  <ul className="space-y-3 font-mono text-sm">
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-red" /> Standard Events</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-red" /> Conversion Tracking</li>
+                    <li className="flex items-center gap-3"><Check className="w-4 h-4 text-accent-red" /> Meta & Google Ready</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5.5 PORTFOLIO PROOF */}
+        <section className="py-24 border-b-2 border-foreground bg-accent-blue text-white">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="text-center mb-16">
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter mb-4">
+                Don't Take Our Word For It.
+              </h2>
+              <p className="font-bold text-xl opacity-90 max-w-2xl mx-auto">
+                Built by our team, not assembled from a template. We engineer high-performance platforms, products, and conversion-ready websites.
+              </p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {/* Project 1 */}
+              <div className="bg-white text-black border-4 border-black p-8 shadow-[8px_8px_0_0_#000]">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-xs font-black uppercase tracking-widest text-accent-red mb-1 block">Project</span>
+                    <h3 className="font-heading font-black text-3xl uppercase tracking-tighter">CouponHub</h3>
+                  </div>
+                  <span className="bg-black text-white text-xs font-bold px-3 py-1 uppercase">Next.js</span>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-widest opacity-60 mb-1">Objective</h4>
+                    <p className="font-bold text-sm">Build a high-performance programmatic SEO platform and consumer marketplace.</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-widest opacity-60 mb-1">Infrastructure</h4>
+                    <p className="font-bold text-sm">Next.js App Router, AEO-ready content clusters, advanced schema markup, edge caching.</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 border-t-2 border-black pt-6">
+                  <div>
+                    <div className="text-3xl font-black text-accent-red">100/100</div>
+                    <div className="text-xs font-bold uppercase tracking-widest mt-1">SEO Health</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-accent-blue">&lt; 1.2s</div>
+                    <div className="text-xs font-bold uppercase tracking-widest mt-1">LCP Speed</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Project 2 */}
+              <div className="bg-black text-white border-4 border-accent-yellow p-8 shadow-[8px_8px_0_0_#FFE600]">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <span className="text-xs font-black uppercase tracking-widest text-accent-yellow mb-1 block">Project</span>
+                    <h3 className="font-heading font-black text-3xl uppercase tracking-tighter">TBM Reviews</h3>
+                  </div>
+                  <span className="bg-accent-yellow text-black text-xs font-bold px-3 py-1 uppercase">React</span>
+                </div>
+                
+                <div className="space-y-4 mb-8">
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-widest opacity-60 mb-1">Objective</h4>
+                    <p className="font-bold text-sm text-gray-300">Engineer a streamlined digital product to automate review capture and boost trust conversions.</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-black uppercase tracking-widest opacity-60 mb-1">Infrastructure</h4>
+                    <p className="font-bold text-sm text-gray-300">Scalable multi-tenant architecture, automated funnels, embeddable trust widgets.</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 border-t-2 border-white/20 pt-6">
+                  <div>
+                    <div className="text-3xl font-black text-accent-yellow">+45%</div>
+                    <div className="text-xs font-bold uppercase tracking-widest mt-1 text-gray-300">Trust Conversion</div>
+                  </div>
+                  <div>
+                    <div className="text-3xl font-black text-accent-yellow">+300%</div>
+                    <div className="text-xs font-bold uppercase tracking-widest mt-1 text-gray-300">Capture Rate</div>
+                  </div>
                 </div>
               </div>
             </div>

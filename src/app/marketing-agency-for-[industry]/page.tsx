@@ -33,16 +33,6 @@ const INDUSTRIES = {
     name: "EdTech",
     tagline: "Fill Your Batches with Predictable Precision",
     description: "Stop relying on chaotic, last-minute webinar pushes. We build automated student acquisition funnels that educate, nurture, and convert high-quality enrollments year-round."
-  },
-  "ayurveda-clinics-and-hospitals": {
-    name: "Ayurveda Clinics & Hospitals",
-    tagline: "Dominate Local Search & Maximize Patient Footfall",
-    description: "We helped Karmanya scale patient volume by 120%. Now we're bringing our proven Ayurveda growth system to ambitious clinics. From high-converting websites to local SEO and Ad-Ready tracking, we ensure your hospital dominates the local market."
-  },
-  "restaurants": {
-    name: "Restro Marketing",
-    tagline: "Drive Covers, Bookings, and Local Hype",
-    description: "A beautiful Instagram isn't enough to pack your restaurant. We build end-to-end restro marketing engines: local SEO to capture 'near me' intent, review management systems, and paid social funnels that turn scrollers into diners."
   }
 };
 

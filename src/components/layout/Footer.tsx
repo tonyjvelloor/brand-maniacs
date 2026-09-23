@@ -50,9 +50,8 @@ export function Footer() {
                     <div className="md:col-span-3 space-y-4 md:pl-4">
                         <h4 className="font-heading font-black uppercase text-foreground underline decoration-2 underline-offset-4 mb-2">Industries</h4>
                         <ul className="space-y-3 text-xs sm:text-sm font-bold uppercase tracking-wide text-foreground">
-                            <li><Link href="/industries/ayurveda-wellness" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Ayurveda Clinic Marketing Company">Ayurveda Clinics</Link></li>
-                            <li><Link href="/marketing-agency-for-ayurveda-clinics-and-hospitals" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Hospital Marketing Agency">Hospitals</Link></li>
-                            <li><Link href="/marketing-agency-for-restaurants" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Restaurant Marketing Agency">Restro Marketing</Link></li>
+                            <li><Link href="/ayurveda-marketing-agency" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Ayurveda Clinic Marketing Company">Ayurveda Clinics</Link></li>
+                            <li><Link href="/restaurant-marketing-agency" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Restaurant Marketing Agency">Restro Marketing</Link></li>
                             <li><Link href="/industries/d2c-ecommerce" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="D2C E-commerce Growth">D2C E-commerce</Link></li>
                             <li><Link href="/marketing-agency-for-b2b-saas" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="B2B SaaS Marketing Agency">B2B SaaS</Link></li>
                             <li><Link href="/marketing-agency-for-real-estate" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Real Estate Marketing Agency">Real Estate</Link></li>
