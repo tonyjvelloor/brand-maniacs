@@ -5,7 +5,7 @@ import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/config";
 import { useState } from "react";
 
-export function WebsiteDevLandingClient() {
+export function WebsiteDevLandingClient({ locationName }: { locationName?: string }) {
   const [formState, setFormState] = useState({
     url: "",
     business: "",
@@ -14,7 +14,7 @@ export function WebsiteDevLandingClient() {
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black font-sans">
-<main>
+      <main>
         {/* 1. HERO - ATTACK THE PROBLEM */}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b-2 border-foreground">
           <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-accent-blue rounded-full blur-[120px] opacity-10 pointer-events-none translate-x-1/3 -translate-y-1/3"></div>
@@ -22,7 +22,7 @@ export function WebsiteDevLandingClient() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <span className="inline-block border-2 border-foreground font-black text-xs md:text-sm uppercase tracking-widest px-3 py-1 mb-8 bg-accent-yellow text-black shadow-[2px_2px_0_0_#000]">
-                Website Design & Development
+                {locationName ? `Website Design & Development in ${locationName}` : "Website Design & Development"}
               </span>
               
               <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.9] text-foreground mb-8">
@@ -353,7 +353,46 @@ export function WebsiteDevLandingClient() {
           </div>
         </section>
 
+        {/* 6. SERVICE AREAS (PROGRAMMATIC SEO INTERNAL LINKING) */}
+        <section className="py-12 bg-foreground text-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h3 className="font-black text-sm uppercase tracking-widest text-background/50 mb-6 border-b-2 border-background/20 pb-4">
+                Local Expertise: Best Website Development Agency in Pune
+              </h3>
+              <div className="flex flex-wrap gap-x-6 gap-y-3">
+                {[
+                  { name: "Pune", slug: "pune" },
+                  { name: "Pimple Saudagar", slug: "pimple-saudagar" },
+                  { name: "Kalewadi", slug: "kalewadi" },
+                  { name: "Pimpri", slug: "pimpri" },
+                  { name: "Moshi", slug: "moshi" },
+                  { name: "Chikhali", slug: "chikhali" },
+                  { name: "Wakad", slug: "wakad" },
+                  { name: "Hinjewadi", slug: "hinjewadi" },
+                  { name: "Baner", slug: "baner" },
+                  { name: "Balewadi", slug: "balewadi" },
+                  { name: "Koregaon Park", slug: "koregaon-park" },
+                  { name: "Kalyani Nagar", slug: "kalyani-nagar" },
+                  { name: "Viman Nagar", slug: "viman-nagar" },
+                  { name: "Magarpatta", slug: "magarpatta" },
+                  { name: "Kharadi", slug: "kharadi" },
+                  { name: "Aundh", slug: "aundh" }
+                ].map((area) => (
+                  <Link 
+                    key={area.slug} 
+                    href={`/website-development-agency-in-${area.slug}`}
+                    className="text-sm font-bold text-background/70 hover:text-accent-yellow transition-colors"
+                  >
+                    {area.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
       </main>
-</div>
+    </div>
   );
 }

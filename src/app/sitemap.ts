@@ -39,5 +39,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticEntries, ...caseStudyEntries];
+  const locationEntries: MetadataRoute.Sitemap = [
+    "pune", "pimple-saudagar", "kalewadi", "pimpri", "moshi", "chikhali", 
+    "wakad", "hinjewadi", "baner", "balewadi", "koregaon-park", "kalyani-nagar", 
+    "viman-nagar", "magarpatta", "kharadi", "aundh"
+  ].map((location) => ({
+    url: `${baseUrl}/website-development-agency-in-${location}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...caseStudyEntries, ...locationEntries];
 }
