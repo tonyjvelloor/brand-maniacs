@@ -19,6 +19,7 @@ export function RestaurantAuditClient() {
     runningAds: "",
     eventDining: "",
     biggestProblem: "",
+    auditMotivation: "",
     name: "",
     phone: "",
     email: ""
@@ -228,6 +229,20 @@ export function RestaurantAuditClient() {
                   ))}
                 </div>
               </div>
+              <div>
+                <label className="block font-black uppercase text-sm mb-3">What made you take this audit today?</label>
+                <div className="flex flex-col gap-3">
+                  {[
+                    "Google Ads isn't generating enough covers", 
+                    "Organic/Google Maps visibility is poor", 
+                    "Website isn't converting to bookings", 
+                    "We want more customers", 
+                    "We aren't sure what's working"
+                  ].map(opt => (
+                    <button key={opt} onClick={() => handleInputChange("auditMotivation", opt)} className={`border-2 border-black py-3 px-4 text-left font-bold ${formData.auditMotivation === opt ? 'bg-accent-yellow text-black' : 'hover:bg-gray-100'}`}>{opt}</button>
+                  ))}
+                </div>
+              </div>
               <div className="pt-6 flex justify-between">
                 <button onClick={() => handleStepChange("visibility")} className="font-bold opacity-60 hover:opacity-100">Back</button>
                 <button onClick={() => handleStepChange("contact")} className="bg-black text-white px-8 py-3 font-black uppercase tracking-widest hover:bg-accent-yellow hover:text-black flex items-center gap-2 transition-colors">Next <ChevronRight className="w-4 h-4" /></button>
@@ -322,7 +337,7 @@ export function RestaurantAuditClient() {
               </p>
               
               <a 
-                href="https://calendly.com/tonyjvelloor/30min" // Replace with actual Calendly link if different
+                href="https://calendly.com/tonyjvelloor/30min" // MUST CONFIGURE CALENDLY TO REDIRECT TO: https://thebrandmaniacs.online/booking-confirmed?audit_type=restaurant
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
