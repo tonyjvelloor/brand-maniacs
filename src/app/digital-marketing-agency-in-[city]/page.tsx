@@ -19,6 +19,7 @@ const TARGET_CITIES = [
 ];
 
 function formatCityName(slug: string): string {
+  if (!slug) return "";
   return slug
     .split("-")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
@@ -31,20 +32,22 @@ export function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { city: string } }): Promise<Metadata> {
-  const formattedCity = formatCityName(params.city);
+export async function generateMetadata({ params }: { params: Promise<{ city: string }> }): Promise<Metadata> {
+  const { city } = await params;
+  const formattedCity = formatCityName(city);
   
   return {
     title: `Digital Marketing Agency in ${formattedCity} | The Brand Maniacs`,
     description: `Looking for a top digital marketing agency in ${formattedCity}? We build AI-powered growth systems, scale revenue, and acquire high-intent customers for ambitious brands.`,
     alternates: {
-      canonical: `/digital-marketing-agency-in-${params.city}`,
+      canonical: `/digital-marketing-agency-in-${city}`,
     },
   };
 }
 
-export default function CityDynamicPage({ params }: { params: { city: string } }) {
-  const formattedCity = formatCityName(params.city);
+export default async function CityDynamicPage({ params }: { params: Promise<{ city: string }> }) {
+  const { city } = await params;
+  const formattedCity = formatCityName(city);
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">

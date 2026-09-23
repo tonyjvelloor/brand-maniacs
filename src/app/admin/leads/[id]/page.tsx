@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 
-export default async function LeadBriefPage({ params }: { params: { id: string } }) {
+export default async function LeadBriefPage({ params }: { params: Promise<{ id: string }> }) {
     const redis = (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
         ? new Redis({
             url: process.env.UPSTASH_REDIS_REST_URL,
@@ -17,7 +17,8 @@ export default async function LeadBriefPage({ params }: { params: { id: string }
         return <div className="p-12 text-red-500 font-bold">Redis configuration missing.</div>;
     }
 
-    const rawLead = await redis.get(`lead:${params.id}`);
+    const { id } = await params;
+    const rawLead = await redis.get(`lead:${id}`);
     if (!rawLead) {
         notFound();
     }

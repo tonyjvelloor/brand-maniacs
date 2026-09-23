@@ -13,8 +13,9 @@ export function generateStaticParams() {
 }
 
 // 2. Generate dynamic metadata based on the slug
-export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
-    const caseStudy = caseStudies.find((cs) => cs.slug === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+    const { slug } = await params;
+    const caseStudy = caseStudies.find((cs) => cs.slug === slug);
 
     if (!caseStudy) {
         return {
@@ -32,8 +33,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
 }
 
 // 3. Page Component
-export default function CaseStudyPage({ params }: { params: { slug: string } }) {
-    const caseStudy = caseStudies.find((cs) => cs.slug === params.slug);
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+    const caseStudy = caseStudies.find((cs) => cs.slug === slug);
 
     if (!caseStudy) {
         notFound();

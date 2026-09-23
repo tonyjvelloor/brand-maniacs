@@ -9,10 +9,11 @@ const redis = (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_R
       })
     : null;
 
-export default async function RoadmapPage({ params }: { params: { id: string } }) {
+export default async function RoadmapPage({ params }: { params: Promise<{ id: string }> }) {
     if (!redis) return notFound();
 
-    const data = await redis.get(`lead:${params.id}`);
+    const { id } = await params;
+    const data = await redis.get(`lead:${id}`);
     if (!data) return notFound();
 
     const leadData = typeof data === 'string' ? JSON.parse(data) : data;

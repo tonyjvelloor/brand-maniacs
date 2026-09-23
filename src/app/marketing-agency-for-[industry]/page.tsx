@@ -44,8 +44,9 @@ export function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { industry: string } }): Promise<Metadata> {
-  const industryData = INDUSTRIES[params.industry as IndustrySlug];
+export async function generateMetadata({ params }: { params: Promise<{ industry: string }> }): Promise<Metadata> {
+  const { industry } = await params;
+  const industryData = INDUSTRIES[industry as IndustrySlug];
   
   if (!industryData) {
     return { title: "Specialized Marketing Agency | The Brand Maniacs" };
@@ -55,13 +56,14 @@ export async function generateMetadata({ params }: { params: { industry: string 
     title: `Best Marketing Agency for ${industryData.name} | The Brand Maniacs`,
     description: `Looking for a specialized marketing agency for ${industryData.name}? ${industryData.description}`,
     alternates: {
-      canonical: `/marketing-agency-for-${params.industry}`,
+      canonical: `/marketing-agency-for-${industry}`,
     },
   };
 }
 
-export default function IndustryDynamicPage({ params }: { params: { industry: string } }) {
-  const industryData = INDUSTRIES[params.industry as IndustrySlug];
+export default async function IndustryDynamicPage({ params }: { params: Promise<{ industry: string }> }) {
+  const { industry } = await params;
+  const industryData = INDUSTRIES[industry as IndustrySlug];
 
   // Fallback if somehow accessed directly with invalid slug
   if (!industryData) {
