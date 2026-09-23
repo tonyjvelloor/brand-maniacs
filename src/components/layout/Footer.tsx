@@ -52,6 +52,9 @@ export function Footer() {
                         <ul className="space-y-3 text-xs sm:text-sm font-bold uppercase tracking-wide text-foreground">
                             <li><Link href="/industries/ayurveda-wellness" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Ayurveda Clinic Marketing Company">Ayurveda Clinics</Link></li>
                             <li><Link href="/industries/d2c-ecommerce" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="D2C E-commerce Growth">D2C E-commerce</Link></li>
+                            <li><Link href="/marketing-agency-for-b2b-saas" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="B2B SaaS Marketing Agency">B2B SaaS</Link></li>
+                            <li><Link href="/marketing-agency-for-real-estate" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Real Estate Marketing Agency">Real Estate</Link></li>
+                            <li><Link href="/marketing-agency-for-fintech" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none" title="Fintech Marketing Agency">Fintech</Link></li>
                             <li><Link href="/website-development" className="text-accent-blue hover:bg-accent-blue hover:text-white p-1 -ml-1 transition-none font-black" title="Website Development Agency">Web Development</Link></li>
                         </ul>
                     </div>

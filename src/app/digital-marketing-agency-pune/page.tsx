@@ -4,6 +4,7 @@ import { Solutions } from "@/components/sections/Solutions";
 import { ResultsShowcase } from "@/components/sections/ResultsShowcase";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { OurSystem } from "@/components/sections/OurSystem";
+import Link from "next/link";
 
 export const metadata: Metadata = {
     title: "Digital Marketing Agency in Pune | The Brand Maniacs",
@@ -45,6 +46,38 @@ export default function PuneLocationPage() {
                 <Solutions />
                 <ResultsShowcase />
                 <OurSystem />
+
+                {/* Locations (PROGRAMMATIC SEO INTERNAL LINKING) */}
+                <section className="py-12 bg-foreground text-background">
+                  <div className="container mx-auto px-4">
+                    <div className="max-w-6xl mx-auto">
+                      <h3 className="font-black text-sm uppercase tracking-widest text-background/50 mb-6 border-b-2 border-background/20 pb-4">
+                        Global Reach: Find a Growth Agency Near You
+                      </h3>
+                      <div className="flex flex-wrap gap-x-6 gap-y-3">
+                        {[
+                          { name: "Mumbai", slug: "mumbai" },
+                          { name: "Bangalore", slug: "bangalore" },
+                          { name: "Delhi", slug: "delhi" },
+                          { name: "Hyderabad", slug: "hyderabad" },
+                          { name: "Chennai", slug: "chennai" },
+                          { name: "Ahmedabad", slug: "ahmedabad" },
+                          { name: "Gurgaon", slug: "gurgaon" },
+                          { name: "Noida", slug: "noida" }
+                        ].map((city) => (
+                          <Link 
+                            key={city.slug} 
+                            href={`/digital-marketing-agency-in-${city.slug}`}
+                            className="text-sm font-bold text-background/70 hover:text-accent-red transition-colors"
+                          >
+                            Digital Marketing Agency in {city.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
                 <FinalCTA />
             </main>
 </div>

@@ -50,5 +50,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...locationEntries];
+  const industryEntries: MetadataRoute.Sitemap = [
+    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech"
+  ].map((industry) => ({
+    url: `${baseUrl}/marketing-agency-for-${industry}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  const cityEntries: MetadataRoute.Sitemap = [
+    "mumbai", "bangalore", "delhi", "hyderabad", "chennai", "ahmedabad", "gurgaon", "noida"
+  ].map((city) => ({
+    url: `${baseUrl}/digital-marketing-agency-in-${city}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...caseStudyEntries, ...locationEntries, ...industryEntries, ...cityEntries];
 }
