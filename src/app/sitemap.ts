@@ -51,7 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const industryEntries: MetadataRoute.Sitemap = [
-    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech"
+    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech", "ayurveda-clinics-and-hospitals", "restaurants"
   ].map((industry) => ({
     url: `${baseUrl}/marketing-agency-for-${industry}`,
     lastModified: new Date(),

@@ -212,6 +212,59 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
           </div>
         </section>
 
+        {/* 5. MARKETING TECH STACK (AEO/SEO/ANALYTICS) */}
+        <section className="py-24 border-b-2 border-foreground bg-black text-white">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <span className="inline-block border-2 border-accent-yellow font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 text-accent-yellow">
+                  DAY 1 INFRASTRUCTURE
+                </span>
+                <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter mb-8 leading-tight">
+                  Ad-Ready & <br/>
+                  <span className="text-accent-red">AEO/SEO</span> Optimized.
+                </h2>
+                <p className="text-lg font-bold opacity-80 mb-8">
+                  We don't hand you a blank website and expect you to figure out tracking. Every site we build is wired for performance marketing from launch.
+                </p>
+                <ul className="space-y-4 font-bold opacity-90">
+                  <li className="flex gap-4 items-start">
+                    <Check className="w-6 h-6 text-accent-yellow shrink-0" /> 
+                    <div>
+                      <span className="block text-accent-yellow uppercase tracking-widest text-xs font-black mb-1">AEO & SEO Friendly</span>
+                      <span>Structured for Google Search and AI-Generative Overviews. Clean code, fast load times, and perfect schema markup.</span>
+                    </div>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <Check className="w-6 h-6 text-accent-blue shrink-0" /> 
+                    <div>
+                      <span className="block text-accent-blue uppercase tracking-widest text-xs font-black mb-1">Analytics Pre-Installed</span>
+                      <span>Google Tag Manager, GA4, and Google Search Console set up and verified before you even hit publish.</span>
+                    </div>
+                  </li>
+                  <li className="flex gap-4 items-start">
+                    <Check className="w-6 h-6 text-accent-red shrink-0" /> 
+                    <div>
+                      <span className="block text-accent-red uppercase tracking-widest text-xs font-black mb-1">Ad-Ready Tracking</span>
+                      <span>Conversion events mapped. Ready to plug into Google Ads and Meta Ads without pixel errors.</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className="bg-[#111] p-10 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600] transform md:-rotate-2">
+                <div className="font-mono text-sm opacity-70 mb-4">// tracking_layer.ts</div>
+                <div className="space-y-3 font-mono text-xs sm:text-sm">
+                  <div className="text-green-400">✓ window.dataLayer initialized</div>
+                  <div className="text-green-400">✓ GTM-XXXXXXX connected</div>
+                  <div className="text-green-400">✓ GA4 page_view firing</div>
+                  <div className="text-accent-yellow">✓ search_console verification passed</div>
+                  <div className="text-accent-red animate-pulse">● Waiting for first lead_submit event...</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 6. AGENCY VS FREELANCER */}
         <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
           <div className="container mx-auto px-4 max-w-5xl text-center">
