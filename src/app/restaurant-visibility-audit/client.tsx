@@ -37,22 +37,49 @@ export function RestaurantAuditClient() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const getStepNumber = (stepName: string) => {
+    const steps = ["intro", "restaurant_info", "visibility", "conversion", "contact", "calculating", "results"];
+    return steps.indexOf(stepName) + 1;
+  };
+
   const trackStep = (stepName: string) => {
     if (typeof window !== "undefined" && (window as any).dataLayer) {
-      (window as any).dataLayer.push({
-        event: "audit_step_view",
-        audit_type: "restaurant",
-        step_name: stepName
-      });
+      if (stepName === "intro") {
+        (window as any).dataLayer.push({
+          event: "audit_start",
+          audit_type: "restaurant"
+        });
+      }
+      
+      if (stepName !== "calculating") {
+        (window as any).dataLayer.push({
+          event: "audit_step_view",
+          audit_type: "restaurant",
+          step_name: stepName,
+          step_number: getStepNumber(stepName)
+        });
+      }
     }
   };
 
   const handleStepChange = (newStep: Step) => {
-    handleStepChange(newStep);
+    setStep(newStep);
     trackStep(newStep);
   };
 
   const calculateScore = () => {
+    // Generate lead ID and UTM tracking (to be sent to backend, not GA4)
+    const leadId = `ld_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    
+    // Fire generate_lead since contact info is now submitted
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: "generate_lead",
+        audit_type: "restaurant",
+        lead_source: "website_diagnostic"
+      });
+    }
+
     handleStepChange("calculating");
     
     // Simulate calculation time
@@ -84,11 +111,11 @@ export function RestaurantAuditClient() {
 
       setScores(newScores);
       
+      // Fire audit_complete
       if (typeof window !== "undefined" && (window as any).dataLayer) {
         (window as any).dataLayer.push({
-          event: "generate_lead",
-          audit_type: "restaurant",
-          restaurant_name: formData.restaurantName
+          event: "audit_complete",
+          audit_type: "restaurant"
         });
       }
 
@@ -298,6 +325,14 @@ export function RestaurantAuditClient() {
                 href="https://calendly.com/tonyjvelloor/30min" // Replace with actual Calendly link if different
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => {
+                  if (typeof window !== "undefined" && (window as any).dataLayer) {
+                    (window as any).dataLayer.push({
+                      event: "booking_click",
+                      audit_type: "restaurant"
+                    });
+                  }
+                }}
                 className="inline-flex justify-center items-center gap-2 bg-black text-white border-2 border-black font-black text-lg uppercase tracking-widest px-10 py-5 hover:bg-white hover:text-black transition-colors"
               >
                 Get Your 15-Minute Growth Breakdown
