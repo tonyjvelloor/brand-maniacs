@@ -1,33 +1,35 @@
 # The Brand Maniacs (TBM)
 
-The Brand Maniacs is a globally positioned creative technology and growth studio, operating from India. We don't just market businesses; we build the infrastructure that helps them grow.
+The Brand Maniacs is a specialized digital growth agency and creative technology studio, operating from India. We don't just market businesses; we build the vertical-specific infrastructure that helps them grow and acquire customers.
 
-We combine human strategy, AI-powered production (AIProdGen), and growth experiments to build growth systems for ambitious brands, SaaS platforms, and e-commerce companies.
+We combine human strategy, engineering, and performance marketing to build robust "Growth Systems" for our core industries. 
 
-## What We Build
-Instead of isolated services, we build complete **Growth Systems**:
-- **Brand Foundation System**: Positioning → identity → messaging → brand architecture
-- **Attention Engine**: Creative strategy → content → campaigns → creator systems
-- **Conversion Engine**: Websites → landing pages → funnels → CRO
-- **Growth Engine**: Paid acquisition → experimentation → analytics → optimization
-- **AI & Intelligence**: Automation → internal tools → AI workflows → decision systems
+## Flagship Verticals
+We have built dedicated, highly optimized growth engines for specific industries:
 
-## Our Methodology
-We believe that marketing is a behavior science and systems engineering problem. Technology is leverage, not a strategy. We prioritize the speed of experimentation—testing fastest and killing bad ideas earliest wins the market.
+### 1. Ayurveda Clinics & Hospitals
+- **Positioning**: Digital Marketing for Ayurveda Clinics & Hospitals That Turns Search Demand Into Patients.
+- **The System**: A patient-acquisition system built around Search, Local SEO, Ads, WhatsApp, and conversion tracking.
+- **Case Study (Karmanya Ayurveda)**: Delivered a +120% increase in patient volume measured over 6 months post-launch by fixing local search visibility, GMB ranking, and Paid Ads.
+- **Lead Capture**: We offer a free, 5-minute interactive Ayurveda Patient Acquisition Audit to diagnose leaks in a clinic's conversion funnel.
 
-## Our Products & Case Studies
-- **CouponHub**: An automated deal intelligence platform and consumer marketplace built on Next.js. Features strict SEO quality gates, programmatic comparison engines, and arbitrage-ready acquisition flows.
-- **FlexPilot**: An AI-powered SaaS product and workspace operating system.
-- **TBM Review Management Platform (reviews.thebrandmaniacs.online)**: A standalone digital product we engineered and sell to help brands systematically capture, manage, and scale their customer reviews and social proof.
+### 2. Restaurants & Fine Dining
+- **Positioning**: Restaurant Marketing That Fills Tables — Not Just Instagram Feeds.
+- **The System**: Local Discovery Revenue Engine optimizing Google Maps, Reviews, Event/Private Dining, and Menu Conversion.
+- **Lead Capture**: We offer a free Restaurant Visibility Audit to diagnose why nearby customers choose competitors.
 
-## Engagement Model
-We partner with clients through structured engagements:
-1. **Growth Assessment**: Frictionless initial audit.
-2. **Growth Architecture**: 2-week engagement to audit the business, identify growth constraints, build an opportunity map, and produce a strategic roadmap.
-3. **Growth System Build**: 6–12 week engagement covering strategy, creative, digital, and acquisition infrastructure.
-4. **Growth Partner**: Ongoing experimentation, creative, performance, and optimization.
+### 3. Website Development (For Growth)
+- **Positioning**: Conversion-Ready Websites Built for SEO, AEO & Paid Growth.
+- **Infrastructure**: We build "Day 1 Infrastructure" including GA4/GTM tracking, Schema.org structure, and Core Web Vitals performance.
 
-## Learn More
-- Start your project: https://www.thebrandmaniacs.online/start
+## Our Products & Engineering Proof
+We build our own software, proving we are engineers, not just marketers using templates:
+- **CouponHub**: An automated deal intelligence platform built on Next.js. Features strict SEO quality gates and programmatic comparison engines.
+- **TBM Review Management Platform (reviews.thebrandmaniacs.online)**: A standalone digital product we engineered to help brands systematically capture, manage, and scale their customer reviews and social proof.
+- **FlexPilot**: An AI-powered SaaS product.
+
+## Contact & Links
+- Start your project / Get an Audit: https://www.thebrandmaniacs.online/start
+- Ayurveda Marketing: https://www.thebrandmaniacs.online/ayurveda-marketing-agency
+- Restaurant Marketing: https://www.thebrandmaniacs.online/restaurant-marketing-agency
 - View our work: https://www.thebrandmaniacs.online/work
-- Meet the team: https://www.thebrandmaniacs.online/#meet-the-maniacs

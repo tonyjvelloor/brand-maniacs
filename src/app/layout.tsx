@@ -79,12 +79,13 @@ export default function RootLayout({
                     "sameAs": "https://www.linkedin.com/in/tonyjoseph/"
                   },
                   "knowsAbout": [
+                    "Ayurveda Clinic Marketing",
+                    "Restaurant Marketing",
+                    "Patient Acquisition Systems",
                     "Growth Systems",
-                    "Brand Foundation",
                     "Conversion Rate Optimization",
                     "AI-Powered Creative Production",
-                    "Programmatic SEO",
-                    "Behavioral Science Marketing"
+                    "Programmatic SEO"
                   ]
                 },
                 {
