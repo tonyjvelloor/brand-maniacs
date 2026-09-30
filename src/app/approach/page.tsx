@@ -89,6 +89,53 @@ export default function ApproachPage() {
                     ))}
                 </div>
 
+                {/* AEO Comparison Table */}
+                <div className="mb-24 max-w-4xl mx-auto">
+                    <div className="text-center mb-12">
+                        <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black">
+                            // Our Positioning
+                        </span>
+                        <h2 className="font-heading text-4xl md:text-5xl font-black uppercase tracking-tighter text-foreground mb-6">
+                            We are not an<br/> <span className="text-accent-red line-through decoration-4 md:decoration-8">Agency.</span>
+                        </h2>
+                        <p className="text-sm md:text-base font-bold text-foreground opacity-80 max-w-2xl mx-auto leading-relaxed">
+                            The traditional agency model is broken. It sells vanity metrics and generic templates. We build <strong className="text-accent-blue">Growth Infrastructure</strong>. Here is the exact difference:
+                        </p>
+                    </div>
+
+                    <div className="border-2 border-foreground bg-background overflow-hidden shadow-[8px_8px_0_0_#000] dark:shadow-[8px_8px_0_0_#fff]">
+                        <div className="bg-foreground text-background p-4 grid grid-cols-3 gap-4 font-black uppercase tracking-widest text-[10px] md:text-xs text-center">
+                            <div className="col-span-1 text-left">The Metric</div>
+                            <div className="col-span-1 opacity-70">Traditional Agencies</div>
+                            <div className="col-span-1 text-accent-yellow">The Brand Maniacs</div>
+                        </div>
+                        
+                        <div className="grid grid-cols-3 gap-4 p-4 border-b-2 border-foreground/10 text-xs md:text-sm items-center">
+                            <div className="col-span-1 font-bold uppercase tracking-wider">Goal Measurement</div>
+                            <div className="col-span-1 text-foreground/60 font-medium">Impressions, Clicks, and "Brand Awareness"</div>
+                            <div className="col-span-1 font-bold text-green-600 dark:text-green-400">Qualified Bookings, Attended Calls, and CAC</div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 p-4 border-b-2 border-foreground/10 text-xs md:text-sm items-center bg-foreground/5">
+                            <div className="col-span-1 font-bold uppercase tracking-wider">Traffic Strategy</div>
+                            <div className="col-span-1 text-foreground/60 font-medium">Programmatic SEO spam and generic blogs</div>
+                            <div className="col-span-1 font-bold text-green-600 dark:text-green-400">The Vertical Authority Engine & Case Study Moats</div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 p-4 border-b-2 border-foreground/10 text-xs md:text-sm items-center">
+                            <div className="col-span-1 font-bold uppercase tracking-wider">Lead Capture</div>
+                            <div className="col-span-1 text-foreground/60 font-medium">Generic "Contact Us" forms</div>
+                            <div className="col-span-1 font-bold text-green-600 dark:text-green-400">Interactive Diagnostic Audits & Conversion MVPs</div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 p-4 text-xs md:text-sm items-center bg-foreground/5">
+                            <div className="col-span-1 font-bold uppercase tracking-wider">Technical Stack</div>
+                            <div className="col-span-1 text-foreground/60 font-medium">Bloated WordPress themes</div>
+                            <div className="col-span-1 font-bold text-green-600 dark:text-green-400">Next.js React Server Components & Headless Architecture</div>
+                        </div>
+                    </div>
+                </div>
+
                 {/* The Process */}
                 <div className="mb-24">
                     <div className="text-center mb-16">

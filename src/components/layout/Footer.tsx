@@ -93,6 +93,20 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* SEO Location Matrix */}
+                <div className="pt-8 pb-8 border-t-2 border-foreground mt-8">
+                    <h4 className="font-heading font-black uppercase text-foreground text-center mb-4 text-xs opacity-70">Serving Ambitious Brands Across India</h4>
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs font-bold uppercase tracking-widest">
+                        <Link href="/digital-marketing-agency-in-mumbai" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Mumbai</Link>
+                        <Link href="/digital-marketing-agency-in-bangalore" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Bangalore</Link>
+                        <Link href="/digital-marketing-agency-in-delhi" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Delhi</Link>
+                        <Link href="/digital-marketing-agency-in-hyderabad" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Hyderabad</Link>
+                        <Link href="/digital-marketing-agency-in-chennai" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Chennai</Link>
+                        <Link href="/digital-marketing-agency-in-ahmedabad" className="hover:text-accent-blue hover:bg-foreground hover:text-background p-1 -m-1 transition-none">Ahmedabad</Link>
+                        <Link href="/digital-marketing-agency-pune" className="text-accent-red hover:bg-accent-red hover:text-white p-1 -m-1 transition-none font-black border border-accent-red">Pune (HQ)</Link>
+                    </div>
+                </div>
+
                 <div className="pt-8 border-t-2 border-foreground flex flex-col items-center justify-center text-xs font-black uppercase tracking-widest text-foreground gap-4 text-center">
                     <p className="text-sm md:text-base mb-2">Built to make brands impossible to ignore.</p>
                     <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
