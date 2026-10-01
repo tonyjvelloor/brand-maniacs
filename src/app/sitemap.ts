@@ -54,9 +54,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const industryEntries: MetadataRoute.Sitemap = [
-    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech"
+    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech", "b2b-services", "manufacturing", "healthcare", "home-services"
   ].map((industry) => ({
     url: `${baseUrl}/marketing-agency-for-${industry}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.6,
+  }));
+
+  const leadGenEntries: MetadataRoute.Sitemap = [
+    "b2b-services", "manufacturing", "healthcare", "home-services", "real-estate", "financial-services"
+  ].map((industry) => ({
+    url: `${baseUrl}/lead-generation-agency-for-${industry}`,
     lastModified: new Date(),
     changeFrequency: 'monthly',
     priority: 0.6,
@@ -71,5 +80,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...locationEntries, ...industryEntries, ...cityEntries];
+  return [...staticEntries, ...caseStudyEntries, ...locationEntries, ...industryEntries, ...leadGenEntries, ...cityEntries];
 }

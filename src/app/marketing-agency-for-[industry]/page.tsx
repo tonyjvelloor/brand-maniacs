@@ -33,6 +33,26 @@ const INDUSTRIES = {
     name: "EdTech",
     tagline: "Fill Your Batches with Predictable Precision",
     description: "Stop relying on chaotic, last-minute webinar pushes. We build automated student acquisition funnels that educate, nurture, and convert high-quality enrollments year-round."
+  },
+  "b2b-services": {
+    name: "B2B Services & Consulting",
+    tagline: "High-Ticket Lead Generation That Closes",
+    description: "Selling B2B services requires deep trust and long sales cycles. We build Account-Based Marketing (ABM) engines, LinkedIn automation, and thought-leadership funnels to capture decision-makers."
+  },
+  "manufacturing": {
+    name: "Manufacturing & Industrial",
+    tagline: "Modernize Your Acquisition and Go Global",
+    description: "Industrial buyers are searching online before they ever request a quote. We optimize your search visibility, build high-converting spec-sheet funnels, and generate qualified RFQs globally."
+  },
+  "healthcare": {
+    name: "Healthcare & Clinics",
+    tagline: "Turn Search Demand Into Booked Patients",
+    description: "Patients search for specialists when they are in pain. We build local SEO moats, direct-response Google Ads campaigns, and seamless booking funnels that fill your waiting room."
+  },
+  "home-services": {
+    name: "Home Services & Contractors",
+    tagline: "Dominate Your Local Market Territory",
+    description: "Stop fighting over shared leads on third-party platforms. We build proprietary local lead generation systems using Local SEO, Google Local Services Ads, and automated follow-up sequences."
   }
 };
 
