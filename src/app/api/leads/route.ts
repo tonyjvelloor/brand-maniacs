@@ -208,6 +208,38 @@ export async function POST(req: Request) {
             }
         }
 
+        // 5. Fire ChatGPT Ads Server-Side Conversion (S2S)
+        if (process.env.CHATGPT_ADS_API_KEY) {
+            try {
+                await fetch("https://bzr.openai.com/v1/events?pid=9UgdaJyaX4g4fTWu2MAXFC", {
+                    method: "POST",
+                    headers: {
+                        "Authorization": \`Bearer \${process.env.CHATGPT_ADS_API_KEY}\`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        validate_only: false,
+                        events: [
+                            {
+                                id: leadId,
+                                type: "lead_created",
+                                timestamp_ms: Date.now(),
+                                source_url: "https://www.thebrandmaniacs.online/api/leads",
+                                action_source: "web",
+                                data: {
+                                    type: "customer_action",
+                                    value: answers.budget || "unknown"
+                                }
+                            }
+                        ]
+                    })
+                });
+                console.log(\`Successfully fired ChatGPT S2S event for lead \${leadId}.\`);
+            } catch (chatgptError) {
+                console.error("Failed to fire ChatGPT S2S event:", chatgptError);
+            }
+        }
+
         return NextResponse.json({ success: true, id: leadId, aiBrief });
     } catch (error) {
         console.error("Lead capture error:", error);
