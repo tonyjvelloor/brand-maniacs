@@ -84,6 +84,11 @@ export function Footer() {
                                     TBM Reviews Software <span className="text-[8px] bg-green-400 text-black px-1">NEW</span>
                                 </a>
                             </li>
+                            <li>
+                                <Link href="/tools/ayurveda-roi-calculator" className="text-accent-yellow hover:bg-accent-yellow hover:text-black p-1 -ml-1 transition-none font-black flex items-center gap-1 w-fit">
+                                    Ayurveda ROI Calculator <span className="text-[8px] border border-accent-yellow px-1">TOOL</span>
+                                </Link>
+                            </li>
                             <li><Link href="/work" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Our Work</Link></li>
                             <li><Link href="/method" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Methodology</Link></li>
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Founder</Link></li>

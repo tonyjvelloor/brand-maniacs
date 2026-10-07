@@ -25,7 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ayurveda-marketing-agency',
     '/restaurant-marketing-agency',
     '/ayurveda-patient-acquisition-audit',
-    '/restaurant-visibility-audit'
+    '/restaurant-visibility-audit',
+    '/tools/ayurveda-roi-calculator'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
