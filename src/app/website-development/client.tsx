@@ -212,6 +212,66 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
           </div>
         </section>
 
+        {/* 4.5 PROVEN SYSTEMS */}
+        <section className="py-24 border-b-2 border-foreground bg-background">
+          <div className="container mx-auto px-4 max-w-5xl">
+            <div className="text-center mb-16">
+              <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-blue text-white shadow-[2px_2px_0_0_#000]">
+                PROOF OF WORK
+              </span>
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter leading-tight">
+                Systems Built By <br className="hidden md:block"/>
+                <span className="text-accent-red">The Brand Maniacs</span>
+              </h2>
+            </div>
+            
+            <div className="space-y-8">
+              {/* VSpaces */}
+              <div className="border-4 border-foreground p-8 bg-[#F5F5F5] hover:bg-white transition-colors relative overflow-hidden group shadow-[8px_8px_0_0_#3b82f6]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent-blue rounded-bl-full -z-0 group-hover:scale-110 transition-transform"></div>
+                <div className="relative z-10 text-black">
+                  <span className="font-bold uppercase tracking-widest text-xs mb-2 block text-accent-blue">Real Estate / Coworking</span>
+                  <h3 className="font-heading font-black text-3xl md:text-4xl uppercase mb-4">VSpaces</h3>
+                  <p className="font-bold opacity-80 max-w-2xl mb-6 text-lg">Engineered a localized conversion architecture to intercept high-intent searches for premium coworking spaces. The system captures enterprise decision-makers rather than shared-desk workers.</p>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">High-Intent</span> Capture</div>
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">Conversion</span> Moat</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Karmanya */}
+              <div className="border-4 border-foreground p-8 bg-[#F5F5F5] hover:bg-white transition-colors relative overflow-hidden group shadow-[8px_8px_0_0_#FFE600]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent-yellow rounded-bl-full -z-0 group-hover:scale-110 transition-transform"></div>
+                <div className="relative z-10 text-black">
+                  <span className="font-bold uppercase tracking-widest text-xs mb-2 block text-black/50">Ayurveda Clinic</span>
+                  <h3 className="font-heading font-black text-3xl md:text-4xl uppercase mb-4">Karmanya Ayurveda</h3>
+                  <p className="font-bold opacity-80 max-w-2xl mb-6 text-lg">Built an educational content system and highly-optimized landing pages. Replaced an invisible brand fighting on discounts with a premium wellness destination.</p>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">+120%</span> Patient Volume</div>
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">-40%</span> Cost Per Lead</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* LiVAta Academy */}
+              <div className="border-4 border-foreground p-8 bg-[#F5F5F5] hover:bg-white transition-colors relative overflow-hidden group shadow-[8px_8px_0_0_#e11d48]">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent-red rounded-bl-full -z-0 group-hover:scale-110 transition-transform"></div>
+                <div className="relative z-10 text-black">
+                  <span className="font-bold uppercase tracking-widest text-xs mb-2 block text-accent-red">EdTech / Education</span>
+                  <h3 className="font-heading font-black text-3xl md:text-4xl uppercase mb-4">LiVAta Academy</h3>
+                  <p className="font-bold opacity-80 max-w-2xl mb-6 text-lg">Rebuilt their lead generation system to replace chaotic, last-minute webinar pushes with an automated, year-round student acquisition funnel driving predictable batches.</p>
+                  <div className="flex flex-wrap gap-4">
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">Automated</span> Funnel</div>
+                    <div className="bg-foreground text-background px-4 py-2 border-2 border-foreground"><span className="font-black text-accent-yellow">Predictable</span> Enrollment</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </section>
+
         {/* 5. DAY 1 INFRASTRUCTURE */}
         <section className="py-24 border-b-2 border-foreground bg-black text-white">
           <div className="container mx-auto px-4 max-w-6xl">
