@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { AdsRescueLandingClient } from "./client";
 
 export const metadata: Metadata = {
-  title: "ADS RESCUE SESSION | Stop Leaking Ad Budget — The Brand Maniacs",
-  description: "A deep-dive forensic diagnostic for businesses spending ₹25,000+ per month on Google or Meta Ads. Find out what went wrong with the money you've already spent.",
+  title: "Ads Rescue Session — Stop Leaking Ad Budget",
+  description: "A deep-dive forensic diagnostic for businesses spending ₹25,000+ per month on Google or Meta Ads. Find out why campaigns aren't producing qualified leads.",
+  alternates: {
+    canonical: "/ads-rescue",
+  },
   openGraph: {
     title: "ADS RESCUE SESSION | Google & Meta Ads Performance Diagnostic",
     description: "Before you spend another ₹10,000 on ads, find out why your campaigns aren't producing the leads and revenue they should. Founding launch price: ₹2,499.",

@@ -214,7 +214,7 @@ export async function POST(req: Request) {
                 await fetch("https://bzr.openai.com/v1/events?pid=9UgdaJyaX4g4fTWu2MAXFC", {
                     method: "POST",
                     headers: {
-                        "Authorization": \`Bearer \${process.env.CHATGPT_ADS_API_KEY}\`,
+                        "Authorization": `Bearer ${process.env.CHATGPT_ADS_API_KEY}`,
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify({
@@ -234,7 +234,7 @@ export async function POST(req: Request) {
                         ]
                     })
                 });
-                console.log(\`Successfully fired ChatGPT S2S event for lead \${leadId}.\`);
+                console.log(`Successfully fired ChatGPT S2S event for lead ${leadId}.`);
             } catch (chatgptError) {
                 console.error("Failed to fire ChatGPT S2S event:", chatgptError);
             }

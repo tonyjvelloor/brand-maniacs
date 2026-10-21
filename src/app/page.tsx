@@ -14,8 +14,11 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Brand Maniacs | Top Growth Marketing Agency & Technology Studio",
-  description: "The premier B2B SaaS and Healthcare Growth Marketing Agency. We combine human strategy, AI-powered production, and digital infrastructure to build scalable growth systems.",
+  title: "Growth Infrastructure & Creative Technology Studio",
+  description: "Built in India, designed for the world. We build revenue-generating growth systems, high-converting websites, and customer acquisition infrastructure.",
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function Home() {

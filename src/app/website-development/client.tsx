@@ -5,12 +5,28 @@ import Link from "next/link";
 import { CALENDLY_URL } from "@/lib/config";
 import { useState } from "react";
 
-export function WebsiteDevLandingClient({ locationName }: { locationName?: string }) {
+export interface LocationDetails {
+  name: string;
+  hub: string;
+  subareas: string;
+  summary: string;
+  clientFocus: string;
+}
+
+export function WebsiteDevLandingClient({ 
+  locationName,
+  locationDetails 
+}: { 
+  locationName?: string;
+  locationDetails?: LocationDetails;
+}) {
   const [formState, setFormState] = useState({
     url: "",
     business: "",
     goal: ""
   });
+
+  const displayName = locationDetails?.name || locationName;
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black font-sans">
@@ -22,15 +38,23 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <span className="inline-block border-2 border-foreground font-black text-xs md:text-sm uppercase tracking-widest px-3 py-1 mb-8 bg-accent-yellow text-black shadow-[2px_2px_0_0_#000]">
-                {locationName ? `Website Design & Development in ${locationName}` : "Website Design & Development"}
+                {displayName ? `Website Design & Development in ${displayName}, Pune` : "Website Design & Development"}
               </span>
               
               <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.9] text-foreground mb-8">
-                Conversion-Ready Websites Built for <span className="text-accent-red underline decoration-8 underline-offset-8">SEO, AEO & Paid Growth.</span>
+                {displayName ? (
+                  <>
+                    Custom Websites For <span className="text-accent-red underline decoration-8 underline-offset-8">{displayName}</span> Businesses That Need Leads.
+                  </>
+                ) : (
+                  <>
+                    Conversion-Ready Websites Built for <span className="text-accent-red underline decoration-8 underline-offset-8">SEO, AEO & Paid Growth.</span>
+                  </>
+                )}
               </h1>
               
               <p className="text-lg md:text-xl font-bold text-foreground opacity-80 leading-relaxed mb-10 max-w-2xl mx-auto">
-                We build high-converting websites designed to turn visitors into enquiries, customers, and revenue. Whether you're launching a new business or tired of your current site generating zero leads.
+                {locationDetails ? locationDetails.summary : "We build high-converting websites designed to turn visitors into enquiries, customers, and revenue. Whether you're launching a new business or tired of your current site generating zero leads."}
               </p>
 
               <div className="flex flex-col items-center gap-6">
@@ -59,6 +83,44 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
             </div>
           </div>
         </section>
+
+        {/* 1.5 LOCAL ECOSYSTEM FOCUS (WHEN TARGETING PUNE LOCALITY) */}
+        {locationDetails && (
+          <section className="py-16 border-b-2 border-foreground bg-accent-yellow text-black">
+            <div className="container mx-auto px-4 max-w-5xl">
+              <div className="border-4 border-black p-8 md:p-10 bg-white shadow-[8px_8px_0_0_#000]">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6 border-b-2 border-black pb-4">
+                  <div>
+                    <span className="font-mono text-xs font-black uppercase tracking-widest bg-black text-white px-3 py-1">
+                      LOCAL INDUSTRY FOCUS · {locationDetails.name.toUpperCase()}
+                    </span>
+                    <h2 className="font-heading font-black text-2xl md:text-4xl uppercase mt-2">
+                      {locationDetails.hub}
+                    </h2>
+                  </div>
+                  <div className="text-left md:text-right">
+                    <span className="text-xs font-black uppercase tracking-widest text-black/60 block">Key Zones</span>
+                    <span className="font-bold text-sm text-black">{locationDetails.subareas}</span>
+                  </div>
+                </div>
+                <div className="grid md:grid-cols-2 gap-8 text-black">
+                  <div>
+                    <h3 className="font-heading font-black text-lg uppercase mb-2 text-accent-red">Commercial Requirement:</h3>
+                    <p className="font-bold opacity-80 text-base leading-relaxed">
+                      {locationDetails.summary}
+                    </p>
+                  </div>
+                  <div className="bg-[#F5F5F5] border-2 border-black p-6">
+                    <h3 className="font-heading font-black text-lg uppercase mb-2 text-accent-blue">Who We Partner With in {locationDetails.name}:</h3>
+                    <p className="font-bold opacity-90 text-sm leading-relaxed">
+                      {locationDetails.clientFocus}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 2. QUALIFICATION */}
         <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
@@ -512,6 +574,73 @@ export function WebsiteDevLandingClient({ locationName }: { locationName?: strin
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* 9. FREQUENTLY ASKED QUESTIONS (AEO / SEO ENGINE) */}
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-16">
+              <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black shadow-[2px_2px_0_0_#000]">
+                TRANSPARENCY FIRST
+              </span>
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter leading-tight">
+                Frequently Asked <br className="hidden md:block" />
+                <span className="text-accent-blue">Questions</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How is The Brand Maniacs different from a traditional web design agency?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Traditional agencies build digital brochures—pretty pages with no commercial strategy, slow load speeds, and generic templates. The Brand Maniacs engineers full Growth Systems. Every website we build includes Day 1 conversion architecture, SEO/AEO metadata and schema, sub-second Next.js edge performance, and closed-loop analytics tracking to directly generate inbound leads and revenue.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Why do you build on Next.js and React instead of WordPress?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  WordPress sites rely on heavy plugins, have slow load times (2–5s), and frequently break or suffer security vulnerabilities. We build with Next.js (React) on modern edge infrastructure. This delivers sub-second load times (&lt; 1.2s LCP), 100/100 Core Web Vitals, enterprise security, and seamless programmatic SEO capabilities that rank higher on Google.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How long does it take to design and launch a custom website?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  A complete high-converting Growth Website typically takes 3 to 5 weeks from initial discovery to deployment. This includes positioning strategy, custom UI/UX design, full-stack Next.js development, responsive mobile testing, and analytics configuration.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Will my website be optimized for SEO and Google AI Overviews on Day 1?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Yes. Every build comes with our Day 1 Growth Stack installed: structured JSON-LD schema markup, optimized meta tags, clean semantic HTML hierarchy, sitemap generation, OpenGraph social cards, and fast Core Web Vitals to maximize indexation across Google Search, ChatGPT Search, and Perplexity.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Do you build websites for businesses outside Pune or internationally?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Yes. While our headquarters and engineering team are in Pune, India, we build growth systems and digital products for clients across India (Mumbai, Bangalore, Delhi) and internationally (UAE, UK, USA, Australia).
+                </p>
+              </details>
             </div>
           </div>
         </section>

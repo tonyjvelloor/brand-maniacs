@@ -184,6 +184,63 @@ export function AyurvedaClient() {
           </div>
         </section>
 
+        {/* 6.5 AYURVEDA FAQS (AEO & GOOGLE SNIPPETS) */}
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-16">
+              <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black shadow-[2px_2px_0_0_#000]">
+                CLINICAL PRACTICE GROWTH
+              </span>
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter leading-tight">
+                Frequently Asked <br className="hidden md:block" />
+                <span className="text-accent-red">Questions</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How do you help Ayurveda clinics get patients from Google Maps?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  We optimize your Google Business Profile (GBP) for high-intent local search queries like "ayurvedic doctor near me", "panchakarma center", and specific chronic condition treatments. This includes localized clinical citations, geotagged procedure updates, structured review collection via our ReviewBoost system, and optimizing your website's medical schema to rank in the Google Local 3-Pack.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Why do traditional social media agencies fail for Ayurveda doctors?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Traditional agencies sell vanity social media retainers—posting generic festival greetings and herbal tips on Instagram. Patients in pain don&apos;t look for solutions on Instagram; they search on Google and ask AI engines. We build search-intent funnels, Google Local ads, and educational landing pages that capture patients actively seeking treatment for their specific condition.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>What is a typical Patient Acquisition Cost (CAC) for Ayurveda clinics?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Across our client base (such as Karmanya Ayurveda), cost-per-lead ranges from ₹180 to ₹350 for qualified consultation inquiries, resulting in an acquired patient cost of ₹800 to ₹1,500 depending on location and speciality. For high-ticket treatments like Panchakarma packages (₹15,000 to ₹50,000+), this generates a 10x+ ROAS. You can test your exact numbers using our free Ayurveda ROI Calculator.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How do you handle Google Ads healthcare policy restrictions for Ayurveda?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Google maintains strict policies around medical claims and unapproved pharmaceuticals. We engineer policy-compliant ad copy and landing page architectures that focus on clinical consultations, authentic holistic practitioner credentials, and symptom alleviation rather than disallowed curative claims, avoiding account suspensions.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
         {/* CROSS LINK */}
         <section className="py-12 bg-foreground text-background text-center">
           <div className="container mx-auto px-4">

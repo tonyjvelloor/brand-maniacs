@@ -23,11 +23,8 @@ import { PostHogProvider } from "./providers";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebrandmaniacs.online'),
-  alternates: {
-    canonical: '/',
-  },
   title: {
-    template: "%s",
+    template: "%s | The Brand Maniacs",
     default: "The Brand Maniacs | Growth Infrastructure & Creative Technology Studio",
   },
   description: "Built in India, designed for the world. We build growth systems, digital products, and acquisition infrastructure for ambitious brands.",
@@ -106,9 +103,30 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@graph": [
                 {
+                  "@type": "WebSite",
+                  "@id": "https://www.thebrandmaniacs.online/#website",
+                  "url": "https://www.thebrandmaniacs.online",
+                  "name": "The Brand Maniacs",
+                  "alternateName": [
+                    "thebrandmaniacs",
+                    "TheBrandManiacs",
+                    "Brand Maniacs",
+                    "TBM",
+                    "TBM Growth Studio"
+                  ],
+                  "description": "A Global Growth Infrastructure and Creative Technology Studio.",
+                  "inLanguage": "en"
+                },
+                {
                   "@type": "Organization",
                   "@id": "https://www.thebrandmaniacs.online/#organization",
                   "name": "The Brand Maniacs",
+                  "alternateName": [
+                    "thebrandmaniacs",
+                    "TheBrandManiacs",
+                    "Brand Maniacs",
+                    "TBM"
+                  ],
                   "url": "https://www.thebrandmaniacs.online",
                   "logo": "https://www.thebrandmaniacs.online/icon.png",
                   "sameAs": [

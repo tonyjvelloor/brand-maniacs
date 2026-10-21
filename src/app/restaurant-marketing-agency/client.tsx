@@ -115,6 +115,63 @@ export function RestaurantClient() {
           </div>
         </section>
 
+        {/* 4.5 RESTAURANT FAQS (AEO & GOOGLE SNIPPETS) */}
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <div className="text-center mb-16">
+              <span className="inline-block border-2 border-foreground font-black text-xs uppercase tracking-widest px-3 py-1 mb-6 bg-accent-yellow text-black shadow-[2px_2px_0_0_#000]">
+                RESTAURANT REVENUE OS
+              </span>
+              <h2 className="font-heading font-black text-4xl md:text-5xl uppercase tracking-tighter leading-tight">
+                Frequently Asked <br className="hidden md:block" />
+                <span className="text-accent-red">Questions</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4">
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How do you help restaurants fill tables without paying 25-30% aggregator commissions?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Aggregators like Swiggy and Zomato keep your customer data and charge 25–30% on every order. We build direct discovery assets: Google Maps Local 3-Pack domination, direct table reservation systems, WhatsApp VIP re-order workflows, and high-margin private dining acquisition funnels that you own 100%.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Why does typical food influencer marketing fail to drive real revenue?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Most food influencers bring freebie-seekers who only visit for a single discount and never return. We replace random influencer barters with our Creator Scoring Matrix: partnering only with creators whose audience demographic matches your exact dining ticket size, and combining creator assets with localized Meta Retargeting to convert footfall repeatedly.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>How does Google Maps Local SEO impact restaurant footfall?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Over 70% of diners search "best rooftop restaurant near me", "family dining", or specific cuisines on Google Maps within 2 hours of dining out. By optimizing your Google Business Profile categories, menu schema, geotagged dish photos, and deploying automated ReviewBoost collection, we position your restaurant in the top 3 recommendations.
+                </p>
+              </details>
+
+              <details className="group border-4 border-foreground p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                  <span>Can you generate corporate events and private party bookings?</span>
+                  <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                </summary>
+                <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                  Yes. Corporate bookings, team dinners, and banquet celebrations carry high ticket values (₹50,000 to ₹5,00,000+). We run targeted B2B Google Search and LinkedIn campaigns reaching HR managers and executive assistants searching for team party venues within your 5–10km radius.
+                </p>
+              </details>
+            </div>
+          </div>
+        </section>
+
         {/* CROSS LINK */}
         <section className="py-12 bg-foreground text-background text-center">
           <div className="container mx-auto px-4">
