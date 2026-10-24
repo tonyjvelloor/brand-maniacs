@@ -19,11 +19,11 @@ export function AyurvedaClient() {
               </span>
               
               <h1 className="font-heading font-black text-5xl sm:text-6xl md:text-7xl lg:text-8xl uppercase tracking-tighter leading-[0.9] text-foreground mb-8">
-                Digital Marketing for Ayurveda Clinics That Turns Search Demand Into <span className="text-accent-red underline decoration-8 underline-offset-8">Patients.</span>
+                Digital Marketing for Ayurveda Clinics & Wellness Centers That Turns Search Demand Into <span className="text-accent-red underline decoration-8 underline-offset-8">Patients.</span>
               </h1>
               
               <p className="text-xl md:text-2xl font-bold text-foreground opacity-80 leading-relaxed mb-10 max-w-2xl">
-                A patient-acquisition system built around Search, Local SEO, Ads, WhatsApp and conversion tracking.
+                A specialized patient acquisition system for Ayurvedic doctors, wellness centers, and Panchakarma clinics. We engineer Google Local 3-Pack rankings, compliant search ads, WhatsApp workflows, and conversion tracking.
               </p>
 
               <Link 

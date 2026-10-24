@@ -4,11 +4,54 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-    title: "Tony Joseph — Founder, The Brand Maniacs | AI Marketing Studio, Pune",
+    title: "Tony Joseph — Founder, The Brand Maniacs",
     description: "Tony Joseph is a marketer-turned-builder obsessed with brand psychology and AI-powered growth systems. Founder of The Brand Maniacs and creator of AIProdGen.",
     alternates: {
         canonical: "/about",
     },
+};
+
+const personSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Person",
+            "@id": "https://www.thebrandmaniacs.online/about#tony-joseph",
+            "name": "Tony Joseph",
+            "jobTitle": "Founder & Chief Architect",
+            "worksFor": {
+                "@type": "Organization",
+                "@id": "https://www.thebrandmaniacs.online/#organization",
+                "name": "The Brand Maniacs",
+                "url": "https://www.thebrandmaniacs.online"
+            },
+            "url": "https://www.thebrandmaniacs.online/about",
+            "image": "https://www.thebrandmaniacs.online/images/tony-joseph.jpg",
+            "sameAs": [
+                "https://www.linkedin.com/in/tonyjoseph/",
+                "https://www.thebrandmaniacs.online"
+            ],
+            "knowsAbout": [
+                "Growth Systems Architecture",
+                "D2C Growth Marketing",
+                "Conversion Rate Optimization",
+                "Behavioral Science in Marketing",
+                "Ayurveda Clinic Marketing",
+                "AI-Powered Creative Production",
+                "Programmatic SEO"
+            ],
+            "description": "Tony Joseph is the founder of The Brand Maniacs and Chief Architect of its proprietary growth systems, combining consumer psychology with modern AI and conversion engineering."
+        },
+        {
+            "@type": "ProfilePage",
+            "@id": "https://www.thebrandmaniacs.online/about#webpage",
+            "url": "https://www.thebrandmaniacs.online/about",
+            "name": "About Tony Joseph — Founder of The Brand Maniacs",
+            "mainEntity": {
+                "@id": "https://www.thebrandmaniacs.online/about#tony-joseph"
+            }
+        }
+    ]
 };
 
 const beliefs = [
@@ -45,6 +88,10 @@ const timeline = [
 export default function AboutPage() {
     return (
         <div className="min-h-screen bg-background pt-28 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+            />
             <div className="container mx-auto px-4 md:px-6 max-w-6xl">
 
                 {/* Hero */}

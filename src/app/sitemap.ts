@@ -26,7 +26,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/restaurant-marketing-agency',
     '/ayurveda-patient-acquisition-audit',
     '/restaurant-visibility-audit',
-    '/tools/ayurveda-roi-calculator'
+    '/tools/ayurveda-roi-calculator',
+    '/reviewboost'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
@@ -55,7 +56,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const industryEntries: MetadataRoute.Sitemap = [
-    "b2b-saas", "d2c-ecommerce", "real-estate", "fintech", "edtech", "b2b-services", "manufacturing", "healthcare", "home-services"
+    "b2b-saas", "real-estate", "fintech", "edtech", "b2b-services", "manufacturing", "healthcare", "home-services"
   ].map((industry) => ({
     url: `${baseUrl}/marketing-agency-for-${industry}`,
     lastModified: new Date(),

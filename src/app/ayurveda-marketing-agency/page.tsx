@@ -2,10 +2,15 @@ import { Metadata } from "next";
 import { AyurvedaClient } from "./client";
 
 export const metadata: Metadata = {
-  title: "Ayurveda Marketing Agency — Patient Acquisition Systems",
-  description: "Digital Marketing for Ayurveda Clinics & Hospitals that turns Google search demand into booked patients. Proven frameworks with our Karmanya Ayurveda case study.",
+  title: "Ayurveda Marketing Agency — Digital Marketing for Clinics & Hospitals",
+  description: "Specialized digital marketing agency for Ayurveda clinics, wellness centers, and hospitals. Local SEO, Google Ads, and patient acquisition systems.",
   alternates: {
     canonical: "/ayurveda-marketing-agency",
+  },
+  openGraph: {
+    title: "Ayurveda Marketing Agency | The Brand Maniacs",
+    description: "Digital marketing for Ayurveda clinics & wellness hospitals that turns search demand into booked patients. See our Karmanya Ayurveda case study.",
+    url: "https://www.thebrandmaniacs.online/ayurveda-marketing-agency",
   },
 };
 
@@ -20,13 +25,31 @@ const ayurvedaSchema = {
         "@id": "https://www.thebrandmaniacs.online/#organization"
       },
       "serviceType": "Healthcare Marketing & Patient Acquisition",
-      "description": "Full-funnel digital marketing systems for Ayurveda clinics and hospitals: Local SEO, Google Business Profile optimization, compliant Google Ads, and patient conversion funnels.",
+      "description": "Full-funnel digital marketing systems for Ayurveda clinics, wellness centers, and hospitals: Local SEO, Google Business Profile optimization, compliant Google Ads, and patient conversion funnels.",
       "areaServed": ["India", "Global"],
       "offers": {
         "@type": "Offer",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock"
       }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.thebrandmaniacs.online/ayurveda-marketing-agency#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.thebrandmaniacs.online"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ayurveda Marketing Agency",
+          "item": "https://www.thebrandmaniacs.online/ayurveda-marketing-agency"
+        }
+      ]
     },
     {
       "@type": "FAQPage",

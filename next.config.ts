@@ -20,6 +20,11 @@ const nextConfig: NextConfig = {
         source: '/marketing-agency-for-restaurants',
         destination: '/restaurant-marketing-agency',
         permanent: true,
+      },
+      {
+        source: '/marketing-agency-for-d2c-ecommerce',
+        destination: '/industries/d2c-ecommerce',
+        permanent: true,
       }
     ];
   },

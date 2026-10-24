@@ -80,9 +80,9 @@ export function Footer() {
                         <ul className="space-y-3 text-xs sm:text-sm font-bold uppercase tracking-wide text-foreground">
                             <li><Link href="/labs" className="text-accent-blue hover:bg-accent-blue hover:text-white p-1 -ml-1 transition-none">Maniac Labs</Link></li>
                             <li>
-                                <a href="https://reviews.thebrandmaniacs.online/" target="_blank" rel="noopener noreferrer" className="text-green-400 hover:bg-green-400 hover:text-black p-1 -ml-1 transition-none font-black flex items-center gap-1 w-fit">
-                                    TBM Reviews Software <span className="text-[8px] bg-green-400 text-black px-1">NEW</span>
-                                </a>
+                                <Link href="/reviewboost" className="text-green-400 hover:bg-green-400 hover:text-black p-1 -ml-1 transition-none font-black flex items-center gap-1 w-fit">
+                                    ReviewBoost Software <span className="text-[8px] bg-green-400 text-black px-1">NEW</span>
+                                </Link>
                             </li>
                             <li>
                                 <Link href="/tools/ayurveda-roi-calculator" className="text-accent-yellow hover:bg-accent-yellow hover:text-black p-1 -ml-1 transition-none font-black flex items-center gap-1 w-fit">
