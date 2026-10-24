@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { caseStudies } from '@/lib/case-studies';
+import { guides } from '@/lib/guides';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.thebrandmaniacs.online';
@@ -27,7 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ayurveda-patient-acquisition-audit',
     '/restaurant-visibility-audit',
     '/tools/ayurveda-roi-calculator',
-    '/reviewboost'
+    '/reviewboost',
+    '/guides'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
@@ -82,5 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...locationEntries, ...industryEntries, ...leadGenEntries, ...cityEntries];
+  const guideEntries: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${baseUrl}/guides/${guide.slug}`,
+    lastModified: new Date(guide.updatedAt),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...caseStudyEntries, ...guideEntries, ...locationEntries, ...industryEntries, ...leadGenEntries, ...cityEntries];
 }
