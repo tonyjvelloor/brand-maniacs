@@ -89,6 +89,7 @@ export function Footer() {
                                     Ayurveda ROI Calculator <span className="text-[8px] border border-accent-yellow px-1">TOOL</span>
                                 </Link>
                             </li>
+                            <li><Link href="/guides" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Blog & Guides</Link></li>
                             <li><Link href="/work" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Our Work</Link></li>
                             <li><Link href="/method" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Methodology</Link></li>
                             <li><Link href="/about" className="hover:bg-foreground hover:text-background p-1 -ml-1 transition-none">Founder</Link></li>

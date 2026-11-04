@@ -25,6 +25,16 @@ const nextConfig: NextConfig = {
         source: '/marketing-agency-for-d2c-ecommerce',
         destination: '/industries/d2c-ecommerce',
         permanent: true,
+      },
+      {
+        source: '/blog',
+        destination: '/guides',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/guides/:slug',
+        permanent: true,
       }
     ];
   },

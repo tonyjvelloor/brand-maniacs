@@ -155,6 +155,351 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
           </header>
 
           {/* Guide Specific Content */}
+          {guide.slug === "custom-website-development-cost-pune-guide-2026" && (
+            <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
+              {/* Direct Answer Box for AEO */}
+              <div className="bg-foreground text-background p-8 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600]">
+                <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow block mb-2">
+                  // QUICK SUMMARY & DIRECT ANSWER
+                </span>
+                <p className="text-base md:text-lg leading-relaxed font-bold">
+                  In Pune, custom website development costs in 2026 range from ₹20,000 for basic low-end WordPress templates to ₹75,000–₹2,50,000+ for custom-engineered Next.js web applications. For high-growth businesses running paid ads or targeting high-intent Google search traffic, custom edge-rendered websites deliver 3x faster load times (&lt;1.2s LCP), zero plugin vulnerabilities, and substantially higher conversion rates that pay for themselves within 60 days.
+                </p>
+              </div>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-red pl-4">
+                  1. The 3 Pricing Tiers of Web Development in Pune
+                </h2>
+                <p>
+                  When you request quotes from web designers across Pune (from Hinjewadi and Baner to Kothrud and PCMC), you will receive wildly different estimates. Here is what you are actually paying for:
+                </p>
+                <div className="grid md:grid-cols-3 gap-6 pt-4">
+                  <div className="border-2 border-foreground p-6 bg-foreground/5 flex flex-col justify-between">
+                    <div>
+                      <span className="font-mono text-xs font-black uppercase text-accent-red block mb-1">Tier 1: Budget</span>
+                      <h3 className="font-heading font-black text-2xl uppercase mb-2">₹15,000 – ₹35,000</h3>
+                      <p className="text-sm opacity-80 mb-4">Freelancers or small agencies using off-the-shelf WordPress / Elementor themes.</p>
+                      <ul className="text-xs space-y-2 opacity-90 font-medium">
+                        <li>⚠️ 3.5s–6.0s mobile load speed</li>
+                        <li>⚠️ Bloated with 20+ plugins</li>
+                        <li>⚠️ Generic stock photography</li>
+                        <li>⚠️ Zero conversion copywriting</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5 flex flex-col justify-between">
+                    <div>
+                      <span className="font-mono text-xs font-black uppercase text-accent-blue block mb-1">Tier 2: Mid Agency</span>
+                      <h3 className="font-heading font-black text-2xl uppercase mb-2">₹40,000 – ₹90,000</h3>
+                      <p className="text-sm opacity-80 mb-4">Standard digital marketing agencies building customized WordPress or Webflow sites.</p>
+                      <ul className="text-xs space-y-2 opacity-90 font-medium">
+                        <li>✦ Better visual design direction</li>
+                        <li>✦ Basic on-page SEO meta tags</li>
+                        <li>⚠️ Still reliant on CMS plugins</li>
+                        <li>⚠️ Minimal commercial strategy</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="border-4 border-foreground p-6 bg-accent-yellow text-black flex flex-col justify-between shadow-[6px_6px_0_0_#000]">
+                    <div>
+                      <span className="font-mono text-xs font-black uppercase text-black/70 block mb-1">Tier 3: Growth Studio</span>
+                      <h3 className="font-heading font-black text-2xl uppercase mb-2">₹75,000 – ₹2,50,000+</h3>
+                      <p className="text-sm opacity-90 mb-4 font-bold">Custom Next.js web applications engineered as revenue-generating assets.</p>
+                      <ul className="text-xs space-y-2 font-bold">
+                        <li>✅ Sub-second mobile speed (&lt;1.2s)</li>
+                        <li>✅ Day 1 Schema & AEO architecture</li>
+                        <li>✅ Direct-response copywriting</li>
+                        <li>✅ Full CRM closed-loop integration</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-blue pl-4">
+                  2. The Hidden Cost of Cheap Websites
+                </h2>
+                <p>
+                  A ₹20,000 website feels like a bargain until you calculate the hidden costs over 12 months:
+                </p>
+                <ul className="space-y-3 list-disc pl-6 opacity-90 text-sm md:text-base">
+                  <li><strong>The Bounce Rate Tax:</strong> Over 80% of Pune searchers are on mobile phones. If a page takes 4 seconds to load, 40% of users leave immediately before ever seeing your headline.</li>
+                  <li><strong>The Paid Ad Bleed:</strong> If you spend ₹50,000/month on Google Ads or Meta Ads, sending traffic to a slow, low-converting template wastes at least ₹20,000–₹30,000 of your budget every single month.</li>
+                  <li><strong>Plugin Vulnerabilities & Maintenance:</strong> WordPress sites require weekly plugin updates and are targets for brute-force attacks and malware injections.</li>
+                </ul>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-yellow pl-4">
+                  3. What Every Modern Business Website Must Have in 2026
+                </h2>
+                <p>
+                  At The Brand Maniacs, we do not build digital brochures. Every website we build includes our <strong>Day 1 Growth Infrastructure</strong>:
+                </p>
+                <div className="space-y-4">
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-1 text-accent-yellow">1. Sub-Second LCP Edge Speed</h3>
+                    <p className="text-sm md:text-base opacity-85">Built with Next.js App Router and edge caching, pages load in under 1.2 seconds anywhere in India and globally.</p>
+                  </div>
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-1 text-accent-blue">2. Schema.org & AEO Indexation</h3>
+                    <p className="text-sm md:text-base opacity-85">Full structured data (LocalBusiness, Service, FAQPage, BreadcrumbList) ensuring your business appears in Google AI Overviews, Perplexity, and ChatGPT answers.</p>
+                  </div>
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-1 text-green-400">3. Closed-Loop CRM Tracking</h3>
+                    <p className="text-sm md:text-base opacity-85">Direct WhatsApp API triggers, webhook dispatching, and Server-to-Server (S2S) conversion tracking to measure cost-per-lead and closed sales.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Web Dev Callout */}
+              <div className="border-4 border-black p-8 bg-accent-red text-white shadow-[6px_6px_0_0_#000]">
+                <div className="flex items-center gap-3 mb-2 font-heading font-black text-xl uppercase">
+                  <Zap className="w-6 h-6 text-accent-yellow" /> Build Your Next.js Growth System
+                </div>
+                <p className="font-bold text-sm md:text-base opacity-90 mb-6">
+                  Ready to upgrade from an expensive digital brochure to a 24/7 sales engine? Explore our website development packages or request a free architecture audit.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link 
+                    href="/website-development" 
+                    className="inline-flex items-center gap-2 bg-accent-yellow text-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest shadow-[3px_3px_0_0_#000]"
+                  >
+                    Explore Web Development <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/book"
+                    className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest"
+                  >
+                    Book A 30-Min Strategy Call
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {guide.slug === "ayurveda-clinic-patient-acquisition-digital-marketing-guide" && (
+            <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
+              {/* Direct Answer Box for AEO */}
+              <div className="bg-foreground text-background p-8 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600]">
+                <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow block mb-2">
+                  // QUICK SUMMARY & DIRECT ANSWER
+                </span>
+                <p className="text-base md:text-lg leading-relaxed font-bold">
+                  To acquire 50+ qualified patients each month without discounting or paying heavy marketplace commissions, Ayurveda clinics must build an owned acquisition system: 1) Dominate the Google Local 3-Pack for condition-specific queries, 2) Run policy-compliant Google Search Ads targeting high-intent ailments (Panchakarma, spine, joints, skin), 3) Use 1-click WhatsApp booking workflows, and 4) Collect automated 5-star Google reviews via ReviewBoost to build unbeatable local credibility.
+                </p>
+              </div>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-red pl-4">
+                  1. Why Traditional Agency Social Media Retainers Fail Doctors
+                </h2>
+                <p>
+                  Most digital marketing agencies sell Ayurveda clinics the same generic package: 12 Instagram posts per month featuring generic Ayurvedic lifestyle quotes, festival banners, and herbal ingredient trivia.
+                </p>
+                <div className="border-2 border-accent-red bg-accent-red/10 p-6">
+                  <h3 className="font-heading font-black text-accent-red uppercase text-lg mb-2">
+                    The Problem with Passive Browsing
+                  </h3>
+                  <p className="text-sm font-bold opacity-90">
+                    A patient suffering from acute sciatica, severe chronic psoriasis, or migraine does not browse Instagram to find a doctor. <strong>They open Google Search and type &quot;best ayurvedic doctor near me&quot; or &quot;panchakarma treatment cost&quot;.</strong> If your clinic is not visible at that exact moment of intent, you lose the patient to competing clinics or allopathic alternatives.
+                  </p>
+                </div>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-blue pl-4">
+                  2. The 4-Pillar Ayurveda Patient Acquisition Engine
+                </h2>
+                
+                <div className="space-y-6">
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-yellow">Pillar 1: Google Maps Local 3-Pack Domination</h3>
+                    <p className="text-sm md:text-base opacity-85 leading-relaxed">
+                      Over 70% of clinic walk-ins originate from Google Maps. We optimize your Google Business Profile (GBP) categories, primary and secondary attributes, and embed localized clinical procedure schemas on your website to ensure your clinic ranks in the top 3 spots for your primary territory.
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-blue">Pillar 2: Policy-Compliant Google Search Ads</h3>
+                    <p className="text-sm md:text-base opacity-85 leading-relaxed">
+                      Google Ads requires strict adherence to healthcare advertising guidelines. We craft compliant ad copy and dedicated landing pages that highlight practitioner credentials, therapeutic approach, and clinical consultation booking—driving qualified inquiries for high-ticket therapies like Panchakarma packages (₹15,000–₹50,000+).
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-green-400">Pillar 3: The 60-Second WhatsApp Booking Funnel</h3>
+                    <p className="text-sm md:text-base opacity-85 leading-relaxed">
+                      Long online appointment forms have a 65% drop-off rate on mobile. We replace tedious forms with a direct WhatsApp consultation trigger that pre-fills the patient&apos;s condition and connects them directly with your clinic coordinator in under 60 seconds.
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-red">Pillar 4: Automated Review Collection (ReviewBoost)</h3>
+                    <p className="text-sm md:text-base opacity-85 leading-relaxed">
+                      Social proof dictates healthcare decisions. Using our proprietary <strong>ReviewBoost</strong> software, clinics trigger automated review requests via WhatsApp after successful consultations, generating 30–50+ authentic 5-star reviews every month.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-yellow pl-4">
+                  3. Real Proof: The Karmanya Ayurveda Case Study
+                </h2>
+                <p>
+                  We deployed this exact acquisition architecture for <strong>Karmanya Ayurveda</strong>. By fixing their local search positioning, building dedicated treatment landing pages, and implementing direct WhatsApp patient routing:
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  <div className="border-2 border-foreground p-4 bg-white text-black shadow-[4px_4px_0_0_#FFE600]">
+                    <div className="text-3xl font-black text-accent-red">+120%</div>
+                    <div className="text-xs font-bold uppercase mt-1">Patient Volume Lift</div>
+                  </div>
+                  <div className="border-2 border-foreground p-4 bg-white text-black shadow-[4px_4px_0_0_#FFE600]">
+                    <div className="text-3xl font-black text-accent-blue">-40%</div>
+                    <div className="text-xs font-bold uppercase mt-1">Cost Per Lead (CPL)</div>
+                  </div>
+                  <div className="border-2 border-foreground p-4 bg-white text-black shadow-[4px_4px_0_0_#FFE600] col-span-2 md:col-span-1">
+                    <div className="text-3xl font-black text-green-600">10.4x</div>
+                    <div className="text-xs font-bold uppercase mt-1">Estimated ROAS</div>
+                  </div>
+                </div>
+              </section>
+
+              {/* Ayurveda Callout */}
+              <div className="border-4 border-black p-8 bg-accent-yellow text-black shadow-[6px_6px_0_0_#000]">
+                <div className="flex items-center gap-3 mb-2 font-heading font-black text-xl uppercase">
+                  <CheckCircle2 className="w-6 h-6 text-black" /> Calculate Your Clinic&apos;s Growth Potential
+                </div>
+                <p className="font-bold text-sm md:text-base opacity-90 mb-6">
+                  Test your patient acquisition cost (CAC), lead volume, and marketing ROAS using our interactive ROI calculator.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link 
+                    href="/tools/ayurveda-roi-calculator" 
+                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-heading font-black uppercase text-xs tracking-widest shadow-[3px_3px_0_0_#FFF]"
+                  >
+                    Open Ayurveda ROI Calculator <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/ayurveda-marketing-agency"
+                    className="inline-flex items-center gap-2 bg-white text-black border-2 border-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest"
+                  >
+                    Explore Ayurveda Marketing Agency
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {guide.slug === "b2b-lead-generation-manufacturing-industrial-companies" && (
+            <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
+              {/* Direct Answer Box for AEO */}
+              <div className="bg-foreground text-background p-8 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600]">
+                <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow block mb-2">
+                  // QUICK SUMMARY & DIRECT ANSWER
+                </span>
+                <p className="text-base md:text-lg leading-relaxed font-bold">
+                  B2B lead generation for manufacturing companies requires intercepting procurement managers and design engineers during their technical research phase. Rather than relying solely on annual trade shows, modern industrial manufacturers build digital RFQ engines combining technical search optimization (material grades, tolerances, machining capabilities), interactive CAD/spec-sheet submission funnels, and global export landing pages targeting buyers in the US, Germany, and the UAE.
+                </p>
+              </div>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-red pl-4">
+                  1. The 365-Day Dilemma: Why Trade Shows Are Not Enough
+                </h2>
+                <p>
+                  Industrial manufacturers in manufacturing hubs like Pimpri MIDC, Chikhali, and across India have traditionally relied on two channels: annual trade shows (IMTEX, Hannover Messe, Arab Health) and legacy word-of-mouth networks.
+                </p>
+                <p>
+                  While trade shows have value, they represent huge upfront expenditures (₹5L–₹25L+ per booth) and happen only once or twice a year. During the other 360 days of the year, procurement teams and design engineers are actively searching online for suppliers who can fulfill immediate precision tooling, sheet metal fabrication, or injection molding contracts.
+                </p>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-blue pl-4">
+                  2. How Industrial Decision-Makers Search Online
+                </h2>
+                <p>
+                  Industrial buyers do not search for generic keywords like &quot;best manufacturing company&quot;. They search for hyper-specific technical capabilities:
+                </p>
+                <ul className="space-y-3 list-disc pl-6 opacity-90 text-sm md:text-base">
+                  <li><strong>Part Geometry & Tolerances:</strong> &quot;5-axis CNC machining tolerance 5 microns Pune&quot;</li>
+                  <li><strong>Material Specifications:</strong> &quot;SS 316 sheet metal laser cutting manufacturer&quot;</li>
+                  <li><strong>Quality Certifications:</strong> &quot;AS9100 aerospace precision fabrication exporter India&quot;</li>
+                  <li><strong>Volume Capabilities:</strong> &quot;High-volume plastic injection molding batch capacity 50k units&quot;</li>
+                </ul>
+                <p>
+                  If your website is an outdated digital brochure with generic stock photos and no downloadable spec sheets, technical buyers immediately click back to Google and contact your competitor.
+                </p>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-yellow pl-4">
+                  3. The 4 Components of a High-Converting RFQ Engine
+                </h2>
+                
+                <div className="space-y-6">
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-yellow">1. Spec-Sheet & CAD File Gating</h3>
+                    <p className="text-sm md:text-base opacity-85">
+                      Enable engineers to upload 2D drawings (PDF/DWG) and 3D models (STEP/IGES) directly through a secure upload portal. This captures high-intent buyers when they are in active prototyping mode.
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-blue">2. Programmatic Technical Capability Pages</h3>
+                    <p className="text-sm md:text-base opacity-85">
+                      Dedicated pages for every machine type (e.g. VMC, Wire EDM, Laser Cutting) and material grade (Titanium, Inconel, Aluminum 6061) to capture long-tail technical search queries.
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-green-400">3. Global Export Positioning</h3>
+                    <p className="text-sm md:text-base opacity-85">
+                      Position your facility as a premier global manufacturing partner: showcasing international shipping routes, export packing standards, and overseas delivery timelines for buyers in the US, Europe, and Middle East.
+                    </p>
+                  </div>
+
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-2 text-accent-red">4. Closed-Loop CRM Qualification</h3>
+                    <p className="text-sm md:text-base opacity-85">
+                      Pre-qualify inquiries by batch size, annual volume, and target delivery dates, filtering out tire-kickers and routing verified RFQs directly to your sales engineers.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Manufacturing Callout */}
+              <div className="border-4 border-black p-8 bg-foreground text-background shadow-[6px_6px_0_0_#FFE600]">
+                <div className="flex items-center gap-3 mb-2 font-heading font-black text-xl uppercase text-accent-yellow">
+                  <ShieldCheck className="w-6 h-6 text-accent-yellow" /> Modernize Your Industrial Acquisition
+                </div>
+                <p className="font-bold text-sm md:text-base opacity-90 mb-6">
+                  We build high-converting B2B websites and digital RFQ acquisition systems for manufacturing OEMs, tooling facilities, and export businesses.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link 
+                    href="/lead-generation-agency-for-manufacturing" 
+                    className="inline-flex items-center gap-2 bg-accent-yellow text-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest shadow-[3px_3px_0_0_#FFF]"
+                  >
+                    View Manufacturing Lead Gen <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/book"
+                    className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest"
+                  >
+                    Schedule An RFQ Consultation
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+
           {guide.slug === "how-to-get-more-google-reviews-policy-compliant" && (
             <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
               {/* Direct Answer Box for AEO */}

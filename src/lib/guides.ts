@@ -8,7 +8,7 @@ export interface Guide {
   title: string;
   metaTitle: string;
   metaDescription: string;
-  category: "Reputation & Local SEO" | "D2C Growth" | "Web Architecture";
+  category: "Reputation & Local SEO" | "D2C Growth" | "Web Architecture" | "B2B & Industrial";
   readTime: string;
   publishedAt: string;
   updatedAt: string;
@@ -23,6 +23,111 @@ export interface Guide {
 }
 
 export const guides: Guide[] = [
+  {
+    slug: "custom-website-development-cost-pune-guide-2026",
+    title: "Custom Website Development Cost in Pune (2026): Agency vs Freelancer vs Next.js Systems",
+    metaTitle: "Website Development Cost in Pune (2026 Price Guide) | The Brand Maniacs",
+    metaDescription: "How much does a custom website cost in Pune? Full breakdown of pricing for WordPress vs custom Next.js web applications, agency vs freelancer costs, and ROI models.",
+    category: "Web Architecture",
+    readTime: "8 min read",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    excerpt: "Looking to build or redesign a business website in Pune? Here is an unfiltered 2026 breakdown of what web development actually costs—from ₹25,000 WordPress templates to ₹1.5L+ custom Next.js conversion engines.",
+    author: {
+      name: "Tony Joseph",
+      role: "Chief Architect, The Brand Maniacs",
+      image: "/images/tony-joseph.jpg",
+      url: "https://www.thebrandmaniacs.online/about"
+    },
+    faqs: [
+      {
+        question: "How much does custom website development cost in Pune in 2026?",
+        answer: "In Pune, website development costs typically range across three tiers: Basic WordPress template sites cost between ₹20,000 and ₹45,000; mid-tier agency builds range from ₹50,000 to ₹1,20,000; and high-performance custom Next.js web applications engineered for lead generation, SEO/AEO indexability, and sub-second speed range from ₹75,000 to ₹2,50,000+ depending on CRM integrations and custom UI architecture."
+      },
+      {
+        question: "Why are cheap ₹15,000–₹25,000 WordPress websites risky for growing businesses?",
+        answer: "Cheap websites rely on bloated pre-made templates and 20+ conflicting plugins. They suffer from 3–6 second mobile load times, frequent malware vulnerabilities, zero conversion architecture, and broken Google analytics tracking. You end up burning money on ads that bounce before the page loads."
+      },
+      {
+        question: "What is the difference between a freelance web developer and a growth studio?",
+        answer: "A freelance developer focuses purely on writing code or setting up a theme to match a visual mockup. A growth studio like The Brand Maniacs engineers the complete commercial asset: commercial positioning, direct-response copywriting, technical SEO and schema, sub-second edge hosting, and automated CRM lead capture."
+      },
+      {
+        question: "How long does it take to build a custom Next.js business website?",
+        answer: "A custom Next.js growth website takes between 3 to 5 weeks from kickoff to launch. This includes discovery, conversion copywriting, custom Figma UI/UX prototyping, full-stack React/Next.js engineering, mobile responsiveness testing, and Day 1 analytics setup."
+      }
+    ]
+  },
+  {
+    slug: "ayurveda-clinic-patient-acquisition-digital-marketing-guide",
+    title: "How Ayurveda Clinics Can Acquire 50+ Patients Every Month from Google (The 2026 Blueprint)",
+    metaTitle: "Ayurveda Patient Acquisition: How to Get 50+ Patients/Mo from Google",
+    metaDescription: "Step-by-step digital marketing blueprint for Ayurveda clinics and Panchakarma hospitals. Dominate Google Local 3-Pack, run compliant Google Ads, and automate WhatsApp bookings.",
+    category: "Reputation & Local SEO",
+    readTime: "9 min read",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    excerpt: "Stop wasting money on social media retainers and festival posters. Here is the exact system Karmanya Ayurveda used to increase patient volume by +120% and drop Cost Per Lead by 40%.",
+    author: {
+      name: "Tony Joseph",
+      role: "Chief Architect, The Brand Maniacs",
+      image: "/images/tony-joseph.jpg",
+      url: "https://www.thebrandmaniacs.online/about"
+    },
+    faqs: [
+      {
+        question: "Why do Instagram and social media marketing fail for Ayurveda clinics?",
+        answer: "Patients seeking treatment for chronic conditions like Panchakarma, sciatica, arthritis, or skin disorders search with high intent on Google when they are experiencing distress. They do not look for doctors on Instagram reels. Agencies charging monthly retainers for social media festival graphics generate vanity impressions with zero booked consultations."
+      },
+      {
+        question: "How do you rank an Ayurveda clinic in the Google Maps Local 3-Pack?",
+        answer: "Ranking in the Local 3-Pack requires: 1) Optimizing your primary Google Business Profile category (e.g. 'Ayurvedic clinic' or 'Alternative medicine practitioner'), 2) Embedding localized clinical procedure schema on your website, 3) Uploading geotagged treatment room and doctor photos, and 4) Maintaining consistent review velocity with patients mentioning specific treatments in their reviews."
+      },
+      {
+        question: "How do you handle Google Ads healthcare restrictions for Ayurvedic medicine?",
+        answer: "Google strictly enforces policies prohibiting unapproved pharmaceuticals and misleading curative claims. Compliant campaigns focus on doctor consultation bookings, holistic wellness evaluation, and authentic clinical credentials rather than guaranteeing cures for specific medical conditions."
+      },
+      {
+        question: "What is an acceptable Patient Acquisition Cost (CAC) for Ayurveda clinics?",
+        answer: "For qualified outpatient consultations, a healthy Cost Per Lead (CPL) is between ₹180 to ₹350, resulting in an acquired patient cost of ₹800 to ₹1,500. Given that high-ticket Panchakarma packages and chronic therapies range from ₹15,000 to ₹50,000+, this delivers a 10x+ ROAS on marketing spend."
+      }
+    ]
+  },
+  {
+    slug: "b2b-lead-generation-manufacturing-industrial-companies",
+    title: "B2B Lead Generation for Manufacturing & Industrial Companies: How to Get Global RFQs Online",
+    metaTitle: "B2B Lead Generation for Manufacturing: How to Get Online Export RFQs",
+    metaDescription: "Learn how manufacturing OEMs, machine shops, and industrial fabricators generate qualified domestic and export RFQs online without relying purely on trade shows.",
+    category: "B2B & Industrial",
+    readTime: "8 min read",
+    publishedAt: "2026-11-04",
+    updatedAt: "2026-11-04",
+    excerpt: "Industrial procurement officers and design engineers search online before they ever walk a trade show. Here is how modern manufacturers build digital acquisition engines that produce verified purchase orders.",
+    author: {
+      name: "Tony Joseph",
+      role: "Chief Architect, The Brand Maniacs",
+      image: "/images/tony-joseph.jpg",
+      url: "https://www.thebrandmaniacs.online/about"
+    },
+    faqs: [
+      {
+        question: "Why is relying solely on trade shows and exhibitions dangerous for manufacturers?",
+        answer: "Trade shows cost ₹5L–₹25L+ per booth and happen once or twice a year. If competitors intercept procurement managers online during the remaining 360 days, your pipeline dries up. A digital inbound engine generates qualified Requests for Quotation (RFQs) 24/7/365 at a fraction of the cost."
+      },
+      {
+        question: "How do industrial buyers search for manufacturers online?",
+        answer: "Procurement managers and mechanical engineers search by technical specifications, part geometries, tolerances (e.g. 'CNC precision turning ISO 9001'), material grades (e.g. 'SS 316 sheet metal fabrication'), and OEM batch volume capabilities. If your website lacks technical spec sheets, you are invisible to them."
+      },
+      {
+        question: "What is an RFQ conversion funnel for manufacturing?",
+        answer: "An RFQ conversion funnel replaces the generic 'Contact Us' box with an interactive specification submitter: allowing engineers to upload CAD/STEP files, select batch quantities, specify material grades, and set target delivery dates. This pre-qualifies buyers and eliminates back-and-forth email delays."
+      },
+      {
+        question: "Can an Indian manufacturer get export clients in the US, Germany, and UAE via digital marketing?",
+        answer: "Yes. By optimizing programmatic search landing pages for international B2B buyer intent, earning technical backlinks, and configuring multi-region Google Search campaigns targeting overseas procurement managers, Indian manufacturers regularly close high-margin export contracts."
+      }
+    ]
+  },
   {
     slug: "how-to-get-more-google-reviews-policy-compliant",
     title: "How to Get More Google Reviews in 2026 (Without Violating Google's Anti-Gating Policy)",

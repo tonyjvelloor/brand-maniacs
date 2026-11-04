@@ -15,7 +15,7 @@ const navLinks = [
     { label: "Methodology", href: "/method" },
     { label: "Work", href: "/#work" },
     { label: "Process", href: "/#process" },
-    { label: "Guides", href: "/guides" },
+    { label: "Blog & Guides", href: "/guides" },
     { label: "Products", href: "https://reviews.thebrandmaniacs.online/" },
 ];
 
