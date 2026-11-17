@@ -83,8 +83,50 @@ export const caseStudies: CaseStudy[] = [
           { label: "Cost Per Consultation", value: "-40%", improvement: true, width: "60%" }
       ],
       outcome: "Shifted positioning from discount-clinic to premium wellness destination. Patient volume grew consistently month-over-month without a single discount offered. Trust scales. Discounts don't.",
-      seoTitle: "Ayurveda Digital Marketing Case Study | Karmanya Ayurveda Growth",
+      seoTitle: "Ayurveda Digital Marketing Case Study — Karmanya Ayurveda Growth",
       seoDescription: "See how we increased patient volume by 120% and reduced acquisition costs by 40% for Karmanya Ayurveda using our proprietary Growth System."
+  },
+  {
+      slug: "vspaces",
+      client: "VSpaces",
+      category: "Real Estate · Managed Coworking",
+      accentColor: "bg-accent-blue",
+      accentText: "text-white",
+      problem: "Operating in a crowded commercial real estate and coworking market where standard listing portals only brought low-intent freelancers looking for cheap daily desk passes instead of long-term enterprise office leases.",
+      systemBuilt: [
+          "Engineered a high-speed Next.js conversion architecture tailored for corporate decision-makers",
+          "Built localized search-intent landing hubs targeting enterprise office requirements",
+          "Replaced generic contact forms with an interactive seat-capacity and custom cabin configurator",
+          "Implemented closed-loop CRM attribution connecting Google Search intent directly to site visits"
+      ],
+      metrics: [
+          { label: "Enterprise Inquiries", value: "+185%", improvement: true, width: "90%" },
+          { label: "Qualified Site Visits", value: "3.2x", improvement: true, width: "85%" }
+      ],
+      outcome: "Transformed their digital presence from a passive brochure into a 24/7 commercial leasing engine that consistently captures multi-seat enterprise contracts.",
+      seoTitle: "VSpaces Case Study — Real Estate & Coworking Lead Generation System",
+      seoDescription: "How we engineered a localized Next.js conversion architecture for VSpaces that increased enterprise office inquiries by 185% and tripled qualified site visits."
+  },
+  {
+      slug: "livata-academy",
+      client: "LiVAta Academy",
+      category: "EdTech · Professional Education",
+      accentColor: "bg-accent-red",
+      accentText: "text-white",
+      problem: "Relying on chaotic, last-minute webinar pushes and high-pressure sales calls to fill student batches. Customer acquisition cost spiked every quarter and enrollment volume was unpredictable.",
+      systemBuilt: [
+          "Rebuilt the student acquisition funnel around career outcomes and curriculum authority",
+          "Engineered high-converting course landing pages with sub-second mobile load times",
+          "Automated WhatsApp and email counselor workflows to nurture prospective students",
+          "Deployed intent-driven search and social video campaigns targeting career-switchers"
+      ],
+      metrics: [
+          { label: "Batch Fill Rate", value: "98%", improvement: true, width: "98%" },
+          { label: "Cost Per Enrollment", value: "-38%", improvement: true, width: "65%" }
+      ],
+      outcome: "Replaced last-minute webinar panic with an automated, year-round student enrollment engine that fills batches predictably while cutting acquisition costs by 38%.",
+      seoTitle: "LiVAta Academy Case Study — EdTech Student Acquisition Funnel",
+      seoDescription: "How we built an automated year-round student enrollment system for LiVAta Academy, achieving a 98% batch fill rate and reducing cost per enrollment by 38%."
   },
   {
       slug: "aiprodgen-experiment",

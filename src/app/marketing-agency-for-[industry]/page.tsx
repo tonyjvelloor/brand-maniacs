@@ -73,7 +73,7 @@ export async function generateMetadata({ params }: { params: Promise<{ industry:
   }
 
   return {
-    title: `Best Marketing Agency for ${industryData.name} | The Brand Maniacs`,
+    title: `Growth Marketing Agency for ${industryData.name}`,
     description: `Looking for a specialized marketing agency for ${industryData.name}? ${industryData.description}`,
     alternates: {
       canonical: `/marketing-agency-for-${industry}`,
@@ -90,8 +90,74 @@ export default async function IndustryDynamicPage({ params }: { params: Promise<
     return null;
   }
 
+  const faqs = [
+    {
+      q: `Why choose a specialized growth studio for ${industryData.name} over a generalist agency?`,
+      a: `Generalist agencies run the same templated social media playbooks across every client. In ${industryData.name}, buyer psychology, sales cycle length, and unit economics require tailored conversion infrastructure, high-intent search capture, and closed-loop attribution.`
+    },
+    {
+      q: `What channels drive the highest ROI for ${industryData.name}?`,
+      a: `We combine high-intent Google Search and AEO/SEO capture with conversion-engineered Next.js landing pages, behavioral paid social retargeting, and automated CRM nurture workflows to lower Customer Acquisition Cost (CAC).`
+    },
+    {
+      q: `How do you measure marketing success for ${industryData.name} clients?`,
+      a: `We do not report on vanity impressions or likes. We track qualified pipeline velocity, Cost Per Acquisition (CPA), and net revenue attribution directly inside your CRM.`
+    }
+  ];
+
+  const industrySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `https://www.thebrandmaniacs.online/marketing-agency-for-${industry}#service`,
+        "name": `Growth Marketing System for ${industryData.name}`,
+        "provider": {
+          "@id": "https://www.thebrandmaniacs.online/#organization"
+        },
+        "serviceType": `${industryData.name} Marketing Agency`,
+        "description": industryData.description,
+        "areaServed": ["India", "United States", "United Kingdom", "United Arab Emirates", "Global"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://www.thebrandmaniacs.online/marketing-agency-for-${industry}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.thebrandmaniacs.online"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": `Marketing Agency for ${industryData.name}`,
+            "item": `https://www.thebrandmaniacs.online/marketing-agency-for-${industry}`
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `https://www.thebrandmaniacs.online/marketing-agency-for-${industry}#faq`,
+        "mainEntity": faqs.map((item) => ({
+          "@type": "Question",
+          "name": item.q,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.a
+          }
+        }))
+      }
+    ]
+  };
+
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(industrySchema) }}
+      />
       <main>
         {/* Dynamic Hero Section */}
         <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden border-b-2 border-foreground">
@@ -136,6 +202,29 @@ export default async function IndustryDynamicPage({ params }: { params: Promise<
         <Solutions />
         <ResultsShowcase />
         <OurSystem />
+
+        {/* Industry FAQ Accordion */}
+        <section className="py-24 border-b-2 border-foreground bg-[#F5F5F5] text-black">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h3 className="font-heading font-black text-3xl md:text-5xl uppercase tracking-tighter mb-12 text-center">
+              Frequently Asked <span className="text-accent-red">Questions</span>
+            </h3>
+            <div className="space-y-4">
+              {faqs.map((item, idx) => (
+                <details key={idx} className="group border-4 border-black p-6 bg-white shadow-[6px_6px_0_0_#000] cursor-pointer">
+                  <summary className="flex justify-between items-center font-heading font-black text-lg md:text-xl uppercase tracking-tight list-none">
+                    <span>{item.q}</span>
+                    <span className="text-2xl transition-transform group-open:rotate-45 font-mono">+</span>
+                  </summary>
+                  <p className="mt-4 font-bold opacity-80 text-base leading-relaxed border-t-2 border-black/10 pt-4">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <FinalCTA />
       </main>
     </div>

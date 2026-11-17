@@ -102,6 +102,18 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* Featured Playbooks Internal Linking Matrix */}
+                <div className="pt-8 pb-4 border-t-2 border-foreground mt-8">
+                    <h4 className="font-heading font-black uppercase text-foreground text-center mb-4 text-xs opacity-70">Tactical Growth Playbooks & Guides</h4>
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-xs font-bold uppercase tracking-widest">
+                        <Link href="/guides/custom-website-development-cost-pune-guide-2026" className="hover:text-accent-yellow hover:bg-foreground p-1 -m-1 transition-none">Pune Website Cost Guide (2026)</Link>
+                        <Link href="/guides/ayurveda-clinic-patient-acquisition-digital-marketing-guide" className="hover:text-accent-yellow hover:bg-foreground p-1 -m-1 transition-none">Ayurveda Patient Acquisition Blueprint</Link>
+                        <Link href="/guides/nextjs-vs-shopify-vs-wordpress-d2c-growth" className="hover:text-accent-yellow hover:bg-foreground p-1 -m-1 transition-none">Next.js vs Shopify for D2C</Link>
+                        <Link href="/guides/b2b-lead-generation-manufacturing-industrial-companies" className="hover:text-accent-yellow hover:bg-foreground p-1 -m-1 transition-none">Manufacturing Export RFQ Guide</Link>
+                        <Link href="/guides/how-to-get-more-google-reviews-policy-compliant" className="hover:text-accent-yellow hover:bg-foreground p-1 -m-1 transition-none">Google Review Policy Guide</Link>
+                    </div>
+                </div>
+
                 {/* SEO Location Matrix */}
                 <div className="pt-8 pb-8 border-t-2 border-foreground mt-8">
                     <h4 className="font-heading font-black uppercase text-foreground text-center mb-4 text-xs opacity-70">Serving Ambitious Brands Across India</h4>

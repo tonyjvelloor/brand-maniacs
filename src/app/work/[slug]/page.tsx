@@ -41,8 +41,55 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
         notFound();
     }
 
+    const caseStudySchema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": `https://www.thebrandmaniacs.online/work/${caseStudy.slug}#article`,
+                "headline": `${caseStudy.client} Case Study — ${caseStudy.category}`,
+                "description": caseStudy.seoDescription,
+                "author": {
+                    "@id": "https://www.thebrandmaniacs.online/#organization"
+                },
+                "publisher": {
+                    "@id": "https://www.thebrandmaniacs.online/#organization"
+                },
+                "mainEntityOfPage": `https://www.thebrandmaniacs.online/work/${caseStudy.slug}`
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": `https://www.thebrandmaniacs.online/work/${caseStudy.slug}#breadcrumb`,
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.thebrandmaniacs.online"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Work",
+                        "item": "https://www.thebrandmaniacs.online/work"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": caseStudy.client,
+                        "item": `https://www.thebrandmaniacs.online/work/${caseStudy.slug}`
+                    }
+                ]
+            }
+        ]
+    };
+
     return (
         <div className="min-h-screen bg-background pt-28 pb-24">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }}
+            />
             <div className="container mx-auto px-4 md:px-6 max-w-4xl">
                 
                 {/* Back Link */}
