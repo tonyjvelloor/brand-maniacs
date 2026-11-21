@@ -35,10 +35,10 @@ const steps = [
         id: "budget",
         question: "What is your anticipated budget for this growth project?",
         options: [
-            { id: "under10k", label: "Under ₹10,00,000" },
-            { id: "10k-25k", label: "₹10,00,000 - ₹25,00,000" },
-            { id: "25k-50k", label: "₹25,00,000 - ₹50,00,000" },
-            { id: "over50k", label: "₹50,00,000+" }
+            { id: "under10k", label: "$2,500 – $5,000 (or Under ₹5,00,000)" },
+            { id: "10k-25k", label: "$5,000 – $15,000 (or ₹5,00,000 – ₹15,00,000)" },
+            { id: "25k-50k", label: "$15,000 – $35,000 (or ₹15,00,000 – ₹35,00,000)" },
+            { id: "over50k", label: "$35,000+ (or ₹35,00,000+)" }
         ]
     },
     {

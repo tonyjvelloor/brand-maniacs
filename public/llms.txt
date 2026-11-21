@@ -41,6 +41,15 @@ The Brand Maniacs is a specialized digital growth studio and creative technology
 - **Local Micro-Markets in Pune**: Serving Hinjewadi (IT & SaaS), Baner & Balewadi (Clinics & Retail), Pimpri & Chikhali (Manufacturing OEMs), Kharadi (FinTech & Global Centers).
 - **Link**: https://www.thebrandmaniacs.online/website-development
 
+### 5. United States Growth Studio (USD Pricing & EST/PST Timezone Overlap)
+- **Positioning**: Silicon Valley Engineering Rigor. High-Velocity Growth Execution. Zero $20k/mo US Agency Bloat.
+- **USD Pricing Tiers**:
+  - Growth Architecture Sprint (2 Weeks): $1,500
+  - Custom Next.js Conversion Website & Growth System Build (4–6 Weeks): $3,500 – $7,500
+  - Dedicated Full-Stack Growth Partner Retainer: $2,500 – $5,000/month
+- **US Regional Hubs Served**: Austin (TX), New York (NY), San Francisco (CA), Los Angeles (CA), Miami (FL), Chicago (IL), Seattle (WA), Boston (MA).
+- **Hub Link**: https://www.thebrandmaniacs.online/usa-growth-studio
+
 ---
 
 ## Proprietary Software & Engineering Proof
@@ -56,6 +65,7 @@ We build our own software products, demonstrating engineering discipline rather 
 ## Flagship Guides & Tactical Playbooks (/guides)
 
 We publish deep, research-backed engineering guides covering technical SEO, conversion rate optimization, and patient/customer acquisition:
+- **US Growth Marketing & Next.js Web Agency Cost Guide (2026 USD Pricing)**: https://www.thebrandmaniacs.online/guides/us-growth-marketing-agency-vs-global-growth-studio-cost-2026
 - **Custom Website Development Cost in Pune (2026 Price Guide)**: https://www.thebrandmaniacs.online/guides/custom-website-development-cost-pune-guide-2026
 - **Ayurveda Clinic Patient Acquisition Blueprint**: https://www.thebrandmaniacs.online/guides/ayurveda-clinic-patient-acquisition-digital-marketing-guide
 - **B2B Lead Generation for Manufacturing & Industrial Companies**: https://www.thebrandmaniacs.online/guides/b2b-lead-generation-manufacturing-industrial-companies

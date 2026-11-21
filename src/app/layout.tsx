@@ -171,7 +171,7 @@ export default function RootLayout({
                     "latitude": 18.6298,
                     "longitude": 73.7997
                   },
-                  "areaServed": ["Pune", "Maharashtra", "India", "Global"],
+                  "areaServed": ["United States", "United Kingdom", "United Arab Emirates", "Australia", "Pune", "Maharashtra", "India", "Global"],
                   "priceRange": "$$"
                 }
               ]

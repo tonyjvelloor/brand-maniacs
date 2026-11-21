@@ -155,6 +155,126 @@ export default async function GuideDetailPage({ params }: { params: Promise<{ sl
           </header>
 
           {/* Guide Specific Content */}
+          {guide.slug === "us-growth-marketing-agency-vs-global-growth-studio-cost-2026" && (
+            <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
+              {/* Direct Answer Box for AEO */}
+              <div className="bg-foreground text-background p-8 border-4 border-foreground shadow-[8px_8px_0_0_#FFE600]">
+                <span className="font-mono text-xs font-black uppercase tracking-widest text-accent-yellow block mb-2">
+                  // QUICK SUMMARY & DIRECT ANSWER (USD BENCHMARKS)
+                </span>
+                <p className="text-base md:text-lg leading-relaxed font-bold">
+                  In 2026, hiring a traditional US growth marketing agency in New York, San Francisco, or Austin costs $12,000 to $25,000/month in retainers plus $25,000–$60,000 for custom Next.js website development. By partnering with an engineering-first global growth studio like The Brand Maniacs, US founders get direct access to senior Next.js architects, Server-to-Server (CAPI) tracking, and 15+ weekly creative experiments for $3,500–$7,500 per web build and $2,500–$5,000/month ongoing—with live EST/PST timezone overlap.
+                </p>
+              </div>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-red pl-4">
+                  1. The $20,000/Month US Agency Retainer Trap
+                </h2>
+                <p>
+                  If you are scaling a D2C brand, B2B SaaS product, or healthcare network in the United States, you have likely experienced the classic agency bait-and-switch: you get pitched by senior partners on a Zoom call, sign a $15,000/month 6-month lock-in contract, and are immediately handed off to a 23-year-old Account Coordinator managing 11 other clients.
+                </p>
+                <div className="border-2 border-accent-red bg-accent-red/10 p-6">
+                  <h3 className="font-heading font-black text-accent-red uppercase text-lg mb-2">
+                    Where Your $15,000/Mo Actually Goes at a Traditional US Agency
+                  </h3>
+                  <ul className="space-y-2 list-disc pl-6 text-sm font-bold opacity-90">
+                    <li><strong>45% Overhead & Real Estate:</strong> Subsidizing SoHo, Santa Monica, or Downtown Austin office leases and executive salaries.</li>
+                    <li><strong>30% Account Management Layers:</strong> Non-technical project managers who forward your Slack messages to outsourced contractors.</li>
+                    <li><strong>Only 25% Actual Execution:</strong> Slow creative turnaround (2–4 static ads/month) and zero full-stack Next.js engineering capability.</li>
+                  </ul>
+                </div>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-blue pl-4">
+                  2. 2026 USD Cost Comparison: US Agency vs. US Freelancer vs. The Brand Maniacs
+                </h2>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse border-2 border-foreground bg-white text-black text-sm">
+                    <thead>
+                      <tr className="bg-foreground text-background font-heading uppercase tracking-widest text-xs">
+                        <th className="p-3 border-2 border-foreground">Deliverable / Metric</th>
+                        <th className="p-3 border-2 border-foreground">Traditional US Agency</th>
+                        <th className="p-3 border-2 border-foreground">US Freelancer</th>
+                        <th className="p-3 border-2 border-foreground bg-accent-red text-white">The Brand Maniacs Studio</th>
+                      </tr>
+                    </thead>
+                    <tbody className="font-bold">
+                      <tr>
+                        <td className="p-3 border-2 border-foreground">Custom Next.js Web System</td>
+                        <td className="p-3 border-2 border-foreground">$25,000 – $60,000</td>
+                        <td className="p-3 border-2 border-foreground">$8,000 – $15,000 (Code only)</td>
+                        <td className="p-3 border-2 border-foreground text-green-700 font-black">$3,500 – $7,500 (Full Stack + CRO)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 border-2 border-foreground">Monthly Growth Retainer</td>
+                        <td className="p-3 border-2 border-foreground">$12,000 – $25,000/mo</td>
+                        <td className="p-3 border-2 border-foreground">$4,000 – $7,000/mo (Single skill)</td>
+                        <td className="p-3 border-2 border-foreground text-accent-blue font-black">$2,500 – $5,000/mo (Full Growth Team)</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 border-2 border-foreground">Time to Launch</td>
+                        <td className="p-3 border-2 border-foreground">12 – 16 Weeks</td>
+                        <td className="p-3 border-2 border-foreground">6 – 10 Weeks</td>
+                        <td className="p-3 border-2 border-foreground text-accent-red font-black">3 – 5 Weeks</td>
+                      </tr>
+                      <tr>
+                        <td className="p-3 border-2 border-foreground">S2S CAPI & AEO Schema</td>
+                        <td className="p-3 border-2 border-foreground">Extra $5,000+ Add-on</td>
+                        <td className="p-3 border-2 border-foreground">Rarely Supported</td>
+                        <td className="p-3 border-2 border-foreground bg-accent-yellow font-black">Included Day 1</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <section className="space-y-6">
+                <h2 className="font-heading font-black text-3xl md:text-4xl uppercase text-foreground tracking-tight border-l-4 border-accent-yellow pl-4">
+                  3. The 24-Hour US-India Engineering Advantage
+                </h2>
+                <p>
+                  We operate on a simple philosophy: <strong>&quot;Built in India. Designed for the world. Global ambition. Indian engineering discipline.&quot;</strong>
+                </p>
+                <div className="space-y-4">
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-1 text-accent-yellow">1. Live EST / CST / PST Overlap Windows</h3>
+                    <p className="text-sm md:text-base opacity-85">We hold dedicated live overlap hours every day during US morning and afternoon windows for real-time Slack communication, sprint planning, and executive reviews.</p>
+                  </div>
+                  <div className="border-2 border-foreground p-6 bg-foreground/5">
+                    <h3 className="font-heading font-black text-xl uppercase mb-1 text-accent-blue">2. Overnight Shipping Velocity</h3>
+                    <p className="text-sm md:text-base opacity-85">While your US competitors wait two weeks for their agency to build a landing page variant, our engineering team builds, tests, and deploys your new Next.js funnel overnight so it is live when you open your laptop at 8 AM EST.</p>
+                  </div>
+                </div>
+              </section>
+
+              {/* USA Studio Callout */}
+              <div className="border-4 border-black p-8 bg-accent-yellow text-black shadow-[6px_6px_0_0_#000]">
+                <div className="flex items-center gap-3 mb-2 font-heading font-black text-xl uppercase">
+                  <Zap className="w-6 h-6 text-black" /> Scale Your US Brand Without Agency Bloat
+                </div>
+                <p className="font-bold text-sm md:text-base opacity-90 mb-6">
+                  Explore our dedicated US Growth Studio packages in USD ($) or book a 30-minute architecture call during EST/PST hours.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <Link 
+                    href="/usa-growth-studio" 
+                    className="inline-flex items-center gap-2 bg-black text-white px-6 py-3 font-heading font-black uppercase text-xs tracking-widest shadow-[3px_3px_0_0_#FFF]"
+                  >
+                    Explore USA Growth Studio ($) <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link 
+                    href="/book"
+                    className="inline-flex items-center gap-2 bg-white text-black border-2 border-black px-6 py-3 font-heading font-black uppercase text-xs tracking-widest"
+                  >
+                    Book US Discovery Call
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )}
+
           {guide.slug === "custom-website-development-cost-pune-guide-2026" && (
             <div className="space-y-12 text-base md:text-lg font-bold text-foreground/90 leading-relaxed font-sans">
               {/* Direct Answer Box for AEO */}

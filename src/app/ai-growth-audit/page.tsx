@@ -18,13 +18,13 @@ const CHANNELS = [
 ];
 
 const REVENUE_RANGES = [
-    "Under ₹5 Lakhs/mo", "₹5L – ₹20L/mo", "₹20L – ₹50L/mo",
-    "₹50L – ₹1 Crore/mo", "Above ₹1 Crore/mo"
+    "Under $10K/mo (₹5L/mo)", "$10K – $30K/mo (₹5L – ₹20L/mo)", "$30K – $75K/mo (₹20L – ₹50L/mo)",
+    "$75K – $150K/mo (₹50L – ₹1Cr/mo)", "Above $150K/mo (₹1Cr+/mo)"
 ];
 
 const AD_SPEND_RANGES = [
-    "Under ₹50K/mo", "₹50K – ₹2L/mo", "₹2L – ₹5L/mo",
-    "₹5L – ₹15L/mo", "Above ₹15L/mo", "Not running paid ads yet"
+    "Under $1,500/mo (₹50K/mo)", "$1,500 – $5,000/mo (₹50K – ₹2L/mo)", "$5,000 – $15,000/mo (₹2L – ₹5L/mo)",
+    "$15,000 – $40,000/mo (₹5L – ₹15L/mo)", "Above $40,000/mo (₹15L+/mo)", "Not running paid ads yet"
 ];
 
 const TEAM_SIZES = ["Solo founder", "2–5", "6–15", "16–50", "50+"];

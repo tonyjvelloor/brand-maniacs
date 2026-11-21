@@ -29,7 +29,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/restaurant-visibility-audit',
     '/tools/ayurveda-roi-calculator',
     '/reviewboost',
-    '/guides'
+    '/guides',
+    '/usa-growth-studio'
   ];
 
   const staticEntries: MetadataRoute.Sitemap = routes.map((route) => ({
@@ -84,6 +85,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const usCityEntries: MetadataRoute.Sitemap = [
+    "austin", "new-york", "san-francisco", "los-angeles", "miami", "chicago", "seattle", "boston"
+  ].map((city) => ({
+    url: `${baseUrl}/growth-marketing-agency-in-${city}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.8,
+  }));
+
   const guideEntries: MetadataRoute.Sitemap = guides.map((guide) => ({
     url: `${baseUrl}/guides/${guide.slug}`,
     lastModified: new Date(guide.updatedAt),
@@ -91,5 +101,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticEntries, ...caseStudyEntries, ...guideEntries, ...locationEntries, ...industryEntries, ...leadGenEntries, ...cityEntries];
+  return [...staticEntries, ...caseStudyEntries, ...guideEntries, ...usCityEntries, ...locationEntries, ...industryEntries, ...leadGenEntries, ...cityEntries];
 }

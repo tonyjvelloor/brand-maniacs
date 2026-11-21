@@ -24,6 +24,41 @@ export interface Guide {
 
 export const guides: Guide[] = [
   {
+    slug: "us-growth-marketing-agency-vs-global-growth-studio-cost-2026",
+    title: "Hiring a Growth Marketing & Next.js Web Agency in the US (2026): $20k/Mo Retainers vs. Engineering-First Growth Studios",
+    metaTitle: "US Growth Marketing & Next.js Web Agency Cost Guide (2026) | USD Pricing",
+    metaDescription: "Comparing $15k–$25k/mo US marketing agency retainers vs. engineering-first global growth studios. Full 2026 breakdown of Next.js web development costs, CAPI attribution, and ROI.",
+    category: "Web Architecture",
+    readTime: "8 min read",
+    publishedAt: "2026-11-21",
+    updatedAt: "2026-11-21",
+    excerpt: "Why US D2C and B2B SaaS founders in Austin, NYC, and SF are replacing bloated $20,000/month agency retainers with senior Next.js growth engineering studios.",
+    author: {
+      name: "Tony Joseph",
+      role: "Chief Architect, The Brand Maniacs",
+      image: "/images/tony-joseph.jpg",
+      url: "https://www.thebrandmaniacs.online/about"
+    },
+    faqs: [
+      {
+        question: "How much does a growth marketing agency cost in the US in 2026?",
+        answer: "In major US hubs (New York, San Francisco, Los Angeles, Austin), traditional full-service growth marketing agencies charge $12,000 to $25,000/month plus 10–15% of ad spend, while custom Next.js website builds cost $25,000 to $60,000. By partnering with a global engineering-first growth studio like The Brand Maniacs, US brands access senior Next.js engineers and growth architects for $3,500–$7,500 per web build and $2,500–$5,000/month ongoing."
+      },
+      {
+        question: "Why do traditional $15k/mo US agency retainers fail seed and Series A brands?",
+        answer: "Traditional agencies suffer from severe overhead bloat. When a US brand pays a $15,000/month retainer, over 65% goes toward Manhattan or Bay Area office rent, partner margins, and layers of non-technical account coordinators. Actual execution is delegated to junior staff juggling 10+ accounts, resulting in slow creative testing and zero engineering depth."
+      },
+      {
+        question: "How does timezone collaboration work for US founders (EST, CST, PST)?",
+        answer: "We operate with dedicated live overlap blocks during US Eastern (EST), Central (CST), and Pacific (PST) business hours for Slack collaboration and weekly sprint calls. Additionally, our 24-hour development cycle turns timezone differences into an advantage: landing page changes or creative iterations requested at 5 PM EST are coded, QA-tested, and live by 8 AM EST the next morning."
+      },
+      {
+        question: "What technical stack do you deploy for US D2C and SaaS clients?",
+        answer: "We build on Next.js App Router (React), edge-cached on Vercel/Cloudflare for sub-second (<1.2s LCP) speeds across North America, paired with Shopify Storefront API (for D2C), Server-to-Server (Meta CAPI, Google Enhanced Conversions, ChatGPT Ads S2S) attribution, and full Schema.org JSON-LD + llms.txt for AI search engines."
+      }
+    ]
+  },
+  {
     slug: "custom-website-development-cost-pune-guide-2026",
     title: "Custom Website Development Cost in Pune (2026): Agency vs Freelancer vs Next.js Systems",
     metaTitle: "Website Development Cost in Pune (2026 Price Guide) | The Brand Maniacs",
