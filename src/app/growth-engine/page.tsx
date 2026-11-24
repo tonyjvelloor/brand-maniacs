@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Performance Marketing & Growth Engine | The Brand Maniacs",
+    title: "Performance Marketing & Growth Engine",
     description: "We deploy capital aggressively but mathematically. Scalable Google Ads, Meta Ads, and SEO systems that acquire customers profitably.",
     alternates: {
         canonical: "/growth-engine",

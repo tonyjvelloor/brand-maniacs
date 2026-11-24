@@ -61,7 +61,7 @@ export const guides: Guide[] = [
   {
     slug: "custom-website-development-cost-pune-guide-2026",
     title: "Custom Website Development Cost in Pune (2026): Agency vs Freelancer vs Next.js Systems",
-    metaTitle: "Website Development Cost in Pune (2026 Price Guide) | The Brand Maniacs",
+    metaTitle: "Website Development Cost in Pune (2026 Price Guide)",
     metaDescription: "How much does a custom website cost in Pune? Full breakdown of pricing for WordPress vs custom Next.js web applications, agency vs freelancer costs, and ROI models.",
     category: "Web Architecture",
     readTime: "8 min read",

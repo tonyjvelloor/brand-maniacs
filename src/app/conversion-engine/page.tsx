@@ -5,7 +5,7 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Conversion Engine & CRO Strategy | The Brand Maniacs",
+    title: "Conversion Engine & CRO Strategy",
     description: "Traffic is worthless if it doesn't convert. We engineer high-performance landing pages, UI/UX, and conversion funnels that maximize ROI.",
     alternates: {
         canonical: "/conversion-engine",

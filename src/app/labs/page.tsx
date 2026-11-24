@@ -3,7 +3,7 @@ import { CALENDLY_URL } from "@/lib/config";
 import { ArrowRight, Sparkles, Image as ImageIcon, Zap, Layers } from "lucide-react";
 
 export const metadata: Metadata = {
-    title: "Maniac Labs & AIProdGen — AI Product Photography Tool | The Brand Maniacs",
+    title: "Maniac Labs & AIProdGen — AI Product Photography Tool",
     description: "AIProdGen generates ecommerce product visuals without expensive photo shoots. One image in. 50 ad-ready variants out. Built by The Brand Maniacs.",
     alternates: {
         canonical: "/labs",

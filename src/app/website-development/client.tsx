@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowRight, Check, X, Search, Smartphone, PenTool, Code, LineChart, Zap } from "lucide-react";
+import { ArrowRight, Check, X, Search, Smartphone, PenTool, Code, LineChart, Zap, Loader2 } from "lucide-react";
 import Link from "next/link";
-import { CALENDLY_URL } from "@/lib/config";
+import { CALENDLY_URL, WHATSAPP_URL } from "@/lib/config";
 import { useState } from "react";
 
 export interface LocationDetails {
@@ -21,12 +21,68 @@ export function WebsiteDevLandingClient({
   locationDetails?: LocationDetails;
 }) {
   const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    phone: "",
     url: "",
     business: "",
-    goal: ""
+    goal: "More enquiries"
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const displayName = locationDetails?.name || locationName;
+
+  const handleAssessmentSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitError("");
+    if (!formState.name.trim() || (!formState.email.trim() && !formState.phone.trim())) {
+      setSubmitError("Please enter your name and email or WhatsApp/phone number.");
+      return;
+    }
+
+    setIsSubmitting(true);
+    try {
+      const res = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          skipAiBrief: true,
+          leadInfo: {
+            name: formState.name.trim(),
+            email: formState.email.trim(),
+            phone: formState.phone.trim(),
+            company: formState.business.trim() || "Website Inquiry",
+            website: formState.url.trim(),
+          },
+          answers: {
+            source: displayName ? `Website Dev (${displayName})` : "Website Development Page",
+            industry: formState.business.trim(),
+            goal: formState.goal,
+          },
+        }),
+      });
+
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.error || "Could not submit assessment.");
+      }
+
+      if (typeof window !== "undefined" && (window as any).dataLayer) {
+        (window as any).dataLayer.push({
+          event: "generate_lead",
+          lead_source: displayName ? `website_dev_${displayName.toLowerCase()}` : "website_dev",
+        });
+      }
+
+      setIsSubmitted(true);
+    } catch (err: any) {
+      setSubmitError(err?.message || "Something went wrong. Please try again or book directly below.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="bg-background min-h-screen text-foreground selection:bg-accent-yellow selection:text-black font-sans">
@@ -656,33 +712,131 @@ export function WebsiteDevLandingClient({
                 Send us your details. We'll review your current setup and tell you what's holding it back, or map out the architecture for your new launch. No obligation.
               </p>
 
-              <form className="space-y-6" onSubmit={(e) => {
-                e.preventDefault();
-                window.open(CALENDLY_URL, '_blank');
-              }}>
-                <div>
-                  <label className="block font-black uppercase text-xs tracking-widest mb-2">Current Website URL (if any)</label>
-                  <input type="text" placeholder="www.yourwebsite.com" className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue" />
-                </div>
-                <div>
-                  <label className="block font-black uppercase text-xs tracking-widest mb-2">Business Type / Industry</label>
-                  <input type="text" placeholder="e.g. D2C Fashion, B2B SaaS, Clinic" className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue" />
-                </div>
-                <div>
-                  <label className="block font-black uppercase text-xs tracking-widest mb-4">What are you trying to achieve?</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {["More enquiries", "More sales", "Better branding", "Launch a new business", "Replace an outdated website", "Other"].map((goal, i) => (
-                      <label key={i} className="flex items-center gap-3 p-3 border-2 border-foreground/20 cursor-pointer hover:bg-foreground/5">
-                        <input type="radio" name="goal" className="w-4 h-4 accent-accent-red" />
-                        <span className="font-bold text-sm">{goal}</span>
-                      </label>
-                    ))}
+              {isSubmitted ? (
+                <div className="border-4 border-black bg-accent-yellow text-black p-8 text-center space-y-6">
+                  <div className="w-12 h-12 bg-black text-accent-yellow mx-auto flex items-center justify-center">
+                    <Check className="w-6 h-6" />
+                  </div>
+                  <h3 className="font-heading font-black text-2xl md:text-3xl uppercase tracking-tight">
+                    Assessment Request Received!
+                  </h3>
+                  <p className="font-bold text-sm md:text-base opacity-90 max-w-lg mx-auto">
+                    We&apos;ve captured your details and will review your website setup within 24 hours. Want to jump straight to a 30-minute walkthrough?
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+                    <a
+                      href={CALENDLY_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex justify-center items-center gap-2 bg-black text-white border-2 border-black font-black uppercase text-xs tracking-widest px-6 py-4 hover:bg-accent-red transition-colors"
+                    >
+                      Book 30-Min Call on Calendly <ArrowRight className="w-4 h-4" />
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex justify-center items-center gap-2 bg-white text-black border-2 border-black font-black uppercase text-xs tracking-widest px-6 py-4 hover:bg-green-500 hover:text-white transition-colors"
+                    >
+                      Message on WhatsApp
+                    </a>
                   </div>
                 </div>
-                <button type="submit" className="w-full bg-accent-yellow text-black border-2 border-black font-black uppercase tracking-widest py-5 hover:bg-black hover:text-white transition-colors shadow-[4px_4px_0_0_#000]">
-                  Get My Website Assessment →
-                </button>
-              </form>
+              ) : (
+                <form className="space-y-6" onSubmit={handleAssessmentSubmit}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-black uppercase text-xs tracking-widest mb-2">Your Name *</label>
+                      <input
+                        type="text"
+                        required
+                        value={formState.name}
+                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                        placeholder="Jane Doe"
+                        className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue bg-background text-foreground"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-black uppercase text-xs tracking-widest mb-2">Work Email *</label>
+                      <input
+                        type="email"
+                        required
+                        value={formState.email}
+                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                        placeholder="jane@company.com"
+                        className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue bg-background text-foreground"
+                      />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-black uppercase text-xs tracking-widest mb-2">Phone / WhatsApp</label>
+                      <input
+                        type="tel"
+                        value={formState.phone}
+                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
+                        placeholder="+1 / +91 ..."
+                        className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue bg-background text-foreground"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-black uppercase text-xs tracking-widest mb-2">Current Website URL (if any)</label>
+                      <input
+                        type="text"
+                        value={formState.url}
+                        onChange={(e) => setFormState({ ...formState, url: e.target.value })}
+                        placeholder="www.yourwebsite.com"
+                        className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue bg-background text-foreground"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-black uppercase text-xs tracking-widest mb-2">Company &amp; Industry</label>
+                    <input
+                      type="text"
+                      value={formState.business}
+                      onChange={(e) => setFormState({ ...formState, business: e.target.value })}
+                      placeholder="e.g. D2C Fashion, B2B SaaS, Clinic"
+                      className="w-full border-2 border-foreground p-4 font-bold outline-none focus:border-accent-blue bg-background text-foreground"
+                    />
+                  </div>
+                  <div>
+                    <label className="block font-black uppercase text-xs tracking-widest mb-4">What are you trying to achieve?</label>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {["More enquiries", "More sales", "Better branding", "Launch a new business", "Replace an outdated website", "Other"].map((goal, i) => (
+                        <label key={i} className="flex items-center gap-3 p-3 border-2 border-foreground/20 cursor-pointer hover:bg-foreground/5">
+                          <input
+                            type="radio"
+                            name="goal"
+                            checked={formState.goal === goal}
+                            onChange={() => setFormState({ ...formState, goal })}
+                            className="w-4 h-4 accent-accent-red"
+                          />
+                          <span className="font-bold text-sm">{goal}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+                  {submitError && (
+                    <p className="text-sm font-black text-accent-red bg-accent-red/10 border-2 border-accent-red p-3">
+                      {submitError}
+                    </p>
+                  )}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full bg-accent-yellow text-black border-2 border-black font-black uppercase tracking-widest py-5 hover:bg-black hover:text-white transition-colors shadow-[4px_4px_0_0_#000] disabled:opacity-60 flex items-center justify-center gap-2"
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-5 h-5 animate-spin" /> Sending Details...
+                      </>
+                    ) : (
+                      "Get My Website Assessment →"
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </section>

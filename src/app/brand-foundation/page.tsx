@@ -6,7 +6,7 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "Brand Foundation & Positioning Strategy | The Brand Maniacs",
+    title: "Brand Foundation & Positioning Strategy",
     description: "We engineer brand positioning rooted in behavioral science. We build trust systems that compress sales cycles and make price irrelevant.",
     alternates: {
         canonical: "/brand-foundation",

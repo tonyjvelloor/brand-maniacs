@@ -5,7 +5,7 @@ import { ArrowRight, ArrowDown } from "lucide-react";
 import { Solutions } from "@/components/sections/Solutions";
 
 export const metadata: Metadata = {
-    title: "Growth Systems | The Brand Maniacs",
+    title: "Growth Systems & Acquisition Infrastructure",
     description: "We don't sell digital marketing services. We build Growth Systems. Learn how our 4-part infrastructure turns attention into measurable revenue.",
     alternates: {
         canonical: "/growth-systems",

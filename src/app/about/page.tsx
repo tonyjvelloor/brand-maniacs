@@ -4,7 +4,7 @@ import Link from "next/link";
 
 
 export const metadata: Metadata = {
-    title: "Tony Joseph — Founder, The Brand Maniacs",
+    title: "Tony Joseph — Founder & Chief Architect",
     description: "Tony Joseph is a marketer-turned-builder obsessed with brand psychology and AI-powered growth systems. Founder of The Brand Maniacs and creator of AIProdGen.",
     alternates: {
         canonical: "/about",

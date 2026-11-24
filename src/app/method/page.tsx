@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { FadeUp } from "@/components/ui/FadeUp";
 
 export const metadata: Metadata = {
-    title: "Our Methodology | The Brand Maniacs",
+    title: "Our Methodology — The Maniac Method™",
     description: "Marketing is a behavior science and systems engineering problem. Learn how we engineer growth through psychology, infrastructure, and high-velocity testing.",
     alternates: {
         canonical: "/method",

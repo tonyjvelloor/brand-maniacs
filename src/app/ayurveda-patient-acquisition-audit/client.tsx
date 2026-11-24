@@ -72,8 +72,50 @@ export function AyurvedaAuditClient() {
   };
 
   const calculateScore = () => {
-    // Generate lead ID and UTM tracking (to be sent to backend, not GA4)
-    const leadId = `ld_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Basic rules-based scoring MVP
+    const newScores = {
+      localSearch: 50,
+      maps: 40,
+      website: 50,
+      paid: 30,
+      tracking: 40,
+      reputation: 50
+    };
+
+    if (formData.hasGMB === "Yes") newScores.maps += 30;
+    if (formData.reviewsCount === "50+") newScores.reputation += 35;
+    if (formData.reviewsCount === "10-50") newScores.reputation += 10;
+    if (formData.runningAds === "Yes") {
+      newScores.paid += 40;
+      newScores.tracking += 20;
+    }
+    if (formData.website !== "") newScores.website += 25;
+    if (formData.primaryChannel === "SEO / Organic Search") newScores.localSearch += 30;
+
+    // Persist lead to backend (/api/leads -> Redis + Webhook + ChatGPT S2S)
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        skipAiBrief: true,
+        leadInfo: {
+          name: formData.name || "Ayurveda Clinic Lead",
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.clinicName || "Ayurveda Clinic",
+          website: formData.website,
+        },
+        answers: {
+          source: "Ayurveda Patient Acquisition Audit",
+          industry: "Ayurveda Clinic",
+          goal: formData.biggestProblem || formData.auditMotivation,
+          budget: formData.marketingSpend,
+          stage: formData.monthlyEnquiries,
+          location: formData.location,
+          scores: newScores,
+        },
+      }),
+    }).catch((err) => console.error("Failed to save Ayurveda audit lead:", err));
     
     // Fire generate_lead since contact info is now submitted
     if (typeof window !== "undefined" && (window as any).dataLayer) {
@@ -88,26 +130,6 @@ export function AyurvedaAuditClient() {
     
     // Simulate calculation time
     setTimeout(() => {
-      // Basic rules-based scoring MVP
-      let newScores = {
-        localSearch: 50,
-        maps: 40,
-        website: 50,
-        paid: 30,
-        tracking: 40,
-        reputation: 50
-      };
-
-      if (formData.hasGMB === "Yes") newScores.maps += 30;
-      if (formData.reviewsCount === "50+") newScores.reputation += 35;
-      if (formData.reviewsCount === "10-50") newScores.reputation += 10;
-      if (formData.runningAds === "Yes") {
-        newScores.paid += 40;
-        newScores.tracking += 20;
-      }
-      if (formData.website !== "") newScores.website += 25;
-      if (formData.primaryChannel === "SEO / Organic Search") newScores.localSearch += 30;
-
       setScores(newScores);
       
       // Fire audit_complete

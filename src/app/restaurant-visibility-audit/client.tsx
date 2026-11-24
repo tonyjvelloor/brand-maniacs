@@ -69,8 +69,48 @@ export function RestaurantAuditClient() {
   };
 
   const calculateScore = () => {
-    // Generate lead ID and UTM tracking (to be sent to backend, not GA4)
-    const leadId = `ld_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+    // Basic rules-based scoring MVP
+    const newScores = {
+      maps: 40,
+      reviews: 50,
+      website: 50,
+      reservation: 30,
+      paid: 30,
+      events: 40
+    };
+
+    if (formData.gmbRanking === "Top 3") newScores.maps += 50;
+    if (formData.gmbRanking === "Page 1 (Below top 3)") newScores.maps += 20;
+    if (formData.rating === "4.5+") newScores.reviews += 40;
+    if (formData.rating === "4.0 - 4.4") newScores.reviews += 15;
+    if (formData.website !== "") newScores.website += 30;
+    if (formData.reservationSystem === "Online System (Zomato/Dineout/Direct)") newScores.reservation += 60;
+    if (formData.reservationSystem === "WhatsApp / Call Only") newScores.reservation += 20;
+    if (formData.runningAds === "Yes") newScores.paid += 50;
+    if (formData.eventDining === "Yes, actively promote it") newScores.events += 50;
+
+    // Persist lead to backend (/api/leads -> Redis + Webhook + ChatGPT S2S)
+    fetch("/api/leads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        skipAiBrief: true,
+        leadInfo: {
+          name: formData.name || "Restaurant Lead",
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.restaurantName || "Restaurant",
+          website: formData.website,
+        },
+        answers: {
+          source: "Restaurant Visibility Audit",
+          industry: "Restaurant / Hospitality",
+          goal: formData.biggestProblem || formData.auditMotivation,
+          location: formData.location,
+          scores: newScores,
+        },
+      }),
+    }).catch((err) => console.error("Failed to save Restaurant audit lead:", err));
     
     // Fire generate_lead since contact info is now submitted
     if (typeof window !== "undefined" && (window as any).dataLayer) {
@@ -85,31 +125,6 @@ export function RestaurantAuditClient() {
     
     // Simulate calculation time
     setTimeout(() => {
-      // Basic rules-based scoring MVP
-      let newScores = {
-        maps: 40,
-        reviews: 50,
-        website: 50,
-        reservation: 30,
-        paid: 30,
-        events: 40
-      };
-
-      if (formData.gmbRanking === "Top 3") newScores.maps += 50;
-      if (formData.gmbRanking === "Page 1 (Below top 3)") newScores.maps += 20;
-      
-      if (formData.rating === "4.5+") newScores.reviews += 40;
-      if (formData.rating === "4.0 - 4.4") newScores.reviews += 15;
-      
-      if (formData.website !== "") newScores.website += 30;
-      
-      if (formData.reservationSystem === "Online System (Zomato/Dineout/Direct)") newScores.reservation += 60;
-      if (formData.reservationSystem === "WhatsApp / Call Only") newScores.reservation += 20;
-      
-      if (formData.runningAds === "Yes") newScores.paid += 50;
-      
-      if (formData.eventDining === "Yes, actively promote it") newScores.events += 50;
-
       setScores(newScores);
       
       // Fire audit_complete

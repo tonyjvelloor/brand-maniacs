@@ -94,26 +94,34 @@ async function fetchWebsiteData(url: string) {
 export async function POST(req: Request) {
     try {
         const body = await req.json();
-        const { answers, leadInfo } = body;
+        const { answers = {}, leadInfo, skipAiBrief = false } = body;
 
-        // Basic server-side validation
-        if (!leadInfo?.name || !leadInfo?.email || !leadInfo?.company) {
-            return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+        // Basic server-side validation — accept email OR phone so leads are never silently dropped
+        if (!leadInfo?.name || (!leadInfo?.email && !leadInfo?.phone)) {
+            return NextResponse.json({ error: "Please provide your name and email or phone number." }, { status: 400 });
         }
+
+        const normalizedLeadInfo = {
+            name: leadInfo.name,
+            email: leadInfo.email || "",
+            phone: leadInfo.phone || "",
+            company: leadInfo.company || "Not provided",
+            website: leadInfo.website || "",
+        };
 
         const leadId = uuidv4();
         const timestamp = new Date().toISOString();
 
-        // 1. Scrape Website Data (if provided)
+        // 1. Scrape Website Data (if provided and not skipped)
         let websiteData = null;
-        if (leadInfo.website) {
-            websiteData = await fetchWebsiteData(leadInfo.website);
+        if (!skipAiBrief && normalizedLeadInfo.website) {
+            websiteData = await fetchWebsiteData(normalizedLeadInfo.website);
         }
 
         let aiBrief = null;
 
         // 2. Generate AI Brief
-        if (process.env.ANTHROPIC_API_KEY) {
+        if (!skipAiBrief && process.env.ANTHROPIC_API_KEY) {
             try {
                 const { object } = await generateObject({
                     model: anthropic('claude-3-5-sonnet-20240620'),
@@ -122,16 +130,16 @@ export async function POST(req: Request) {
                     Analyze the following lead submission for a growth/digital product agency.
                     
                     LEAD INFO:
-                    Name: ${leadInfo.name}
-                    Company: ${leadInfo.company}
-                    Website URL provided: ${leadInfo.website || 'None'}
+                    Name: ${normalizedLeadInfo.name}
+                    Company: ${normalizedLeadInfo.company}
+                    Website URL provided: ${normalizedLeadInfo.website || 'None'}
                     Industry: ${answers.industry || 'Not specified'}
                     Team Size: ${answers.teamSize || 'Not specified'}
                     
                     ESTIMATOR ANSWERS:
-                    Goal/Bottleneck: ${answers.goal}
-                    Stage: ${answers.stage}
-                    Budget: ${answers.budget}
+                    Goal/Bottleneck: ${answers.goal || 'Not specified'}
+                    Stage: ${answers.stage || 'Not specified'}
+                    Budget: ${answers.budget || 'Not specified'}
 
                     ${websiteData ? `
                     WEBSITE OBSERVATIONS (Raw Scrape):
@@ -161,7 +169,8 @@ export async function POST(req: Request) {
             status: "New",
             assignedTo: "Unassigned",
             timestamp,
-            contact: leadInfo,
+            source: answers.source || "Website Lead Form",
+            contact: normalizedLeadInfo,
             rawAnswers: answers,
             websiteData,
             aiBrief
@@ -180,11 +189,13 @@ export async function POST(req: Request) {
             try {
                 // Flatten data for easy Google Sheets insertion
                 const webhookPayload = {
+                    Source: answers.source || "Website Lead Form",
                     Timestamp: timestamp,
-                    Name: leadInfo.name || "",
-                    Email: leadInfo.email || "",
-                    Company: leadInfo.company || "",
-                    Website: leadInfo.website || "",
+                    Name: normalizedLeadInfo.name || "",
+                    Email: normalizedLeadInfo.email || "",
+                    Phone: normalizedLeadInfo.phone || "",
+                    Company: normalizedLeadInfo.company || "",
+                    Website: normalizedLeadInfo.website || "",
                     Goal: answers.goal || "",
                     Stage: answers.stage || "",
                     Budget: answers.budget || "",

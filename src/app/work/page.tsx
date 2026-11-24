@@ -5,7 +5,7 @@ import { ArrowRight, Image as ImageIcon, Sparkles } from "lucide-react";
 import { caseStudies } from "@/lib/case-studies";
 
 export const metadata: Metadata = {
-    title: "Case Studies & Proof — The Brand Maniacs Creative Growth Studio",
+    title: "Case Studies & Proof — Growth Systems Portfolio",
     description: "See how TBM helped brands go from invisible to impossible to ignore — real strategy, AI-powered production, and measurable growth outcomes.",
     alternates: {
         canonical: '/work',

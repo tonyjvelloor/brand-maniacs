@@ -14,8 +14,10 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Growth Infrastructure & Creative Technology Studio",
-  description: "Built in India, designed for the world. We build revenue-generating growth systems, high-converting websites, and customer acquisition infrastructure.",
+  title: {
+    absolute: "The Brand Maniacs | Growth Marketing & Next.js Web Agency",
+  },
+  description: "The Brand Maniacs is a creative technology & growth studio serving the USA and India. We build sub-second Next.js websites, SEO/AEO engines, and customer acquisition systems.",
   alternates: {
     canonical: "/",
   },

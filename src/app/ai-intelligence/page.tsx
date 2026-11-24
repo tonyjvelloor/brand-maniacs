@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-    title: "AI Marketing Intelligence & Automation | The Brand Maniacs",
+    title: "AI Marketing Intelligence & Automation",
     description: "We use AI to collapse production timelines and scale output. Programmatic SEO, AI creative generation, and growth workflow automation.",
     alternates: {
         canonical: "/ai-intelligence",
